@@ -1,0 +1,69 @@
+---
+sidebar_position: 1
+---
+
+# Layout
+
+The Biel.ai button is highly customizable, allowing you to customize its behavior to suit your application's needs.
+This page lists all available properties you can use to adjust the behavior and appearance of the Biel.ai button in your application.
+
+## Usage
+
+To customize the properties, you need to set the appropriate attributes on the `<biel-button>` element in your HTML. For example:
+
+```html
+<biel-button project="YOUR_PROJECT_ID" button-style="dark" hide-icon="true">ASK AI</biel-button>
+```
+
+## Properties
+
+The table below lists all the available properties you can set:
+
+| Property               | Description                                                                                   |
+|------------------------|-----------------------------------------------------------------------------------------------|
+| `project`              | **Required**<br />**Type**: `string`<br /><br />The project ID.         |
+| `button-position`      | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `bottom-right`, `center-right`<br /><br />Position of the button.|
+| `button-style`         | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `dark`, `light`<br /><br />Style of the button.|
+| `custom-font`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the [Inter font](https://fonts.google.com/specimen/Inter) will not be loaded. Useful if your site already uses a different font, enabling a quicker load time.|
+
+## Examples
+
+Here you'll find practical examples to guide you in customizing the Biel.ai button for various use cases.
+
+### Change the button style
+
+<iframe height="700" style={{width: '100%'}}  scrolling="no" title="Feedback button styles" src="https://codepen.io/David-Garcia-the-bashful/embed/rNQrojP?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/David-Garcia-the-bashful/pen/rNQrojP">
+  Feedback button styles</a> by David Garcia (<a href="https://codepen.io/David-Garcia-the-bashful">@David-Garcia-the-bashful</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### Create a floating button
+
+<iframe height="700" style={{width: '100%'}} scrolling="no" title="Floating feedback buttons" src="https://codepen.io/David-Garcia-the-bashful/embed/PoxBXmm?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/David-Garcia-the-bashful/pen/PoxBXmm">
+  Floating feedback buttons</a> by David Garcia (<a href="https://codepen.io/David-Garcia-the-bashful">@David-Garcia-the-bashful</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### Add the widget to any button
+
+<iframe height="700" style={{width: '100%'}} scrolling="no" title="Untitled" src="https://codepen.io/David-Garcia-the-bashful/embed/poQxyeY?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/David-Garcia-the-bashful/pen/poQxyeY">
+  Untitled</a> by David Garcia (<a href="https://codepen.io/David-Garcia-the-bashful">@David-Garcia-the-bashful</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### Change modal position
+
+:::info 
+For an optimal viewing experience of this demo, select the **0.25x** zoom level on CodePen.
+:::
+
+<iframe height="700" style={{width: '100%'}}  scrolling="no" title="Feedback widget modal position" src="https://codepen.io/David-Garcia-the-bashful/embed/poQZqwZ?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/David-Garcia-the-bashful/pen/poQZqwZ">
+  Feedback widget modal position</a> by David Garcia (<a href="https://codepen.io/David-Garcia-the-bashful">@David-Garcia-the-bashful</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+
+:root {
+  --ifm-font-family-base: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  --ifm-color-primary: #18181b;
+  --ifm-color-primary-dark: #161618;
+  --ifm-color-primary-darker: #141417;
+  --ifm-color-primary-darkest: #111113;
+  --ifm-color-primary-light: #1a1a1e;
+  --ifm-color-primary-lighter: #1c1c1f;
+  --ifm-color-primary-lightest: #1f1f23;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-menu-color-background-active: #f3f4f6;
+  --ifm-z-index-fixed: 100;
+  --feedback-primary-color: #18181b;
+}
+
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4fd1c5;
+  --ifm-color-primary-dark: #38cbbd;
+  --ifm-color-primary-darker: #33c2b5;
+  --ifm-color-primary-darkest: #2aa095;
+  --ifm-color-primary-light: #66d7cd;
+  --ifm-color-primary-lighter: #71dad0;
+  --ifm-color-primary-lightest: #93e3dc;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+  display: none;
+}
+
+.navbar__logo {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 0 solid rgb(229, 231, 235);
+  border-radius: 4px;
+  box-shadow: rgba(9, 9, 11, 0.2) 0px 1px 2px 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.navbar__logo img {
+  width: 24px;
+  height: 24px;
+}
+
+
+.theme-doc-sidebar-menu {
+  margin-right: 10px;
+}
+
+.menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+}
+
+
+.navbar__search-input {
+  border-radius: 8px;
+}
+
+.menu__list-item-collapsible,
+.menu__link {
+  border-radius: 8px;
+}
+
+@media (min-width: 997px){
+
+  .navbar__inner {
+    max-width: 1432px;
+    margin: 0 auto;
+  }
+  
+  .main-wrapper {
+    max-width: 1432px;
+    margin: 0 auto;
+    padding-top: 24px;
+  }
+
+  .main-wrapper .container {
+    padding-top: 0px !important;
+  }
+  
+  .main-wrapper article:not(.col),
+  .main-wrapper header {
+    padding: 0 10%;
+  }
+
+  .breadcrumbs {
+    display: none;
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .navbar {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        background-color: initial;
+    }
+  }  
+}

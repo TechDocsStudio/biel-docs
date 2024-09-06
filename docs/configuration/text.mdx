@@ -1,0 +1,48 @@
+---
+sidebar_position: 3
+---
+
+# Text
+
+Biel.ai provides comprehensive text customization options, allowing you to align the feedback button's textual content with your company's tone or support various languages. By customizing these properties, you can ensure a consistent user experience that reflects your brand's voice or caters to your diverse user base.
+
+## Usage
+
+To customize the textual properties, set the respective attributes on the `<biel-button>` element in your HTML. Here's an illustrative example:
+
+```html
+<biel-button 
+  project="YOUR_PROJECT_ID"
+  email-placeholder="Enter your email"
+  modal-title="Give us your thoughts">
+  Button text
+</biel-button>
+```
+
+## Properties
+
+The table below lists all the available properties you can override:
+
+| Property                       | Description                                                                                                                     |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `email-placeholder`            | **Type**: `string`<br />**Default value**: `Email address (optional)`<br />Placeholder text for the email input field.<br /><br />    |
+| `error-message`                | **Type**: `string`<br />**Default value**: `Please try again later."`<br />Message displayed when there's an error submitting feedback.<br /><br />|
+| `modal-title-error-4-0-3`      | **Type**: `string`<br />**Default value**: `The request URL does not match the one defined in Biel.ai for this project."`<br />Message displayed when there's a 403 error submitting feedback.<br /><br />|
+| `modal-title-error-4-0-4`      | **Type**: `string`<br />**Default value**: `We could not find the provided project id in Biel.ai.`<br />Message displayed when there's a 404 error submitting feedback.<br /><br />|
+| `message-placeholder`          | **Type**: `string`<br />**Default value**: `Comments`<br />Placeholder for the feedback message input.<br /><br />|
+| `modal-title`                  | **Type**: `string`<br />**Default value**: `Share your feedback`<br />Title of the feedback modal.<br /><br />                        |
+| `modal-title-error`            | **Type**: `string`<br />**Default value**: `Oops!`<br />Title displayed when there's an error submitting feedback.<br /><br />|
+| `modal-title-success`          | **Type**: `string`<br />**Default value**: `Thanks for your feedback!`<br />Title displayed upon successful feedback submission.<br /><br />|
+| `screenshot-button-text`        | **Type**: `string`<br />**Default value**: `Take a Screenshot`<br />Tooltip text for the screenshot button.<br /><br />              |
+| `screenshot-topbar-text`        | **Type**: `string`<br />**Default value**: `SELECT AN ELEMENT ON THE PAGE`<br />Instructional text when taking a screenshot.<br /><br />|
+| `send-button-text`              | **Type**: `string`<br />**Default value**: `Send`<br />Text for the button that submits feedback.<br /><br />                         |
+| `rating-placeholder`            | **Type**: `string`<br />**Default value**: `Was this page helpful?`<br />Heading for the feedback rating feature (thumbs).<br /><br />|
+| `rating-stars-placeholder`      | **Type**: `string`<br />**Default value**: `How would you rate this page`<br />Heading for the feedback rating feature (stars).<br /><br />|
+
+## Example
+
+<iframe height="700" style={{width: '100%'}} scrolling="no" title="Untitled" src="https://codepen.io/David-Garcia-the-bashful/embed/MWzPyvM?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/David-Garcia-the-bashful/pen/MWzPyvM">
+  Untitled</a> by David Garcia (<a href="https://codepen.io/David-Garcia-the-bashful">@David-Garcia-the-bashful</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
