@@ -31,18 +31,18 @@ To integrate the Biel.ai widget into your Sphinx site:
 2. With your terminal still open, run the following command to install Biel.ai via PIP:
 
     ```console
-    pip install sphinx-pushfeedback
+    pip install sphinx-biel
     ```
 
 2. Add the extension to your Sphinx project's `conf.py` file:
 
     ```python
-    extensions ['sphinx_pushfeedback']
+    extensions ['sphinx_biel']
     ```
 3. Configure your project ID in the `conf.py` file:
 
     ```python
-    pushfeedback_project = '<YOUR_PROJECT_ID>'
+    biel_project = '<YOUR_PROJECT_ID>'
     ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
@@ -63,12 +63,12 @@ You can customize the Biel.ai widget to suit your needs. For example, you can ch
 
 To do so, you can add any of the following [configuration](../configuration/layout.mdx)  options to your `conf.py` file, with the following modifications:
 
-1. Prefix configuration options with `pushfeedback_`. For instance, `project` would be `pushfeedback_project`.
+1. Prefix configuration options with `biel_`. For instance, `project` would be `biel_project`.
 
-2. Use underscores instead of hyphens as words separator. For example, `button-position` becomes `pushfeedback_button_position`.
+2. Use underscores instead of hyphens as words separator. For example, `button-position` becomes `biel_button_position`.
 
 Here's an example:
 
 ```python
-pushfeedback_button_style = "light"
+biel_button_style = "light"
 ```
