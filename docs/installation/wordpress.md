@@ -2,7 +2,7 @@
 sidebar_label: Wordpress
 ---
 
-# Feedback widget for Wordpress
+# AI chatbot for Wordpress
 
 Here's a step-by-step guide to help you install Biel.ai in your Wordpress site.
 

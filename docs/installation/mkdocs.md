@@ -2,7 +2,7 @@
 sidebar_label: MkDocs
 ---
 
-# Feedback widget for MkDocs
+# AI chatbot for MkDocs
 
 Here's a step-by-step guide to help you install Biel.ai in your MkDocs project.
 

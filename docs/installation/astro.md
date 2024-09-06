@@ -2,11 +2,11 @@
 sidebar_label: Astro
 ---
 
-# Feedback widget for Astro
+# AI chatbot for Astro
 
 Here's a step-by-step guide to help you install Biel.ai in your Astro project.
 
-![Feedback widget for docs screenshot](./images/feedback-widget-astro.png)
+![AI chatbot for docs screenshot](./images/feedback-widget-astro.png)
 
 ## Prerequisites
 

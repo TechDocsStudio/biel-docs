@@ -2,7 +2,7 @@
 sidebar_label: HTML
 ---
 
-# Feedback widget for HTML sites
+# AI chatbot for HTML sites
 
 Here's a step-by-step guide to help you install Biel.ai in your HTML site.
 

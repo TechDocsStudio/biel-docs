@@ -2,7 +2,7 @@
 sidebar_label: Vue.js
 ---
 
-# Feedback widget for Vue.js
+# AI chatbot for Vue.js
 
 Here's a step-by-step guide to help you install Biel.ai in your Vue.js project using NPM.
 

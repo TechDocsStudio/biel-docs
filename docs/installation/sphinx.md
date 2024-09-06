@@ -2,7 +2,7 @@
 sidebar_label: Sphinx
 ---
 
-# Feedback widget for Sphinx
+# AI chatbot for Sphinx
 
 Here's a step-by-step guide to help you install Biel.ai in your Sphinx project.
 

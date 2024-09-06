@@ -2,7 +2,7 @@
 sidebar_label: React
 ---
 
-# Feedback widget for React
+# AI chatbot for React
 
 Here's a step-by-step guide to help you install Biel.ai in your React project using NPM.
 

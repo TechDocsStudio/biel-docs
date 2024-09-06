@@ -2,7 +2,7 @@
 sidebar_label: Next.js
 ---
 
-# Feedback widget for Next.js
+# AI chatbot for Next.js
 
 Here's a step-by-step guide to help you install Biel.ai in your Next.js project using NPM.
 

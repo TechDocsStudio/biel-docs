@@ -2,7 +2,7 @@
 sidebar_label: Hugo
 ---
 
-# Feedback widget for Hugo
+# AI chatbot for Hugo
 
 Here's a step-by-step guide to help you install Biel.ai in your Hugo project.
 

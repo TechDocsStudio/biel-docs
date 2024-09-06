@@ -2,7 +2,7 @@
 sidebar_label: NPM
 ---
 
-# Feedback widget for NPM projects
+# AI chatbot for NPM projects
 
 Here's a step-by-step guide to help you install Biel.ai in your project using NPM.
 

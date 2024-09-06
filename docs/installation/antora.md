@@ -2,7 +2,7 @@
 sidebar_label: Antora
 ---
 
-# Feedback widget for Antora
+# AI chatbot for Antora
 
 Here's a step-by-step guide to help you install Biel.ai in your Antora project.
 

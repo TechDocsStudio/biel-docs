@@ -2,7 +2,7 @@
 sidebar_label: Gatsby
 ---
 
-# Feedback widget for Gatsby
+# AI chatbot for Gatsby
 
 Here's a step-by-step guide to help you install Biel.ai in your Gatsby project using NPM.
 
