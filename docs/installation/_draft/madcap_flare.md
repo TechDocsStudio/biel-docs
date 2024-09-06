@@ -22,12 +22,12 @@ Near the </body> tag, place:
 
 html
 Copy code
-<biel-button project="<YOUR_PROJECT_ID>">Send ASK AI</biel-button>
+<biel-button project="<YOUR_PROJECT_ID>">Send Ask AI</biel-button>
 (Remember to replace <YOUR_PROJECT_ID>.)
 
 Build your project.
 
-Test to ensure the feedback button appears and functions correctly on every topic.
+Test to ensure the chatbot appears and functions correctly on every topic.
 
 
 

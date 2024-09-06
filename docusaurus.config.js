@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Biel.ai docs',
-  tagline: 'ASK AI chatbot for technical documentation',
+  tagline: 'Ask AI chatbot for technical documentation',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
 

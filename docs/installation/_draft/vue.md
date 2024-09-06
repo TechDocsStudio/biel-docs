@@ -24,7 +24,7 @@ In your main `App.vue` or any other global component, add the following to the `
 ```
 ### **b. Use the Component in Vue**
 
-In the script section of the Vue component where you want to use the feedback button, import the Biel.ai module:
+In the script section of the Vue component where you want to use the chatbot, import the Biel.ai module:
 
 ```<script>
 import 'pushfeedback/dist/biel-search/biel-search.esm.js';
@@ -35,11 +35,11 @@ export default {
 }
 </script>
 ```
-### **c. Add the Feedback Button**
+### **c. Add the chatbot**
 
 In the template section of your component, add:
 
-```<biel-button project="<YOUR_PROJECT_ID>">Send ASK AI</biel-button>
+```<biel-button project="<YOUR_PROJECT_ID>">Send Ask AI</biel-button>
 ```
 Replace `<YOUR_PROJECT_ID>` with your actual Biel.ai project ID.
 

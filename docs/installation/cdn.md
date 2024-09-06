@@ -30,7 +30,7 @@ To integrate the Biel.ai widget into your website:
 1. Just before the closing `</body>` tag of your website's HTML, add the following snippet:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">ASK AI</biel-button>
+    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
     ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).

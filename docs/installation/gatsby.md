@@ -35,17 +35,17 @@ To integrate the Biel.ai widget into your Gatsby site:
     ```
 
     :::info
-    If you're using yarn as your package manager, run `yarn add pushfeedback-react` instead of the npm command above.
+    If you're using yarn as your package manager, run `yarn add biel-search-react` instead of the npm command above.
     :::
 
-1. In the main component where you wish to place the feedback button (often `src/pages/index.js`), embed the Biel.ai button:
+1. In the main component where you wish to place the chatbot (often `src/pages/index.js`), embed the Biel.ai button:
 
     ```ts
     import React, { useEffect } from 'react';
 
-    import { FeedbackButton } from 'pushfeedback-react';
-    import { defineCustomElements } from 'pushfeedback/loader';
-    import 'pushfeedback/dist/biel-search/biel-search.css';
+    import { BielButton } from 'biel-search-react';
+    import { defineCustomElements } from 'biel-search/loader';
+    import 'biel-search/dist/biel-search/biel-search.css';
 
     const IndexPage = () => {
         
@@ -58,7 +58,7 @@ To integrate the Biel.ai widget into your Gatsby site:
         return (
             <div className="page-layout">
                 {/* Other components and content */}
-                <FeedbackButton project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Feedback</FeedbackButton>
+                <BielButton project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</BielButton>
             </div>
         );
     }
@@ -68,7 +68,7 @@ To integrate the Biel.ai widget into your Gatsby site:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Start your Gatsby app by running `gatsby develop` in your terminal. Once it compiles successfully, verify that the feedback button appears and functions correctly on your site.
+1. Start your Gatsby app by running `gatsby develop` in your terminal. Once it compiles successfully, verify that the chatbot  appears and functions correctly on your site.
 
 ## Next steps
 

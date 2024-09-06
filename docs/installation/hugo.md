@@ -36,10 +36,10 @@ To integrate the Biel.ai widget into your Hugo site:
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```
 
-1. Next, find the footer partial (or wherever you'd like the feedback button to be placed) and add the following code just before the closing tags:
+1. Next, find the footer partial (or wherever you'd like the chatbot to be placed) and add the following code just before the closing tags:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">ASK AI</biel-button>
+    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
     ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
@@ -50,7 +50,7 @@ To integrate the Biel.ai widget into your Hugo site:
     hugo server
     ```
 
-    Once it builds successfully, verify that the feedback button appears and functions correctly on your site.
+    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
 
 ## Next steps
 

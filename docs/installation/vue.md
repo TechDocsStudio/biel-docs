@@ -35,7 +35,7 @@ To integrate the Biel.ai widget into your Vue.js site:
     npm install pushfeedback
     ```
 
-1. Open your main Vue component or the desired Vue component where you want the feedback widget to appear. Then, incorporate the Biel.ai styles and scripts:
+1. Open your main Vue component or the desired Vue component where you want the chatbot to appear. Then, incorporate the Biel.ai styles and scripts:
 
     ```js
     <script>
@@ -71,7 +71,7 @@ To integrate the Biel.ai widget into your Vue.js site:
     npm run serve
     ```
 
-    Open the website in a web browser to verify that the feedback button appears and works correctly.
+    Open the website in a web browser to verify that the chatbot  appears and works correctly.
 
 
 ## Next steps

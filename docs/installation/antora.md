@@ -37,10 +37,10 @@ To integrate the Biel.ai widget into your Antora site:
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```
 
-1. Locate the `footer.hbs` or the specific file where you'd like the feedback button to appear. Just before the closing tags in that file, add the following snippet:
+1. Locate the `footer.hbs` or the specific file where you'd like the chatbot to appear. Just before the closing tags in that file, add the following snippet:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">ASK AI</biel-button>
+    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
     ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
@@ -50,7 +50,7 @@ To integrate the Biel.ai widget into your Antora site:
     * If you're using a custom UI, make sure to re-bundle it and then run the Antora command to build your project.
     * If you cloned the default UI, you'd have to integrate it as a local UI and then run Antora with the `--ui-bundle-url` flag to point to your modified local UI bundle.
 
-    Once it builds successfully, verify that the feedback button appears and functions correctly on your site.
+    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
 
 ## Next steps
 

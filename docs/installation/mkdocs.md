@@ -45,7 +45,7 @@ To integrate the Biel.ai widget into your MkDocs site:
     {{ super() }}
 
     <!-- Feedback button -->
-    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">ASK AI</biel-button>
+    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
     {% endblock %}
     ```
 
@@ -63,7 +63,7 @@ To integrate the Biel.ai widget into your MkDocs site:
     mkdocs build
     ```
 
-    Once it builds successfully, verify that the feedback button appears and functions correctly on your site.
+    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
 
 ## Next steps
 

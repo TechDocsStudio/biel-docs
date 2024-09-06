@@ -53,9 +53,9 @@ To integrate the Biel.ai widget into your Sphinx site:
     make html
     ```
 
-    Once built, open your documentation in a web browser. Verify that the feedback button appears and works correctly on your site.
+    Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site.
 
-    ![Sphinx Feedback widget](./images/sphinx.png)
+    ![Sphinx Chatbot](./images/sphinx.png)
 
 ## Next steps
 
