@@ -22,6 +22,7 @@
   --ifm-menu-color-background-active: #f3f4f6;
   --ifm-z-index-fixed: 100;
   --feedback-primary-color: #18181b;
+  --biel-button-dark-bg-color: #18181b;
 }
 
 
@@ -96,11 +97,6 @@
     padding-top: 0px !important;
   }
   
-  .main-wrapper article:not(.col),
-  .main-wrapper header {
-    padding: 0 10%;
-  }
-
   .breadcrumbs {
     display: none;
   }

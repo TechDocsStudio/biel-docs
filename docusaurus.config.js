@@ -1,8 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsDark');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -56,7 +58,6 @@ const config = {
     ],
   ],
   plugins: [
-    require.resolve('docusaurus-lunr-search'),
     [
       'docusaurus-pushfeedback',{
         project: 'wlkz1eomrs',
@@ -66,6 +67,11 @@ const config = {
       }
     ],
     'docusaurus-plugin-image-zoom',
+    [
+      'docusaurus-biel',{
+          project: 'dl1kps0old'
+      }
+  ]
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -88,8 +94,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Biel.ai.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
       },
       zoom: {
         selector: '.markdown img',
