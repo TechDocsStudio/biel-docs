@@ -23,7 +23,7 @@ Follow these steps to create and configure a new project:
 2. Click **Create project**.
 3. Complete the project setup wizard by providing the necessary details:
 
-    ![Create project](./images/create-project.gif)
+    ![Create project](./images/create-project.png)
 
     * **Name**: A unique identifier for your project.
     * **Sources**: Add the sources you want to index for your project:

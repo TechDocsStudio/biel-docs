@@ -1,14 +1,14 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 # Whitelabel
 
-:::info
-This feature is only available on the [Professional](https://biel.ai#pricing) and [Unlimited](https://biel.ai#pricing) plans.
+:::note
+This feature is available on the **Professional** plan and above.
 :::
 
-Biel.ai offers a white labeling option which allows you to hide the Biel.ai logo from the bottom of the chatbot, ensuring a seamless experience for your users.
+Biel.ai offers a white labeling option which allows you to hide the "Powered by Biel.ai" text and logo from the chatbot widget. This feature is useful when you want to maintain a consistent brand experience on your website without any third-party branding.
 
 ## Steps
 
@@ -22,8 +22,6 @@ Follow the steps below to enable this feature:
 
 4. Within the Teams settings, look for the **Whitelabel** option. Activate this option to enable white labeling.
 
-5. Save your settings by clicking the **Save** button.
+5. Click the **Save** button to apply your changes.
 
-6. To ensure the changes are in place, go to any webpage where you've implemented the Biel.ai widget. The Biel.ai logo should no longer be visible at the bottom of the widget.
-
-With the logo removed, your chatbot will seamlessly blend with your website, providing a consistent user experience.
+6. To ensure the changes are in place, go to any webpage where you've implemented the Biel.ai widget. The Biel.ai logo should no longer be visible.
