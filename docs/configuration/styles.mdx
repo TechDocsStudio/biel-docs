@@ -13,7 +13,7 @@ To customize these properties, define them in your website's CSS using the `:roo
 
 ```css
 :root {
-    --feedback-primary-color: #00D68F;
+    --biel-primary-color: #00D68F;
     ...
 }
 ```
@@ -22,135 +22,65 @@ To customize these properties, define them in your website's CSS using the `:roo
 
 The tables below lists all the available properties you can override:
 
-### Global properties
-
 ```css
 :root {
     /* Colors */
-    --feedback-primary-color: #0070F4;
-    --feedback-secondary-color: #f1f3f4;
-    --feedback-light-color: #ccc;
-    --feedback-dark-color: #191919;
-    --feedback-text-color: #5f6368;
-    --feedback-white-color: #fff;
-    --feedback-highlight-color: #ffb422;
-        
+    --biel-primary-color: #0070F4;
+    --biel-secondary-color: #f1f3f4;
+    --biel-light-color: #ccc;
+    --biel-dark-color: #191919;
+    --biel-text-color: #5f6368;
+    --biel-white-color: #fff;
+    --biel-highlight-color: #ffb422;
+       
     /* Fonts */
-    --feedback-font-family: "Inter", "Tahoma", "sans-serif";
-    --feedback-heading-font-size: 16px;
-    --feedback-text-font-size: 14px;
-}
-```
+    --biel-font-family: "Inter", "Tahoma", "sans-serif";
+    --biel-heading-font-size: 16px;
+    --biel-text-font-size: 14px;
 
-### Feedback button properties
-
-```css
-:root {
-    /* Feedback button*/
+    /* Biel button*/
     --biel-button-border-radius: 20px;
-    --biel-button-dark-bg-color: var(--feedback-primary-color);
-    --biel-button-dark-text-color: var(--feedback-white-color);
-    --biel-button-light-bg-color: var(--feedback-white-color);
-    --biel-button-light-text-color: var(--feedback-primary-color);
-    --biel-button-text-font-size: var(--feedback-text-font-size);
+    --biel-button-dark-bg-color: var(--biel-primary-color);
+    --biel-button-dark-text-color: var(--biel-white-color);
+    --biel-button-light-bg-color: var(--biel-white-color);
+    --biel-button-light-text-color: var(--biel-primary-color);
+    --biel-button-text-font-size: var(--biel-text-font-size);
     --biel-button-text-font-weight: 600;
     --biel-button-z-index: 300;
+
+    
+    /*Biel search*/
+    --biel-search-header-font-family: var(--biel-font-family);
+    --biel-search-header-font-size: var(--biel-heading-font-size);
+    --biel-search-header-font-weight: 500;
+    --biel-search-header-text-color: var(--biel-dark-color);
+    --biel-search-close-bg-color: var(--biel-white-color);
+    --biel-search-close-color: var(--biel-dark-color);
+    --biel-search-content-bg-color: var(--biel-white-color);
+    --biel-search-content-border-color: var(--biel-light-color);
+    --biel-search-content-border-radius: 8px;
+    --biel-search-content-font-family: var(--biel-font-family);
+    --biel-search-content-position-bottom: 10px;
+    --biel-search-content-position-left: 10px;
+    --biel-search-content-position-right: 10px;
+    --biel-search-content-position-top: 10px;
+    --biel-search-content-text-color: var(--biel-text-color);
+    --biel-search-content-z-index: 300;
+    --biel-search-footer-link: var(--biel-dark-color);
 }
-```
 
-### Feedback modal properties
-
-```css
-:root {
-    --feedback-modal-button-bg-color: var(--feedback-white-color);
-    --feedback-modal-button-bg-color-active: var(--feedback-white-color);
-    --feedback-modal-button-border-color: var(--feedback-light-color);
-    --feedback-modal-button-border-color-active: var(--feedback-primary-color);
-    --feedback-modal-button-border-radius: 4px;
-    --feedback-modal-button-font-size: var(--feedback-text-font-size);
-    --feedback-modal-button-icon-color: var(--feedback-dark-color);
-    --feedback-modal-button-icon-color-active: var(--feedback-primary-color);
-    --feedback-modal-button-submit-bg-color: var(--feedback-primary-color);
-    --feedback-modal-button-submit-bg-color-hover: var(--feedback-primary-color);
-    --feedback-modal-button-submit-border-color-hover: var(--feedback-primary-color);
-    --feedback-modal-button-submit-text-color: var(--feedback-white-color);
-    --feedback-modal-button-submit-text-color-hover: var(--feedback-white-color);
-    --feedback-modal-button-text-color: var(--feedback-dark-color);
-    --feedback-modal-button-text-color-active: var(--feedback-primary-color);
-    --feedback-modal-close-bg-color: var(--feedback-white-color);
-    --feedback-modal-close-color: var(--feedback-dark-color);
-    --feedback-modal-content-bg-color: var(--feedback-white-color);
-    --feedback-modal-content-border-color: var(--feedback-light-color);
-    --feedback-modal-content-border-radius: 8px;
-    --feedback-modal-content-font-family: var(--feedback-font-family);
-    --feedback-modal-content-position-bottom: 10px;
-    --feedback-modal-content-position-left: 10px;
-    --feedback-modal-content-position-right: 10px;
-    --feedback-modal-content-position-top: 10px;
-    --feedback-modal-content-text-color: var(--feedback-text-color);
-    --feedback-modal-content-z-index: 300;
-    --feedback-modal-element-hover-border-color: var(--feedback-primary-color);
-    --feedback-modal-element-selected-border-color: var(--feedback-primary-color);
-    --feedback-modal-footer-link: var(--feedback-dark-color);
-    --feedback-modal-header-font-family: var(--feedback-font-family);
-    --feedback-modal-header-font-size: var(--feedback-heading-font-size);
-    --feedback-modal-header-font-weight: 500;
-    --feedback-modal-header-text-color: var(--feedback-dark-color);
-    --feedback-modal-input-bg-color: var(--feedback-secondary-color);
-    --feedback-modal-input-border-color: transparent;
-    --feedback-modal-input-border-color-focused: transparent;
-    --feedback-modal-input-border-radius: 4px;
-    --feedback-modal-input-font-size: var(--feedback-text-font-size);
-    --feedback-modal-input-text-color: var(--feedback-text-color);
-    --feedback-modal-message-font-size: var(--feedback-text-font-size);
-    --feedback-modal-modal-wrapper-z-index: 300;
-    --feedback-modal-rating-button-color: var(--feedback-text-color);
-    --feedback-modal-rating-button-selected-color: var(--feedback-primary-color);
-    --feedback-modal-rating-button-stars-selected-color: var(--feedback-highlight-color);
-}
-```
-
-### Screenshot mode properties
-
-```css
-:root {
-    --feedback-modal-screenshot-bg-color: rgba(0, 0, 0, 0.4);
-    --feedback-modal-screenshot-close-color: var(--feedback-dark-color);
-    --feedback-modal-screenshot-header-bg-color: var(--feedback-white-color);
-    --feedback-modal-screenshot-header-text-color: var(--feedback-dark-color);
-    --feedback-modal-screenshot-header-z-index: 250;
-    --feedback-modal-screnshot-z-index: 100;
-}
-```
-
-### Dark mode properties
-
-```css
 [data-theme='dark'] {
-    --feedback-text-color: #b0b8c4;
-    --feedback-light-color: #363636;
-    --feedback-modal-button-bg-color-active: transparent;
-    --feedback-modal-button-icon-color: var(--feedback-white-color);
-    --feedback-modal-button-text-color: var(--feedback-white-color);
-    --feedback-modal-close-bg-color: transparent;
-    --feedback-modal-close-color: var(--feedback-white-color);
-    --feedback-modal-content-bg-color: var(--feedback-dark-color);
-    --feedback-modal-content-text-color: var(--feedback-text-color);
-    --feedback-modal-footer-link: var(--feedback-white-color);
-    --feedback-modal-header-text-color: var(--feedback-white-color);
-    --feedback-modal-input-bg-color: var(--feedback-light-color);
-    --feedback-modal-input-text-color: var(--feedback-white-color);
-    --feedback-modal-rating-button-color: var(--feedback-white-color);
-    --feedback-modal-screenshot-close-color: var(--feedback-white-color);
-    --feedback-modal-screenshot-header-bg-color: var(--feedback-dark-color);
-    --feedback-modal-screenshot-header-text-color: var(--feedback-white-color);
-}
+    --biel-text-color: #b0b8c4;
+    --biel-light-color: #363636;
+    --biel-search-button-bg-color-active: transparent;
+    --biel-search-button-icon-color: var(--biel-white-color);
+    --biel-search-button-text-color: var(--biel-white-color);
+    --biel-search-header-text-color: var(--biel-white-color);
+    --biel-search-close-bg-color: transparent;
+    --biel-search-close-color: var(--biel-white-color);
+    --biel-search-content-bg-color: var(--biel-dark-color);
+    --biel-search-content-text-color: var(--biel-text-color);
+    --biel-search-footer-link: var(--biel-white-color);
+}  
 ```
 
-## Example
-
-<iframe height="700" style={{width: '100%'}} scrolling="no" title="Untitled" src="https://codepen.io/David-Garcia-the-bashful/embed/abQRZNw?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/David-Garcia-the-bashful/pen/abQRZNw">
-  Untitled</a> by David Garcia (<a href="https://codepen.io/David-Garcia-the-bashful">@David-Garcia-the-bashful</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
