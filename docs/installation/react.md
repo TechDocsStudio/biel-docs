@@ -33,7 +33,7 @@ Before you begin, you'll need to have the following:
     ```
 
     :::info
-    If you're using yarn as your package manager, run `yarn add biel-search-react` instead of the npm command above.
+    If you're using yarn as your package manager, run `yarn add biel-react` instead of the npm command above.
     :::
 
 1. In the main component where you wish to place the chatbot (often `src/App.js`), embed the Biel.ai button:
@@ -41,7 +41,7 @@ Before you begin, you'll need to have the following:
     ```ts
     import React, { useEffect } from 'react';
 
-    import { BielButton } from 'biel-search-react';
+    import { BielButton } from 'biel-react';
     import { defineCustomElements } from 'biel-search/loader';
     import 'biel-search/dist/biel-search/biel-search.css';
 

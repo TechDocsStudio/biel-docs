@@ -31,11 +31,11 @@ To integrate the Biel.ai widget into your Next.js site:
 1. With your terminal still open, run the following command to install Biel.ai:
 
     ```console
-    npm install biel-search-react
+    npm install biel-react
     ```
 
     :::info
-    If you're using yarn as your package manager, run `yarn add biel-search-react` instead of the npm command above.
+    If you're using yarn as your package manager, run `yarn add biel-react` instead of the npm command above.
     :::
 
     This will download and install the Biel.ai package into your project.
@@ -45,9 +45,9 @@ To integrate the Biel.ai widget into your Next.js site:
 
     ```ts
     import React, { useEffect } from 'react';
-    import { BielButton } from 'biel-search-react';
+    import { BielButton } from 'biel-react';
     import { JSX, defineCustomElements } from 'biel-search/loader';
-    import { StyleReactProps } from 'biel-search-react/dist/types/react-component-lib/interfaces';
+    import { StyleReactProps } from 'biel-react/dist/types/react-component-lib/interfaces';
     import 'biel-search/dist/biel-search/biel-search.css';
 
     const DynamicBielButtonComponent = (props: React.JSX.IntrinsicAttributes & JSX.BielButton & Omit<React.HTMLAttributes<HTMLBielButtonElement>, "style"> & StyleReactProps & React.RefAttributes<HTMLBielButtonElement>) => {
