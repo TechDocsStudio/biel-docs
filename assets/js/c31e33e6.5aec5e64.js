@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbiel=self.webpackChunkbiel||[]).push([[164],{2674:e=>{e.exports=JSON.parse('{"title":"Connectors","description":"Learn how to ...","slug":"/category/connectors","permalink":"/category/connectors","navigation":{"previous":{"title":"URLs","permalink":"/configuration/urls"},"next":{"title":"Confluence","permalink":"/connectors/confluence"}}}')}}]);
