@@ -60,7 +60,7 @@ const config = {
   plugins: [
     [
       'docusaurus-pushfeedback',{
-        project: 'wlkz1eomrs',
+        project: 'kna08wr4wa',
         buttonStyle: 'dark',
         buttonPosition: 'center-right',
         modalPosition: 'sidebar-right'
