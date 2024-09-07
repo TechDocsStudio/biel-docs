@@ -5,40 +5,39 @@ slug: /
 
 # Quickstart
 
-Welcome to the Biel.ai documentation! In a few minutes, you'll have a chatbot up and running on your site.
+Welcome to the **Biel.ai** documentation! In just a few steps, you'll have a chatbot integrated and running on your website.
 
 ## 1. Create your Biel.ai account
 
-To use the Biel.ai widget, start by setting up your account:
-
 1. Open [app.biel.ai](https://app.biel.ai).
-2. Click on the **Sign Up** button located in the top bar.
-3. Follow the on-screen instructions to set up your account.
+2. Click **Sign Up** in the top bar.
+3. Follow the on-screen instructions to complete your account setup.
 
-    ![Create account](./images/create-account.png)
-
-With your account ready, move on to creating your first project.
+Once your account is ready, you can begin creating your first project.
 
 ## 2. Create a project
 
-Follow these steps to initiate a new project:
+Follow these steps to create and configure a new project:
 
 1. In your Biel.ai dashboard, click the **Projects** tab in the top navbar.
-2. Click the **Create project** button.
-3. Step through the wizard, providing details about your project as prompted:
+2. Click **Create project**.
+3. Complete the project setup wizard by providing the necessary details:
 
     ![Create project](./images/create-project.gif)
 
-    * **Name:** A unique name for your project.
-    * **Sources:** The platforms where you plan to use the Biel.ai widget.
+    * **Name**: A unique identifier for your project.
+    * **Sources**: Add the sources you want to index for your project:
+        * **URL**: Index a specific webpage.
+        * **Sitemap**: Index multiple pages from a sitemap, useful for indexing entire websites.
+        * **Files**: Index documents such as PDFs, Word files, and more.
 
-4. Click **Save**.
+4. Click **Save** to finalize your project setup.
 
 ## 3. Add the widget to your site
 
-To integrate the Biel.ai widget into your website:
+To embed the Biel.ai widget on your website, follow these integration steps:
 
-1. Insert the following code within the `<head>` section of your site's HTML:
+1. Add the following code within the `<head>` section of your site's HTML:
 
     ```html
     <!-- Initialize the Biel.ai widget -->
@@ -47,35 +46,31 @@ To integrate the Biel.ai widget into your website:
     ```
 
     :::info
-    The above method is the standard way of integrating the widget into an static HTML site. If you're using a particular web framework or content management system, Biel.ai offers tailored installation options and plugins. For a comprehensive guides, refer to our [Installation](/category/installation) documentation.
+    The above method is for static HTML sites. For specific platforms (e.g., WordPress, React, etc.), Biel.ai offers tailored plugins and installation guides. Check the [Installation](/category/installation) documentation for more details.
     :::
 
-1. Just before the closing `</body>` tag of your website's HTML, add the following snippet:
+2. Just before the closing `</body>` tag of your website's HTML, insert this code snippet:
 
     ```html
     <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
     ```
 
-Replace `<YOUR_PROJECT_ID>` with your project's ID you obtained from the previous step.
+Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
 
 ## 4. Customize the widget
 
-Get the Biel.ai widget to blend with your website's design and functionality. Here's a quick look at some customization options:
+Make the Biel.ai widget match your website’s style and user experience. You can customize:
 
-* **Initial message:** Set the widget's opening message to greet users or provide context.
+* **Initial message**: Set a welcome message to greet users or provide instructions.
+* **Suggested questions**: Predefine questions to guide users on what to ask.
+* **Position**: Select where the widget appears—bottom right, top left, or integrated into an existing button.
+* **Appearance**: Modify colors, fonts, and other visual elements to align with your website’s branding.
+* **Text**: Adjust the widget's text to fit your website's tone and language.
 
-* **Suggested questions:** Predefine questions to guide users on what to ask.
-
-* **Position:** Choose the widget's placement on your site—bottom right, top left, or even integrate it with an existing button.
-
-* **Look and feel:** Modify colors, fonts, and more to ensure the widget harmonizes with your site's aesthetics.
-
-* **Text:** Adapt the widget's text to mirror your site's tone or language.
-
-For detailed configuration steps, see our [Configuration](/category/configuration) documentation.
+For advanced customization options, refer to our [Configuration](/category/configuration) documentation.
 
 ## Next steps
 
-Congratulations on setting up the Biel.ai widget! Now, your users can interact with your site more effectively.
+Congratulations! Your Biel.ai widget is now live on your website, allowing users to interact with your content in new ways.
 
-Monitor your [dashboard](https://apps.biel-search.com) to gain insights from user interactions and improve your documentation accordingly.
+Don't forget to monitor your [dashboard](https://apps.biel-search.com) for user insights and feedback, which can help you optimize your chatbot's performance.
