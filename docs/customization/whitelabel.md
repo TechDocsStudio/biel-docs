@@ -18,10 +18,10 @@ Follow the steps below to enable this feature:
 
 2. Log in using your account credentials.
 
-3. Once inside the dashboard, click on the **Teams** link in the top navigation bar.
+3. Once inside the dashboard, click **Team** in the top navigation bar.
 
-4. Within the Teams settings, look for the **Whitelabel** option. Activate this option to enable white labeling.
+4. Look for the **Whitelabel** option. Activate this option to enable white labeling.
 
-5. Click the **Save** button to apply your changes.
+5. Click the **Save**.
 
 6. To ensure the changes are in place, go to any webpage where you've implemented the Biel.ai widget. The Biel.ai logo should no longer be visible.

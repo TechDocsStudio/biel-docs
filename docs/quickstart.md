@@ -52,7 +52,13 @@ To embed the Biel.ai widget on your website, follow these integration steps:
 2. Just before the closing `</body>` tag of your website's HTML, insert this code snippet:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
+    <biel-button project="<YOUR_PROJECT_ID>" 
+        header-title="Biel.ai chatbot"
+        button-position="bottom-right"
+        modal-position="bottom-right"
+        button-style="dark">
+            Ask AI
+    </biel-button>
     ```
 
 Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
@@ -67,7 +73,7 @@ Make the Biel.ai widget match your website’s style and user experience. You ca
 * **Appearance**: Modify colors, fonts, and other visual elements to align with your website’s branding.
 * **Text**: Adjust the widget's text to fit your website's tone and language.
 
-For advanced customization options, refer to our [Configuration](/category/configuration) documentation.
+For advanced customization options, refer to [Customization](/category/customization).
 
 ## Next steps
 

@@ -6,7 +6,7 @@ sidebar_label: Sphinx
 
 Here's a step-by-step guide to help you install Biel.ai in your Sphinx project.
 
-![Feedback wiget for docs screenshot](./images/feedback-widget-docs.png)
+![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -55,13 +55,13 @@ To integrate the Biel.ai widget into your Sphinx site:
 
     Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site.
 
-    ![Sphinx Chatbot](./images/sphinx.png)
+    ![Sphinx Chatbot](./images/biel-widget-docs.png)
 
 ## Next steps
 
 You can customize the Biel.ai widget to suit your needs. For example, you can change the widget's position, color, and more.
 
-To do so, you can add any of the following [configuration](../configuration/layout.mdx)  options to your `conf.py` file, with the following modifications:
+To do so, you can add any of the following [customization](../customization/layout.mdx)  options to your `conf.py` file, with the following modifications:
 
 1. Prefix configuration options with `biel_`. For instance, `project` would be `biel_project`.
 

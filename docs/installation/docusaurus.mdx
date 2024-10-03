@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Here's a step-by-step guide to help you install Biel.ai in your Docusaurus project using NPM.
 
-![Feedback wiget for docs screenshot](./images/feedback-widget-docs.png)
+![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -43,7 +43,8 @@ To integrate the Biel.ai widget into your Docusaurus site:
     plugins: [
         [
             'docusaurus-biel',{
-                project: '<YOUR_PROJECT_ID>'
+                project: '<YOUR_PROJECT_ID>',
+                headerTitle: 'Biel.ai chatbot'
             }
         ]
     ],
@@ -53,13 +54,13 @@ To integrate the Biel.ai widget into your Docusaurus site:
 
 1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
 
-    ![Docusaurus Ask AI widget](./images/docusaurus.png)
+    ![Docusaurus Ask AI widget](./images/biel-widget-docs.png)
 
 ## Customization
 
 You can customize the Biel.ai widget to suit your needs. For example, you can change the widget's position, color, and more.
 
-To do so, you can add any of the following [configuration](../configuration/layout.mdx) and [text](../configuration/text.mdx) options to the plugin or formatted as camelCase.
+To do so, you can add any of the following [customization](../customization/layout.mdx) and [text](../customization/text.mdx) options to the plugin or formatted as camelCase.
 
 Here's an example:
 
@@ -89,7 +90,7 @@ To further customize the style of the Biel.ai widget in Docusaurus, such as alte
     }
     ```
 
-    For a complete reference of properties you can modify, see the [Styles](../configuration/styles) documentation.
+    For a complete reference of properties you can modify, see the [Styles](../customization/styles) documentation.
 
 1. Open your `docusaurus.config.js` file and locate the `presets` array and within it, the `classic` preset configuration. Then, add a reference to your custom stylesheet in the theme configuration. It should look something like this:
 

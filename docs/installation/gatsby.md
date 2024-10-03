@@ -6,7 +6,7 @@ sidebar_label: Gatsby
 
 Here's a step-by-step guide to help you install Biel.ai in your Gatsby project using NPM.
 
-![Feedback wiget for docs screenshot](./images/feedback-widget-docs.png)
+![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -72,6 +72,6 @@ To integrate the Biel.ai widget into your Gatsby site:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [Configuration](/category/configuration) section.
+For more about customization and additional features exploration, check out the [customization](/category/customization) section.
 
 Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

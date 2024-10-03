@@ -6,7 +6,7 @@ sidebar_label: Hugo
 
 Here's a step-by-step guide to help you install Biel.ai in your Hugo project.
 
-![Feedback wiget for docs screenshot](./images/feedback-widget-docs.png)
+![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -39,7 +39,13 @@ To integrate the Biel.ai widget into your Hugo site:
 1. Next, find the footer partial (or wherever you'd like the chatbot to be placed) and add the following code just before the closing tags:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</biel-button>
+    <biel-button project="<YOUR_PROJECT_ID>" 
+        header-title="Biel.ai chatbot"
+        button-position="bottom-right"
+        modal-position="bottom-right"
+        button-style="dark">
+            Ask AI
+    </biel-button>
     ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
@@ -54,6 +60,6 @@ To integrate the Biel.ai widget into your Hugo site:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [Configuration](/category/configuration) section.
+For more about customization and additional features exploration, check out the [customization](/category/customization) section.
 
 Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

@@ -69,7 +69,8 @@ const config = {
     'docusaurus-plugin-image-zoom',
     [
       'docusaurus-biel',{
-          project: 'dl1kps0old'
+          project: 'dl1kps0old',
+          headerTitle: 'Biel.ai chatbot'
       }
   ]
   ],
