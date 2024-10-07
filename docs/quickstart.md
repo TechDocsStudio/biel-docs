@@ -87,4 +87,4 @@ For advanced customization options, refer to [Customization](/category/customiza
 
 Congratulations! Your Biel.ai widget is now live on your website, allowing users to interact with your content in new ways.
 
-Don't forget to monitor your [dashboard](https://apps.biel.ai) for user insights and feedback, which can help you optimize your chatbot's performance.
+Don't forget to monitor your [dashboard](https://app.biel.ai) for user insights and feedback, which can help you optimize your chatbot's performance.
