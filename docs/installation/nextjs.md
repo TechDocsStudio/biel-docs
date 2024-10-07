@@ -76,7 +76,14 @@ To integrate the Biel.ai widget into your Next.js site:
     return (
     <div className="App">
     {/* Other components and content */}
-    <DynamicBielButton project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark" custom-font="true">Ask AI</DynamicBielButton>
+        <DynamicBielButton
+            project="<YOUR_PROJECT_ID>"
+            header-title="Biel.ai chatbot"
+            button-position="bottom-right"
+            modal-position="bottom-right"
+            button-style="dark">
+            Ask AI
+        </DynamicBielButton>
     </div>
     );
     ```

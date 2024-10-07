@@ -31,7 +31,7 @@ To integrate the Biel.ai widget into your Gatsby site:
 1. With your terminal still open, run the following command to install Biel.ai:
 
     ```console
-    npm install pushfeedback-react
+    npm install biel-react
     ```
 
     :::info
@@ -58,7 +58,12 @@ To integrate the Biel.ai widget into your Gatsby site:
         return (
             <div className="page-layout">
                 {/* Other components and content */}
-                <BielButton project="<YOUR_PROJECT_ID>" button-position="bottom-right" modal-position="bottom-right" button-style="dark">Ask AI</BielButton>
+                <BielButton project="<YOUR_PROJECT_ID>" 
+                    header-title="Biel.ai chatbot"
+                    button-position="bottom-right"
+                    modal-position="bottom-right"
+                    button-style="dark">Ask AI
+                </BielButton>
             </div>
         );
     }
