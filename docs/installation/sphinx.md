@@ -6,7 +6,7 @@ sidebar_label: Sphinx
 
 Here's a step-by-step guide to help you install Biel.ai in your Sphinx project.
 
-![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -53,9 +53,7 @@ To integrate the Biel.ai widget into your Sphinx site:
     make html
     ```
 
-    Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site:
-
-    ![Sphinx Chatbot](./images/biel-widget-docs.png)
+    Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site.
 
 ## Next steps
 

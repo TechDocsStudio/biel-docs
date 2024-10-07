@@ -6,7 +6,7 @@ sidebar_label: Hugo
 
 Here's a step-by-step guide to help you install Biel.ai in your Hugo project.
 
-![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -57,8 +57,6 @@ To integrate the Biel.ai widget into your Hugo site:
     ```
 
     Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
-
-    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Next steps
 

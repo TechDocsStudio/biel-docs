@@ -6,7 +6,7 @@ sidebar_label: Jekyll
 
 Here's a step-by-step guide to help you install Biel.ai in your Jekyll project.
 
-![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -56,9 +56,7 @@ To integrate the Biel.ai widget into your Jekyll site:
     jekyll build
     ```
 
-    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site:
-
-    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
 
 ## Next steps
 

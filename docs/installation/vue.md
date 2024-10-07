@@ -6,7 +6,7 @@ sidebar_label: Vue.js
 
 Here's a step-by-step guide to help you install Biel.ai in your Vue.js project using NPM.
 
-![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -72,9 +72,7 @@ To integrate the Biel.ai widget into your Vue.js site:
     npm run serve
     ```
 
-1. Open the website in a web browser to verify that the chatbot  appears and works correctly:
-
-    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+1. Open the website in a web browser to verify that the chatbot  appears and works correctly.
 
 ## Next steps
 

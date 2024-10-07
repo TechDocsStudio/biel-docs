@@ -6,7 +6,7 @@ sidebar_label: React
 
 Here's a step-by-step guide to help you install Biel.ai in your React project using NPM.
 
-![Chatbot for docs screenshot](./images/biel-widget-docs.png)
+![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -66,9 +66,7 @@ Before you begin, you'll need to have the following:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Start your React app by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot  appears and functions correctly on your site:
-
-    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+1. Start your React app by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot  appears and functions correctly on your site.
 
 ## Next steps
 

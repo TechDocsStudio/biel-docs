@@ -6,7 +6,7 @@ sidebar_label: Wordpress
 
 Here's a step-by-step guide to help you install Biel.ai in your Wordpress site.
 
-![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 
@@ -46,12 +46,9 @@ To embed the Biel.ai widget into your WordPress site:
         </biel-button>
         ```
 
-
         Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Once you've saved your changes, visit your WordPress website in a web browser. Confirm that the chatbot is visible and operational:
-
-    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+1. Once you've saved your changes, visit your WordPress website in a web browser. Confirm that the chatbot is visible and operational.
 
 ## Next steps
 
