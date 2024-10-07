@@ -6,8 +6,6 @@ sidebar_label: Antora
 
 Here's a step-by-step guide to help you install Biel.ai in your Antora project.
 
-![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
-
 ## Prerequisites
 
 Before you begin, you'll need to have the following:
@@ -56,7 +54,9 @@ To integrate the Biel.ai widget into your Antora site:
     * If you're using a custom UI, make sure to re-bundle it and then run the Antora command to build your project.
     * If you cloned the default UI, you'd have to integrate it as a local UI and then run Antora with the `--ui-bundle-url` flag to point to your modified local UI bundle.
 
-    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
+1. Once it builds successfully, verify that the chatbot appears and functions correctly on your site:
+
+    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Next steps
 

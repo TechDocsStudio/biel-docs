@@ -49,7 +49,9 @@ To embed the Biel.ai widget into your WordPress site:
 
         Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Once you've saved your changes, visit your WordPress website in a web browser. Confirm that the chatbot is visible and operational.
+1. Once you've saved your changes, visit your WordPress website in a web browser. Confirm that the chatbot is visible and operational:
+
+    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Next steps
 

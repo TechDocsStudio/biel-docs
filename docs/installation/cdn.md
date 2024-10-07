@@ -41,7 +41,10 @@ To integrate the Biel.ai widget into your website:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Open the website in a web browser to verify the chatbot is working correctly.
+1. Open the website in a web browser to verify the chatbot is working correctly:
+
+    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
+
 
 ## Next steps
 

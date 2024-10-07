@@ -68,7 +68,9 @@ To integrate the Biel.ai widget into your Gatsby site:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Start your Gatsby app by running `gatsby develop` in your terminal. Once it compiles successfully, verify that the chatbot  appears and functions correctly on your site.
+1. Start your Gatsby app by running `gatsby develop` in your terminal. Once it compiles successfully, verify that the chatbot  appears and functions correctly on your site:
+
+    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Next steps
 

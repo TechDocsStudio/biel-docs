@@ -53,7 +53,7 @@ To integrate the Biel.ai widget into your Sphinx site:
     make html
     ```
 
-    Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site.
+    Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site:
 
     ![Sphinx Chatbot](./images/biel-widget-docs.png)
 

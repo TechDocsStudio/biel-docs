@@ -9,9 +9,13 @@ Welcome to the **Biel.ai** documentation! In just a few steps, you'll have a cha
 
 ## 1. Create your Biel.ai account
 
+To install the Biel.ai chatbot, start by setting up your account:
+
 1. Open [app.biel.ai](https://app.biel.ai).
 2. Click **Sign Up** in the top bar.
-3. Follow the on-screen instructions to complete your account setup.
+3. Follow the on-screen instructions to complete your account setup:
+
+    ![Create account](./images/create-account.png)
 
 Once your account is ready, you can begin creating your first project.
 
@@ -61,7 +65,11 @@ To embed the Biel.ai widget on your website, follow these integration steps:
     </biel-button>
     ```
 
-Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
+    Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
+
+3. You should see the widget installed in your site:
+
+    ![Chatbot widget](./images/biel-widget-docs.png)
 
 ## 4. Customize the widget
 
@@ -79,4 +87,4 @@ For advanced customization options, refer to [Customization](/category/customiza
 
 Congratulations! Your Biel.ai widget is now live on your website, allowing users to interact with your content in new ways.
 
-Don't forget to monitor your [dashboard](https://apps.biel-search.com) for user insights and feedback, which can help you optimize your chatbot's performance.
+Don't forget to monitor your [dashboard](https://apps.biel.ai) for user insights and feedback, which can help you optimize your chatbot's performance.

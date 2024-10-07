@@ -68,7 +68,9 @@ To integrate the Biel.ai widget into your MkDocs site:
     mkdocs build
     ```
 
-    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
+    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site:
+
+    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Next steps
 

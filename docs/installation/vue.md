@@ -72,8 +72,9 @@ To integrate the Biel.ai widget into your Vue.js site:
     npm run serve
     ```
 
-    Open the website in a web browser to verify that the chatbot  appears and works correctly.
+1. Open the website in a web browser to verify that the chatbot  appears and works correctly:
 
+    ![Feedback wiget for docs screenshot](./images/biel-widget-docs.png)
 
 ## Next steps
 
