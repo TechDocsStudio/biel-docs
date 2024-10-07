@@ -43,6 +43,8 @@ To integrate the Biel.ai widget into your Sphinx site:
 
     ```python
     biel_project = '<YOUR_PROJECT_ID>'
+    biel_header_title = 'Biel.ai chatbot'
+    biel_version = 'latest'
     ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
