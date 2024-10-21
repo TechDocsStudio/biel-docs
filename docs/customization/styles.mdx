@@ -41,6 +41,8 @@ The tables below lists all the available properties you can override:
     --biel-message-source-color: #3b3b3b;
     --biel-message-source-hover-color: #303030;
     --biel-table-header-color: #2b2b2b;
+    --biel-result-color: #f9fafb;
+    --biel-result-hover-color: #ebebeb;
 
 
     /* Fonts */
@@ -117,7 +119,7 @@ The tables below lists all the available properties you can override:
     --biel-header-border-color: var(--biel-light-color);
 
     /* Code snippet */
-    --code-snippet-header-text-color: var(--biel-text-color);
+    --code-snippet-header-text-color: var(--biel-light-color);
     --code-snippet-content-text-color: var(--biel-white-color);
     --code-snippet-header-bg-color: var(--code-snippet-header-color);
     --code-snippet-content-bg-color: var(--biel-dark-color);
@@ -144,6 +146,46 @@ The tables below lists all the available properties you can override:
     --biel-feedback-background-selected-color: var(--biel-primary-color);
     --biel-feedback-text-color: var(--biel-white-color);
     --biel-feedback-text-selected-color: var(--biel-white-color);
+
+    /* Biel search button */
+    --biel-search-button-border-radius: 20px;
+    --biel-search-button-bg-color: var(--biel-white-color);
+    --biel-search-button-text-color: var(--biel-text-color);
+    --biel-search-button-icon-size: 20px;
+    --biel-search-button-text-font-size: var(--biel-text-lg-font-size);
+    --biel-search-button-text-font-weight: 400;
+    --biel-search-button-z-index: 300;
+
+    /* Biel search */
+    --biel-search-content-bg-color: var(--biel-white-color);
+    --biel-search-content-border-color: var(--biel-light-color);
+    --biel-search-content-border-radius: 8px;
+    --biel-search-content-font-family: var(--biel-font-family);
+    --biel-search-content-position-bottom: 10px;
+    --biel-search-content-position-left: 10px;
+    --biel-search-content-position-right: 10px;
+    --biel-search-content-position-top: 10px;
+    --biel-search-content-text-color: var(--biel-dark-color);
+    --biel-search-content-z-index: 300;
+
+    /* Biel search input */
+    --biel-search-button-text-color: var(--biel-dark-color);
+
+    /* Biel search body */
+    --biel-search-body-max-height: 250px;
+
+    /* Biel search result */
+    --biel-search-result-bg-color: var(--biel-result-color);
+    --biel-search-result-bg-hover-color: var(--biel-result-hover-color);
+    --biel-search-result-border-color: var(--biel-light-color);
+    --biel-search-result-title-color: var(--biel-dark-color);
+    --biel-search-result-description-color: var(--biel-scrollbar-hover-color);
+    --biel-search-result-mark-color: var(--biel-primary-color);
+    --biel-search-button-border-color: var(--biel-light-color);
+
+    /* Biel search ask ai button */
+    --biel-search-ask-ai-bg-color: var(--biel-primary-color);
+    --biel-search-ask-ai-color: var(--biel-white-color);
 }
 
 [data-theme='dark'] {
@@ -153,6 +195,8 @@ The tables below lists all the available properties you can override:
     --biel-scrollbar-hover-color: #333333;
     --biel-message-source-color: #eee;
     --biel-message-source-hover-color: #ddd;
+    --biel-result-color: #2b2b2b;
+    --biel-result-hover-color: #3a3a3a;
     --biel-bot-button-bg-color-active: transparent;
     --biel-bot-button-icon-color: var(--biel-white-color);
     --biel-bot-button-text-color: var(--biel-white-color);
@@ -173,6 +217,19 @@ The tables below lists all the available properties you can override:
     --biel-suggested-questions-text-color: var(--biel-white-color);
     --biel-suggested-questions-bg-color: var(--biel-dark-color);
     --biel-feedback-text-color: var(--biel-dark-color);
+    --biel-search-button-bg-color: var(--biel-dark-color);
+    --biel-search-button-text-color: var(--biel-white-color);
+    --biel-search-button-border-color: var(--biel-primary-color);
+    --biel-search-content-text-color: var(--biel-text-color);
+    --biel-search-content-bg-color: var(--biel-dark-color);
+    --biel-search-content-text-color: var(--biel-text-color);
+    --biel-search-content-border-color: var(--biel-dark-color);
+    --biel-search-button-text-color: var(--biel-white-color);
+    --biel-search-result-border-color: var(--biel-light-color);
+    --biel-search-result-title-color: var(--biel-white-color);
+    --biel-search-result-description-color: var(--biel-text-color);
+    --biel-search-result-mark-color: var(--biel-primary-light-color);
+    --code-snippet-header-text-color: var(--biel-text-color)
 }
 ```
 
