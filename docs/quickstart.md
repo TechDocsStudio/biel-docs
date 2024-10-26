@@ -41,7 +41,8 @@ Follow these steps to create and configure a new project:
 
 To embed the Biel.ai widget on your website, follow these integration steps:
 
-1. Add the following code within the `<head>` section of your site's HTML:
+### 1. Include the Biel Widget Script  
+Add the following code within the `<head>` section of your site's HTML:
 
     ```html
     <!-- Initialize the Biel.ai widget -->
@@ -52,8 +53,15 @@ To embed the Biel.ai widget on your website, follow these integration steps:
     :::info
     The above method is for static HTML sites. For specific platforms (e.g., WordPress, React, etc.), Biel.ai offers tailored plugins and installation guides. Check the [Installation](/category/installation) documentation for more details.
     :::
+    
+### 2. Choose Your Widget Type
+You can add either Biel-bot or Biel-search, depending on the functionality you need.
 
-2. Just before the closing `</body>` tag of your website's HTML, insert this code snippet:
+#### Biel-bot
+Biel-bot enables a conversational chat with AI directly on your website.  
+
+**How to add Biel-bot**:  
+1. Just before the closing `</body>` tag of your website's HTML, insert this code snippet:
 
     ```html
     <biel-button project="<YOUR_PROJECT_ID>" 
@@ -67,11 +75,29 @@ To embed the Biel.ai widget on your website, follow these integration steps:
 
     Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
 
-3. You should see the widget installed in your site:
+2. You should see the widget installed in your site:
 
     ![Chatbot widget](./images/biel-widget-docs.png)
 
-## 4. Customize the widget
+#### Biel-search
+Biel-search offers a search-based interaction that allows users to query documentation or other indexed content.
+
+**How to add Biel-search**:  
+1. Add the following snippet in the desired location on your site:
+
+    ```html
+    <biel-search-button project="<YOUR_PROJECT_ID>" 
+        button-style="rounded">
+            Search
+    </biel-search-button>
+    ```
+
+    Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
+2. You should see the search widget installed in your site:
+
+    ![Search widget](./images/biel-widget-docs.png)
+
+## 3. Customize the widget
 
 Make the Biel.ai widget match your website’s style and user experience. You can customize:
 
