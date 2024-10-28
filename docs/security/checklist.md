@@ -12,9 +12,7 @@ Use this checklist to confirm that essential security measures are configured fo
 The following steps apply only to implementations using the **chatbot widget**.
 :::
 
-- [ ] **Navigate to domain settings**: Go to **Projects** > **Settings** > **Allowed domains** in the Biel platform.
-
-- [ ] **Add authorized domains**: List only the domains authorized to host your chatbot widget. This restricts embedding to approved sites, helping prevent unauthorized access.
+- [ ] **Navigate to domain settings**: List only the domains authorized to host your chatbot widget in  **Projects** > **Settings** > **Allowed domains**. This restricts embedding to approved sites, helping prevent unauthorized access.
 
 ## For API integrations
 

@@ -24,11 +24,9 @@ We provide configurable features to enhance data protection and ensure reliable 
 
 1. **Domain restrictions**: Each project has a Project ID for embedding the chatbot widget on authorized domains. Users can configure allowed domains to prevent unauthorized embedding, ensuring secure usage.
 
-2. **Data encryption**: We use industry-standard encryption for all data, safeguarding it from unauthorized access.
+2. **Rate limiting**: To prevent abuse, we enforce rate limits per user session and IP address, controlling interactions and mitigating spam and potential attacks.
 
-3. **Rate limiting**: To prevent abuse, we enforce rate limits per user session and IP address, controlling interactions and mitigating spam and potential attacks.
-
-4. **Public API security**: We implement **Bearer Authentication** for secure client-server communication, preventing unauthorized access to API resources.
+3. **Public API security**: We implement **Bearer Authentication** for secure client-server communication, preventing unauthorized access to API resources.
 
 ## Security architecture
 
@@ -36,7 +34,9 @@ Our security architecture integrates protections for data and network security:
 
 1. **Network protection:** Our infrastructure includes layers of security, such as firewalls and DDoS mitigation, with continuous monitoring for rapid threat response.
 
-2. **Incident response and compliance:** We have a structured incident response plan and prioritize GDPR compliance, ensuring data protection aligns with privacy regulations.
+2. **Data encryption**: We use industry-standard encryption for all data, safeguarding it from unauthorized access.
+
+3. **Incident response and compliance:** We have a structured incident response plan and prioritize GDPR compliance, ensuring data protection aligns with privacy regulations.
 ## Why this approach works
 
 Combining **key security features** with a robust **security architecture** creates a layered defense meeting enterprise-grade demands. This structure protects both user interactions and infrastructure, delivering a secure chatbot solution.
