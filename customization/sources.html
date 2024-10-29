@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search@latest/dist/biel-search/biel-search.css">
 <script src="https://www.googletagmanager.com/gtag/js?id=G-1TMTNMCLSX"></script>
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.a1b3de40.css">
-<script src="/assets/js/runtime~main.c7a9769c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ab5111be.js" defer="defer"></script>
 <script src="/assets/js/main.5f681ce4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -92,7 +92,40 @@ These sources allow the chatbot to provide accurate and relevant answers based o
 <p>Click <strong>Save</strong> to apply your changes.</p>
 </li>
 </ol>
-<p>Once saved, Biel.ai will start indexing the content from the selected source(s). You can verify the setup by interacting with the chatbot and seeing if it references the indexed content in its responses.</p></div><div class="feedback-widget margin-top--md margin-bottom--md"><div class="margin-bottom--sm"><b>Was this helpful?</b></div><span class="feedback-widget-positive"><feedback-button project="kna08wr4wa" rating="1" custom-font="True" button-style="default" modal-position="center"><button class="button button--outline button--primary button--sm" title="Yes"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg></button></feedback-button></span><span class="feedback-widget-negative margin-left--sm"><feedback-button project="kna08wr4wa" rating="0" custom-font="True" button-style="default" modal-position="center"><button class="button button--outline button--primary button--sm" title="No"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg></button></feedback-button></span></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/category/customization"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Customization</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/customization/initial-message"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Initial message</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#source-types" class="table-of-contents__link toc-highlight">Source Types</a><ul><li><a href="#1-url-sources-single-pages" class="table-of-contents__link toc-highlight">1. <strong>URL sources (single pages)</strong></a></li><li><a href="#2-sitemap-sources-complete-websites" class="table-of-contents__link toc-highlight">2. <strong>Sitemap sources (complete websites)</strong></a></li><li><a href="#3-file-sources-coming-soon" class="table-of-contents__link toc-highlight">3. <strong>File sources (coming soon)</strong></a></li></ul></li><li><a href="#configuring-sources" class="table-of-contents__link toc-highlight">Configuring sources</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Biel.ai.</div></div></div></footer></div>
+<p>Once saved, Biel.ai will start indexing the content from the selected source(s). You can verify the setup by interacting with the chatbot and seeing if it references the indexed content in its responses.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="filtering-sources">Filtering sources<a href="#filtering-sources" class="hash-link" aria-label="Direct link to Filtering sources" title="Direct link to Filtering sources">​</a></h2>
+<p>When implementing a chatbot for documentation, ensuring it retrieves relevant information from a large, complex knowledge base is crucial.
+Biel AI provides a <strong>Filter Sources</strong> feature that allows you to define specific URL patterns the chatbot should include or exclude.
+By focusing only on pertinent content, this feature improves both the chatbot&#x27;s accuracy and user experience by preventing irrelevant pages from entering the chatbot’s scope.</p>
+<p>To filter sources, follow these steps:</p>
+<ol>
+<li>
+<p>Open <a href="https://app.biel.ai" target="_blank" rel="noopener noreferrer">app.biel.ai</a>.</p>
+</li>
+<li>
+<p>Log in with your account credentials.</p>
+</li>
+<li>
+<p>In the dashboard, click <strong>Projects</strong> in the top navigation bar.</p>
+</li>
+<li>
+<p>Find and select your project from the list.</p>
+</li>
+<li>
+<p>Click <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Sources</strong> section, scroll to <strong>Filter URLs</strong>.</p>
+</li>
+<li>
+<p>Add patterns to include or exclude as needed:
+<img decoding="async" loading="lazy" alt="Exclude sources" src="/assets/images/exclude-url-bff919d267080b68a85e5c537ced43c3.png" width="2880" height="1508" class="img_ev3q"></p>
+<p>For example, setting <code>/es</code> to <code>Exclude</code> will prevent the chatbot from crawling any pages containing <code>/es</code> in the URL.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> to apply your changes.</p>
+</li>
+</ol></div><div class="feedback-widget margin-top--md margin-bottom--md"><div class="margin-bottom--sm"><b>Was this helpful?</b></div><span class="feedback-widget-positive"><feedback-button project="kna08wr4wa" rating="1" custom-font="True" button-style="default" modal-position="center"><button class="button button--outline button--primary button--sm" title="Yes"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg></button></feedback-button></span><span class="feedback-widget-negative margin-left--sm"><feedback-button project="kna08wr4wa" rating="0" custom-font="True" button-style="default" modal-position="center"><button class="button button--outline button--primary button--sm" title="No"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg></button></feedback-button></span></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/category/customization"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Customization</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/customization/initial-message"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Initial message</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#source-types" class="table-of-contents__link toc-highlight">Source Types</a><ul><li><a href="#1-url-sources-single-pages" class="table-of-contents__link toc-highlight">1. <strong>URL sources (single pages)</strong></a></li><li><a href="#2-sitemap-sources-complete-websites" class="table-of-contents__link toc-highlight">2. <strong>Sitemap sources (complete websites)</strong></a></li><li><a href="#3-file-sources-coming-soon" class="table-of-contents__link toc-highlight">3. <strong>File sources (coming soon)</strong></a></li></ul></li><li><a href="#configuring-sources" class="table-of-contents__link toc-highlight">Configuring sources</a></li><li><a href="#filtering-sources" class="table-of-contents__link toc-highlight">Filtering sources</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Biel.ai.</div></div></div></footer></div>
 <script type="module" src="https://cdn.jsdelivr.net/npm/pushfeedback@latest/dist/pushfeedback/pushfeedback.esm.js"></script>
 <script>const feedbackButton=document.createElement("feedback-button");feedbackButton.setAttribute("project","kna08wr4wa"),feedbackButton.setAttribute("modal-position","sidebar-right"),feedbackButton.setAttribute("button-style","dark"),feedbackButton.setAttribute("button-position","center-right"),feedbackButton.setAttribute("id","default"),feedbackButton.textContent="Feedback",document.body.appendChild(feedbackButton)</script>
 
