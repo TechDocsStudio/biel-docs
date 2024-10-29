@@ -77,3 +77,24 @@ Regardless of the source type, configuring sources in Biel.ai follows a similar 
 7. Click **Save** to apply your changes.
 
 Once saved, Biel.ai will start indexing the content from the selected source(s). You can verify the setup by interacting with the chatbot and seeing if it references the indexed content in its responses.
+
+## Filtering sources
+
+When implementing a chatbot for documentation, ensuring it retrieves relevant information from a large, complex knowledge base is crucial.
+Biel AI provides a **Filter Sources** feature that allows you to define specific URL patterns the chatbot should include or exclude.
+By focusing only on pertinent content, this feature improves both the chatbot's accuracy and user experience by preventing irrelevant pages from entering the chatbot’s scope.
+
+To filter sources, follow these steps:
+
+1. Open [app.biel.ai](https://app.biel.ai).
+2. Log in with your account credentials.
+3. In the dashboard, click **Projects** in the top navigation bar.
+4. Find and select your project from the list.
+5. Click **Settings**.
+6. In the **Sources** section, scroll to **Filter URLs**.
+7. Add patterns to include or exclude as needed:
+    ![Exclude sources](./images/exclude-url.png)
+    
+    For example, setting `/es` to `Exclude` will prevent the chatbot from crawling any pages containing `/es` in the URL.
+7. Click **Save** to apply your changes.
+
