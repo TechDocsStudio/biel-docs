@@ -107,3 +107,63 @@ To further customize the style of the Biel.ai widget in Docusaurus, such as alte
         ],
     ],
     ```
+
+## Advanced setup: Biel Search
+
+To integrate the Biel Search widget into your Docusaurus site:
+
+1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
+
+    ```console
+    cd path/to/your/project
+    ```
+
+    Replace `path/to/your/project` with your project's actual directory path.
+
+2. With your terminal still open, run the following command to install Biel Search:
+    
+    ```console
+    npm install biel-react
+    ```
+
+    :::tip
+    In this setup, the `docusaurus-biel` package is not required. You can uninstall it by running `npm uninstall docusaurus-biel`.
+    :::
+
+3. For Docusaurus, the best approach is to swizzle the original doc SearchBar component to embed the Biel Search button. Begin by using the npm run swizzle command to start the swizzle process:
+
+    ```console
+    npm run swizzle @docusaurus/theme-classic SearchBar
+    ```
+    When prompted with the question: `Which language do you want to use?`, choose **TypeScript**.
+    When prompted with the question: `Which swizzle action do you want to do?`, choose **Eject**.
+
+    By choosing to eject, Docusaurus will extract the `SearchBar` component into the `src/theme` directory. This allows you to modify the original SearchBar component, replacing it with BielSearch.
+
+4. After swizzling, navigate to `src/theme/SearchBar.tsx` in your project directory. Now, integrate the BielSearch button:
+
+    ```tsx
+    import React from 'react';
+    import { BielSearchButton } from 'biel-react';
+
+    export default function SearchBar() {
+        // Replace with your <PROJECT_ID>
+        const projectId = '<PROJECT_ID>';
+
+        return <BielSearchButton project={projectId} button-style="rounded">Search</BielSearchButton>;
+    }
+    ```
+
+    Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
+
+5. Now you’ll need to update the `tsconfig.json` file to ensure compatibility with React components. Open `tsconfig.json` in your project root directory and add the following options to `compilerOptions`:
+    ```json
+    {
+        "compilerOptions": {
+            "esModuleInterop": true,
+            "jsx": "react"
+        }
+    }
+    ```
+
+6. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the feedback button appears and functions correctly on your site.
