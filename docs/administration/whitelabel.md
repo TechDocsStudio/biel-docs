@@ -22,6 +22,8 @@ Follow the steps below to enable this feature:
 
 4. Look for the **Whitelabel** option. Activate this option to enable white labeling.
 
+    ![Remove logo](./images/remove-logo.png)
+
 5. Click the **Save**.
 
 6. To ensure the changes are in place, go to any webpage where you've implemented the Biel.ai widget. The Biel.ai logo should no longer be visible.
