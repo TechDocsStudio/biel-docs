@@ -12,8 +12,6 @@ By leveraging AI, Biel.ai delivers instant, context-rich answers, making your do
 
 Here's a step-by-step guide to help you install Biel.ai in your Docusaurus project using NPM.
 
-![Chatbot wiget for docs](./images/biel-widget-docs.png)
-
 ## Prerequisites
 
 Before you begin, you'll need to have the following:
@@ -23,6 +21,10 @@ Before you begin, you'll need to have the following:
 - A Docusaurus site and Node.js installed.
 
 ## Installation
+
+The Biel.ai widget enables a conversational chat powered by AI in your site.
+
+![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 To integrate the Biel.ai widget into your Docusaurus site:
 
@@ -58,6 +60,50 @@ To integrate the Biel.ai widget into your Docusaurus site:
 
 1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
 
+
+## Advanced: Install the search widget
+
+Biel.ai's search widget offers a search-based ineraction that allows users to query documentation or other indexed content.
+
+To integrate the search widget into your Docusaurus site, follow these steps:
+
+1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
+
+    ```console
+    cd path/to/your/project
+    ```
+    
+    Replace `path/to/your/project` with your project's actual directory path.
+
+1. With your terminal still open, run the following command to install Biel.ai:
+
+    ```console
+    npm install docusaurus-biel
+    ```
+    
+1. Add the plugin to your Docusaurus config file `docusaurus.config.js`:
+
+    ```js
+    plugins: [
+        [
+            'docusaurus-biel',{
+                project: '<YOUR_PROJECT_ID>',
+                headerTitle: 'Biel.ai chatbot',
+                version: 'latest',
+                search: {
+                    enable: true,
+                    searchButtonText: 'Search...',
+                }
+            }
+        ]
+    ],
+    ```
+
+    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
+
+1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
+
+
 ## Customization
 
 You can customize the Biel.ai widget to suit your needs. For example, you can change the widget's position, color, and more.
@@ -75,6 +121,10 @@ plugins: [
             modalPosition: 'sidebar-right',
             headerTitle: 'Biel.ai chatbot'
             buttonStyle: 'dark',
+            search: {
+                enable: true,
+                searchButtonText: 'Search...',
+            }
         }
     ]
 ],
@@ -111,6 +161,6 @@ To further customize the style of the Biel.ai widget in Docusaurus, such as alte
     ],
     ```
 
-## Next steps
+## Need help?
 
-Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
+We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

@@ -6,7 +6,7 @@ sidebar_label: Gatsby
 
 Here's a step-by-step guide to help you install Biel.ai in your Gatsby project using NPM.
 
-![Chatbot wiget for docs](./images/biel-widget-docs.png)
+![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 

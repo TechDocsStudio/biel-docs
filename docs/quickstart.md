@@ -65,7 +65,7 @@ To embed the Biel.ai widget on your website, follow these steps:
 
 3. Open the website in a web browser to verify the chatbot is working correctly.
 
-    ![Chatbot wiget for docs](./images/biel-widget-docs.png)
+    ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 :::info
 The above method is for static HTML sites. For specific platforms (e.g., WordPress, React, etc.), Biel.ai offers tailored plugins and installation guides. Check the [Installation](/category/installation) documentation for more details.

@@ -17,7 +17,11 @@ Before you begin, you'll need to have the following:
 
 ## Installation
 
-To integrate the Biel.ai widget into your website, follow these steps:
+The `<biel-button>` widget enables a conversational chat powered by AI in your site.
+
+![Chatbot widget for docs](./images/biel-widget-docs.png)
+
+To integrate the widget into your website, follow these steps:
 
 1. Insert the following code within the `<head>` section of your site's HTML:
 
@@ -43,11 +47,12 @@ To integrate the Biel.ai widget into your website, follow these steps:
 
 1. Open the website in a web browser to verify the chatbot is working correctly.
 
-    ![Chatbot wiget for docs](./images/biel-widget-docs.png)
 
 ## Advanced: Install biel-search
 
-Todo: Explain biel search.
+The `<biel-search-button>` widget offers a search-based ineraction that allows users to query documentation or other indexed content.
+
+To integrate the widget into your website, follow these steps:
 
 
 1. Insert the following code within the `<head>` section of your site's HTML:
