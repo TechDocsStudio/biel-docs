@@ -22,6 +22,7 @@ To customize the properties, you need to set the appropriate attributes on the `
 ```
 
 ### Properties
+
 The table below lists all the available properties that modify the layout:
 
 | Property               | Description                                                                                   |
@@ -47,6 +48,8 @@ The table below lists all the available properties that modify the layout:
 
 The `<biel-search-button>` widget offers a search-based ineraction that allows users to query documentation or other indexed content.
 
+![Biel search](./images/biel-search-widget.png)
+
 ### Usage
 
 To customize the properties, you need to set the appropriate attributes on the `<biel-search-button>` element in your HTML. For example:
@@ -63,7 +66,10 @@ The table below lists all the available properties that modify the layout:
 | `project`              | **Required**<br />**Type**: `string`<br /><br />The project ID.                                |
 | `button-style`         | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `rounded`<br /><br />Style of the button.|
 | `search-placeholder`   | **Type**: `string`<br />**Default value**: `"Search..."`<br /><br />Placeholder for the search input. |
+| `footer-text`          | **Type**: `string`<br />**Default value**: `AI generated answers. Always verify the sources before using them.`<br /><br />Footer text. |
+| `header-title`         | **Type**: `string`<br />**Default value**: `Company Name AI`<br /><br />Title text for the chatbot header. |
 | `hide-ctrl-k`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the Ctrl+K text hides. |
+| `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, feedback options for the user are hidden. |
 | `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
 | `error-message-4-0-3`  | **Type**: `string`<br />**Default value**: `Oops! The request URL does not match the one defined for this project.`<br /><br />403 unauthorized message    |
 | `error-message-4-0-4`  | **Type**: `string`<br />**Default value**: `Oops! We could not find the provided project ID.`<br /><br />404 not found message.    |

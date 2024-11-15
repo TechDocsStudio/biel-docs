@@ -52,8 +52,9 @@ To integrate the widget into your website, follow these steps:
 
 The `<biel-search-button>` widget offers a search-based ineraction that allows users to query documentation or other indexed content.
 
-To integrate the widget into your website, follow these steps:
+![Biel search](./images/biel-search-widget.png)
 
+To integrate the widget into your website, follow these steps:
 
 1. Insert the following code within the `<head>` section of your site's HTML:
 
