@@ -6,7 +6,7 @@ sidebar_label: React
 
 Here's a step-by-step guide to help you install Biel.ai in your React project using NPM.
 
-![Chatbot wiget for docs](./images/biel-widget-docs.png)
+![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 

@@ -39,7 +39,7 @@ Follow these steps to create and configure a new project:
 
 ## 3. Add the widget to your site
 
-To embed the Biel.ai widget on your website, follow these integration steps:
+To embed the Biel.ai widget on your website, follow these steps:
 
 1. Add the following code within the `<head>` section of your site's HTML:
 
@@ -48,11 +48,7 @@ To embed the Biel.ai widget on your website, follow these integration steps:
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```
-
-    :::info
-    The above method is for static HTML sites. For specific platforms (e.g., WordPress, React, etc.), Biel.ai offers tailored plugins and installation guides. Check the [Installation](/category/installation) documentation for more details.
-    :::
-
+    
 2. Just before the closing `</body>` tag of your website's HTML, insert this code snippet:
 
     ```html
@@ -65,11 +61,15 @@ To embed the Biel.ai widget on your website, follow these integration steps:
     </biel-button>
     ```
 
-    Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project.
+    Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project in [app.biel.ai](https://app.biel.ai).
 
-3. You should see the widget installed in your site:
+3. Open the website in a web browser to verify the chatbot is working correctly.
 
-    ![Chatbot widget](./images/biel-widget-docs.png)
+    ![Chatbot widget for docs](./images/biel-widget-docs.png)
+
+:::info
+The above method is for static HTML sites. For specific platforms (e.g., WordPress, React, etc.), Biel.ai offers tailored plugins and installation guides. Check the [Installation](/category/installation) documentation for more details.
+:::
 
 ## 4. Customize the widget
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Here's a step-by-step guide to help you install Biel.ai chatbot in your Starlight (Astro) project.
 
-![Chatbot wiget for docs](./images/biel-widget-docs.png)
+![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 

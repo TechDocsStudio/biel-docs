@@ -6,7 +6,7 @@ sidebar_label: Astro
 
 Here's a step-by-step guide to help you install Biel.ai in your Astro project.
 
-![Chatbot wiget for docs](./images/biel-widget-docs.png)
+![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 ## Prerequisites
 

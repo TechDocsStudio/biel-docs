@@ -4,9 +4,9 @@ sidebar_label: HTML
 
 # AI chatbot for HTML sites
 
-Here's a step-by-step guide to help you install Biel.ai in your HTML site.
+Biel.ai is an advanced chatbot designed to transform the way users interact with your technical documentation. By leveraging AI, Biel.ai delivers instant, context-rich answers, making your documentation more accessible and reducing the need for repetitive support tasks.
 
-![Chatbot wiget for docs](./images/biel-widget-docs.png)
+Here's a step-by-step guide to help you install Biel.ai in your HTML site.
 
 ## Prerequisites
 
@@ -17,7 +17,11 @@ Before you begin, you'll need to have the following:
 
 ## Installation
 
-To integrate the Biel.ai widget into your website:
+The `<biel-button>` widget enables a conversational chat powered by AI in your site.
+
+![Chatbot widget for docs](./images/biel-widget-docs.png)
+
+To integrate the widget into your website, follow these steps:
 
 1. Insert the following code within the `<head>` section of your site's HTML:
 
@@ -27,7 +31,7 @@ To integrate the Biel.ai widget into your website:
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```
 
-1. Just before the closing `</body>` tag of your website's HTML, add the following snippet:
+2. Just before the closing `</body>` tag of your website's HTML, add the following snippet:
 
     ```html
     <biel-button project="<YOUR_PROJECT_ID>" 
@@ -42,6 +46,32 @@ To integrate the Biel.ai widget into your website:
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
 1. Open the website in a web browser to verify the chatbot is working correctly.
+
+
+## Advanced: Install biel-search
+
+The `<biel-search-button>` widget offers a search-based ineraction that allows users to query documentation or other indexed content.
+
+To integrate the widget into your website, follow these steps:
+
+
+1. Insert the following code within the `<head>` section of your site's HTML:
+
+    ```html
+    <!-- Initialize the Biel.ai widget -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
+    ```
+
+2. Just before the closing `</body>` tag of your website's HTML, add the following snippet in the desired location on your site:
+
+    ```html
+    <biel-search-button project="<YOUR_PROJECT_ID>" button-style="rounded">Search</biel-search-button>
+    ```
+
+    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
+
+3. Open the website in a web browser to verify the search widget is working correctly.
 
 ## Next steps
 
