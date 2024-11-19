@@ -170,6 +170,21 @@ To integrate the search widget into your Docusaurus site, follow these steps:
 
 6. Check that the Biel.ai search widget appears and functions correctly on your site.
 
+7. (Optional) If you want to hide the floating widget and use only the Biel.ai search bar, you can disable the floating button by adding the following option to your `docusaurus.config.js` file:
+
+    ```js
+    plugins: [
+        [
+            'docusaurus-biel', {
+                enable: false,
+                project: '<YOUR_PROJECT_ID>',
+                headerTitle: 'Biel.ai chatbot',
+                version: 'latest'
+            }
+        ]
+    ],
+    ```
+
 ## Need help?
 
 We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
