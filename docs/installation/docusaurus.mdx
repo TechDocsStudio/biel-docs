@@ -36,7 +36,7 @@ To integrate the Biel.ai widget into your Docusaurus site:
     
     Replace `path/to/your/project` with your project's actual directory path.
 
-1. With your terminal still open, run the following command to install Biel.ai:
+1. With your terminal still open, run the following command to install Biel.ai extension for Docusaurus:
 
     ```console
     npm install docusaurus-biel
@@ -72,15 +72,12 @@ Here's an example:
 plugins: [
     [
         'docusaurus-biel',{
+            enable: true,
             project: '<YOUR_PROJECT_ID>',
             buttonPosition: 'center-right',
             modalPosition: 'sidebar-right',
             headerTitle: 'Biel.ai chatbot'
             buttonStyle: 'dark',
-            search: {
-                enable: true,
-                searchButtonText: 'Search...',
-            }
         }
     ]
 ],
@@ -133,7 +130,7 @@ To integrate the search widget into your Docusaurus site, follow these steps:
     
     Replace `path/to/your/project` with your project's actual directory path.
 
-2. With your terminal still open, run the following command to install Biel.ai:
+2. With your terminal still open, run the following command to install Biel.ai extension for Docusaurus:
 
     ```console
     npm install docusaurus-biel
