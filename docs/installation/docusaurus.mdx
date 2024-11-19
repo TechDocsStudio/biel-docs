@@ -60,52 +60,6 @@ To integrate the Biel.ai widget into your Docusaurus site:
 
 1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
 
-## Advanced: Install the search widget
-
-Biel.ai's search widget offers a search-based ineraction that allows users to query documentation or other indexed content.
-
-![Biel search](./images/biel-search-widget.png)
-
-
-To integrate the search widget into your Docusaurus site, follow these steps:
-
-1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
-
-    ```console
-    cd path/to/your/project
-    ```
-    
-    Replace `path/to/your/project` with your project's actual directory path.
-
-1. With your terminal still open, run the following command to install Biel.ai:
-
-    ```console
-    npm install docusaurus-biel
-    ```
-    
-1. Add the plugin to your Docusaurus config file `docusaurus.config.js`:
-
-    ```js
-    plugins: [
-        [
-            'docusaurus-biel',{
-                project: '<YOUR_PROJECT_ID>',
-                headerTitle: 'Biel.ai chatbot',
-                version: 'latest',
-                search: {
-                    enable: true,
-                    searchButtonText: 'Search...',
-                }
-            }
-        ]
-    ],
-    ```
-
-    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
-
-1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
-
-
 ## Customization
 
 You can customize the Biel.ai widget to suit your needs. For example, you can change the widget's position, color, and more.
@@ -162,6 +116,58 @@ To further customize the style of the Biel.ai widget in Docusaurus, such as alte
         ],
     ],
     ```
+
+## Advanced: Enable AI search
+
+Biel.ai's search widget offers a search-based interaction that allows users to query documentation or other indexed content.
+
+![Biel search](./images/biel-search-widget.png)
+
+To integrate the search widget into your Docusaurus site, follow these steps:
+
+1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
+
+    ```console
+    cd path/to/your/project
+    ```
+    
+    Replace `path/to/your/project` with your project's actual directory path.
+
+1. With your terminal still open, run the following command to install Biel.ai:
+
+    ```console
+    npm install docusaurus-biel
+    ```
+
+3. For Docusaurus, the best approach is to swizzle the original `SearchBar` component to embed the `BielSearchButton`. Begin by using the npm run swizzle command to start the swizzle process:
+
+    ```console
+    npm run swizzle @docusaurus/theme-classic SearchBar
+    ```
+    When prompted with the question: `Which language do you want to use?`, choose **TypeScript**.
+    When prompted with the question: `Which swizzle action do you want to do?`, choose **Eject**.
+
+    By choosing to eject, Docusaurus will extract the `SearchBar` component into the `src/theme` directory. This allows you to modify the original SearchBar component, replacing it with BielSearch.
+
+4. After swizzling, navigate to `src/theme/SearchBar.tsx` in your project directory. Now, integrate the BielSearch button:
+
+    ```tsx
+    import React from 'react';
+
+    export default function SearchBar() {
+        // Replace with your <PROJECT_ID>
+        const projectId = '<PROJECT_ID>';
+        const headerTitle = 'Documentation chatbot';
+        // @ts-ignore: Not a React component
+        return <biel-search-button project={projectId} button-style="rounded" header-title={headerTitle}>Search</biel-search-button>;
+    }
+    ```
+
+    Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
+
+
+6. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the feedback button appears and functions correctly on your site.
+
 
 ## Need help?
 
