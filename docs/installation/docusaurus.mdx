@@ -139,18 +139,16 @@ To integrate the search widget into your Docusaurus site, follow these steps:
     npm install docusaurus-biel
     ```
 
-3. For Docusaurus, the best approach is to swizzle the original `SearchBar` component to embed the `BielSearchButton`. Begin by using the npm run swizzle command to start the swizzle process:
+3. Swizzling allows you to customize the `SearchBar` component. Run this command:
 
     ```console
     npm run swizzle @docusaurus/theme-classic SearchBar
     ```
     
     * When prompted with the question: `Which language do you want to use?`, choose **TypeScript**.
-    * When prompted with the question: `Which swizzle action do you want to do?`, choose **Eject**.
+    * When prompted with the question: `Which swizzle action do you want to do?`, choose **Eject** extract the `SearchBar` component into the `src/theme` directory.
 
-    By choosing to eject, Docusaurus will extract the `SearchBar` component into the `src/theme` directory. This allows you to modify the original `SearchBar` component, replacing it with BielSearch.
-
-4. After swizzling, navigate to `src/theme/SearchBar.tsx` in your project directory. Now, integrate the `<biel-search-button>`:
+4. Open the file at `src/theme/SearchBar.tsx` and replace its content with the following:
 
     ```tsx
     import React from 'react';
@@ -167,8 +165,13 @@ To integrate the search widget into your Docusaurus site, follow these steps:
     Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
 
-5. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the feedback button appears and functions correctly on your site.
+5. Run your Docusaurus site to verify the changes:
 
+    ```console
+    npm run start
+    ```
+
+6. Check that the Biel.ai search widget appears and functions correctly on your site.
 
 ## Need help?
 
