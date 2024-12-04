@@ -24,6 +24,8 @@
   --ifm-link-color: #0070F4;
   --feedback-primary-color: #18181b;
   --biel-button-dark-bg-color: #18181b;
+  --biel-primary-color: #18181b;
+  --ifm-navbar-item-padding-vertical: 0;
 }
 
 
@@ -45,21 +47,14 @@
 
 .navbar__logo {
   align-items: center;
-  background-color: rgb(255, 255, 255);
-  border: 0 solid rgb(229, 231, 235);
-  border-radius: 4px;
-  box-shadow: rgba(9, 9, 11, 0.2) 0px 1px 2px 0px;
-  box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  height: 32px;
+  width: 100%;
   justify-content: center;
-  width: 32px;
 }
 
 .navbar__logo img {
-  width: 24px;
-  height: 24px;
+  height: 34px;
 }
 
 .theme-doc-sidebar-menu {

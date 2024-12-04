@@ -82,7 +82,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'Biel.ai',
-          src: 'img/logo.png',
+          src: 'img/logo-biel.png',
         },
       },
       colorMode: {

@@ -1,1 +1,18 @@
-<svg class="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient cx="21.152%" cy="86.063%" fx="21.152%" fy="86.063%" r="79.941%" id="footer-logo"><stop stop-color="#4FD1C5" offset="0%"></stop><stop stop-color="#81E6D9" offset="25.871%"></stop><stop stop-color="#338CF5" offset="100%"></stop></radialGradient></defs><rect width="32" height="32" rx="16" fill="url(#footer-logo)" fill-rule="nonzero"></rect></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 411.56 475.22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="43.49" y1="399.9" x2="368.07" y2="75.32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#52219f"/>
+      <stop offset=".51" stop-color="#9857ef"/>
+      <stop offset="1" stop-color="#f17c90"/>
+    </linearGradient>
+  </defs>
+  <g id="_Слой_1" data-name="Слой 1">
+    <path class="cls-1" d="M411.56,153.19v-34.38l-33.89-19.56L205.8,0,0,118.8v237.61l33.63,19.39,172.17,99.42,175.72-101.46,30.03-17.35v-34.96l-64.1-37-80.16-46.27,80.16-47.25,64.1-37.75ZM317.42,336.76l-111.62,64.42-108.73-62.73,110.51-65.08,109.84,63.4ZM144.22,236.77l-80.12,47.16v-128.12l141.7-81.81,108.42,62.6-170,100.17Z"/>
+  </g>
+</svg>
