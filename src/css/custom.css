@@ -75,6 +75,11 @@
   border-radius: 8px;
 }
 
+article a {
+  color: #542895;
+  font-weight: bold;
+}
+
 @media (min-width: 997px){
 
   .navbar__inner {
