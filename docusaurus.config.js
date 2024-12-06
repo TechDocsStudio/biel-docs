@@ -83,12 +83,11 @@ const config = {
         logo: {
           alt: 'Biel.ai',
           src: 'img/logo-biel.png',
+          srcDark: 'img/logo-biel-dark.png',
         },
       },
       colorMode: {
         defaultMode: 'light',
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
       },    
       footer: {
         style: 'dark',
