@@ -27,7 +27,8 @@ The tables below lists all the available properties you can override:
     /* Colors */
     --biel-primary-color: #0070F4;
     --biel-primary-light-color: #3a99ff;
-    --biel-secondary-color: #f1f3f4;
+    --biel-secondary-color: #f9fafb;
+    --biel-secondary-hover-color: #ebebeb;
     --biel-light-color: #ccc;
     --biel-dark-color: #191919;
     --biel-dark-hover-color: #333;
@@ -37,12 +38,9 @@ The tables below lists all the available properties you can override:
     --biel-highlight-color: #ffb422;
     --biel-scrollbar-color: #888888;
     --biel-scrollbar-hover-color: #666666;
-    --code-snippet-header-color: #3a3a3a;
-    --biel-message-source-color: #3b3b3b;
-    --biel-message-source-hover-color: #303030;
-    --biel-table-header-color: #2b2b2b;
-    --biel-result-color: #f9fafb;
-    --biel-result-hover-color: #ebebeb;
+    --biel-code-header-color: #3a3a3a;
+    --biel-code-body-color: #3b3b3b;
+    --biel-table-header-color: #372b2b;
 
 
     /* Fonts */
@@ -50,7 +48,7 @@ The tables below lists all the available properties you can override:
     --biel-text-font-size: 14px;
     --biel-text-lg-font-size: 16px;
     --biel-text-xl-font-size: 18px;
-    --code-snippet-font-family: "Courier New", "Courier", "monospace";
+    --biel-code-snippet-font-family: "Courier New", "Courier", "monospace";
 
     /* Biel button */
     --biel-button-border-radius: 20px;
@@ -85,28 +83,34 @@ The tables below lists all the available properties you can override:
     --biel-input-button-hover-bg-color: var(--biel-dark-hover-color);
     --biel-input-border-radius: 6px;
     --biel-input-font-family: var(--biel-font-family);
-    --biel-input-textarea-max-height: 102px;
-    --biel-input-textarea-min-height: 17px;
+    --biel-input-textarea-max-height: 114px;
+    --biel-input-textarea-min-height: 19px;
 
     /* Biel message */
-    --biel-message-biel-text-color: var(--biel-white-color);
-    --biel-message-user-text-color: var(--biel-white-color);
-    --biel-message-biel-background-color: var(--biel-dark-color);
-    --biel-message-user-background-color: var(--biel-primary-color);
+    --biel-message-biel-text-color: var(--biel-dark-color);
+    --biel-message-user-text-color: var(--biel-dark-color);
+    --biel-message-biel-bg-color: var(--biel-secondary-color);
+    --biel-message-user-bg-color: var(--biel-secondary-color);
     --biel-message-avatar-width: 20px;
     --biel-message-avatar-height: 20px;
     --biel-message-padding: 10px;
     --biel-message-avatar-margin-right: 10px;
     --biel-message-border-radius: 10px;
     --biel-message-source-font-size: 14px;
-    --biel-message-source-background-color: var(--biel-message-source-color);
-    --biel-message-source-background-hover-color: var(--biel-message-source-hover-color);
+    --biel-message-source-bg-color: var(--biel-white-hover-color);
+    --biel-message-source-bg-hover-color: var(--biel-light-color);
+    --biel-message-source-text-color: var(--biel-dark-color);
     --biel-message-link-color: var(--biel-primary-light-color);
+    --biel-message-code-font-size: 14px;
+    --biel-message-code-bg-color: var(--biel-code-body-color);
+    --biel-message-code-inline-text-color: var(--biel-dark-color);
+    --biel-message-code-inline-bg-color: var(--biel-white-hover-color);
 
     /* Biel chat */
     --biel-chat-scrollbar-color: var(--biel-scrollbar-color);
     --biel-chat-scrollbar-hover-color: var(--biel-scrollbar-hover-color);
     --biel-chat-height: 45vh;
+    --biel-chat-embedded-height: 450px;
 
     /* Biel header */
     --biel-header-font-family: var(--biel-font-family);
@@ -119,11 +123,11 @@ The tables below lists all the available properties you can override:
     --biel-header-border-color: var(--biel-light-color);
 
     /* Code snippet */
-    --code-snippet-header-text-color: var(--biel-light-color);
-    --code-snippet-content-text-color: var(--biel-white-color);
-    --code-snippet-header-bg-color: var(--code-snippet-header-color);
-    --code-snippet-content-bg-color: var(--biel-dark-color);
-    --code-snippet-font-size: var(--biel-text-font-size);
+    --biel-code-snippet-header-text-color: var(--biel-light-color);
+    --biel-code-snippet-content-text-color: var(--biel-white-color);
+    --biel-code-snippet-header-bg-color: var(--biel-code-header-color);
+    --biel-code-snippet-content-bg-color: var(--biel-dark-color);
+    --biel-code-snippet-font-size: var(--biel-text-font-size);
 
     /* Biel footer */
     --biel-footer-font-size: 12px;
@@ -141,10 +145,10 @@ The tables below lists all the available properties you can override:
     --biel-suggested-questions-border-color: var(--biel-primary-color);    
 
     /* Biel feedback */
-    --biel-feedback-background-color: var(--biel-message-source-color);
-    --biel-feedback-background-hover-color: var(--biel-message-source-hover-color);
+    --biel-feedback-bg-color: var(--biel-white-hover-color);
+    --biel-feedback-bg-hover-color: var(--biel-light-color);
     --biel-feedback-background-selected-color: var(--biel-primary-color);
-    --biel-feedback-text-color: var(--biel-white-color);
+    --biel-feedback-text-color: var(--biel-dark-color);
     --biel-feedback-text-selected-color: var(--biel-white-color);
 
     /* Biel search button */
@@ -165,6 +169,7 @@ The tables below lists all the available properties you can override:
     --biel-search-content-position-left: 10px;
     --biel-search-content-position-right: 10px;
     --biel-search-content-position-top: 10px;
+    --biel-search-content-position-top-center: 50px;
     --biel-search-content-text-color: var(--biel-dark-color);
     --biel-search-content-z-index: 300;
 
@@ -175,8 +180,8 @@ The tables below lists all the available properties you can override:
     --biel-search-body-max-height: 250px;
 
     /* Biel search result */
-    --biel-search-result-bg-color: var(--biel-result-color);
-    --biel-search-result-bg-hover-color: var(--biel-result-hover-color);
+    --biel-search-result-bg-color: var(--biel-secondary-color);
+    --biel-search-result-bg-hover-color: var(--biel-secondary-hover-color);
     --biel-search-result-border-color: var(--biel-light-color);
     --biel-search-result-title-color: var(--biel-dark-color);
     --biel-search-result-description-color: var(--biel-scrollbar-hover-color);
@@ -186,17 +191,24 @@ The tables below lists all the available properties you can override:
     /* Biel search ask ai button */
     --biel-search-ask-ai-bg-color: var(--biel-primary-color);
     --biel-search-ask-ai-color: var(--biel-white-color);
+
+    /* Biel search filters */
+    --biel-search-filter-color: var(--biel-dark-color);
+    --biel-search-filter-selected-color: var(--biel-white-color);
+    --biel-search-filter-bg-color: var(--biel-white-color);
+    --biel-search-filter-selected-bg-color: var(--biel-dark-color);
+    --biel-search-filter-border-color: var(--biel-white-hover-color);
+    --biel-search-filter-hover-color: var(--biel-white-hover-color);
+    --biel-search-filter-selected-border-color: var(--biel-white-hover-color);
+
+    /* Biel search footer */
+    --biel-search-footer-command-key-border-color: var(--biel-header-border-color);
 }
 
 [data-theme='dark'] {
     --biel-text-color: #b0b8c4;
-    --biel-light-color: #363636;
     --biel-scrollbar-color: #555555;
     --biel-scrollbar-hover-color: #333333;
-    --biel-message-source-color: #eee;
-    --biel-message-source-hover-color: #ddd;
-    --biel-result-color: #2b2b2b;
-    --biel-result-hover-color: #3a3a3a;
     --biel-bot-button-bg-color-active: transparent;
     --biel-bot-button-icon-color: var(--biel-white-color);
     --biel-bot-button-text-color: var(--biel-white-color);
@@ -205,6 +217,7 @@ The tables below lists all the available properties you can override:
     --biel-bot-close-color: var(--biel-white-color);
     --biel-bot-content-bg-color: var(--biel-dark-color);
     --biel-bot-content-text-color: var(--biel-text-color);
+    --biel-header-border-color: #363636;
     --biel-header-powered-by-link-color: var(--biel-white-color);
     --biel-input-color: var(--biel-white-color);
     --biel-input-border-color: var(--biel-white-color);
@@ -212,8 +225,10 @@ The tables below lists all the available properties you can override:
     --biel-input-button-bg-color: var(--biel-white-color);
     --biel-input-button-hover-bg-color: var(--biel-white-hover-color);
     --biel-message-biel-text-color: var(--biel-dark-color);
-    --biel-message-biel-background-color: var(--biel-white-color);
+    --biel-message-biel-bg-color: var(--biel-secondary-color);
+    --biel-message-source-color: var(--biel-white-hover-color);
     --biel-message-source-link-color: var(--biel-primary-color);
+    --biel-message-source-bg-hover-color: var(--biel-light-color);
     --biel-suggested-questions-text-color: var(--biel-white-color);
     --biel-suggested-questions-bg-color: var(--biel-dark-color);
     --biel-feedback-text-color: var(--biel-dark-color);
@@ -225,11 +240,20 @@ The tables below lists all the available properties you can override:
     --biel-search-content-text-color: var(--biel-text-color);
     --biel-search-content-border-color: var(--biel-dark-color);
     --biel-search-button-text-color: var(--biel-white-color);
-    --biel-search-result-border-color: var(--biel-light-color);
+    --biel-search-result-bg-color: #2b2b2b;
+    --biel-search-result-bg-hover-color: #3a3a3a;
+    --biel-search-result-border-color: #363636;
     --biel-search-result-title-color: var(--biel-white-color);
     --biel-search-result-description-color: var(--biel-text-color);
     --biel-search-result-mark-color: var(--biel-primary-light-color);
-    --code-snippet-header-text-color: var(--biel-text-color)
+    --biel-code-snippet-header-text-color: var(--biel-text-color);
+    --biel-search-filter-color: var(--biel-white-color);
+    --biel-search-filter-selected-color: var(--biel-white-color);
+    --biel-search-filter-bg-color: var(--biel-dark-color);
+    --biel-search-filter-selected-bg-color: var(--biel-primary-color);
+    --biel-search-filter-border-color: #3a3a3a;
+    --biel-search-filter-hover-color: #3a3a3a;
+    --biel-search-filter-selected-border-color: var(--biel-primary-color);
 }
 ```
 
