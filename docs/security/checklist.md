@@ -14,6 +14,8 @@ The following steps apply only to implementations using the **chatbot widget**.
 
 - [ ] **Restrict allowed domains**: List only the domains authorized to host your chatbot widget in  **Projects** > **Settings** > **Allowed domains**. This restricts embedding to approved sites, helping prevent unauthorized access.
 
+- [ ] **Enable two-factor authentication (2FA)**: Navigate to **My Account** > **Profile** and enable 2FA for all accounts with access to the dashboard to enhance access security.
+
 ## For API integrations
 
 :::info API Integrations Only

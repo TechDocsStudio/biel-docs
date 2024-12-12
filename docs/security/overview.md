@@ -36,11 +36,13 @@ Our security architecture integrates protections for data and network security:
 
 1. **Network protection:** Our infrastructure includes layers of security, such as firewalls and DDoS mitigation, with continuous monitoring for rapid threat response.
 
-2. **Data encryption**: We use industry-standard encryption for all data, safeguarding it from unauthorized access.
+2. **Data encryption**: We use industry-standard encryption to protect sensitive data both in transit and at rest, safeguarding it from unauthorized access.
 
-3. **Opt-out for model training**: Biel.ai does not use customer data for model training and opts out of data-sharing programs with providers (e.g., OpenAI, Anthropic), ensuring user conversations remain private and are not used for training purposes.
+3. **Logical separation between customer accounts**: We implement strict logical separation between customer accounts to prevent unauthorized cross-access and ensure that data and resources remain isolated and secure.
 
-4. **GDPR compliance:** We adhere to GDPR regulations, ensuring data protection aligns with privacy regulations.
+4. **Opt-out for model training**: Biel.ai does not use customer data for model training and opts out of data-sharing programs with providers (e.g., OpenAI, Anthropic), ensuring user conversations remain private and are not used for training purposes.
+
+5. **GDPR compliance:** We adhere to GDPR regulations, ensuring data protection aligns with privacy regulations.
 
 ## Why this approach works
 
