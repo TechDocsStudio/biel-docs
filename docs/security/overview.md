@@ -48,4 +48,4 @@ Our security architecture integrates protections for data and network security:
 
 Combining **key security features** with a robust **security architecture** creates a layered defense meeting enterprise-grade demands. This structure protects both user interactions and infrastructure, delivering a secure chatbot solution.
 
-For detailed information on our data handling practices, please refer to our [Privacy Policy](https://biel.ai/privacy-policy).
+For detailed information on our data handling practices, please refer to our [Privacy Policy](https://biel.ai/privacy).
