@@ -32,7 +32,7 @@ To integrate the Biel.ai widget into your Vue.js site:
 1. With your terminal still open, run the following command to install Biel.ai:
 
     ```console
-    npm install pushfeedback
+    npm install biel-search
     ```
 
 1. Open your main Vue component or the desired Vue component where you want the chatbot to appear. Then, incorporate the Biel.ai styles and scripts:
@@ -40,10 +40,10 @@ To integrate the Biel.ai widget into your Vue.js site:
     ```js
     <script>
     // Incorporate Biel.ai styles
-    import 'pushfeedback/dist/biel-search/biel-search.css';
+    import 'biel-search/dist/biel-search/biel-search.css';
 
     // Initialize the Biel.ai widget
-    import 'pushfeedback/dist/biel-search/biel-search.esm.js';
+    import 'biel-search/dist/biel-search/biel-search.esm.js';
     </script>
     ```
 
