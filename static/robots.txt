@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://docs.biel.ai
+
+# Sitemaps
+Sitemap: https://docs.biel.ai/sitemap.xml
