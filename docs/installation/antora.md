@@ -1,35 +1,41 @@
 ---
 sidebar_label: Antora
+description: Learn how to add an AI chatbot to your Antora documentation project with this easy step-by-step guide.
 ---
 
 # AI chatbot for Antora
 
-Here's a step-by-step guide to help you install Biel.ai in your Antora project.
+Biel.ai is an advanced chatbot designed to transform the way users interact with your technical documentation.
+By leveraging AI, Biel.ai delivers instant, context-rich answers, making your documentation more accessible and reducing the need for repetitive support tasks.
 
-![Chatbot widget for docs](./images/biel-widget-docs.png)
+Here's a step-by-step guide to help you install Biel.ai in your Antora project.
 
 ## Prerequisites
 
-Before you begin, you'll need to have the following:
+Before starting, ensure you have the following:
 
-- A Biel.ai account. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
-- A project created in your Biel.ai dashboard. If you haven't created one yet, follow the steps in the [Quickstart](../quickstart.md#2-create-a-project) guide.
-- An Antora project.
+- A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
+- **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
+- **An Antora documentation site** ready to install Biel.ai.  
 
 ## Installation
 
-To integrate the Biel.ai widget into your Antora site:
+The Biel.ai widget enables a conversational chat powered by AI in your site.
+
+![Chatbot widget for docs](./images/biel-widget-docs.png)
+
+To integrate the Biel.ai widget into your Docusaurus site:
 
 1. Modify the UI bundle:
 
     * If you're using a custom UI bundle for your Antora project, navigate to the UI bundle's directory.
-    * If not, you'll first need to clone Antora's default UI bundle.
+    * Otherwise, clone Antora's default UI bundle with the following command:
 
         ```bash
         git clone https://gitlab.com/antora/antora-ui-default.git
         ```
 
-1. Locate the `head.hbs` file, which is usually under `src/partials`, and insert the following code:
+1. Locate the `head.hbs` file, which is usually under `src/partials`, and insert the following code to initialize the Biel.ai widget:
 
     ```html
     <!-- Initialize the Biel.ai widget -->
@@ -51,12 +57,12 @@ To integrate the Biel.ai widget into your Antora site:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Build the project:
+1. Build and verify your project:
 
-    * If you're using a custom UI, make sure to re-bundle it and then run the Antora command to build your project.
-    * If you cloned the default UI, you'd have to integrate it as a local UI and then run Antora with the `--ui-bundle-url` flag to point to your modified local UI bundle.
+    * Re-bundle your custom UI and run the Antora build command.
+    * If using the default UI, you'd have to integrate it as a local UI and then run Antora with the `--ui-bundle-url` flag to point to your modified local UI bundle.
 
-1. Once it builds successfully, verify that the chatbot appears and functions correctly on your site.
+1. Once built, ensure the chatbot is functioning correctly on your site.
 
 ## Next steps
 

@@ -1,23 +1,28 @@
 ---
 sidebar_label: NPM
+description: Learn how to add an AI chatbot to your site with this step-by-step guide.
 ---
 
 # AI chatbot for NPM projects
 
-Here's a step-by-step guide to help you install Biel.ai in your project using NPM.
+Biel.ai is an advanced chatbot designed to transform the way users interact with your technical documentation.
+By leveraging AI, Biel.ai delivers instant, context-rich answers, making your documentation more accessible and reducing the need for repetitive support tasks.
 
-![Chatbot widget for docs](./images/biel-widget-docs.png)
+Here's a step-by-step guide to help you install Biel.ai in your project using NPM.
 
 ## Prerequisites
 
-Before you begin, you'll need to have the following:
+Before starting, ensure you have the following:
 
-- A Biel.ai account. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
-- A project created in your Biel.ai dashboard. If you haven't created one yet, follow the steps in the [Quickstart](../quickstart.md#2-create-a-project) guide.
-- Node.js installed.
-
+- A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
+- **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
+- **Node.js** installed.
 
 ## Installation
+
+The Biel.ai widget enables a conversational chat powered by AI in your site.
+
+![Chatbot widget for docs](./images/biel-widget-docs.png)
 
 To integrate the Biel.ai widget into your site:
 
