@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: /
+description: Learn how to integrate an AI chatbot into your website using your content. This guide walks you through creating your account, setting up a project, and testing the chatbot.
 ---
 
 # Quickstart
@@ -16,6 +17,9 @@ To install the Biel.ai chatbot, start by setting up your account:
 3. Follow the on-screen instructions to complete your account setup:
 
     ![Create account](./images/create-account.png)
+
+    - Provide your email, and password, and company name.
+    - Confirm your email address to activate your account.
 
 Once your account is ready, you can begin creating your first project.
 
