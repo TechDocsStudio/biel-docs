@@ -5,7 +5,7 @@ slug: /
 
 # Quickstart
 
-Welcome to the **Biel.ai** documentation! In just a few steps, you'll have a chatbot integrated and running on your website.
+Welcome to the **Biel.ai** documentation! In just a few steps, you'll have an AI-powered chatbot for your website and documents.
 
 ## 1. Create your Biel.ai account
 
@@ -35,56 +35,33 @@ Follow these steps to create and configure a new project:
         * **Sitemap**: Index multiple pages from a sitemap, useful for indexing entire websites.
         * **Files**: Index documents such as PDFs, Word files, and more.
 
-4. Click **Save** to finalize your project setup.
+4. Click **Create** and **Done!** to finalize your project setup.
 
-## 3. Add the widget to your site
+Biel.ai will start crawling your documents. Please allow a few minutes for the process to complete, or refresh the page to check the status.
 
-To embed the Biel.ai widget on your website, follow these steps:
+## 3. Chat with your docs
 
-1. Add the following code within the `<head>` section of your site's HTML:
+Once your project is created and the documents are indexed, your chatbot will be ready to interact with the content.
 
-    ```html
-    <!-- Initialize the Biel.ai widget -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
-    ```
-    
-2. Just before the closing `</body>` tag of your website's HTML, insert this code snippet:
+To test your chatbot:
 
-    ```html
-    <biel-button project="<YOUR_PROJECT_ID>" 
-        header-title="Biel.ai chatbot"
-        button-position="bottom-right"
-        modal-position="bottom-right"
-        button-style="dark">
-            Ask AI
-    </biel-button>
-    ```
+1. Click **New chat** in the **Project** dashboard.
+2. Enter a query or ask a question to see how your chatbot responds:
 
-    Replace `<YOUR_PROJECT_ID>` with the unique project ID you received after setting up your project in [app.biel.ai](https://app.biel.ai).
+    ![My first chat](./images/my-first-chat.png)
 
-3. Open the website in a web browser to verify the chatbot is working correctly.
+3. Click **Send**.
 
-    ![Chatbot widget for docs](./images/biel-widget-docs.png)
+:::tip
+If the chatbot does not provide accurate or helpful responses, try the following steps:
 
-:::info
-The above method is for static HTML sites. For specific platforms (e.g., WordPress, React, etc.), Biel.ai offers tailored plugins and installation guides. Check the [Installation](/category/installation) documentation for more details.
+1. Review the sources loaded in the **Logs** section to ensure the necessary content is indexed correctly.
+2. Adjust advanced settings in **Settings** to fine-tune the chatbot's behavior and improve responses.
+3. Click **Refresh sources** to re-crawl the indexed content.
 :::
-
-## 4. Customize the widget
-
-Make the Biel.ai widget match your website’s style and user experience. You can customize:
-
-* **Initial message**: Set a welcome message to greet users or provide instructions.
-* **Suggested questions**: Predefine questions to guide users on what to ask.
-* **Position**: Select where the widget appears—bottom right, top left, or integrated into an existing button.
-* **Appearance**: Modify colors, fonts, and other visual elements to align with your website’s branding.
-* **Text**: Adjust the widget's text to fit your website's tone and language.
-
-For advanced customization options, refer to [Customization](/category/customization).
 
 ## Next steps
 
-Congratulations! Your Biel.ai widget is now live on your website, allowing users to interact with your content in new ways.
+Congratulations! You’ve successfully created your first chatbot.
 
-Don't forget to monitor your [dashboard](https://app.biel.ai) for user insights and feedback, which can help you optimize your chatbot's performance.
+To integrate the chatbot widget into your website, check out the [Installation](/category/installation) guides. You’ll find detailed instructions for embedding the chatbot in your site, customizing its appearance, and configuring advanced integration options.
