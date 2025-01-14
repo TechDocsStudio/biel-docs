@@ -109,7 +109,7 @@ const config = {
       }
     }),
     scripts: [
-      'https://www.googletagmanager.com/gtag/js?id=G-1TMTNMCLSX',
+      'https://www.googletagmanager.com/gtag/js?id=G-CWY6XSMG75',
       '/analytics.js'
     ],
   
