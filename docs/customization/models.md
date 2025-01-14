@@ -23,7 +23,7 @@ To select the best model for your needs, consider the following factors:
 |-------------------------|------------------------------------------------------|--------------------------------------------------|
 | **Response speed**       | Prioritizes speed for real-time responsiveness.       | Slightly slower, with a focus on depth and accuracy. |
 | **Content complexity**   | Ideal for straightforward or moderately complex content. | Best for highly technical, specialized, or detailed content. |
-| **Plan eligibility**     | Available on all plans.                               | Requires **Professional** or higher plans.        |
+| **Plan eligibility**     | Available on all plans.                               | Requires **Business** or higher plans.        |
 | **Traffic considerations** | Suitable for high-traffic sites due to lower cost.     | Recommended for sites with focused, high-value queries. |
 
 ### GPT vs. Claude
