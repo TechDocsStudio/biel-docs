@@ -1,0 +1,24 @@
+---
+sidebar_label: Embedded mode
+sidebar_position: 7
+description: Biel.ai's embedded mode lets you integrate a chatbot directly into your site's layout. Learn how to implement it with a simple HTML snippet.
+---
+
+# Embedded mode
+
+Biel.ai supports an embedded mode.
+This mode enables you to integrate conversational AI chatbot directly into your site's layout.
+
+## Preview
+
+<biel-bot project="dl1kps0old" embedded-mode="true"></biel-bot>
+
+## How to enable the embedded mode
+
+To add the chatbot in embedded mode to your site, include the following code snippet in your HTML:
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/biel-search@latest/dist/biel-search/biel-search.esm.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search@latest/dist/biel-search.css">
+<biel-bot project="<PROJECT_ID>" embedded-mode="true"></biel-bot>
+```
