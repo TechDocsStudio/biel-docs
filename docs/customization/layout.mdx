@@ -4,8 +4,8 @@ sidebar_position: 4
 
 # Layout
 
-The Biel.ai widget is highly customizable, allowing you to customize its behavior to suit your application's needs.
-This page lists all available properties you can use to adjust the behavior and appearance of the Biel.ai button in your application.
+The Biel.ai widget is highly customizable, allowing you to adjust its behavior and appearance to suit your application's needs. This includes options to modify the button's text to align with your company's tone or support multiple languages (i18n). 
+This page lists all available properties you can use to configure the Biel.ai widget and ensure it fits within your application.
 
 ## biel-button
 
@@ -32,6 +32,7 @@ The table below lists all the available properties that modify the layout:
 | `button-style`         | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `dark`, `light`<br /><br />Style of the button.|
 | `custom-font`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the [Inter font](https://fonts.google.com/specimen/Inter) will not be loaded. Useful if your site already uses a different font, enabling a quicker load time.|
 | `disable-input`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the user input field is disabled. |
+| `email`                | **Type**: `string`<br />**Default value**: ``<br /> An email address or ID to identify the user initiating the conversation. This value is displayed under "Email" in the project dashboard. |
 | `error-message-4-0-3`  | **Type**: `string`<br />**Default value**: `Oops! The request URL does not match the one defined for this project.`<br /><br />403 unauthorized message.    |
 | `error-message-4-0-4`  | **Type**: `string`<br />**Default value**: `Oops! We could not find the provided project ID.`<br /><br />404 not found message.    |
 | `error-message-default`| **Type**: `string`<br />**Default value**: `Oops! Please try again later.`<br /><br />500 error message. |
@@ -42,7 +43,7 @@ The table below lists all the available properties that modify the layout:
 | `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, feedback options for the user are hidden. |
 | `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
 | `initial-messages`     | **Type**: `array`<br />**Default value**: `[]`<br /><br />Array of initial messages to be displayed in the chat. Each message should include `text` and `sender` (either `user` or `ai`). |
-| `modal-position`       | **Type**: `string`<br />**Default value**: `center`<br />**Available values:** `center`, `bottom-right`, `bottom-left`<br /><br />Position of the modal.|
+| `modal-position`       | **Type**: `string`<br />**Default value**: `center`<br />**Available values:** `center`, `top-center`, `bottom-right`, `bottom-left`<br /><br />Position of the modal.|
 
 ## biel-search-button
 
@@ -65,12 +66,16 @@ The table below lists all the available properties that modify the layout:
 |------------------------|-----------------------------------------------------------------------------------------------|
 | `project`              | **Required**<br />**Type**: `string`<br /><br />The project ID.                                |
 | `button-style`         | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `rounded`<br /><br />Style of the button.|
-| `search-placeholder`   | **Type**: `string`<br />**Default value**: `"Search..."`<br /><br />Placeholder for the search input. |
-| `footer-text`          | **Type**: `string`<br />**Default value**: `AI generated answers. Always verify the sources before using them.`<br /><br />Footer text. |
-| `header-title`         | **Type**: `string`<br />**Default value**: `Company Name AI`<br /><br />Title text for the chatbot header. |
-| `hide-ctrl-k`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the Ctrl+K text hides. |
-| `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, feedback options for the user are hidden. |
-| `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
+| `custom-font`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the [Inter font](https://fonts.google.com/specimen/Inter) will not be loaded. Useful if your site already uses a different font, enabling a quicker load time.|
 | `error-message-4-0-3`  | **Type**: `string`<br />**Default value**: `Oops! The request URL does not match the one defined for this project.`<br /><br />403 unauthorized message    |
 | `error-message-4-0-4`  | **Type**: `string`<br />**Default value**: `Oops! We could not find the provided project ID.`<br /><br />404 not found message.    |
 | `error-message-default`| **Type**: `string`<br />**Default value**: `Oops! Please try again later.`<br /><br />500 error message. |
+| `footer-text`          | **Type**: `string`<br />**Default value**: `AI generated answers. Always verify the sources before using them.`<br /><br />Footer text. |
+| `header-title`         | **Type**: `string`<br />**Default value**: `Company Name AI`<br /><br />Title text for the chatbot header. |
+| `hide-ctrl-k`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the Ctrl+K text hides. |
+| `hide-expand-button`   | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the expand button icon hides. |
+| `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, feedback options for the user are hidden. |
+| `hide-filters`         | **Type**: `boolean`<br />**Default value**: `true`<br /><br />When set to `true`, hides the selector for filtering by source. |
+| `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
+| `modal-position`       | **Type**: `string`<br />**Default value**: `top-center`<br />**Available values:** `center`, `top-center`, `top-right`, `bottom-left`<br /><br />Position of the modal.|
+| `search-placeholder`   | **Type**: `string`<br />**Default value**: `"Search..."`<br /><br />Placeholder for the search input. |
