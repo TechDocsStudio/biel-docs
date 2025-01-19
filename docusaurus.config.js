@@ -58,14 +58,6 @@ const config = {
     ],
   ],
   plugins: [
-    [
-      'docusaurus-pushfeedback',{
-        project: 'kna08wr4wa',
-        buttonStyle: 'dark',
-        buttonPosition: 'center-right',
-        modalPosition: 'sidebar-right'
-      }
-    ],
     'docusaurus-plugin-image-zoom',
     [
       'docusaurus-biel',{
@@ -108,6 +100,22 @@ const config = {
         }
       }
     }),
+    headTags: [
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.css'
+        }
+      },
+      {
+        tagName: 'script',
+        attributes: {
+          type: 'module',
+          src: 'https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.esm.js'
+        }
+      }
+    ],
     scripts: [
       'https://www.googletagmanager.com/gtag/js?id=G-CWY6XSMG75',
       '/analytics.js'
