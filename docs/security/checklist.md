@@ -21,7 +21,7 @@ The following steps apply only to implementations using the **chatbot widget**.
 ## For API integrations
 
 :::info API Integrations Only
-The following steps apply only to direct integrations using the **public API**. These steps are not necessary for widget-based implementations.
+The following steps apply only to direct integrations using the **enterprise API**. These steps are not necessary for widget-based implementations.
 :::
 
 - [ ] **Enable bearer authentication**: Ensure each API client request includes a bearer token in the header as follows: `Authorization: Bearer <token>`.
