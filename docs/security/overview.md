@@ -26,9 +26,11 @@ We provide configurable features to enhance data protection and ensure reliable 
 
 2. **Rate limiting**: To prevent abuse, we enforce rate limits per user session and IP address, controlling interactions and mitigating spam and potential attacks.
 
-3. **Role-based authentication**: Our platform includes role-based access control (RBAC) to protect the admin panel. Only authorized users with the appropriate roles can access sensitive administrative features, ensuring a secure and segmented permissions structure.
+4. **Personal identifiable information (PII)**: Each project can define if they want to automatically detect and remove sensitive information like names, emails, IPs, and phone numbers from chat conversations to protect user privacy.
 
-4. **Public API security**: We implement **Bearer Authentication** for secure client-server communication, preventing unauthorized access to API resources.
+4. **Role-based authentication**: Our platform includes role-based access control (RBAC) to protect the admin panel. Only authorized users with the appropriate roles can access sensitive administrative features, ensuring a secure and segmented permissions structure.
+
+5. **Public API security**: We implement **Bearer Authentication** for secure client-server communication, preventing unauthorized access to API resources.
 
 ## Security architecture
 

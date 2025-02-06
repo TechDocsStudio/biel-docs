@@ -16,6 +16,8 @@ The following steps apply only to implementations using the **chatbot widget**.
 
 - [ ] **Enable two-factor authentication (2FA)**: Navigate to **My Account** > **Profile** and enable 2FA for all accounts with access to the dashboard to enhance access security.
 
+- [ ] **Configure data privacy (optional)**: Choose whether to display a terms and conditions modal before starting a conversation or to remove Personally Identifiable Information (PII) from chat conversations. For more information, see [Data privacy](../customization/data-privacy.mdx).
+
 ## For API integrations
 
 :::info API Integrations Only
