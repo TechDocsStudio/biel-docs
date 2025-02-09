@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 ---
 
 # Models
@@ -30,14 +30,19 @@ To select the best model for your needs, consider the following factors:
 
 When deciding between GPT-4 and Claude 3.5, consider your organization's preferences and the style of responses you expect. GPT-4 models are known for their technical depth, while Claude 3.5 often delivers responses with a conversational and empathetic tone. Testing both models against your use case can help identify which aligns better with your documentation needs.
 
-## How to change the chatbot model
+## Change the chatbot model
+
+:::important  
+Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](roles.md).  
+:::
 
 Follow these steps to change the AI model used in your Biel.ai project:
 
 1. Log in to your Biel.ai account and navigate to your dashboard.  
 2. Select your project from the list of available projects.  
 3. Click **Settings**.
-4. Under the **Select model** section, choose the AI model you want to use from the dropdown menu.  
+4. Find **LLM settings**.
+4. Under the **Select model**, choose the AI model you want to use from the dropdown menu.  
 5. Click **Save** to apply the changes.  
 
 Your chatbot will now use the selected model to respond to user queries.  

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Sources
@@ -8,6 +8,10 @@ In Biel.ai, you can configure various types of sources to index content for your
 These sources allow the chatbot to provide accurate and relevant answers based on the content you want to make accessible. Each source type serves different needs, depending on the scope of content you want to index.
 
 This guide will explain the different source types, when to use them, and how to configure each.
+
+:::important  
+Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](roles.md).  
+:::
 
 ## Source types
 
@@ -49,9 +53,7 @@ It is useful when you want the chatbot to reference information from static docu
 - Widgets will not expose link to the files as sources or search results.
 - This feature is currently under development and will be available soon.
 
-## Configuring sources
-
-Regardless of the source type, configuring sources in Biel.ai follows a similar process. Here’s a general guide on how to add a source to your project:
+## Manage sources
 
 Regardless of the source type, configuring sources in Biel.ai follows a similar process. Here’s a general guide on how to add a source to your project:
 
@@ -70,13 +72,11 @@ Regardless of the source type, configuring sources in Biel.ai follows a similar 
 
 Once saved, Biel.ai will start indexing the content from the selected source(s). You can verify the setup by interacting with the chatbot and seeing if it references the indexed content in its responses.
 
-## Filtering sources
+## Exclude URLs
 
-When implementing a chatbot for documentation, ensuring it retrieves relevant information from a large, complex knowledge base is crucial.
-Biel AI provides a **Filter Sources** feature that allows you to define specific URL patterns the chatbot should include or exclude. 
-By focusing only on pertinent content, this feature improves both the chatbot's accuracy and user experience by preventing irrelevant pages from entering the chatbot’s scope.
+When setting up a chatbot for documentation, it’s important to ensure it retrieves only relevant information from your knowledge base.
 
-The filter supports both standard URL patterns and regular expressions (regex), allowing precise control over which URLs are crawled.
+The **Filter URLs** feature lets you specify which URL patterns the chatbot should include or exclude. 
 
 To filter sources, follow these steps:
 
@@ -85,7 +85,7 @@ To filter sources, follow these steps:
 3. In the dashboard, click **Projects** in the top navigation bar.
 4. Find and select your project from the list.
 5. Click **Settings**.
-6. In the **Sources** section, scroll to **Filter URLs**.
+6. In the **Sources** section, scroll to **Restrictions > Filter URLs**.
 7. Add patterns to include or exclude as needed:
     ![Exclude sources](./images/exclude-url.png)
     

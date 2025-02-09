@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Manage subscription
@@ -13,5 +13,7 @@ From **Team > Manage subscription**, you can:
 * View your invoices.
 * Change your billing details.
 
-
+:::important  
+Only users with the **Administrator** or **Maintainer** role can manage subscriptions. For more details, see [Manage roles](roles.md).  
+:::  
 
