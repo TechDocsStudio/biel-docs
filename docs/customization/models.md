@@ -33,7 +33,7 @@ When deciding between GPT-4 and Claude 3.5, consider your organization's prefere
 ## Change the chatbot model
 
 :::important  
-Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](../customization/roles.md).  
+Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](../administration/roles.md).  
 :::
 
 Follow these steps to change the AI model used in your Biel.ai project:
