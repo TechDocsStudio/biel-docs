@@ -17,7 +17,7 @@ If you want the chatbot to behave differently (e.g., for other use cases), the p
 ### Customize the prompt  
 
 :::important  
-Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](roles.md).  
+Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](../customization/roles.md).  
 :::  
 
 Follow these steps to change the prompt:
