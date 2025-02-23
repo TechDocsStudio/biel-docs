@@ -1,18 +1,18 @@
 ---
 sidebar_label: Basic installation
-description: Learn how to add an AI chatbot to your HTML site with this step-by-step guide.
+description: Add an AI chatbot to your HTML site with this step-by-step guide.
 sidebar_position: 1
 ---
 
 # Basic installation
 
-Biel.ai is an advanced chatbot designed to transform the way users interact with your technical documentation. By leveraging AI, Biel.ai delivers instant, context-rich answers, making your documentation more accessible and reducing the need for repetitive support tasks.
+Add an AI chatbot to any website using Biel.ai's CDN-hosted components. This method works with any HTML site and requires only two code snippets: one in your head tag and one where you want the chat widget to appear.
 
-Here's a step-by-step guide to help you install Biel.ai in your HTML site.
+This guide shows you how to add the chat widget to your site in minutes using simple HTML.
 
 ## Prerequisites
 
-Before starting, ensure you have the following:
+Before starting, ensure you have::
 
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
@@ -28,7 +28,7 @@ To integrate the widget into your website, follow these steps:
 1. Insert the following code within the `<head>` section of your site's HTML:
 
     ```html
-    <!-- Initialize the Biel.ai widget -->
+    <!-- Initialize the Biel.AI chat widget -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```
@@ -60,7 +60,7 @@ To integrate the widget into your website, follow these steps:
 1. Insert the following code within the `<head>` section of your site's HTML:
 
     ```html
-    <!-- Initialize the Biel.ai widget -->
+    <!-- Initialize the Biel.AI chat widget -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```

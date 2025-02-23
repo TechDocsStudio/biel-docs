@@ -1,21 +1,17 @@
 ---
 sidebar_label: Starlight
-description: Learn how to add an AI chatbot to your Starlight documentation site with this step-by-step guide.
+description: Add an AI chatbot to your Starlight documentation site with this step-by-step guide.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# AI chat widget for Starlight
 
-# AI chatbot for Starlight
+Add an AI chatbot to your Starlight documentation using Biel.ai's web components. The integration works with any Starlight theme and requires only adding a few lines to your components.
 
-Biel.ai is an advanced chatbot designed to transform the way users interact with your technical documentation.
-By leveraging AI, Biel.ai delivers instant, context-rich answers, making your documentation more accessible and reducing the need for repetitive support tasks.
-
-Here's a step-by-step guide to help you install Biel.ai chatbot in your Starlight (Astro) project.
+This guide shows you how to add the chat widget to your Starlight site in minutes using component overrides.
 
 ## Prerequisites
 
-Before starting, ensure you have the following:
+Before starting, ensure you have::
 
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
@@ -23,7 +19,7 @@ Before starting, ensure you have the following:
 
 ## Installation
 
-The Biel.ai widget enables a conversational chat powered by AI in your site.
+The Biel.AI chat widget enables a conversational chat powered by AI in your site.
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 

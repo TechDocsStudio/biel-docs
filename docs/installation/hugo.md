@@ -1,18 +1,17 @@
 ---
 sidebar_label: Hugo
-description: Learn how to add an AI chatbot to your Hugo site with this step-by-step guide.
+description: Add an AI chatbot to your Hugo site with this step-by-step guide.
 ---
 
-# AI chatbot for Hugo
+# AI chat widget for Hugo
 
-Biel.ai is an advanced chatbot designed to transform the way users interact with your technical documentation.
-By leveraging AI, Biel.ai delivers instant, context-rich answers, making your documentation more accessible and reducing the need for repetitive support tasks.
+Add an AI chatbot to your Hugo site using Biel.ai's web components. The integration works with any Hugo theme and requires only adding a few lines to your templates.
 
-Here's a step-by-step guide to help you install Biel.ai in your Hugo project.
+This guide shows you how to add the chat widget to your Hugo site in minutes using HTML partials.
 
 ## Prerequisites
 
-Before starting, ensure you have the following:
+Before starting, ensure you have::
 
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
@@ -20,11 +19,11 @@ Before starting, ensure you have the following:
 
 ## Installation
 
-The Biel.ai widget enables a conversational chat powered by AI in your site.
+The Biel.AI chat widget enables a conversational chat powered by AI in your site.
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
-To integrate the Biel.ai widget into your Hugo site:
+To integrate the Biel.AI chat widget into your Hugo site:
 
 1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
 
@@ -37,7 +36,7 @@ To integrate the Biel.ai widget into your Hugo site:
 1. Find the head partial, which is often located under `layouts/partials/`. Add the following code to this file:
 
     ```html
-    <!-- Initialize the Biel.ai widget -->
+    <!-- Initialize the Biel.AI chat widget -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     ```
