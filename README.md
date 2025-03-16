@@ -1,25 +1,32 @@
 # Biel.ai docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Biel.ai revolutionizes traditional documentation by turning static docs into a dynamic, interactive assistant. Whether you're a developer, technical writer, or marketer, this documentation will guide you through installing, configuring, and deploying Biel.ai to enhance your support, reduce repetitive queries, and boost user engagement.
 
-### Installation
+👉 [https://docs.biel.ai](https://docs.biel.ai)
 
-```
-$ yarn
-```
+## Contributing
 
-### Local development
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-```
-$ yarn start
-```
+## Local development
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
+To build the docs locally, run the following commands:
 
 ```
-$ yarn build
+yarn
+yarn start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+The latest command starts a local development server and opens a browser window. Most changes are reflected live without restarting the server.
+
+## Build
+
+```
+yarn build
+```
+
+This command generates static content into the build directory, which can be served using any static content hosting service.
+
+## License
+
+Biel.ai docs is licensed under the MIT License.
