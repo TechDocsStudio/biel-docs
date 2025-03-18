@@ -44,10 +44,16 @@ The table below lists all the available properties that modify the layout:
 | `hide-expand-button`   | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the expand button icon hides. |
 | `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, feedback options for the user are hidden. |
 | `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
-| `inputPlaceholderText` | **Type**: `string`<br />**Default value**: `Type your message`<br /><br />Placeholder text displayed in the chatbot's input field. |
-| `sendButtonText`       | **Type**: `string`<br />**Default value**: `Send`<br /><br />Text displayed on the send button next to the input field. |
 | `initial-messages`     | **Type**: `array`<br />**Default value**: `[]`<br /><br />Array of initial messages to be displayed in the chat. Each message should include `text` and `sender` (either `user` or `ai`). |
+| `input-placeholder-text` | **Type**: `string`<br />**Default value**: `Type your message`<br /><br />Placeholder text displayed in the chatbot's input field. |
 | `modal-position`       | **Type**: `string`<br />**Default value**: `center`<br />**Available values:** `center`, `top-center`, `bottom-right`, `bottom-left`<br /><br />Position of the modal.|
+| `send-button-text`       | **Type**: `string`<br />**Default value**: `Send`<br /><br />Text displayed on the send button next to the input field. |
+| `suggested-questions-title` | **Type**: `string`<br />**Default value**: `Suggested questions`<br /><br />Title text displayed above the suggested questions section. |
+| `show-terms-modal` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, displays a terms and conditions modal before starting the chat. |
+| `terms-title` | **Type**: `string`<br />**Default value**: `Chatbot Terms & Conditions`<br /><br />Title text for the terms and conditions modal. |
+| `terms-description` | **Type**: `string`<br />**Default value**: `Please review our <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Terms & Conditions</a> before proceeding.`<br /><br />Description text shown in the terms and conditions modal. |
+| `terms-checkbox-text` | **Type**: `string`<br />**Default value**: `I have read and agree to the Terms & Conditions.`<br /><br />Text displayed next to the terms acceptance checkbox. |
+
 
 ## biel-search-button
 
@@ -64,6 +70,7 @@ To customize the properties, you need to set the appropriate attributes on the `
 ```
 
 ### Properties
+
 The table below lists all the available properties that modify the layout:
 
 | Property               | Description                                                                                   |
@@ -83,3 +90,8 @@ The table below lists all the available properties that modify the layout:
 | `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
 | `modal-position`       | **Type**: `string`<br />**Default value**: `top-center`<br />**Available values:** `center`, `top-center`, `top-right`, `bottom-left`<br /><br />Position of the modal.|
 | `search-placeholder`   | **Type**: `string`<br />**Default value**: `"Search..."`<br /><br />Placeholder for the search input. |
+
+:::note
+Currently, only a subset of properties are available to customize the chatbot from the `biel-search-button` component. If you need to customize properties that are not listed here, please [contact us](https://biel.ai/contact) and we'll be happy to help with your specific needs.
+:::
+

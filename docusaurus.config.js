@@ -58,13 +58,16 @@ const config = {
     ],
   ],
   plugins: [
-    'docusaurus-plugin-image-zoom',
-    [
-      'docusaurus-biel',{
-          project: 'dl1kps0old',
-          headerTitle: 'Biel.ai chatbot'
-      }
-  ]
+      [
+        'docusaurus-biel',{
+            project: 'dl1kps0old',
+            headerTitle: 'Biel.ai chatbot',
+            showTermsModal: true,
+            termsTitle: 'Chatbot Terms & Conditions',
+            termsDescription: 'Please review our <a href="https://biel.ai/terms" target="_blank">Terms & Conditions</a> before proceeding.',
+            termsCheckboxText: 'I have read and agree to the Terms & Conditions.',
+          }
+    ]
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
