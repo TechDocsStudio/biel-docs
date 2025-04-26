@@ -187,6 +187,158 @@ To integrate the search widget into your Docusaurus site, follow these steps:
     ],
     ```
 
+## Advanced:  Multilingual support
+
+This installation method is best for projects that need to support multiple languages.
+
+Example:
+
+![Chatbot widget i18n](./images/biel-i18n.png)
+
+
+:::info
+Before you start with this guide, your docusaurus site must have [i18n](https://docusaurus.io/docs/i18n/tutorial) enabled.
+:::
+
+To integrate the Biel.ai widget into your Docusaurus site:
+
+1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
+
+    ```console
+    cd path/to/your/project
+    ```
+
+    Replace `path/to/your/project` with your project's actual directory path.
+
+2. With your terminal still open, run the following command to install Biel.ai:
+
+    ```bash
+    npm install biel-react
+    ```
+
+    :::tip
+    In this setup, the `docusaurus-biel` package is not required. You can uninstall it by running `npm uninstall docusaurus-biel`.
+    :::
+
+
+1. For Docusaurus, the best approach is to swizzle the original footer component to embed the chatbot button. This ensures the feedback button is loaded just before the closing body tag for optimal performance. Begin by using the npm run swizzle command to start the swizzle process:
+
+    ```bash
+    npm run swizzle @docusaurus/theme-classic Footer
+    ```
+
+    When prompted with the question: `Which swizzle action do you want to do?`, choose **Wrap**.
+
+    By choosing to wrap, Docusaurus will create a wrapper component for the Footer in the `src/theme` directory. This allows you to extend the original footer component without modifying its intrinsic content.
+
+
+1. After swizzling, navigate to `src/theme/Footer/index.js` in your project directory. Replace the content with the following to integrate the chatbot button:
+
+    ```js
+    import React, { useEffect } from 'react';
+    import Footer from '@theme-original/Footer';
+    import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+    import { BielButton } from 'biel-react';
+    import { defineCustomElements } from 'biel-search/loader';
+    import 'biel-search/dist/biel-search/biel-search.css';
+
+    function BielWidget() {
+        const { i18n } = useDocusaurusContext();
+        const language = i18n.currentLocale;
+        const projectId = '<PROJECT_ID>'; // Replace with your actual project ID
+
+        const placeholders = {
+            en: {
+                bielButtonText: "Ask AI",
+                sendButtonText: 'Send',
+                inputPlaceholderText: 'Type your message',
+                error403: 'Oops! The request URL does not match the one defined for this project.',
+                error404: 'Oops! We could not find the provided project ID.',
+                errorDefault: 'Oops! Please try again later.',
+                headerTitle: 'Need help?',
+                footerText: 'AI generated answers. Always verify the sources before using them.',
+                suggestedQuestionsTitle: 'Suggested questions',
+                termsTitle: 'Chatbot Terms & Conditions',
+                termsDescription: "Please review our <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Terms & Conditions</a> before proceeding.",
+                termsCheckboxText: 'I have read and agree to the Terms & Conditions.'
+            },
+            es: {
+                bielButtonText: "Pregúntame",
+                sendButtonText: 'Enviar',
+                inputPlaceholderText: 'Escribe tu mensaje',
+                error403: '¡Ups! La URL de solicitud no coincide con la definida para este proyecto.',
+                error404: '¡Ups! No pudimos encontrar el ID de proyecto proporcionado.',
+                errorDefault: '¡Ups! Por favor, intenta de nuevo más tarde.',
+                headerTitle: '¿Necesitas ayuda?',
+                footerText: 'Respuestas generadas por IA. Verifica siempre las fuentes antes de usarlas.',
+                suggestedQuestionsTitle: 'Preguntas sugeridas',
+                termsTitle: 'Términos y condiciones del chatbot',
+                termsDescription: "Por favor revisa nuestros <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Términos y Condiciones</a> antes de continuar.",
+                termsCheckboxText: 'He leído y acepto los Términos y Condiciones.'
+            }
+        };
+
+        const {
+            bielButtonText,
+            sendButtonText,
+            inputPlaceholderText,
+            error403,
+            error404,
+            errorDefault,
+            headerTitle,
+            footerText,
+            suggestedQuestionsTitle,
+            termsTitle,
+            termsDescription,
+            termsCheckboxText
+        } = placeholders[language] || placeholders.en;
+
+        useEffect(() => {
+            if (typeof window !== 'undefined') {
+                defineCustomElements(window);
+            }
+        }, []);
+
+        return (
+            <div className="biel-widget">
+                <BielButton
+                    project={projectId}
+                    send-button-text={sendButtonText}
+                    input-placeholder-text={inputPlaceholderText}
+                    error-message-4-0-3={error403}
+                    error-message-4-0-4={error404}
+                    error-message-default={errorDefault}
+                    header-title={headerTitle}
+                    footer-text={footerText}
+                    suggested-questions-title={suggestedQuestionsTitle}
+                    terms-title={termsTitle}
+                    terms-description={termsDescription}
+                    terms-checkbox-text={termsCheckboxText}
+                    button-position="bottom-right"
+                    button-style="dark"
+                    modal-position="bottom-right"
+                >
+                {bielButtonText}
+                </BielButton>
+            </div>
+        );
+    }
+
+    export default function FooterWrapper(props) {
+        return (
+            <>
+                <Footer {...props} />
+                <BielWidget />
+            </>
+        );
+    }
+    ```
+
+    Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project) and the placeholder strings with your project's supported languages.
+
+1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the feedback button appears and functions correctly on your site.
+
+
 ## Need help?
 
 We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
