@@ -26,6 +26,7 @@ The tables below lists all the available properties you can override:
     /* Colors */
     --biel-primary-color: #0070F4;
     --biel-primary-light-color: #3a99ff;
+    --biel-primary-hover-color: #005FCC;
     --biel-secondary-color: #f9fafb;
     --biel-secondary-hover-color: #ebebeb;
     --biel-light-color: #ccc;
@@ -59,6 +60,10 @@ The tables below lists all the available properties you can override:
     --biel-button-text-font-size: var(--biel-text-lg-font-size);
     --biel-button-text-font-weight: 400;
     --biel-button-z-index: 300;
+    --biel-button-position-top: 15px;
+    --biel-button-position-bottom: 15px;
+    --biel-button-position-left: 15px;
+    --biel-button-position-right: 15px;
 
     /* Biel bot */
     --biel-bot-close-bg-color: var(--biel-white-color);
@@ -76,11 +81,15 @@ The tables below lists all the available properties you can override:
 
     /* Biel input */
     --biel-input-color: var(--biel-dark-color);
-    --biel-input-border-color: var(--biel-dark-color);
     --biel-input-button-color: var(--biel-white-color);
     --biel-input-button-bg-color: var(--biel-dark-color);
+    --biel-input-button-border-color: var(--biel-dark-color);
+    --biel-input-button-hover-color: var(--biel-white-color);
     --biel-input-button-hover-bg-color: var(--biel-dark-hover-color);
+    --biel-input-button-hover-border-color: var(--biel-dark-color);
+    --biel-input-border-color: var(--biel-dark-color);
     --biel-input-border-radius: 6px;
+    --biel-input-border-focus-color: var(--biel-dark-color);
     --biel-input-font-family: var(--biel-font-family);
     --biel-input-textarea-max-height: 114px;
     --biel-input-textarea-min-height: 19px;
@@ -202,6 +211,22 @@ The tables below lists all the available properties you can override:
 
     /* Biel search footer */
     --biel-search-footer-command-key-border-color: var(--biel-header-border-color);
+
+    /* Biel terms modal */
+    --biel-terms-modal-color: var(--biel-dark-color);
+    --biel-terms-modal-bg-color: var(--biel-white-color);
+    --biel-terms-modal-link-color: var(--biel-primary-light-color);
+    --biel-terms-modal-accept-btn-bg-color-disabled: var(--biel-primary-light-color);
+    --biel-terms-modal-accept-btn-color-disabled: var(--biel-white-color);
+    --biel-terms-modal-accept-btn-bg-color: var(--biel-primary-color);
+    --biel-terms-modal-accept-btn-color: var(--biel-white-color);
+    --biel-terms-modal-accept-btn-bg-color-hover: var(--biel-primary-hover-color);
+    --biel-terms-modal-decline-btn-bg-color: var(--biel-white-hover-color);
+    --biel-terms-modal-decline-btn-hover-bg-color: var(--biel-light-color);
+    --biel-terms-modal-decline-btn-color: var(--biel-dark-color);
+    --biel-terms-modal-close-btn-color: var(--biel-dark-color);
+    --biel-terms-modal-close-btn-color-hover: var(--biel-dark-hover-color);
+
 }
 
 [data-theme='dark'] {
@@ -220,9 +245,13 @@ The tables below lists all the available properties you can override:
     --biel-header-powered-by-link-color: var(--biel-white-color);
     --biel-input-color: var(--biel-white-color);
     --biel-input-border-color: var(--biel-white-color);
+    --biel-input-border-focus-color: var(--biel-white-color);
     --biel-input-button-color: var(--biel-dark-color);
     --biel-input-button-bg-color: var(--biel-white-color);
+    --biel-input-button-border-color: var(--biel-white-color);
+    --biel-input-button-hover-color: var(--biel-dark-color);
     --biel-input-button-hover-bg-color: var(--biel-white-hover-color);
+    --biel-input-button-hover-border-color: var(--biel-white-color);
     --biel-message-biel-text-color: var(--biel-dark-color);
     --biel-message-biel-bg-color: var(--biel-secondary-color);
     --biel-message-source-color: var(--biel-white-hover-color);
@@ -246,6 +275,7 @@ The tables below lists all the available properties you can override:
     --biel-search-result-description-color: var(--biel-text-color);
     --biel-search-result-mark-color: var(--biel-primary-light-color);
     --biel-code-snippet-header-text-color: var(--biel-text-color);
+    --biel-code-snippet-text-color: var(--biel-white-color);
     --biel-search-filter-color: var(--biel-white-color);
     --biel-search-filter-selected-color: var(--biel-white-color);
     --biel-search-filter-bg-color: var(--biel-dark-color);
@@ -253,6 +283,10 @@ The tables below lists all the available properties you can override:
     --biel-search-filter-border-color: #3a3a3a;
     --biel-search-filter-hover-color: #3a3a3a;
     --biel-search-filter-selected-border-color: var(--biel-primary-color);
+    --biel-terms-modal-bg-color: var(--biel-dark-color);
+    --biel-terms-modal-color: var(--biel-white-color);
+    --biel-terms-modal-close-btn-color: var(--biel-white-color);
+    --biel-terms-modal-close-btn-color-hover: var(--biel-white-hover-color);
 }
 ```
 
