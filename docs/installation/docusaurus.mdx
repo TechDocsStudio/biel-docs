@@ -260,7 +260,10 @@ To integrate the Biel.ai widget into your Docusaurus site:
                 suggestedQuestionsTitle: 'Suggested questions',
                 termsTitle: 'Chatbot Terms & Conditions',
                 termsDescription: "Please review our <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Terms & Conditions</a> before proceeding.",
-                termsCheckboxText: 'I have read and agree to the Terms & Conditions.'
+                termsCheckboxText: 'I have read and agree to the Terms & Conditions.',
+                sourcesText: 'Sources',
+                welcomeMessage: 'Hello! How can I help you today?',
+                suggestedQuestions: ['What is Biel.ai?', 'How to install in Docusaurus?']
             },
             es: {
                 bielButtonText: "Pregúntame",
@@ -274,7 +277,10 @@ To integrate the Biel.ai widget into your Docusaurus site:
                 suggestedQuestionsTitle: 'Preguntas sugeridas',
                 termsTitle: 'Términos y condiciones del chatbot',
                 termsDescription: "Por favor revisa nuestros <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Términos y Condiciones</a> antes de continuar.",
-                termsCheckboxText: 'He leído y acepto los Términos y Condiciones.'
+                termsCheckboxText: 'He leído y acepto los Términos y Condiciones.',
+                sourcesText: 'Fuentes',
+                welcomeMessage: '¡Hola! ¿En qué puedo ayudarte hoy?',
+                suggestedQuestions: ['¿Qué es Biel.ai', '¿Cómo instalar en Docusaurus?']
             }
         };
 
@@ -290,7 +296,9 @@ To integrate the Biel.ai widget into your Docusaurus site:
             suggestedQuestionsTitle,
             termsTitle,
             termsDescription,
-            termsCheckboxText
+            termsCheckboxText,
+            welcomeMessage,
+            suggestedQuestions
         } = placeholders[language] || placeholders.en;
 
         useEffect(() => {
@@ -314,6 +322,8 @@ To integrate the Biel.ai widget into your Docusaurus site:
                     terms-title={termsTitle}
                     terms-description={termsDescription}
                     terms-checkbox-text={termsCheckboxText}
+                    welcome-message={welcomeMessage}
+                    suggested-questions={JSON.stringify(suggestedQuestions)}
                     button-position="bottom-right"
                     button-style="dark"
                     modal-position="bottom-right"
