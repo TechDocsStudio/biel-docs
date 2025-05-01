@@ -257,13 +257,13 @@ To integrate the Biel.ai widget into your Docusaurus site:
                 errorDefault: 'Oops! Please try again later.',
                 headerTitle: 'Need help?',
                 footerText: 'AI generated answers. Always verify the sources before using them.',
+                sourcesText: 'Sources',
+                suggestedQuestions: "['What is Biel.ai?', 'How to install in Docusaurus?']",
                 suggestedQuestionsTitle: 'Suggested questions',
                 termsTitle: 'Chatbot Terms & Conditions',
                 termsDescription: "Please review our <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Terms & Conditions</a> before proceeding.",
                 termsCheckboxText: 'I have read and agree to the Terms & Conditions.',
-                sourcesText: 'Sources',
-                welcomeMessage: 'Hello! How can I help you today?',
-                suggestedQuestions: "['What is Biel.ai?', 'How to install in Docusaurus?']"
+                welcomeMessage: 'Hello! How can I help you today?'
             },
             es: {
                 bielButtonText: "Pregúntame",
@@ -274,31 +274,32 @@ To integrate the Biel.ai widget into your Docusaurus site:
                 errorDefault: '¡Ups! Por favor, intenta de nuevo más tarde.',
                 headerTitle: '¿Necesitas ayuda?',
                 footerText: 'Respuestas generadas por IA. Verifica siempre las fuentes antes de usarlas.',
+                sourcesText: 'Fuentes',
+                suggestedQuestions: "['¿Qué es Biel.ai', '¿Cómo instalar en Docusaurus?']",
                 suggestedQuestionsTitle: 'Preguntas sugeridas',
                 termsTitle: 'Términos y condiciones del chatbot',
                 termsDescription: "Por favor revisa nuestros <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Términos y Condiciones</a> antes de continuar.",
                 termsCheckboxText: 'He leído y acepto los Términos y Condiciones.',
-                sourcesText: 'Fuentes',
-                welcomeMessage: '¡Hola! ¿En qué puedo ayudarte hoy?',
-                suggestedQuestions: "['¿Qué es Biel.ai', '¿Cómo instalar en Docusaurus?']"
+                welcomeMessage: '¡Hola! ¿En qué puedo ayudarte hoy?'
             }
         };
 
         const {
             bielButtonText,
-            sendButtonText,
-            inputPlaceholderText,
             error403,
             error404,
             errorDefault,
-            headerTitle,
             footerText,
+            headerTitle,
+            inputPlaceholderText,
+            sendButtonText,
+            sourcesText,
+            suggestedQuestions,
             suggestedQuestionsTitle,
-            termsTitle,
-            termsDescription,
             termsCheckboxText,
+            termsDescription,
+            termsTitle,
             welcomeMessage,
-            suggestedQuestions
         } = placeholders[language] || placeholders.en;
 
         useEffect(() => {
@@ -311,22 +312,23 @@ To integrate the Biel.ai widget into your Docusaurus site:
             <div className="biel-widget">
                 <BielButton
                     project={projectId}
-                    send-button-text={sendButtonText}
-                    input-placeholder-text={inputPlaceholderText}
-                    error-message-4-0-3={error403}
-                    error-message-4-0-4={error404}
-                    error-message-default={errorDefault}
-                    header-title={headerTitle}
-                    footer-text={footerText}
-                    suggested-questions-title={suggestedQuestionsTitle}
-                    terms-title={termsTitle}
-                    terms-description={termsDescription}
-                    terms-checkbox-text={termsCheckboxText}
-                    welcome-message={welcomeMessage}
-                    suggested-questions={JSON.stringify(suggestedQuestions)}
                     button-position="bottom-right"
                     button-style="dark"
                     modal-position="bottom-right"
+                    error-message-4-0-3={error403}
+                    error-message-4-0-4={error404}
+                    error-message-default={errorDefault}
+                    footer-text={footerText}
+                    header-title={headerTitle}
+                    input-placeholder-text={inputPlaceholderText}
+                    send-button-text={sendButtonText}
+                    sources-text={sourcesText}
+                    suggested-questions={suggestedQuestions}
+                    suggested-questions-title={suggestedQuestionsTitle}
+                    terms-checkbox-text={termsCheckboxText}
+                    terms-description={termsDescription}
+                    terms-title={termsTitle}
+                    welcome-message={welcomeMessage}
                 >
                 {bielButtonText}
                 </BielButton>
