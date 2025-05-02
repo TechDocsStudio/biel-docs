@@ -1,10 +1,10 @@
 ---
 sidebar_position: 4
+title: View analytics
 ---
 
 <head>
   <meta name="biel:boost_score" content="1.0" />
-  <link rel="canonical" href="https://docusaurus.io/docs/markdown-features/head-metadata" />
 </head>
 
 # View analytics
