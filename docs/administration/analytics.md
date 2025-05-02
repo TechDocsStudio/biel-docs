@@ -2,6 +2,11 @@
 sidebar_position: 4
 ---
 
+<head>
+  <meta name="biel:boost_score" content="1.0" />
+  <link rel="canonical" href="https://docusaurus.io/docs/markdown-features/head-metadata" />
+</head>
+
 # View analytics
 
 ![View analytics](./images/view-analytics.png)

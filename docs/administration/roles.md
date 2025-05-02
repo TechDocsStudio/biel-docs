@@ -2,6 +2,10 @@
 sidebar_position: 2
 ---
 
+<head>
+  <meta name="biel:boost_score" content="-1.0" />
+</head>
+
 # Manage roles
 
 ![Manage roles](./images/manage-team.png)
