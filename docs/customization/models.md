@@ -11,8 +11,9 @@ Biel.ai offers a range of AI models designed to enhance user interactions with y
 Biel.ai supports the following models:
 
 ### GPT models
-- **GPT-4o Mini (default)**: Optimized for speed and efficiency.  
+- **GPT-4o Mini (default)**: Optimized for speed and efficiency.
 - **GPT-4**: Advanced capabilities for detailed and complex queries.  
+- **GPT-4.1-nano**: Lightweight version optimized for maximum speed and efficiency.
 - **GPT-4.1-mini**: Enhanced version optimized for speed and efficiency.  
 - **GPT-4.1**: Latest version with advanced capabilities for detailed and complex queries.  
 
@@ -27,6 +28,7 @@ Models are categorized based on their primary characteristics:
 
 ### Fast models
 - GPT-4o mini
+- GPT-4.1-nano
 - GPT-4.1 mini
 - Claude 3.5 Haiku
 
