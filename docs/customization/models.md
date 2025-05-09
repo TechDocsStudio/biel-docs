@@ -19,7 +19,6 @@ Biel.ai supports the following models:
 ### Claude models
 - **Claude 3.5 Haiku**: Fast and effective for general documentation.  
 - **Claude 3.5 Sonnet**: Designed for nuanced, context-rich answers.  
-- **Claude 3.7 Haiku**: Updated version for fast and effective general documentation.  
 - **Claude 3.7 Sonnet**: Latest version designed for nuanced, context-rich answers.  
 
 ## Model selection guide
@@ -29,7 +28,7 @@ Models are categorized based on their primary characteristics:
 ### Fast models
 - GPT-4o mini
 - GPT-4.1 mini
-- Claude 3.5/3.7 Haiku
+- Claude 3.5 Haiku
 
 **Best for:**
 - Real-time responsiveness
