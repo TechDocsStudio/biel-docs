@@ -12,8 +12,7 @@ This guide shows you how to add the chat widget to your site in minutes using si
 
 ## Prerequisites
 
-Before starting, ensure you have::
-
+Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 
