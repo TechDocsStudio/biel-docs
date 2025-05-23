@@ -77,6 +77,13 @@ const config = {
           src: 'img/logo-biel.png',
           srcDark: 'img/logo-biel-dark.png',
         },
+        items: [
+          {
+            type: 'html',
+            position: 'right',
+            value: `<biel-button project="dl1kps0old" header-title="Biel.ai chatbot" modal-position="default" button-style="dark"> Ask AI </biel-button>`,
+          }
+        ],
       },
       colorMode: {
         defaultMode: 'light',
