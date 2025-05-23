@@ -81,7 +81,7 @@ const config = {
           {
             type: 'html',
             position: 'right',
-            value: `<biel-button project="dl1kps0old" header-title="Biel.ai chatbot" modal-position="default" button-style="dark"> Ask AI </biel-button>`,
+            value: `<biel-button project="dl1kps0old" header-title="Biel.ai chatbot" button-position="default" button-style="dark"> Ask AI </biel-button>`,
           }
         ],
       },
