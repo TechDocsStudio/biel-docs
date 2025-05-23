@@ -61,6 +61,7 @@ const config = {
     'docusaurus-plugin-image-zoom',
     [
       'docusaurus-biel',{
+          enable: false,
           project: 'dl1kps0old',
           headerTitle: 'Biel.ai chatbot'
       }
@@ -77,6 +78,13 @@ const config = {
           src: 'img/logo-biel.png',
           srcDark: 'img/logo-biel-dark.png',
         },
+        items: [
+          {
+            type: 'html',
+            position: 'right',
+            value: `<biel-button project="dl1kps0old" header-title="Biel.ai chatbot" button-position="default" button-style="dark"> Ask AI </biel-button>`,
+          }
+        ],
       },
       colorMode: {
         defaultMode: 'light',
