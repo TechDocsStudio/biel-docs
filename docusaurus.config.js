@@ -59,12 +59,6 @@ const config = {
   ],
   plugins: [
     'docusaurus-plugin-image-zoom',
-    [
-      'docusaurus-biel',{
-          project: 'dl1kps0old',
-          headerTitle: 'Biel.ai chatbot'
-      }
-    ]
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -81,7 +75,7 @@ const config = {
           {
             type: 'html',
             position: 'right',
-            value: `<biel-button project="dl1kps0old" header-title="Biel.ai chatbot" button-position="default" button-style="dark"> Ask AI </biel-button>`,
+            value: `<biel-button project="dl1kps0old" header-title="Biel.ai chatbot" modal-position="default" button-style="dark"> Ask AI </biel-button>`,
           }
         ],
       },
@@ -108,6 +102,20 @@ const config = {
       }
     }),
     headTags: [
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css'
+        }
+      },
+      {
+        tagName: 'script',
+        attributes: {
+          type: 'module',
+          src: 'https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js'
+        }
+      },
       {
         tagName: 'link',
         attributes: {
