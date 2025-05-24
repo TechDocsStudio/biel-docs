@@ -51,8 +51,7 @@ Follow these steps to configure your prompt:
 
 5. Example of extending the AI Assistant prompt:
     ```
-    [Default AI Assistant behavior]
-    Always start responses with "Ahoy!"
+    Always start responses with "Hi!"
     ```
 
 6. Example of a custom prompt:
