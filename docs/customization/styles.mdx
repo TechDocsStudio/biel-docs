@@ -48,18 +48,22 @@ The tables below lists all the available properties you can override:
     --biel-text-font-size: 14px;
     --biel-text-lg-font-size: 16px;
     --biel-text-xl-font-size: 18px;
+    --biel-text-xxl-font-size: 20px;
     --biel-code-snippet-font-family: "Courier New", "Courier", "monospace";
 
     /* Biel button */
     --biel-button-border-radius: 20px;
+    --biel-button-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     --biel-button-dark-bg-color: var(--biel-primary-color);
+    --biel-button-dark-bg-color-hover: var(--biel-primary-color);
     --biel-button-dark-text-color: var(--biel-white-color);
     --biel-button-icon-size: 20px;
     --biel-button-light-bg-color: var(--biel-white-color);
+    --biel-button-light-bg-color-hover: var(--biel-white-color);
     --biel-button-light-text-color: var(--biel-primary-color);
     --biel-button-text-font-size: var(--biel-text-lg-font-size);
     --biel-button-text-font-weight: 400;
-    --biel-button-z-index: 300;
+    --biel-button-padding: 8px 15px;
     --biel-button-position-top: 15px;
     --biel-button-position-bottom: 15px;
     --biel-button-position-left: 15px;
@@ -71,6 +75,8 @@ The tables below lists all the available properties you can override:
     --biel-bot-content-bg-color: var(--biel-white-color);
     --biel-bot-content-border-color: var(--biel-light-color);
     --biel-bot-content-border-radius: 8px;
+    --biel-bot-content-box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, .30), 0px 2px 6px 2px rgba(60, 64, 67, .15);
+
     --biel-bot-content-font-family: var(--biel-font-family);
     --biel-bot-content-position-bottom: 10px;
     --biel-bot-content-position-left: 10px;
@@ -79,22 +85,23 @@ The tables below lists all the available properties you can override:
     --biel-bot-content-text-color: var(--biel-text-color);
     --biel-bot-content-z-index: 300;
 
-    /* Biel input */
-    --biel-input-color: var(--biel-dark-color);
-    --biel-input-button-color: var(--biel-white-color);
-    --biel-input-button-bg-color: var(--biel-dark-color);
-    --biel-input-button-border-color: var(--biel-dark-color);
-    --biel-input-button-hover-color: var(--biel-white-color);
-    --biel-input-button-hover-bg-color: var(--biel-dark-hover-color);
-    --biel-input-button-hover-border-color: var(--biel-dark-color);
-    --biel-input-border-color: var(--biel-dark-color);
-    --biel-input-border-radius: 6px;
-    --biel-input-border-focus-color: var(--biel-dark-color);
-    --biel-input-font-family: var(--biel-font-family);
-    --biel-input-textarea-max-height: 114px;
-    --biel-input-textarea-min-height: 19px;
-
-    /* Biel message */
+    /* Biel bot chat */
+    --biel-chat-scrollbar-color: var(--biel-scrollbar-color);
+    --biel-chat-scrollbar-hover-color: var(--biel-scrollbar-hover-color);
+    --biel-chat-height: 45vh;
+    --biel-chat-embedded-height: 450px;
+    
+    /* Biel bot header */
+    --biel-header-font-family: var(--biel-font-family);
+    --biel-header-font-size: var(--biel-text-xl-font-size);
+    --biel-header-font-weight: 600;
+    --biel-header-powered-by-font-weight: 400;
+    --biel-header-powered-by-text-color: var(--biel-text-color);
+    --biel-header-powered-by-link-color: var(--biel-dark-color);
+    --biel-header-text-color: var(--biel-dark-color);
+    --biel-header-border-color: var(--biel-light-color);
+    
+    /* Biel bot message */
     --biel-message-biel-text-color: var(--biel-dark-color);
     --biel-message-user-text-color: var(--biel-dark-color);
     --biel-message-biel-bg-color: var(--biel-secondary-color);
@@ -113,57 +120,61 @@ The tables below lists all the available properties you can override:
     --biel-message-code-bg-color: var(--biel-code-body-color);
     --biel-message-code-inline-text-color: var(--biel-dark-color);
     --biel-message-code-inline-bg-color: var(--biel-white-hover-color);
+    --biel-message-code-inline-border-radius: 4px;
+    /* Biel bot input */
+    --biel-input-color: var(--biel-dark-color);
+    --biel-input-button-color: var(--biel-white-color);
+    --biel-input-button-bg-color: var(--biel-dark-color);
+    --biel-input-button-border-color: var(--biel-dark-color);
+    --biel-input-button-hover-color: var(--biel-white-color);
+    --biel-input-button-hover-bg-color: var(--biel-dark-hover-color);
+    --biel-input-button-hover-border-color: var(--biel-dark-color);
+    --biel-input-border-color: var(--biel-dark-color);
+    --biel-input-border-radius: 6px;
+    --biel-input-border-focus-color: var(--biel-dark-color);
+    --biel-input-font-family: var(--biel-font-family);
+    --biel-input-textarea-max-height: 114px;
+    --biel-input-textarea-min-height: 19px;
 
-    /* Biel chat */
-    --biel-chat-scrollbar-color: var(--biel-scrollbar-color);
-    --biel-chat-scrollbar-hover-color: var(--biel-scrollbar-hover-color);
-    --biel-chat-height: 45vh;
-    --biel-chat-embedded-height: 450px;
-
-    /* Biel header */
-    --biel-header-font-family: var(--biel-font-family);
-    --biel-header-font-size: var(--biel-text-xl-font-size);
-    --biel-header-font-weight: 600;
-    --biel-header-powered-by-font-weight: 400;
-    --biel-header-powered-by-text-color: var(--biel-text-color);
-    --biel-header-powered-by-link-color: var(--biel-dark-color);
-    --biel-header-text-color: var(--biel-dark-color);
-    --biel-header-border-color: var(--biel-light-color);
-
-    /* Code snippet */
+    /* Biel bot code snippet */
     --biel-code-snippet-header-text-color: var(--biel-light-color);
     --biel-code-snippet-content-text-color: var(--biel-white-color);
     --biel-code-snippet-header-bg-color: var(--biel-code-header-color);
     --biel-code-snippet-content-bg-color: var(--biel-dark-color);
     --biel-code-snippet-font-size: var(--biel-text-font-size);
 
-    /* Biel footer */
-    --biel-footer-font-size: 12px;
-
-    /* Biel table */
+    /* Biel bot table */
     --biel-table-th-bg-color: var(--biel-table-header-color);
     --biel-table-bg-color: var(--biel-dark-color);
     --biel-table-content-text-color: var(--biel-white-color);
 
-    /* Biel suggested questions */
-    --biel-suggested-questions-text-color: var(--biel-dark-color);
-    --biel-suggested-questions-text-hover-color: var(--biel-white-color);
+    /* Biel bot suggested questions */
+    --biel-suggested-questions-border-radius: 8px;
     --biel-suggested-questions-bg-color: var(--biel-white-color);
     --biel-suggested-questions-bg-hover-color: var(--biel-primary-color);
-    --biel-suggested-questions-border-color: var(--biel-primary-color);    
+    --biel-suggested-questions-border-color: var(--biel-primary-color);
+    --biel-suggested-questions-padding: 8px 12px;
+    --biel-suggested-questions-text-color: var(--biel-dark-color);
+    --biel-suggested-questions-text-hover-color: var(--biel-white-color);
+    --biel-suggested-questions-font-size: var(--biel-text-font-size);
 
-    /* Biel feedback */
+    /* Biel bot feedback */
     --biel-feedback-bg-color: var(--biel-white-hover-color);
     --biel-feedback-bg-hover-color: var(--biel-light-color);
     --biel-feedback-background-selected-color: var(--biel-primary-color);
     --biel-feedback-text-color: var(--biel-dark-color);
     --biel-feedback-text-selected-color: var(--biel-white-color);
+    
+    /* Biel bot footer */
+    --biel-footer-font-size: 12px;
 
     /* Biel search button */
     --biel-search-button-border-radius: 20px;
+    --biel-search-button-border-color: var(--biel-light-color);
     --biel-search-button-bg-color: var(--biel-white-color);
     --biel-search-button-text-color: var(--biel-dark-color);
     --biel-search-button-icon-size: 20px;
+    --biel-search-button-padding: 8px 15px;
     --biel-search-button-text-font-size: var(--biel-text-lg-font-size);
     --biel-search-button-text-font-weight: 400;
     --biel-search-button-z-index: 300;
@@ -172,6 +183,7 @@ The tables below lists all the available properties you can override:
     --biel-search-content-bg-color: var(--biel-white-color);
     --biel-search-content-border-color: var(--biel-light-color);
     --biel-search-content-border-radius: 8px;
+    --biel-search-content-box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, .30), 0px 2px 6px 2px rgba(60, 64, 67, .15);
     --biel-search-content-font-family: var(--biel-font-family);
     --biel-search-content-position-bottom: 10px;
     --biel-search-content-position-left: 10px;
@@ -180,25 +192,22 @@ The tables below lists all the available properties you can override:
     --biel-search-content-position-top-center: 50px;
     --biel-search-content-text-color: var(--biel-dark-color);
     --biel-search-content-z-index: 300;
-
-    /* Biel search input */
-
-    /* Biel search body */
     --biel-search-body-max-height: 250px;
 
     /* Biel search result */
     --biel-search-result-bg-color: var(--biel-secondary-color);
     --biel-search-result-bg-hover-color: var(--biel-secondary-hover-color);
+    --biel-search-result-border-radius: 6px;
     --biel-search-result-border-color: var(--biel-light-color);
-    --biel-search-result-title-color: var(--biel-dark-color);
     --biel-search-result-description-color: var(--biel-scrollbar-hover-color);
     --biel-search-result-mark-color: var(--biel-primary-color);
-    --biel-search-button-border-color: var(--biel-light-color);
+    --biel-search-result-padding: 10px 8px;
+    --biel-search-result-title-color: var(--biel-dark-color);
 
     /* Biel search ask ai button */
     --biel-search-ask-ai-bg-color: var(--biel-primary-color);
+    --biel-search-ask-ai-border-radius: 8px;
     --biel-search-ask-ai-color: var(--biel-white-color);
-
     /* Biel search filters */
     --biel-search-filter-color: var(--biel-dark-color);
     --biel-search-filter-selected-color: var(--biel-white-color);
@@ -214,6 +223,7 @@ The tables below lists all the available properties you can override:
     /* Biel terms modal */
     --biel-terms-modal-color: var(--biel-dark-color);
     --biel-terms-modal-bg-color: var(--biel-white-color);
+    --biel-terms-modal-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     --biel-terms-modal-link-color: var(--biel-primary-light-color);
     --biel-terms-modal-accept-btn-bg-color-disabled: var(--biel-primary-light-color);
     --biel-terms-modal-accept-btn-color-disabled: var(--biel-white-color);
@@ -251,6 +261,12 @@ The tables below lists all the available properties you can override:
     --biel-input-button-hover-color: var(--biel-dark-color);
     --biel-input-button-hover-bg-color: var(--biel-white-hover-color);
     --biel-input-button-hover-border-color: var(--biel-white-color);
+    --biel-message-h1-font-size: var(--biel-text-xxl-font-size);
+    --biel-message-h2-font-size: var(--biel-text-xl-font-size);
+    --biel-message-h3-font-size: var(--biel-text-lg-font-size);
+    --biel-message-h4-font-size: var(--biel-text-lg-font-size);
+    --biel-message-h5-font-size: var(--biel-text-lg-font-size);
+    --biel-message-h6-font-size: var(--biel-text-lg-font-size);
     --biel-message-biel-text-color: var(--biel-dark-color);
     --biel-message-biel-bg-color: var(--biel-secondary-color);
     --biel-message-source-color: var(--biel-white-hover-color);
