@@ -44,6 +44,7 @@ const config = {
           // This moves your docs to the root domain
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          docItemComponent: "@theme/ApiItem",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -72,6 +73,7 @@ const config = {
         docsPluginId: "classic",
         config: {
           biel: {
+            label: 'API reference',
             specPath: 'openapi/schema.yaml',
             outputDir: 'docs/api',
             sidebarOptions: {
