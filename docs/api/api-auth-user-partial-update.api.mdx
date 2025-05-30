@@ -1,0 +1,78 @@
+---
+id: api-auth-user-partial-update
+title: "api_auth_user_partial_update"
+description: "Reads and updates UserModel fields"
+sidebar_label: "api_auth_user_partial_update"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV0tv4zYQ/ivEoLfQllNgLzptdhO0i27RRR6n2DXG4tjiWhIZkorjNfTfiyFlW93YaO/JxaDJefGbb4ajHRhLDoM2zRcFOaDVc2xDOW89ublFFzRW89YqDAQSFPnCacvikMMtofICGyWSgBcPntyfRlEllpoq5afNVVGQDV78dnMvxbcH/rm6//y7qCmURvnxtJk217TEtgoCoyypXjkXHESDNUmx1M6HeVpX2C+Pmkp7W+H2oGjXcqBMNerqrA2+xcg01b+1ow4Hd0uhdc3rq41BQsCVh/yRUYOZBEdPLfnwyagt5DsoTBOoCbxEaytdRJiz757B24EvSqqRV2FrCXIwi+9UhFcos2NRR8+bzAiL3m+MUyDBOk5e0OTZil0PbOkm0IoccFCo/mqqLeTBtSQh6FCxxJdr6CTsQRqo+uB0szqR7KdWO1JjcflhIooSHRaBnBfGiSVtyI3FVwq8I4XSKx0SMz5m4+wiG2VzwRAzaBZZik3+/TidbsYfL0azi19AQo0vX6lZhRLyyw+TTkLMwanIlsbVGCDvJc5f8obPBSrlyHu+75EDp+y+iuBAk/8h3R3dfsNQlKQ4c9cUUFce+HjIgpfRZrMZ8UVGrauoKYwi9U6Lt0iLuq2C5labRTooDPhOhLdHBBbwVLROhy3kj/x+mLWmq5YNPM46uYMFel0MN66s/oO2h534BnlrGp9S/utk8v4QvUWiuR4jHk72odk1DGCeHWP7iYY/4516VBzXIGfQijKBV0IOGVqd8cCYseUMjhS+Y1YlQgxZeoge4yZI0OykJFSRJemOwMLG6R+RqYzXgPoHE2UIlj1GT5AnGRYeVs4Zh0nk6NCT99o0WsXrcmncHqe5mxesbRWxP/J0wIJBLo+7g5TtNzt2vjQxqB78T5o4Oc/kfIJ7Mr4cT16R/r4kURsfBNb4QzcrcYd4JwbVLEJJYmNcpUSJXtAzOeGJInbW+FBjrPU+HrRacNbikCz6MV+cHvMH/eN94u+5FOglZLZCHfFtXWwOqSTS14AEhrcvOJDA9VYaH/h8t1ugpwdXdR1vP7XkuOHPJDyj07hgXnB73xcFvwVr2kIOn1MiRvccBYtXbcrmf82V/FYkEyk7Z5Tji8CvyKHcY+pAwqL/puH2DzkMTMvhnxQ3viq8dSy8fsH32R8120EoxxqUfbT8y7GfFN/tUkl33UE+HZ3VOHSZJM3Zm3Vd9w+1/x/B
+sidebar_class_name: "patch api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"api_auth_user_partial_update"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/api/auth/user/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Reads and updates UserModel fields
+Accepts GET, PUT, PATCH methods.
+
+Default accepted fields: username, first_name, last_name
+Default display fields: pk, username, email, first_name, last_name
+Read-only fields: pk, email
+
+Returns UserModel fields.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","description":"User model w/o password","properties":{"pk":{"type":"integer","readOnly":true,"title":"ID"},"username":{"type":"string","description":"Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.","pattern":"^[\\w.@+-]+$","maxLength":150},"email":{"type":"string","format":"email","readOnly":true,"title":"Email address"},"first_name":{"type":"string","maxLength":150},"last_name":{"type":"string","maxLength":150}},"title":"PatchedUserDetails"}},"application/x-www-form-urlencoded":{"schema":{"type":"object","description":"User model w/o password","properties":{"pk":{"type":"integer","readOnly":true,"title":"ID"},"username":{"type":"string","description":"Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.","pattern":"^[\\w.@+-]+$","maxLength":150},"email":{"type":"string","format":"email","readOnly":true,"title":"Email address"},"first_name":{"type":"string","maxLength":150},"last_name":{"type":"string","maxLength":150}},"title":"PatchedUserDetails"}},"multipart/form-data":{"schema":{"type":"object","description":"User model w/o password","properties":{"pk":{"type":"integer","readOnly":true,"title":"ID"},"username":{"type":"string","description":"Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.","pattern":"^[\\w.@+-]+$","maxLength":150},"email":{"type":"string","format":"email","readOnly":true,"title":"Email address"},"first_name":{"type":"string","maxLength":150},"last_name":{"type":"string","maxLength":150}},"title":"PatchedUserDetails"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","description":"User model w/o password","properties":{"pk":{"type":"integer","readOnly":true,"title":"ID"},"username":{"type":"string","description":"Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.","pattern":"^[\\w.@+-]+$","maxLength":150},"email":{"type":"string","format":"email","readOnly":true,"title":"Email address"},"first_name":{"type":"string","maxLength":150},"last_name":{"type":"string","maxLength":150}},"required":["email","pk","username"],"title":"UserDetails"}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,77 @@
+---
+id: api-auth-login-create
+title: "api_auth_login_create"
+description: "Check the credentials and return the REST Token"
+sidebar_label: "api_auth_login_create"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVcFuEzEQ/RVrLlzcJCBOe6IUkBBIoCacmqia7E6ybry2sb1N02j/HY29SbakFQdOSFyijf08nnnz5nkP1pHHqKz5XEEB6NQttrG+1XatzG3pCSOBhIpC6ZVjHBRwVVO5EbEmUXqqyESFOgg0lfAUW2/S1vXH6UzM7IbM3KjVOdqTuEetqnSO7+SdEiNVo7m5Qq2D+HCHZm3FZRtrkRISDcXaViJa4WmtQiQvfgTy4vOHuVHmcCBQCMoasfLY0Nb6zdzMzWVZkospj5XV2m6VWYvv36Yz4ZBxkXwoRBvIG2xICochbK2v5ub6t6I+HcLm8sS35R2V8VUQG9qNQELEdYDihsmEhQRPP1sK8b2tdlDsobQmkon8ic5pLllZM74LTO0eQllTg/wVd46gAJuigwTnuVdRUeDdQ6IDZIhemTV0EqhBpc93JKysbzBC0SM6CYcyn4nT5dyVp4rLOSIXEqKKmqFfuSsJOazl4WK73V7wXRet12RKW1H1LxfXtDoqhz6OU1EVRvx3y3kCjb6lTkKgsvUq7qC4YYXajSKeOihuFp3cwxKDKocLl059od1gpUtCD86akGt+M5n8ldqfOs6UvEKtHsmLlfX93DW2Ij06Y3tDu+fobPDhK5k1Z/x28jtffGZAVYqfqXqaR1ZDMiEowNmQmo0cFMbo1JiNbJy8agwnWqdcZs5uyNwxSUyLIEHxJTVhRR4kZM0Ag61Xj4k61sGgHccQdYyOb0w3QZExDB5284ULM+R0Ye+fqkrlcq+uTx728QEbp+mprk8093JOe+8oY0elbWAo34H8lVnZlFhP/XtFGiTckw+Z8sno9WhyJohZTaKxIQps8JGdfIo4FQOJJbveWq8rUWMQdE9eBKLEH/etwSTAPn10Kr1B/TPz/Ls3UPP/J/APT2CWWaSHOHYaVaK99cnn8rjk51EClw0SUm0ggaew5rEqbmC/X2KgH153HS//bMmzQS0k3KNXuGS9sPkcBoa9Kw0/XOU+Xcw4DYbrNnf5T28Ue1sOkbl64XCyL7a8oxUwiyBh2T/ybE08BKfIcvgnp41nM7lJM9l/cDmHLbMbZHIaT9kny7+c+rPw/T5Pe9cd8XnrxRNHA8po7t6i67pf2CSKnA==
+sidebar_class_name: "post api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"api_auth_login_create"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/auth/login/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Check the credentials and return the REST Token
+if the credentials are valid and authenticated.
+Calls Django Auth login method to register User ID
+in Django session framework
+
+Accept the following POST parameters: username, password
+Return the REST Framework Token Object's key.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"username":{"type":"string"},"email":{"type":"string","format":"email"},"password":{"type":"string"}},"required":["password"],"title":"Login"}},"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"username":{"type":"string"},"email":{"type":"string","format":"email"},"password":{"type":"string"}},"required":["password"],"title":"Login"}},"multipart/form-data":{"schema":{"type":"object","properties":{"username":{"type":"string"},"email":{"type":"string","format":"email"},"password":{"type":"string"}},"required":["password"],"title":"Login"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","description":"Serializer for Token model.","properties":{"key":{"type":"string","maxLength":40}},"required":["key"],"title":"Token"}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

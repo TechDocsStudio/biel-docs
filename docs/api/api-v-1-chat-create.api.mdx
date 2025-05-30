@@ -1,0 +1,71 @@
+---
+id: api-v-1-chat-create
+title: "api_v1_chat_create"
+description: "Send a message to the bot and get a response. Returns 201 if a new chat is created, 200 if using an existing chat."
+sidebar_label: "api_v1_chat_create"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1v2zAM/SsCz1qTFDv51u007LBiaU9BEDA2E3O1JU2S02aB//tAyW3dxit22LDLLo5tfjyS78nMCawjj5Gt+VRBAeh4c1hsyhrjpvSEkUBDRaH07MQJCliSqRSqlkLAPaloVaxJbW1UaCq1p6hQeQrOmkAX6ivFzpugLucLxTuFytC9kvSKg8oIlVaX87lYu8Bmr9AoeuAQ5V48L0BDxH2AYgXyDGsNnr53FOIHWx2hOEFpTSQT5TYeHclvKGtq8fkN2O03KiNowKpi6QWbay/dR6YAxal/3eitCY5K3jFVasBTWwHsew1uHDoCG8Yywg3Rs9lDjpESNqHp9pMOaexdx9W5VcPO+hYjFJAceg2dbyazUIs8ZZGypQ/2VP31CQlYoLLzHI9QrE5w5fgzHa+6WEOxWveJwyySNMHL+fwVkehcw2WS5uxbELy3Sn7JRxfIbwYqNlPj7DUgb87J+kW+nbftZJK36B5sn6bhOVyjj4xjprbWNoRGzJFbChFbNxkcbOfLXNpgQ+/xmDl+Q0V9JuYli5Lwcr74P/5/N/73f1T95L31v42eRhVrK59/Z0NKh3JKYYaOZ4fFTDqawfN5XkodGWp8qp+HkV6CBhaEmrAiDxoMtmIVZ+v5R+pNmt9i4PJVijpGJ4gJSagRn/SJtPaO6U3A7PIMGCgEtkY+mkK82dkUyrER6wemBjQcyIc8kfnF4mJ+tvVualKtDVFhiz9kMy0Rl2rEUtqC99Y3laoxKDqQV4EodShjbTFxONSEjtVhkRfh9J4dqeEfrdw820gPceYaZDPaOVkgK2lDZreALHvQIMu5FhUVKzidthjo1jd9L6+/d+RlF6w1HNAzbmX+q3WvHyUia+KOjlDAx9z6uxupQdybLtUij71+9LoqS3JxZD87NLJmnsR9/WV5Axq2w3+G1lYS4/EedLrmo4hn0rpL0hpupMZHkzmOsF/KWg8lylUKngw5nbJw+/7JP5t+GfF0lrK3cLLu+/4nDuxZRg==
+sidebar_class_name: "post api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"api_v1_chat_create"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/chat/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Send a message to the bot and get a response. Returns 201 if a new chat is created, 200 if using an existing chat.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"type":{"schema":{"type":"object","additionalProperties":{},"description":"Unspecified request body"}},"properties":{"schema":{"message":{"type":"string"},"project_slug":{"type":"string"},"chat_uuid":{"type":"string","format":"uuid"},"url":{"type":"string"},"email":{"type":"string"}}},"required":{"schema":{"type":"object","additionalProperties":{},"description":"Unspecified request body"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"user_message_id":{"type":"string"},"ai_message":{"type":"object","properties":{"from":{"type":"string"},"message":{"type":"string"},"messageId":{"type":"string"},"isPartial":{"type":"boolean"},"timestamp":{"type":"string"},"sources":{"type":"array"}}},"chat_uuid":{"type":"string"}}}}},"description":""},"201":{"content":{"application/json":{"schema":{"type":"object","properties":{"user_message_id":{"type":"string"},"ai_message":{"type":"object","properties":{"from":{"type":"string"},"message":{"type":"string"},"messageId":{"type":"string"},"isPartial":{"type":"boolean"},"timestamp":{"type":"string"},"sources":{"type":"array"}}},"chat_uuid":{"type":"string"}}}}},"description":""},"400":{"content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

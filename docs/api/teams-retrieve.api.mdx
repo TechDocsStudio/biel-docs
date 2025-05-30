@@ -1,0 +1,71 @@
+---
+id: teams-retrieve
+title: "teams_retrieve"
+description: "teams_retrieve"
+sidebar_label: "teams_retrieve"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVk2P20YM/SsC0UObyrtO0B6qmwssiqANCmS3PdR1vbRFW8xKM9oZyolX0H8vOJJlOdIWGyCnXuzRDIcfj49D1mBLcihszdsUEhDCwq8diWM6EMRQosOChJyHZFkDG0igRMkgBoMFQQKcQgx+m1GBkNQgxzLsGqE9OWhiSMlvHZdqAxJYRJXhx4qiTiI6YK5fKRnh3ZHNPpKMfaSeXEEMjh4rdpRCIq6iZhWD4F6daX2FVQyetpVjOQYPt9Y+MC0qySBZrpq4hg163g43FiX/Ssd+Z6VGfGmNJ68RvJnP9W9rjZARXWJZ5rwNKF1/8BpGPY7Ybj7QVhQyp5gKt9o4nUBFLWL6u8mPXVgnNHtJL47NHmIo8NNvZPbq6+v5vInB59V+SrBEEXIK8T/LGc6eFrO/5rOf1qvvv9EkFFRsQhL7i+gcHiEGFir814uj8uTWLxXesfOyfi70kXiOXyKdsi9zPL78grN5ECRTFUowTAs2IQVsBNmEGChlsbo4MH0kp/z7XPEl4V9F90HRfTSLFrpgLw7Fur/Nq+j+rFvP3/Vf4bC1pQc3YRU2W7u6+WfrQQzCop7De5vTjTrfNMPCWV5CcQF73NbvGdkOhnMiV2f971oSZVxCM4EfmwNLqJKvxbMe0p11BQokUFXB35FtfQymnx8qkPP/1NlKXJTamx9/+H8RossOpevN8UXFwH6N2y2VQsOEbKzNCc2IYCcIQ3IGlrrEDDj0tifJJIdS9NnGokvXlZvM2qSjIS9jL0fSn5fFhbGh9x2LB9rPT2j3Vg9iutMYm2bU62C8NWqwBUlmtfXuSdpXPIMEroPcNZbcrWpOm2s497pbbT9txQzb2bnqwmYIBxLICNNAjK5nq7B1/NTnYdAjexWZSHlq7QFVlVHhYYt9xmArcjboyXu2htMACZudDVc7/H5mUvgP5HyL0vzq9dV8VDh3GUWF9RJhgU86KNwi3kaD5hxJRtFH6/I0ytBHdCAXeaIQYWm9FBhY0vkUgI0Gqbiw1gcm9Emuyxw5qOlY2abpNIPEGn3Hdf1KApGUIZn1onJ1vUFPf7i8aXT7sSKn48oqhgM6xo3CsKz1ndZ1CskOc08jl/qZBL593/H4u+hLJ6rJuE5ZNJrCoED5G8MDHdsZr1k18YlH6mp7sAhPxODKaFTS8arn+C83dwrWiDkPgTndQrVPunMm0ckv/dWJblK8rltONk0v3x49e6Mvky5q9b5pmn8BmW3LEw==
+sidebar_class_name: "get api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"teams_retrieve"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/teams/api/teams/{id}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+teams_retrieve
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"integer"},"description":"A unique integer value identifying this team.","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"name":{"type":"string","maxLength":100},"slug":{"type":"string","pattern":"^[-a-zA-Z0-9_]+$"},"members":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"user_id":{"type":"integer","readOnly":true},"first_name":{"type":"string","readOnly":true},"last_name":{"type":"string","readOnly":true},"display_name":{"type":"string","readOnly":true},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"}},"required":["display_name","first_name","id","last_name","role","user_id"],"title":"Membership"},"readOnly":true},"invitations":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"required":["email","id","invited_by","team"],"title":"Invitation"},"readOnly":true},"dashboard_url":{"type":"string","readOnly":true},"is_admin":{"type":"boolean","readOnly":true}},"required":["dashboard_url","id","invitations","is_admin","members","name"],"title":"Team"}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

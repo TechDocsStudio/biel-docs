@@ -1,0 +1,71 @@
+---
+id: teams-partial-update
+title: "teams_partial_update"
+description: "teams_partial_update"
+sidebar_label: "teams_partial_update"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWV9v2zYQ/yrCYQ9bJ8dusT1Ub24RYMVWrEjSPSz1nLN4sdhIpEJSThxB3304Upbk2tkSoA/doBeDIo/393d3NFmDLsmgk1q9E5CAIyzsskTjJObLqhToCGIo0WBBjoyF5LIGqSCBEl0GMSgsCBKQAmKwaUYFQlKD25Z+Vjlak4EmBkE2NbJkSZDAPKqUvK0oaimiDeb8JUg5eb2Vah25TNqI9TmBGAzdVtKQgMSZippFDA7XrEzQGBaBhKx7o8WWNUi1cqQcD7Esc5l6I6efLcuvD1XVq8+UOrbVsEucJMurUhwxh4Wh+F3l21afnRs6SuuMVGuIocD730itXQbJy9msicHm1foYYYnOkWHf/HU5wcnDfPLnbPJ6ufjxO/ZeQcXKe7/biMbgFmKQjgr79eyoLJnlU4mvpbFu+ZjpB+Q5PodaSFvmuH36BqNzT0iqKhgZKAqpfAikciiVt4GEdJoHG0l3ZBg4XzLeR+qL6Mozuoom0ZwH0jqDTptP6kV01fPm9ffdl18Msnjh1I/8ZJDLk38EDWJw0rHmcKZzOmXlm2aI+Mt9V+y5PQ6J13u2dUMfyEXP/30AUSZLaI74T6qNdD5LvhbOOpdea1OggwSqyut7IJuz+HjdoAJl/o88A8Veqr36+af/FyDa6JBYrrZPSgZpl5imVDoaBmSldU6oDgC2c6EPzkBSG5gBht51IDmKIYE2W2k0YlmZo1E7qqiPy6GWB9RNr8cHdGlG4oLV4/lhjb+f3N3dTRgfk8rkpFItghfGoj8W/W83x8eiPxb9seg/p+gXVe4k/1mZ+mIv0OFY5scy/21n9VjmxzI/lvmnl3lesZRWRrqtv31Ktb6RNK8YDJeLJq5hhVamw4l5KX+lbTfjb4dsqZUNQH41m41XRGMb+U9XjbGNjG1kbCPH2sheWuwJG2rfonjAvS+hba0e2LTrRV9GGg6nHnlCKchlWoR3kzQL1TyDBKaefoqlbEe1FM0U+p53zm0oZM6wrfXZ5ye9WZBARig8QNp3GSbWRj508Rj0yo5F5ly5e77x3mUaJh622kcEBpJeoCVrpVZSeNdwLz3rH2ZO77EoQ8btyHdRD01v9+3RfK291DYEbyRxBDdkbHD07OTlyewg9y4yigptXYQFPvA70jnieTTo75HLKLrTJhdRhjaiDZnIEnnnlNq6AtVAPx+TqI1m1EVzT2bnGUf3blrmKD2zFt4hzruHKr6plG3S8FfiEclQy7R1TFfXK7T00eRNw9O3FRk+9yxi2KCRuGJnXNZc8HksILnG3NKBSt3hBr4/axPih+i5z25H7drBQDEGPANOhBhuaBseAptFE++AyKqGhbdBockFb+83/vvFLR/oAou5L1ePbPbHNj7qdZn2YX7x9heIYdU+CRZa8KYB63j44c+OgAdgv/Fgbwdsz1EH9LjfeYJ/Wfej5HUd0qhpOvqw9OiOLrNbP7OxTdP8DYBCLgI=
+sidebar_class_name: "patch api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"teams_partial_update"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/teams/api/teams/{id}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+teams_partial_update
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"integer"},"description":"A unique integer value identifying this team.","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"name":{"type":"string","maxLength":100},"slug":{"type":"string","pattern":"^[-a-zA-Z0-9_]+$"},"members":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"user_id":{"type":"integer","readOnly":true},"first_name":{"type":"string","readOnly":true},"last_name":{"type":"string","readOnly":true},"display_name":{"type":"string","readOnly":true},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"}},"required":["display_name","first_name","id","last_name","role","user_id"],"title":"Membership"},"readOnly":true},"invitations":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"required":["email","id","invited_by","team"],"title":"Invitation"},"readOnly":true},"dashboard_url":{"type":"string","readOnly":true},"is_admin":{"type":"boolean","readOnly":true}},"title":"PatchedTeam"}},"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"name":{"type":"string","maxLength":100},"slug":{"type":"string","pattern":"^[-a-zA-Z0-9_]+$"},"members":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"user_id":{"type":"integer","readOnly":true},"first_name":{"type":"string","readOnly":true},"last_name":{"type":"string","readOnly":true},"display_name":{"type":"string","readOnly":true},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"}},"required":["display_name","first_name","id","last_name","role","user_id"],"title":"Membership"},"readOnly":true},"invitations":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"required":["email","id","invited_by","team"],"title":"Invitation"},"readOnly":true},"dashboard_url":{"type":"string","readOnly":true},"is_admin":{"type":"boolean","readOnly":true}},"title":"PatchedTeam"}},"multipart/form-data":{"schema":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"name":{"type":"string","maxLength":100},"slug":{"type":"string","pattern":"^[-a-zA-Z0-9_]+$"},"members":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"user_id":{"type":"integer","readOnly":true},"first_name":{"type":"string","readOnly":true},"last_name":{"type":"string","readOnly":true},"display_name":{"type":"string","readOnly":true},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"}},"required":["display_name","first_name","id","last_name","role","user_id"],"title":"Membership"},"readOnly":true},"invitations":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"required":["email","id","invited_by","team"],"title":"Invitation"},"readOnly":true},"dashboard_url":{"type":"string","readOnly":true},"is_admin":{"type":"boolean","readOnly":true}},"title":"PatchedTeam"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"name":{"type":"string","maxLength":100},"slug":{"type":"string","pattern":"^[-a-zA-Z0-9_]+$"},"members":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","readOnly":true},"user_id":{"type":"integer","readOnly":true},"first_name":{"type":"string","readOnly":true},"last_name":{"type":"string","readOnly":true},"display_name":{"type":"string","readOnly":true},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"}},"required":["display_name","first_name","id","last_name","role","user_id"],"title":"Membership"},"readOnly":true},"invitations":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"required":["email","id","invited_by","team"],"title":"Invitation"},"readOnly":true},"dashboard_url":{"type":"string","readOnly":true},"is_admin":{"type":"boolean","readOnly":true}},"required":["dashboard_url","id","invitations","is_admin","members","name"],"title":"Team"}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: api-auth-token-refresh-create
+title: "api_auth_token_refresh_create"
+description: "Takes a refresh type JSON web token and returns an access type JSON web"
+sidebar_label: "api_auth_token_refresh_create"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVU1v2zAM/SsCz0qd7ehbO+ywDViHJjtlQcDYTK3GllRJTpoa/u8DJSdxv7bbgO4SONLjxyMfqQ6MJYdBGf2lhBzQqhW2oVoFsyW9crRx5KtV4QgDgYSSfOGUZTzkMMcteYFigIlwsCS+zq6/iz2tRXQhUJfCUWid9gK1wKIg758if+kEVRsRKjp7S4de7LBW5QVICHjrIV9wlrCU4Oi+JR+uTHmAvIPC6EA68CdaW6si0sruPOfagS8qapC/ODjkYNZ3VASQYB0XISjy0TZmOML54JS+BY6H5bWuD5AH11LPBzHT17B7pwKNwH1KVzkqI4MU5OxiKSGoULOPOfO+Gc7ZcMzmYbLf7ycb45pJ62rShSnZ43um17R1UBZdyCKtEgO+Z0JPLIfAnorWqXCAfNHBpVXf6HDZhgryxbKPQvbWaJ/4fJxO/2M19893SJIAhcrw/rHGRw7IxYEMrcp4HWVxF2SD+wzOFZ1xHRLVcV1PFDAeggTFwSrCkhxI0NjwLYONU4+xttBLWKNXxTMXVQiWI8ZIkCcMgwtjtor+GDBBzgE9ea+MVmWkzc28OS+xzw/YWC5ad+7FsQc9O9yYGGio7JWiGiTsyPlUyunFh4vpyyVdkWiMDwIbfFT6VswQZ2Kkqbh098bVpajQC9qRE54o1oP70WBU3MAArRLckmE9H5f16y/ESMb//rFI/Qj0EDJbo4p8WldzVklf6SGRwHTYgF2MRCyBdVyxIvMFdN0aPf10dd/z8X1Ljsd5KWGHTuGaW7JY9vKoMZ70LR0gh0+pBJM5J8Twuk2F/NtW7+XRxWVRkA1vGMeVwGvkNEU/rmdzkLAeHsbGlGwz8izHf1La+ELG2yjj4YPpHK/0YZTJ0xGSQ8L8y+m/atJ1aUj6/oRPV29anOY2obmXy77vfwPJugbX
+sidebar_class_name: "post api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"api_auth_token_refresh_create"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/auth/token/refresh/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Takes a refresh type JSON web token and returns an access type JSON web
+token if the refresh token is valid.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"access":{"type":"string","readOnly":true},"refresh":{"type":"string","writeOnly":true}},"required":["access","refresh"],"title":"TokenRefresh"}},"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"access":{"type":"string","readOnly":true},"refresh":{"type":"string","writeOnly":true}},"required":["access","refresh"],"title":"TokenRefresh"}},"multipart/form-data":{"schema":{"type":"object","properties":{"access":{"type":"string","readOnly":true},"refresh":{"type":"string","writeOnly":true}},"required":["access","refresh"],"title":"TokenRefresh"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"access":{"type":"string","readOnly":true},"refresh":{"type":"string","writeOnly":true}},"required":["access","refresh"],"title":"TokenRefresh"}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

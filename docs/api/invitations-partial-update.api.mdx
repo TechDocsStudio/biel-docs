@@ -1,0 +1,71 @@
+---
+id: invitations-partial-update
+title: "invitations_partial_update"
+description: "invitations_partial_update"
+sidebar_label: "invitations_partial_update"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV91v2zYQ/1eEe1oLJfaK7UVPc7sAC7ZhRT724hnOWbxYbCRSJU9OXEH/+3CkLSm1k6J9TV4Mijzex+9+dzy3YGtyyNqacwUZaLPRHD79skbHGstlUytkghRqdFgRk/OQzVvQBjKokQtIwWBFcl1BCj4vqELIWuBtLbuenTZrSOHWugoZMmgaraBLQZHPna7FHmQwS66vz39PoniiFRnWt1tZc6F9Mvh2Cik4+txoRwoydg116VF/mLBa+rJZP+NWd6BrkQLjWoIMCjwsogh5fm/VVlTk1jAZliXWdanz4Nfkk5dA2kNbdvWJchYMnQDOmrycavVtmMQ2qn9Mud2HGrwaXdSGaU1OIqEKdfmsziiRQoUPf5FZcwHZu19/ERBsSXKTTFNJ6KgqbYKgNozakIMUSGm2sthouicnyHxt6XFO3yY3QdFNcpLMZKE9O2Tr/jNvk5tBt5z/3X+Fw2hLDs7CKmxGu7L5b/QgBdYsnsOFLelMnO/SyGNSy9X2GBgHgGq/xDynmmmckJW1JaGBrhuMfETOC1LnPRfD6ZgDDyf39/cngvdJ40oyuVVR6yspXhYpqqZkLU10EsigkPGVBi+NBnLuKW+c5m14NXNr7zTNGgF3vpB3a4Ve5+ONWa3/pG2/E14fX1vjIzHeTaevT9ALpNkwpcx7CENyRpZ2iVkMLj1m49fYwOHWsyNgRVxYFeesvAgzoaQPJm0/anUTWU6w1pORqkmrVTeBoRguhZ+RgmO+95Fj2AzRQQYFoQpI7wY7EbZOf9kFlo6LqFdRMNf7wS+AKTIiPK7BJwxGkcGgJ++1NTK2dilIkV0ME+HZA1Z1pG6si2lfBtB4cr9RFDjNbQV7mvfsfpT5PRvMrQ3qdll8r0nSvSHnY5ampz+fTg+oflVQUlnPCVb4RQbnS8TLZNQeEi4oubeuVEmBPqENucQTBQhr67nC0Dz24/yQv2RHhaSnwiPLPYpMDzypS9RBZeNCJ4gkmUM2nscDUjI66T2FoyVIIQu0FhYX1rPcbNsVerp2ZdfJ9ueGnLTTRQobdBpXAtK8BaW9rBVkt1h6OnCy75nw08Wumt4k3/W342iYewYZoc8Gy0a+IIU72sY/RdLVf8i3H7M4wNwtunRfPAJQPP8QTZ1ciZbh/renWIkjqpgFxj5xObxB8m717eLj7OrDH5DCavf/qbJKLo1Up+OP8BACHhToXSjQ3ULiOYrDUKt7QORXfD8q3rax9Luul49HT97ou9EuwRJs13X/A+ssPWs=
+sidebar_class_name: "patch api-method"
+info_path: api/biel
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"invitations_partial_update"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/{team_slug}/team/api/invitations/{id}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+invitations_partial_update
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"string","format":"uuid"},"description":"A UUID string identifying this invitation.","required":true},{"in":"path","name":"team_slug","schema":{"type":"string"},"required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"title":"PatchedInvitation"}},"application/x-www-form-urlencoded":{"schema":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"title":"PatchedInvitation"}},"multipart/form-data":{"schema":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"title":"PatchedInvitation"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","format":"uuid","readOnly":true},"team":{"type":"integer"},"email":{"type":"string","format":"email","maxLength":254},"role":{"enum":["admin","maintainer","editor","viewer"],"type":"string","description":"* `admin` - Administrator\n* `maintainer` - Maintainer\n* `editor` - Editor\n* `viewer` - Viewer","title":"RoleEnum"},"invited_by":{"type":"string","readOnly":true},"is_accepted":{"type":"boolean"}},"required":["email","id","invited_by","team"],"title":"Invitation"}}},"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

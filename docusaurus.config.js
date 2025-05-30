@@ -63,9 +63,26 @@ const config = {
       'docusaurus-biel',{
           project: 'dl1kps0old',
           headerTitle: 'Biel.ai chatbot'
-      }
-    ]
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'biel',
+        docsPluginId: "classic",
+        config: {
+          biel: {
+            specPath: 'openapi/schema.yaml',
+            outputDir: 'docs/api',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+            },
+          },
+        }
+      },
+    ],    
   ],
+  themes: ["docusaurus-theme-openapi-docs"],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
