@@ -1,0 +1,71 @@
+---
+id: list-sources
+title: "List project sources"
+description: "List all sources (files, URLs, and sitemaps) associated with a project"
+sidebar_label: "List project sources"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVm1v2zgM/iuEBtythZu0u/tkHAZ0w3YoNgy7tvvUFChjM7FWWdJEOrss8H8/UHbSpC/f7kNbV+LLQ/KhyI0JkRKKDf6iNqVxluUqdKkiNoWpiatko96a0ny2LIDOAQ8C8HphHXEB3y4/cwHoa2Ar1GLkI0DmUFkUquGnlQYQYgrfqRJTmIgJWxJKbMqbjbFqPKI0pjAeWzKlYdctTWG4aqhFU26MrGM+l2T90vSFSfSjs4lqU0rq6DHUr4MvUDtga/JiF5aS6W8LI7hUv1sZNreFYaq6ZGWd8ZxH+4nW5500pry5VZVEHINnYoXy5vRU/1TBC3nRT4zR2SoncfqdFcDmKXRMCdemMJoh3jsP85yVvu/7x1GMhQAtCtXAXVUR86Jzbm1UuiVpglZtSUNaFbGZYrTT1dl0zDdPN5qFfjpWbWoewr1SkENU+0E/YM6HClrhNIQ1pYciqXBI9lcOPAOyfhGyuhWnEu8suQlauPxwdQ3nXy9MYVaUeIjudHI2OX1CMlUBy4Aezi9OYvhJiWqoQ9W15CW7Um5ZFvQC0qBAQy4yCGHLUCVCoQJatF7Q+oGW1gslrGSgojRkEwhVjbcVukPjE5j5C4GOiQHrFfqKanDolx0uCdpQk2OQAJ2vKSmIGoYf/kkJfnTEaoUB56ETWIcuHdpXaPfWL8EKELKlBIuQRvQSYGF9rQhBc5naIWBpaA2eqJ7M/Mx/ojV8JJQuEZczf/JyopgwVU0G+M9v5yp61cUYkmSfbefERkePlZ7t7l1nq5Vrwhaq4BzOQxproknI/ATtjBScCr7vWEJrf+Hc0fYBACYR65c8lsaKRQctMeOSWLUuCd2J2Jag0vrm6i2wooz6EOyPjpJVrZn/qCGFdJC5AlaWrUAjErmcTucDIVX8LRwffwlC5fExXDek9FTeBe/WgCu0LmNWj+86tl4DU7wfFExMlkk5kngCFwst8+/ZsVCi3KvWg2otcynPv14UEB0hE9xodpSKHd++fgRrOt4dZYLFZcKaBgpFhz7X/tUrOGi7mc8No+AzZfXjntaAnTT66g2vUg4jNz1tiyQBYrIrlF1ddqGkXaUsQ4vpnmpA3ooXOVrnMh/VjPWV62rKHTt6t36wo480sVrW4sRu7my1c1eAD49xWobtw57DvQ6wpLGNRuOlnp9N4HNYqh8Jw21OA1ZV6LwACtxgjJMxrw+J3js8mvk3E/iCK7vUJEgYWH01knPm/5jAx20zqm9tO6ZqyPqfE3gf4voAmQK7GJOxf55hqpH9wsHwmubK6ExV2W26nitOOfN3d3czf2CkhL/U0QlGe3JP67ejzMxnYsMnoniIZMsBX4OnFSXgBpW4MhbHrbckAO44KgcO9BtkmBN5qEIbU2gtU50JARV6SLQkr9tEtjhGfZDVyczr8I6BpcU8J8dZkneL3QPx/AKyN3P/v11knHRC/8o0OrQZX5ecuhsG6o2OQZ1cZzpjt0tDYcrtkrJDq5tEE1hUZ7OZI9O35Ppej/Wd0u3itjArTFbflrxr1Jb1uzblAh0/3mP2I359OTbGEby03bwQzXaYe53kK3Sd/mcKc0/r7arV3/bFdr4rrOHqvKooyp7Sk0VHl6PdFvL3h2tTGHyyQtznFWL8UOvPAjrcJrbo9HdfvKCy2QwLSt/v5IerFzV2K8wgrfm57fv+Px054CI=
+sidebar_class_name: "get api-method"
+info_path: api/biel-ai-rest-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List project sources"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/projects/{slug}/sources/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List all sources (files, URLs, and sitemaps) associated with a project
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"slug","schema":{"type":"string"},"required":true,"description":"Project slug identifier"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}},"description":"Sources listed successfully"}}}
+>
+  
+</StatusCodes>
+
+
+      

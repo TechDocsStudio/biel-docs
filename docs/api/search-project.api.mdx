@@ -1,0 +1,71 @@
+---
+id: search-project
+title: "Search project sources"
+description: "Search for relevant sources within a project"
+sidebar_label: "Search project sources"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVt9v2zgM/lcIDbhbCzdpd/cUHAZ0w3YoNgy9tntqCoyxmVirLGkinV0W+H8/ULbTpD8e7qGtK4nkx4+fRG5NiJRQbPAXlZkZJkxlfZnCdyrFFKYiLpONum9m5jrvwjIkSORojV6AQ5tKYvhppbYeEOLOOGLChoQSm9nt1lh1EVFqUxiPDWk4165MYbisqUEz2xrZxLwuyfqV6QqT6EdrE1VmJqmlx4AGoKB+wFbkxS4tJdPdFUZwpXHHM2zuCsNUtsnKJuM5j/YTbc5bqc3s9k5NEnEMnokVypvTU/1TBi/kRT8xRmfLTNb0OyuA7VPomBJuTGGsUMN762ExspKUcrF9lD33T3JvSLBCwee8YFVZBYLuct9f1x1wdrvzv+dNubHi1N11SG1JfVmviFsnpssunq17yicYEkmytKYKuC1LYl62zm1M10OugwppRb0ClFwzxWin67PpIA2ebrVg3bRX29Q8FOZa6eyZ2S/PA7t5UelVXDVhRelBTno4JPsrlyjjsX4ZsvmQ8DtLboIWrj5c38D55YUpzJoS92meTs4mp09EryZgGdDD+cVJDD8pUQVVKNuGvORQgMyWRa+D1ChQk4sMQtgwlIlQqIAGrRe0vgD0FVgvlLCUfG1AarIJhMra2xLdofMJzP2FQMvEgNUafUkVOPSrFlcETajIMUiA1leUFEQF/Q//pAQ/WmL1woCL0ApsQpsO/Su0e+tXYAUI2VLKF7xHLwGW1leKEJTL1PQJS00b8ETVZO7n/hNt4COhtIl4NvcnLxPVVzwD/Oe3cz163cYYkuSYTevERkePjYYn5vXSOuICvl595gJYbxhGPlIvN4QNlME5XIQ01ERJyPIEvQQpOD34vmUJjf2FC0fjUwVMItaveCiNFYsOGmLGFbFaXRG6E7ENQan1zdVbYkkZ9SHYHy0lq1Zz/1FTCumAuQLWlq1ALRJ5Np0uekHq8bdwfPwlCM2Oj+GmJpWn6i54twFco3UZs0Z817L1mpji/aBgYrJMqpHEE7hYapl/z4GFErGQpgVqtcqlPL+8KCA6Qia4VXZUii3fvX4EazrsHWWBxVXCinoJRYc+1/7VKzi4dnOfL4yCz5LVj3vaALZS6/vcv585jXzpaSySBIjJrlF2ddmlknaVsgwNpnuqAHk8XuRsnct6VDfWl66tKN/YIbr1vR99GonVsxYntgtny124Anx4jNMyjM9pTvcmwIqGazQ4n+n62QQ+h5XGkdDvZhqwLEPrBVDgFmOcDLw+EL23eDT3bybwBdd2pSRI6FV9PYhz7v+YwMfxMmpsvXZMZc/6nxN4H+LmAJkCuxjI2F/PMNXJfuGgf01zZdD1FRzpeq44s7n/9u3b3B84mcFfGugEoz25p83b4czcZ2HDJ6J4iGTUgK/A05oScI0qXBmK4zajCIBbjqqBA/saGRZEHsrQxBQay1RlQUCJHhKtyOt8kz0OWR+wOpl7bbUxsDSYO/rQS4aet3si+jfocXfYa+D/dzoaOprQvzKNDm3G0SanTvu+eavtTjvUWT829GNMYWbj2JQDmsJoS68Di5pstwtk+ppc1+myPkc67twVZo3J6hOSh5/Ksn5XZrZEx48Hq/20Xl8N+j+Cl8atF5IZe7bXhr1G1+p/pjD3tBlnv+6uK8Y2rrD6rfOypCh7Rk8mL53WdrPG3x9udCJ6Minc50lh+FDvzwI6HBpGdPq7K14w2W77OaTrduf7rRctdpNKf1r5ueu67j99Twz5
+sidebar_class_name: "get api-method"
+info_path: api/biel-ai-rest-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search project sources"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/projects/{slug}/search/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Search for relevant sources within a project
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"slug","schema":{"type":"string"},"required":true,"description":"Project slug identifier"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"content":{"type":"string"},"metadata":{"type":"object","additionalProperties":{}}},"required":["content","metadata"],"title":"SoruceSearchResult"}}}},"description":"Search results retrieved successfully"}}}
+>
+  
+</StatusCodes>
+
+
+      
