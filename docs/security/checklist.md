@@ -24,7 +24,7 @@ The following steps apply only to implementations using the **chatbot widget**.
 The following steps apply only to direct integrations using the **enterprise API**. These steps are not necessary for widget-based implementations.
 :::
 
-- [ ] **Enable bearer authentication**: Ensure each API client request includes a bearer token in the header as follows: `Authorization: Bearer <token>`.
+- [ ] **Enable bearer authentication**: Ensure each API client request includes a bearer token in the header as follows: `Authorization: Api-Key <token>`.
 
 - [ ] **Set up regular token rotation**: Establish a schedule for rotating bearer tokens periodically to enhance security.
 
