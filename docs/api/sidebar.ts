@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "api/biel-ai-rest-api",
+      id: "api/biel-ai-rest-api-beta",
     },
     {
       type: "category",
@@ -14,12 +14,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/send-message",
           label: "Send a message to the AI chat",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/send-feedback",
-          label: "Send feedback for a message",
           className: "api-method post",
         },
       ],
@@ -40,12 +34,12 @@ const sidebar: SidebarsConfig = {
           label: "Search project sources",
           className: "api-method get",
         },
-        {
-          type: "doc",
-          id: "api/track-search-click",
-          label: "Track search result click",
-          className: "api-method post",
-        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Sources",
+      items: [
         {
           type: "doc",
           id: "api/list-sources",
@@ -63,6 +57,12 @@ const sidebar: SidebarsConfig = {
           id: "api/delete-source",
           label: "Delete project source",
           className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/sync-project",
+          label: "Sync project data",
+          className: "api-method post",
         },
       ],
     },

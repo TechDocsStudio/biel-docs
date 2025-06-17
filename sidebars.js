@@ -65,7 +65,7 @@ const sidebars = {
       label: 'API Reference',
       link: {
         type: 'doc',
-        id: 'api/biel-ai-rest-api',
+        id: 'api/biel-ai-rest-api-beta',
       },
       items: require('./docs/api/sidebar'),
     },

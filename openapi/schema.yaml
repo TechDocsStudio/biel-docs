@@ -28,7 +28,7 @@ info:
     ### Private projects  
     - **All operations** require either user authentication OR a valid API key with appropriate permissions
 
-    **Note:** You can configure whether your project is public or private in Project Settings. Projects are public by default.
+    **Note:** You can configure whether your project is public or private in Project settings. Projects are public by default.
 
     ### Available permissions
 
@@ -65,27 +65,32 @@ info:
     Authorization: Api-Key <your-api-key>
     ```
 
-    **Security Notes:**
+    **Security notes:**
     - Keep your API key secure and never share it publicly
     - Use environment variables to store API keys in your applications
     - Assign only the minimum permissions needed for your use case
     - If compromised, regenerate your API key immediately in Team Settings
-    - Each API key can have different permission sets for different use cases
 tags:
   - name: Chat
     description: Endpoints for interacting with the AI chat functionality
   - name: Projects
     description: Endpoints for managing projects and their sources
+  - name: Sources
+    description: Endpoints for managing project sources (files, URLs, sitemaps)
 paths:
   /api/v1/chat/:
     post:
       operationId: sendMessage
       summary: Send a message to the AI chat
-      description: Send a message to the bot and get a response. Returns 201 if a
+      description: |
+        Send a message to the bot and get a response. Returns 201 if a
         new chat is created, 200 if using an existing chat.
+        
+        **Required permission:** `chat_create`        
+      
       tags:
       - Chat
-              requestBody:
+      requestBody:
         required: true
         content:
           application/json:
@@ -316,7 +321,7 @@ paths:
         required: true
         description: Project slug identifier
       tags:
-      - Projects
+      - Sources
       security:
       - ApiKeyAuth: ['project_sources_read']
       - {}
@@ -360,7 +365,7 @@ paths:
         required: true
         description: Project slug identifier
       tags:
-      - Projects
+      - Sources
       requestBody:
         content:
           multipart/form-data:
@@ -441,7 +446,7 @@ paths:
         required: true
         description: ID of the source to delete
       tags:
-      - Projects
+      - Sources
       security:
       - ApiKeyAuth: ['project_sources_delete']
       responses:
@@ -484,7 +489,7 @@ paths:
   /api/v1/projects/{slug}/sources/sync/:
     post:
       operationId: syncProject
-      summary: Sync/refresh project data
+      summary: Sync project data
       description: |
         Trigger a background task to refresh and re-index all project sources. This will crawl URLs and sitemaps again and update the search index.
         
@@ -497,7 +502,7 @@ paths:
         required: true
         description: Project slug identifier
       tags:
-      - Projects
+      - Sources
       security:
       - ApiKeyAuth: ['project_sync']
       responses:
@@ -540,38 +545,6 @@ paths:
                   error:
                     type: string
           description: 'Project not found'
-  /api/v1/messages/{uuid}/feedback/:
-    post:
-      operationId: sendFeedback
-      summary: Send feedback for a message
-      description: Provide feedback (thumbs up/down) for an AI message
-      parameters:
-      - in: path
-        name: uuid
-        schema:
-          type: string
-          format: uuid
-        required: true
-        description: UUID of the message to provide feedback for
-      tags:
-      - Chat
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                feedback:
-                  type: string
-                  enum: ['positive', 'negative']
-                  description: Type of feedback
-      security:
-      - ApiKeyAuth: []
-      - {}
-      responses:
-        '200':
-          description: 'Feedback sent successfully'
 components:
   schemas:
     SearchResult:
