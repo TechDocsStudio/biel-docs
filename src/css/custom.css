@@ -90,7 +90,7 @@
 }
 
 
-.article a:not(.card) {
+article a:not(.card) {
   font-weight: bold;
 }
 

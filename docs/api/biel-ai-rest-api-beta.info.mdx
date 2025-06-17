@@ -1,0 +1,147 @@
+---
+id: biel-ai-rest-api-beta
+title: "Biel.ai REST API (Beta)"
+description: "Biel is an AI-powered documentation assistant that helps teams create, maintain, and interact with their technical documentation."
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 0.1.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Biel.ai REST API (Beta)"}
+>
+</Heading>
+
+
+
+Biel is an AI-powered documentation assistant that helps teams create, maintain, and interact with their technical documentation. 
+It uses advanced language models to understand and answer questions about your documentation, making it easier for teams to find the information they need.
+
+Key Features:
+- AI-powered documentation search and Q&A
+- Support for multiple documentation sources (files, URLs, sitemaps)
+- Team collaboration and access control
+- Customizable project settings and initial messages
+- Real-time chat interface for documentation queries
+
+For more information, visit https://biel.ai
+
+> **Note:** The API is only available for Business and Enterprise users. If you're interested in using the API, please [contact us](https://biel.ai/contact) to upgrade your plan.
+
+## Authorization & permissions
+
+Biel API uses a granular permission system with API key authentication. The access requirements depend on whether your project is public or private:
+
+### Public projects
+- **Read operations** (like searching, getting project details) don't require authentication
+- **Write operations** (like uploading sources, creating chats) always require a valid API key with appropriate permissions
+
+### Private projects  
+- **All operations** require either user authentication OR a valid API key with appropriate permissions
+
+**Note:** You can configure whether your project is public or private in Project Settings. Projects are public by default.
+
+### Available permissions
+
+When creating an API key, you can assign specific permissions:
+
+| Permission | Description | Required For |
+|------------|-------------|--------------|
+| `project_read` | Read project details | Getting project information |
+| `project_search` | Search documents within projects | Searching project content, tracking search clicks |
+| `project_sources_read` | View project sources | Listing project sources (files, URLs, sitemaps) |
+| `project_sources_create` | Upload sources | Adding files, URLs, and sitemaps to projects |
+| `project_sources_delete` | Delete sources | Removing sources from projects |
+| `project_sync` | Refresh/sync project data | Triggering project data refresh |
+| `chat_create` | Create chats and send messages | Interacting with the AI chat |
+
+### Creating an API Key
+
+1. Log in to your Biel account at [app.biel.ai](https://app.biel.ai)
+2. Navigate to **Team Settings**
+3. Scroll to the **API Keys** section
+4. Click **Create API Key**
+5. Give your key a descriptive name (e.g., "Frontend App", "Data Sync Service")
+6. Select the specific permissions you need:
+   - **Read Only**: Select `project_read`, `project_search`, `project_sources_read` for read-only access
+   - **Read & Write**: Add `project_sources_create`, `project_sources_delete`, `project_sync`, `chat_create` for full access
+   - **Custom**: Choose specific permissions based on your needs
+7. Click **Create API Key**
+8. **Important**: Copy the API key immediately - you won't be able to view it again
+
+### Using your API key
+
+Include your API key in the Authorization header for all API requests:
+```
+Authorization: Api-Key <your-api-key>
+```
+
+**Security Notes:**
+- Keep your API key secure and never share it publicly
+- Use environment variables to store API keys in your applications
+- Assign only the minimum permissions needed for your use case
+- If compromised, regenerate your API key immediately in Team Settings
+- Each API key can have different permission sets for different use cases
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"API Key: ApiKeyAuth"}
+      value={"ApiKeyAuth"}
+    >
+      
+      
+      API Key authentication using the format: `Api-Key <your-api-key>`
+      
+      Create your API key in Team Settings and assign the required permissions for your use case.
+      
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Authorization
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div>
+      

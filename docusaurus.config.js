@@ -44,6 +44,7 @@ const config = {
           // This moves your docs to the root domain
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          docItemComponent: "@theme/ApiItem",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -63,9 +64,27 @@ const config = {
       'docusaurus-biel',{
           project: 'dl1kps0old',
           headerTitle: 'Biel.ai chatbot'
-      }
-    ]
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'biel',
+        docsPluginId: "classic",
+        config: {
+          biel: {
+            label: 'API reference',
+            specPath: 'openapi/schema.yaml',
+            outputDir: 'docs/api',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+            },
+          },
+        }
+      },
+    ],    
   ],
+  themes: ["docusaurus-theme-openapi-docs"],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
