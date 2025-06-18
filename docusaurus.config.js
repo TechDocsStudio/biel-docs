@@ -73,7 +73,7 @@ const config = {
         docsPluginId: "classic",
         config: {
           biel: {
-            label: 'API reference',
+            label: 'API Reference',
             specPath: 'openapi/schema.yaml',
             outputDir: 'docs/api',
             sidebarOptions: {
