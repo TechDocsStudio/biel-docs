@@ -10,8 +10,8 @@
 <script type="module" src="https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.esm.js"></script>
 <script src="https://www.googletagmanager.com/gtag/js?id=G-CWY6XSMG75"></script>
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.a9df0201.css">
-<script src="/assets/js/runtime~main.5a3278b6.js" defer="defer"></script>
-<script src="/assets/js/main.84f2754f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f2b60c4a.js" defer="defer"></script>
+<script src="/assets/js/main.391630d1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -21,7 +21,7 @@
 <h1 class="openapi__heading">Biel.ai REST API (Beta)</h1>
 <p>Biel is an AI-powered documentation assistant that helps teams create, maintain, and interact with their technical documentation.
 It uses advanced language models to understand and answer questions about your documentation, making it easier for teams to find the information they need.</p>
-<p>Key Features:</p>
+<p><strong>Key features</strong></p>
 <ul>
 <li>AI-powered documentation search and Q&amp;A</li>
 <li>Support for multiple documentation sources (files, URLs, sitemaps)</li>
@@ -29,12 +29,12 @@ It uses advanced language models to understand and answer questions about your d
 <li>Customizable project settings and initial messages</li>
 <li>Real-time chat interface for documentation queries</li>
 </ul>
-<p>For more information, visit <a href="https://biel.ai" target="_blank" rel="noopener noreferrer">https://biel.ai</a></p>
+<p>For more information, visit <a href="https://biel.ai" target="_blank" rel="noopener noreferrer">Biel.ai</a></p>
 <blockquote>
-<p><strong>Note:</strong> The API is only available for Business and Enterprise users. If you&#x27;re interested in using the API, please <a href="https://biel.ai/contact" target="_blank" rel="noopener noreferrer">contact us</a> to upgrade your plan.</p>
+<p><strong>Note:</strong> The API is only available for <strong>Business</strong> and <strong>Enterprise</strong> users. If you&#x27;re interested in using the API, <a href="https://biel.ai/contact" target="_blank" rel="noopener noreferrer">contact us</a> to upgrade your plan.</p>
 </blockquote>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="authorization--permissions">Authorization &amp; permissions<a href="#authorization--permissions" class="hash-link" aria-label="Direct link to Authorization &amp; permissions" title="Direct link to Authorization &amp; permissions">​</a></h2>
-<p>Biel API uses a granular permission system with API key authentication. The access requirements depend on whether your project is public or private:</p>
+<p>Biel.ai REST API uses a granular permission system with API key authentication. The access requirements depend on whether your project is public or private:</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="public-projects">Public projects<a href="#public-projects" class="hash-link" aria-label="Direct link to Public projects" title="Direct link to Public projects">​</a></h3>
 <ul>
 <li><strong>Read operations</strong> (like searching, getting project details) don&#x27;t require authentication</li>
@@ -42,40 +42,44 @@ It uses advanced language models to understand and answer questions about your d
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="private-projects">Private projects<a href="#private-projects" class="hash-link" aria-label="Direct link to Private projects" title="Direct link to Private projects">​</a></h3>
 <ul>
-<li><strong>All operations</strong> require either user authentication OR a valid API key with appropriate permissions</li>
+<li>All operations require a valid API key with appropriate permissions</li>
 </ul>
-<p><strong>Note:</strong> You can configure whether your project is public or private in Project Settings. Projects are public by default.</p>
+<blockquote>
+<p><strong>Note:</strong> You can configure whether your project is public or private in <strong>Project settings</strong>. Projects are public by default.</p>
+</blockquote>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="available-permissions">Available permissions<a href="#available-permissions" class="hash-link" aria-label="Direct link to Available permissions" title="Direct link to Available permissions">​</a></h3>
 <p>When creating an API key, you can assign specific permissions:</p>
 <table><thead><tr><th>Permission</th><th>Description</th><th>Required For</th></tr></thead><tbody><tr><td><code>project_read</code></td><td>Read project details</td><td>Getting project information</td></tr><tr><td><code>project_search</code></td><td>Search documents within projects</td><td>Searching project content, tracking search clicks</td></tr><tr><td><code>project_sources_read</code></td><td>View project sources</td><td>Listing project sources (files, URLs, sitemaps)</td></tr><tr><td><code>project_sources_create</code></td><td>Upload sources</td><td>Adding files, URLs, and sitemaps to projects</td></tr><tr><td><code>project_sources_delete</code></td><td>Delete sources</td><td>Removing sources from projects</td></tr><tr><td><code>project_sync</code></td><td>Refresh/sync project data</td><td>Triggering project data refresh</td></tr><tr><td><code>chat_create</code></td><td>Create chats and send messages</td><td>Interacting with the AI chat</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="creating-an-api-key">Creating an API Key<a href="#creating-an-api-key" class="hash-link" aria-label="Direct link to Creating an API Key" title="Direct link to Creating an API Key">​</a></h3>
 <ol>
-<li>Log in to your Biel account at <a href="https://app.biel.ai" target="_blank" rel="noopener noreferrer">app.biel.ai</a></li>
-<li>Navigate to <strong>Team Settings</strong></li>
-<li>Scroll to the <strong>API Keys</strong> section</li>
-<li>Click <strong>Create API Key</strong></li>
-<li>Give your key a descriptive name (e.g., &quot;Frontend App&quot;, &quot;Data Sync Service&quot;)</li>
+<li>Log in to your Biel account at <a href="https://app.biel.ai" target="_blank" rel="noopener noreferrer">app.biel.ai</a>.</li>
+<li>Navigate to <strong>Team</strong>.</li>
+<li>Scroll to the <strong>API Keys</strong> section.</li>
+<li>Click <strong>Create API Key</strong>.</li>
+<li>Give your key a descriptive name (e.g., &quot;Frontend App&quot;, &quot;Data Sync Service&quot;).</li>
 <li>Select the specific permissions you need:<!-- -->
 <ul>
-<li><strong>Read Only</strong>: Select <code>project_read</code>, <code>project_search</code>, <code>project_sources_read</code> for read-only access</li>
-<li><strong>Read &amp; Write</strong>: Add <code>project_sources_create</code>, <code>project_sources_delete</code>, <code>project_sync</code>, <code>chat_create</code> for full access</li>
-<li><strong>Custom</strong>: Choose specific permissions based on your needs</li>
+<li><strong>Read only:</strong> Select <code>project_read</code>, <code>project_search</code>, <code>project_sources_read</code> for read-only access.</li>
+<li><strong>Read &amp; write:</strong> Add <code>project_sources_create</code>, <code>project_sources_delete</code>, <code>project_sync</code>, <code>chat_create</code> for full access.</li>
+<li><strong>Custom:</strong> Choose specific permissions based on your needs.</li>
 </ul>
 </li>
-<li>Click <strong>Create API Key</strong></li>
-<li><strong>Important</strong>: Copy the API key immediately - you won&#x27;t be able to view it again</li>
+<li>Click <strong>Create API Key</strong>.</li>
+<li><strong>Important:</strong> Copy the API key immediately - you won&#x27;t be able to view it again.</li>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="using-your-api-key">Using your API key<a href="#using-your-api-key" class="hash-link" aria-label="Direct link to Using your API key" title="Direct link to Using your API key">​</a></h3>
 <p>Include your API key in the Authorization header for all API requests:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Authorization: Api-Key &lt;your-api-key&gt;</span><br></span></code></pre></div></div>
-<p><strong>Security Notes:</strong></p>
+<p><strong>Security notes:</strong></p>
 <ul>
-<li>Keep your API key secure and never share it publicly</li>
-<li>Use environment variables to store API keys in your applications</li>
-<li>Assign only the minimum permissions needed for your use case</li>
-<li>If compromised, regenerate your API key immediately in Team Settings</li>
-<li>Each API key can have different permission sets for different use cases</li>
+<li>Keep your API key secure and never share it publicly.</li>
+<li>Use environment variables to store API keys in your applications.</li>
+<li>Assign only the minimum permissions needed for your use case.</li>
+<li>If compromised, regenerate your API key immediately in Team Settings.</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> If your use case involves only search or read operations, you can expose an API keys with read-only permissions when necessary. However, always keep keys with write access private.</p>
+</blockquote>
 <div style="margin-bottom:2rem"><h2 class="anchor anchorWithStickyNavbar_LWe7 openapi-tabs__heading" id="authentication">Authentication<a href="#authentication" class="hash-link" aria-label="Direct link to Authentication" title="Direct link to Authentication">​</a></h2><div class="openapi-tabs__schema-container"><div class="openapi-tabs__schema-tabs-container"><ul role="tablist" aria-orientation="horizontal" class="openapi-tabs__schema-list-container tabs openapi-tabs__security-schemes"><li role="tab" tabindex="0" aria-selected="true" class="tabs__item openapi-tabs__schema-item active"><span class="openapi-tabs__schema-label">API Key: ApiKeyAuth</span></li></ul></div><div class="margin-top--md"><div role="tabpanel" class="tabItem_Ymn6"><p>API Key authentication using the format: <code>Api-Key &lt;your-api-key&gt;</code></p><p>Create your API key in Team Settings and assign the required permissions for your use case.</p><div><table><tbody><tr><th><p>Security Scheme Type:</p></th><td><p>apiKey</p></td></tr><tr><th><p>Header parameter name:</p></th><td><p>Authorization</p></td></tr></tbody></table></div></div></div></div></div></div></div></div><div class="row"><div class="col col--12"><div class="feedback-widget margin-top--md margin-bottom--md"><div class="margin-bottom--sm"><b>Was this helpful?</b></div><span class="feedback-widget-positive"><feedback-button project="kna08wr4wa" rating="1" custom-font="True" button-style="default" modal-position="center"><button class="button button--outline button--primary button--sm" title="Yes"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg></button></feedback-button></span><span class="feedback-widget-negative margin-left--sm"><feedback-button project="kna08wr4wa" rating="0" custom-font="True" button-style="default" modal-position="center"><button class="button button--outline button--primary button--sm" title="No"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg></button></feedback-button></span></div></div></div></article><div class="row"><div class="col col--12"><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/security/providers"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Our providers</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/api/biel-ai-rest-api-beta"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Introduction</div></a></nav></div></div></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#authorization--permissions" class="table-of-contents__link toc-highlight">Authorization &amp; permissions</a><ul><li><a href="#public-projects" class="table-of-contents__link toc-highlight">Public projects</a></li><li><a href="#private-projects" class="table-of-contents__link toc-highlight">Private projects</a></li><li><a href="#available-permissions" class="table-of-contents__link toc-highlight">Available permissions</a></li><li><a href="#creating-an-api-key" class="table-of-contents__link toc-highlight">Creating an API Key</a></li><li><a href="#using-your-api-key" class="table-of-contents__link toc-highlight">Using your API key</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Biel.ai.</div></div></div></footer></div>
 <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search@latest/dist/biel-search/biel-search.esm.js"></script>
 <script>const bielButton=document.createElement("biel-button");bielButton.setAttribute("project","dl1kps0old"),bielButton.setAttribute("modal-position","bottom-right"),bielButton.setAttribute("button-style","dark"),bielButton.setAttribute("button-position","bottom-right"),bielButton.setAttribute("header-title","Biel.ai chatbot"),bielButton.setAttribute("id","default"),bielButton.textContent="Ask AI",document.body.appendChild(bielButton)</script></body>
