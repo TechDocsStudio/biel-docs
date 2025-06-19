@@ -338,9 +338,10 @@ paths:
                 items:
                   type: object
                   properties:
-                    id:
-                      type: integer
-                      description: Source ID
+                    uuid:
+                      type: string
+                      format: uuid
+                      description: Source UUID
                     name:
                       type: string
                       description: Source name or URL
@@ -428,7 +429,7 @@ paths:
                   error:
                     type: string
           description: 'Forbidden - missing permissions'
-  /api/v1/projects/{slug}/sources/{source_id}/:
+  /api/v1/projects/{slug}/sources/{source_uuid}/:
     delete:
       operationId: deleteSource
       summary: Delete project source
@@ -444,11 +445,12 @@ paths:
         required: true
         description: Project slug identifier
       - in: path
-        name: source_id
+        name: source_uuid
         schema:
-          type: integer
+          type: string
+          format: uuid
         required: true
-        description: ID of the source to delete
+        description: UUID of the source to delete
       tags:
       - Sources
       security:
