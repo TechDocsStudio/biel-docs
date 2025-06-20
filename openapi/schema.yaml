@@ -82,7 +82,7 @@ tags:
   - name: Sources
     description: Endpoints for managing project sources (files, URLs, sitemaps)
 paths:
-  /api/v1/chat/:
+  /api/v1/chats/:
     post:
       operationId: sendMessage
       summary: Send a message to the AI chat
