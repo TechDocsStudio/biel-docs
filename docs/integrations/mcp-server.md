@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Connect AI development tools like Cursor, VS Code, and Claude Desktop to your product documentation through Biel.ai's Model Context Protocol (MCP) server. 
 
-When AI tools can access your documentation, they provide more accurate code completions, answer technical questions with context, and guide developers with real-time product knowledge.
+Biel.ai provides a hosted Retrieval-Augmented Generation (RAG) layer that makes your documentation searchable and useful to AI tools. This enables smarter completions, accurate technical answers, and context-aware suggestions—directly in your IDE or chat environment.
 
 ![Biel MCP](./images/biel-mcp.png)
 
@@ -27,8 +27,6 @@ Before starting, ensure you have:
 
 The fastest way to get started is using our hosted MCP server. No setup or maintenance required.
 
-### Step 1: Get your configuration
-
 Use this MCP server configuration with your AI tool:
 
 ```json
@@ -39,22 +37,18 @@ Use this MCP server configuration with your AI tool:
       "command": "npx",
       "args": [
         "mcp-remote",
-        "https://mcp.biel.ai/sse?project_slug=YOUR_PROJECT_SLUG&api_key=YOUR_API_KEY&domain=https://your-docs-domain.com"
+        "https://mcp.biel.ai/sse?project_slug=YOUR_PROJECT_SLUG&domain=https://your-docs-domain.com"
       ]
     }
   }
 }
 ```
 
-### Step 2: Replace the placeholders
+Set the following parameters:
 
-- `YOUR_PROJECT_SLUG`: Your Biel.ai project slug from your dashboard
-- `YOUR_API_KEY`: Your API key (only needed for private projects)
-- `https://your-docs-domain.com`: Your documentation domain
-
-### Step 3: Add to your AI tool
-
-See the tool-specific instructions below for where to add this configuration.
+- `project_slug:` Your Biel.ai project slug from your dashboard.
+- `domain`: Your documentation domain.
+- `api_key`: Optopnal, API key (only needed for private projects)
 
 ## Tool-specific setup
 
@@ -119,7 +113,7 @@ biel_ai, what's our staging deployment checklist?
 I'm getting a 403 error from the login API — can biel_ai explain why that might happen?
 ```
 
-#### Setup Instructions
+#### Setup instructions
 ```
 Can you check with biel_ai how to install our plugin in Docusaurus?
 ```
