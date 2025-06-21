@@ -80,7 +80,6 @@
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
 
-
 .navbar__search-input {
   border-radius: 8px;
 }
@@ -88,6 +87,10 @@
 .menu__list-item-collapsible,
 .menu__link {
   border-radius: 8px;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1000;
 }
 
 
