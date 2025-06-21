@@ -64,6 +64,6 @@ To integrate the Biel.AI chat widget into your Jekyll site:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/category/customization) section.
+For more about customization and additional features exploration, check out the [customization](/customization) section.
 
 Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

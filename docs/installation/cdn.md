@@ -76,6 +76,6 @@ To integrate the widget into your website, follow these steps:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/category/customization) section.
+For more about customization and additional features exploration, check out the [customization](/customization) section.
 
 Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

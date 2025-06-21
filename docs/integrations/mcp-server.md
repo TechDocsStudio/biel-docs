@@ -6,7 +6,9 @@ sidebar_position: 1
 
 # MCP server integration
 
-Connect AI development tools like Cursor, VS Code, and Claude Desktop to your product documentation through Biel.ai's Model Context Protocol (MCP) server. When AI tools can access your documentation, they provide more accurate code completions, answer technical questions with context, and guide developers with real-time product knowledge.
+Connect AI development tools like Cursor, VS Code, and Claude Desktop to your product documentation through Biel.ai's Model Context Protocol (MCP) server. 
+
+When AI tools can access your documentation, they provide more accurate code completions, answer technical questions with context, and guide developers with real-time product knowledge.
 
 ![Biel MCP](./images/biel-mcp.png)
 
