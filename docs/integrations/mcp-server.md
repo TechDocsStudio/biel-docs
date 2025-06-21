@@ -48,7 +48,7 @@ Set the following parameters:
 
 - `project_slug:` Your Biel.ai project slug from your dashboard.
 - `domain`: Your documentation domain.
-- `api_key`: Optopnal, API key (only needed for private projects)
+- `api_key`: Optional, API key (only needed for private projects)
 
 ## Tool-specific setup
 
