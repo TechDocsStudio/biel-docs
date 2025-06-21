@@ -179,6 +179,6 @@ Once you have the MCP integration working:
 3. **Monitor usage:** Check your Biel.ai analytics to see how the integration is being used.
 4. **Train your team:** Share example queries and best practices with your development team.
 
-For additional configuration options and advanced usage, check out our [API documentation](/category/api-reference).
+For additional configuration options and advanced usage, check out our [API documentation](/api/biel-ai-rest-api-beta).
 
 Need assistance? [Contact us](https://biel.ai/contact) to discuss your specific use case. 
