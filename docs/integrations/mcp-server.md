@@ -129,7 +129,7 @@ Can you check with biel_ai how to install our plugin in Docusaurus?
 Ask biel_ai what new developers need to install before running the app locally.
 ```
 
-## Configuration pptions
+## Configuration options
 
 The MCP server supports several configuration parameters:
 
