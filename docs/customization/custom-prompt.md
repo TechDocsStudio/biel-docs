@@ -4,24 +4,44 @@ sidebar_position: 7
 
 # Custom prompt
 
-
 A prompt is the instruction or set of instructions given to the chatbot that guides how it processes and responds to user input.
 
-Biel.ai provides two options for configuring your chatbot's behavior:
+Biel.ai provides three options for configuring your chatbot's behavior:
 
-## Option 1: AI assistant (Default)
-This is the default prompt that comes pre-configured with built-in restrictions and optimizations specifically designed for technical documentation and support interactions. It includes:
+## Option 1: AI Assistant v2 (Recommended)
+This is the recommended prompt that comes pre-configured with built-in restrictions and optimizations specifically designed for technical documentation and support interactions. It includes:
 
-- Built-in safeguards for accurate responses
-- Optimized processing for technical content
-- Advanced features for documentation handling
+- **More restrictive to context**: Only responds based on available context and documentation
+- **Reduced hallucinations**: Won't answer unless there's a high degree of certainty
+- **Enhanced accuracy**: Built-in safeguards for precise responses
+- **Optimized processing**: Advanced features for documentation handling
 
-You can extend the default AI Assistant behavior by adding specific instructions. For example:
+**Trade-off**: The assistant won't provide responses when it doesn't have sufficient information, even if it could potentially extrapolate from similar content.
+
+**Example**: If you don't have installation docs for a specific framework but have docs for other frameworks, AI Assistant v2 won't provide a response rather than attempt to extrapolate.
+
+## Option 2: AI Assistant v1
+This option provides more freedom in responses while maintaining core safeguards. It includes:
+
+- **More flexible responses**: Extrapolates from available information and uses existing knowledge
+- **Broader coverage**: Attempts to provide helpful responses even with limited context
+- **Creative problem-solving**: Can make educated guesses based on similar scenarios
+
+**Trade-off**: Higher potential for hallucinations and less accurate responses when information is incomplete.
+
+**Example**: If you don't have installation docs for a specific framework but have docs for other frameworks, AI Assistant v1 will try to extrapolate and provide installation guidance based on similar patterns.
+
+:::tip When to use each version
+- **Use AI Assistant v2** when accuracy is critical and you prefer no response over potentially incorrect information
+- **Use AI Assistant v1** when broader coverage is preferred and occasional inaccuracies are acceptable
+:::
+
+You can extend either AI Assistant version by adding specific instructions. For example:
 - Adding a signature to every response
 - Including specific phrases in responses
 - Modifying the tone or style while maintaining core functionality
 
-## Option 2: Custom prompt
+## Option 3: Custom prompt
 For complete control over the chatbot's behavior, you can define your own custom prompt. This option allows you to:
 
 - Define the exact personality and behavior
@@ -46,10 +66,11 @@ Follow these steps to configure your prompt:
 3. Click **Settings**.
 4. Under the **LLM settings > Define prompt** section:
 
-   - For AI Assistant: Select **AI Assistant** and optionally add your extensions to the default behavior
+   - For AI Assistant v2: Select **AI Assistant v2** and optionally add your extensions to the default behavior
+   - For AI Assistant v1: Select **AI Assistant v1** and optionally add your extensions to the default behavior  
    - For Custom Prompt: Select **Custom prompt** and define your complete prompt
 
-5. Example of extending the AI Assistant prompt:
+5. Example of extending an AI Assistant prompt:
     ```
     Always start responses with "Hi!"
     ```
