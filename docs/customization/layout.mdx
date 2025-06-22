@@ -35,6 +35,7 @@ The table below lists all the available properties that modify the button:
 | `button-style`         | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `dark`, `light`<br /><br />Defines the visual style of the chat button. `dark` uses a dark theme, `light` uses a light theme, and `default` follows your site's theme.|
 | `custom-font`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, disables loading of the Inter font. Use this if your site already uses a different font to improve load time and maintain font consistency.|
 | `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
+| `api-key`              | **Type**: `string`<br />**Default value**: ``<br /><br />API key for authenticating requests to private projects. Required for private projects with `create_chat` and `project_read` permissions. Not required for public projects.|
 
 ### Chatbot modal properties
 
@@ -90,10 +91,12 @@ The table below lists all the available properties that modify the layout:
 |------------------------|-----------------------------------------------------------------------------------------------|
 | **Layout**             |  |  |
 | `project`              | **Required**<br />**Type**: `string`<br /><br />The project ID.                                |
+| `api-key`              | **Type**: `string`<br />**Default value**: ``<br /><br />If project is marked as private, API key with "create_chat, project_read, and project_search" permissions is required. If public, not needed.|
 | `button-style`         | **Type**: `string`<br />**Default value**: `default`<br />**Available values:** `default`, `rounded`<br /><br />Style of the button.|
 | `custom-font`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the [Inter font](https://fonts.google.com/specimen/Inter) will not be loaded. Useful if your site already uses a different font, enabling a quicker load time.|
 | `hide-ctrl-k`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the Ctrl+K text hides. |
 | `hide-icon`            | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the button icon hides. |
+| `api-key`              | **Type**: `string`<br />**Default value**: ``<br /><br />API key for authenticating requests to private projects. Required for private projects with `create_chat`, `project_search`, and `project_read` permissions. Not required for public projects.|
 
 ### Search modal properties
 

@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: Overview
 ---
 
-# Overview
+# Security overview
 
 At Biel.ai, security is a core principle of our AI chatbot-as-a-service platform, designed to meet enterprise-level requirements with robust features that ensure data protection, compliance, and transparency.  
 
@@ -30,7 +31,9 @@ Biel.ai offers several **configurable security features** that allow users to cu
 
 4. **PII removal:** Projects can enable automatic detection and removal of sensitive information (e.g., names, emails, phone numbers) from chat conversations, enhancing user privacy.
 
-5. **Public API security:** Enforces **Bearer Authentication** for secure communication between clients and servers, preventing unauthorized access to API resources.
+5. **Bearer authentication:** Enforces secure **Bearer Authentication** for all API communication between clients and servers, preventing unauthorized access to API resources.
+
+6. **Granular API permissions:** Each API key can be scoped with specific permissions (e.g., `project_read`, `project_search`, `create_chat`, `sources_create`) to ensure principle of least privilege and provide fine-grained access control.
 
 ## Security architecture
 
