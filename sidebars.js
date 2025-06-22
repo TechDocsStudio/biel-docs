@@ -129,6 +129,7 @@ const sidebars = {
       items: require('./docs/api/sidebar'),
     },
     'support',
+    'release-notes',
   ],
 
   // But you can create a sidebar manually
