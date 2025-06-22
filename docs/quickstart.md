@@ -6,7 +6,9 @@ description: Learn how to integrate an AI chatbot into your website using your c
 
 # Quickstart
 
-Welcome to the **Biel.ai** documentation! In just a few steps, you'll have an AI-powered chatbot for your website and documents.
+**Biel.ai** transforms your static documentation into an intelligent, 24/7 AI assistant that provides instant, accurate answers to user questions. Instead of users digging through pages of docs, they simply ask questions and get immediate help—reducing your support workload while improving user experience.
+
+Ready to get started? In just a few minutes, you'll have an AI-powered chatbot running on your website and answering questions from your documentation.
 
 ## 1. Create your Biel.ai account
 
@@ -66,6 +68,6 @@ If the chatbot does not provide accurate or helpful responses, try the following
 
 ## Next steps
 
-Congratulations! You’ve successfully created your first chatbot.
+Congratulations! You've successfully created your first chatbot.
 
-To integrate the chatbot widget into your website, check out the [Installation](/category/installation) guides. You’ll find detailed instructions for embedding the chatbot in your site, customizing its appearance, and configuring advanced integration options.
+To integrate the chatbot widget into your website, check out the [Installation](/category/installation) guides. You'll find detailed instructions for embedding the chatbot in your site, customizing its appearance, and configuring advanced integration options.
