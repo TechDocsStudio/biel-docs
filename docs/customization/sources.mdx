@@ -2,118 +2,80 @@
 sidebar_position: 3
 ---
 
-
-<head>
-  <meta name="biel:boost_score" content="-1.0" />
-</head>
-
 # Sources
 
-In Biel.ai, you can configure various types of sources to index content for both your chatbot and search widget.
-These sources allow the chatbot to provide accurate and relevant answers and enable the search widget to find and display relevant content to users.
-
+Configure sources to provide content for your chatbot and search widget. Sources determine what information your AI can access to answer questions.
 
 :::important  
-Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](../administration/roles.md).  
+Only **Administrator** and **Maintainer** roles can manage sources. See [Manage roles](../administration/roles.md).  
 :::
 
-This guide will explain the different source types, when to use them, and how to configure each.
+## Choose a source type
 
-## Source types
+### URLs
+Index individual web pages like blog posts or landing pages.
 
-### 1. URLs
+For multiple pages, use sitemaps instead.
 
-Use this method when you want to index specific **individual web pages**. 
-It's ideal for cases where you need the chatbot to reference a particular piece of content, such as a blog post, article, or landing page.
+### Sitemaps
+Index entire websites using XML sitemap files. Sitemaps must end with `.xml`.
 
-**Key points:**
-- Best for single-page indexing.
-- Not suitable for indexing an entire website. If you plan to index an entire website or a large number of pages, **using a sitemap is recommended**.
+Supports nested sitemaps for large sites.
 
-### 2. Sitemaps
+### GitHub
+Index GitHub repositories directly.
 
-If you need to index an **entire website** or multiple pages at once, use the sitemap method.
-Sitemaps are XML files that contain a list of all the pages on your website, allowing Biel.ai to automatically crawl and index them.
+- **Public repositories**: No authentication required
+- **Private repositories**: Requires GitHub token
+- **File filtering**: Control which files to include or exclude
 
-**Key points:**
-- Ideal for large websites with multiple pages.
-- Supports nested sitemaps, allowing comprehensive indexing of large sites.
-- Sitemaps must end with `.xml`.
+Files remain private—widgets won't expose file links as sources.
 
-### 3. Files
+### Files
+Upload documents in these formats: PDF, CSV, Excel, Word, TXT, MD.
 
-Use this method to upload and index various document formats, such as:
+Files remain private—widgets won't expose file links as sources.
 
-* PDF
-* CSV
-* Excel
-* Word
-* TXT
-* MD
+## Add a source
 
-It is useful when you want the chatbot to reference information from static documents.
+1. Go to [app.biel.ai](https://app.biel.ai)
+2. Select **Projects** > your project > **Settings**
+3. In **Sources**, choose your source type:
 
-**Key points:**
-- File formats accepted include `.pdf`, `.word`, `.csv`, `.xls`, `.md`, and `.txt`.
-- Files remain private and only accessible by the chatbot to generate responses.
-- Widgets will not expose link to the files as sources or search results.
-- This feature is currently under development and will be available soon.
+   * **URLs**: Enter the complete web page URL
+   
+   * **Sitemaps**: Enter the sitemap URL ending in `.xml`
+   
+   * **GitHub**: Enter the repository URL: `https://github.com/owner/repo`
+     
+     For **private repositories**:
+     1. Generate a GitHub personal access token with `repo` permissions
+     2. In **Advanced options**, enter your GitHub token
+     
+     **Filter files** (optional):
+     - **Include patterns**: `*.md, docs/, README.md`
+     - **Exclude patterns**: `*.log, node_modules/, .git/`
+   
+   * **Files**: Upload documents directly
 
-## Manage sources
+4. Click **Save**
 
-Regardless of the source type, configuring sources in Biel.ai follows a similar process. Here's a general guide on how to add a source to your project:
+Your content will be indexed automatically. Test by asking your chatbot about the indexed content.
 
-1. Open [app.biel.ai](https://app.biel.ai).
-2. Log in with your account credentials.
-3. In the dashboard, click **Projects** in the top navigation bar.
-4. Find and select your project from the list.
-5. Click **Settings**.
-6. In the **Sources** section, choose the type of source you want to add (URL, Sitemap, or Files):
-    ![Configure sources](./images/create-project.png)
+## Filter URLs
 
-    - For **URLs**, enter the full URL of the web page you want to index.
-    - For **Sitemaps**, enter the URL of the `.xml` file that lists the pages to index.
-    - For **Files** (coming soon), you will be able to upload documents directly.
-7. Click **Save** to apply your changes.
+Restrict which URLs your chatbot can access using include/exclude patterns.
 
-Once saved, Biel.ai will start indexing the content from the selected source(s). You can verify the setup by interacting with the chatbot and seeing if it references the indexed content in its responses.
+1. Go to **Settings** > **Sources** > **Restrictions** > **Filter URLs**
+2. Add patterns:
+   - **Exclude** `/es`: Skip URLs containing `/es`
+   - **Include** `/docs`: Only index URLs containing `/docs`
+   - **Exclude** `^https://example.com/old/.*$`: Skip the `/old/` path (regex)
+3. Click **Save**
 
-## Exclude URLs
+## Troubleshoot
 
-When setting up a chatbot for documentation, it's important to ensure it retrieves only relevant information from your knowledge base.
+* **Build stuck during indexing**: Contact support at [biel.ai/contact](https://biel.ai/contact).
 
-The **Filter URLs** feature lets you specify which URL patterns the chatbot should include or exclude. 
-
-To filter sources, follow these steps:
-
-1. Open [app.biel.ai](https://app.biel.ai).
-2. Log in with your account credentials.
-3. In the dashboard, click **Projects** in the top navigation bar.
-4. Find and select your project from the list.
-5. Click **Settings**.
-6. In the **Sources** section, scroll to **Restrictions > Filter URLs**.
-7. Add patterns to include or exclude as needed:
-    ![Exclude sources](./images/exclude-url.png)
-    
-    Examples:
-    * Setting `/es` to `Exclude` will prevent the chatbot from crawling any pages containing `/es` in the URL.
-    * Setting `/es` to `Include` will only include pages that contain `/es` in the URL.
-    * Setting `/es` to `Include` and `/post` to `Exclude` will only include pages that contain `/es`, excluding those that also contain `/post`.
-    * Using a regex pattern such as `^https://example.com/docs/old/.*$` with `Exclude` will filter out all URLs under the `/docs/old/` path.
-
-7. Click **Save** to apply your changes.
-
-This filtering option allows you to refine the chatbot's knowledge base, ensuring that users only access relevant documentation content.
-
-## Troubleshooting
-
-### Build getting stuck
-
-If your build gets stuck during indexing, contact our support team through the [Contact page](https://biel.ai/contact). Include your project configuration and source details.
-
-### First crawl issues
-
-Initial crawls may require manual configuration to support your site's specific structure. Our team can help optimize the indexing process for your documentation.
-
-For assistance with crawling issues, visit the [Contact page](https://biel.ai/contact).
+**First crawl issues**: Initial crawls may need manual configuration. Contact support for optimization help.
 

@@ -44,6 +44,7 @@ Select and configure data sources for your project. Sources determine what infor
 Available source types:
 - **URLs**: Index specific web pages.
 - **Sitemaps**: Index entire websites using XML sitemaps.  
+- **GitHub**: Index GitHub repositories directly.
 - **Files**: Upload documents (PDF, CSV, Excel, Word, TXT, MD).
 
 For detailed configuration instructions, see [Sources](../customization/sources.mdx).
