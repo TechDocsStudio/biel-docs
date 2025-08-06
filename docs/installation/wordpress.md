@@ -11,8 +11,7 @@ This guide shows you how to add the chat widget to your WordPress site in minute
 
 ## Prerequisites
 
-Before starting, ensure you have::
-
+Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **A WordPress website** ready to install Biel.ai.  
@@ -71,6 +70,6 @@ To embed the Biel.AI chat widget into your WordPress site:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/category/customization) section.
+For more about customization and additional features exploration, check out the [customization](/customization) section.
 
 Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

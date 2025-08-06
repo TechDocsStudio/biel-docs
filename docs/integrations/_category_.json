@@ -1,0 +1,8 @@
+{
+  "label": "Integrations",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Connect Biel.ai to AI development tools, IDEs, and other platforms to give them access to your documentation."
+  }
+} 

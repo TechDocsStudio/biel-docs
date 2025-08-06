@@ -11,8 +11,7 @@ This guide shows you how to install the package via NPM and add the chat widget 
 
 ## Prerequisites
 
-Before starting, ensure you have::
-
+Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **A React application** ready to install Biel.ai.  
@@ -83,6 +82,6 @@ To integrate the Biel.AI chat widget into your site:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/category/customization) section.
+For more about customization and additional features exploration, check out the [customization](/customization) section.
 
 Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).

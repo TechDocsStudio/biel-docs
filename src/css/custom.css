@@ -32,17 +32,17 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --biel-search-button-border-color: #f17c90;
-  --ifm-link-color: #f17c90;
-  --ifm-link-hover-color: #f17c90;
-  --ifm-color-primary: #f17c90;
-  --ifm-color-primary-dark: #ed5b74;
-  --ifm-color-primary-darker: #ec4b66;
-  --ifm-color-primary-darkest: #e6193c;
-  --ifm-color-primary-light: #f59dac;
-  --ifm-color-primary-lighter: #f6adba;
-  --ifm-color-primary-lightest: #fcdfe4;
-  --biel-primary-color: #f17c90;
+  --biel-search-button-border-color: #7A4DFF;
+  --ifm-link-color: #7A4DFF;
+  --ifm-link-hover-color: #7A4DFF;
+  --ifm-color-primary: #7A4DFF;
+  --ifm-color-primary-dark: #612cff;
+  --ifm-color-primary-darker: #551bff;
+  --ifm-color-primary-darkest: #3b00e8;
+  --ifm-color-primary-light: #936eff;
+  --ifm-color-primary-lighter: #9f7fff;
+  --ifm-color-primary-lightest: #c4b1ff;
+  --biel-primary-color: #7A4DFF;
   --biel-button-dark-bg-color: #fff;
   --biel-button-dark-text-color: #18181b;
   --feedback-button-dark-bg-color: #fff;
@@ -75,10 +75,10 @@
   margin-right: 10px;
 }
 
-.menu__caret:before {
+.menu__caret:before,
+.menu__link--sublist-caret:after {
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
-
 
 .navbar__search-input {
   border-radius: 8px;
@@ -89,8 +89,12 @@
   border-radius: 8px;
 }
 
+.medium-zoom-image--opened {
+  z-index: 1000;
+}
 
-.article a:not(.card) {
+
+article a:not(.card) {
   font-weight: bold;
 }
 
