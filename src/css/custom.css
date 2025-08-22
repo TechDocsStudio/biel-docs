@@ -49,6 +49,8 @@
   --feedback-button-dark-text-color: #18181b;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-menu-color-background-active: var(--ifm-hover-overlay);
+  --ifm-navbar-shadow: 0 0.5px 0.5px 0 #dadde1;
+
 }
 
 [data-theme='dark'] .feedback-widget .button--outline {

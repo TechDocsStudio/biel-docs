@@ -47,7 +47,7 @@ Available source types:
 - **GitHub**: Index GitHub repositories directly.
 - **Files**: Upload documents (PDF, CSV, Excel, Word, TXT, MD).
 
-For detailed configuration instructions, see [Sources](../customization/sources.mdx).
+For detailed configuration instructions, see [Sources](../customization/data-sources/overview.md).
 
 ### Restrictions
 
@@ -56,7 +56,7 @@ Control which domains and URLs can access your chatbot:
 - **Allowed domains**: Only domains from this list will be able to use your chatbot widget.
 - **Filter URLs**: Use regex patterns to include or exclude specific URLs from indexing.
 
-For more details on URL filtering and domain restrictions, see [Sources](../customization/sources.mdx).
+For more details on URL filtering and domain restrictions, see [URLs](../customization/data-sources/urls.md).
 
 ### UI settings
 

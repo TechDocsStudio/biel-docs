@@ -39,6 +39,7 @@ Follow these steps to create and configure a new project:
     * **Sources**: Add the sources you want to index for your project:
         * **URL**: Index a specific webpage.
         * **Sitemap**: Index multiple pages from a sitemap, useful for indexing entire websites.
+        * **GitHub repositories**: Index documentation from code repositories, including README files and docs folders.
         * **Files**: Index documents such as PDFs, Word files, and more.
 
 4. Click **Create** and **Done!** to finalize your project setup.

@@ -15,12 +15,14 @@ Biel.ai supports the following models:
 - **GPT-4**: Advanced capabilities for detailed and complex queries.  
 - **GPT-4.1-nano**: Lightweight version optimized for maximum speed and efficiency.
 - **GPT-4.1-mini**: Enhanced version optimized for speed and efficiency.  
-- **GPT-4.1**: Latest version with advanced capabilities for detailed and complex queries.  
+- **GPT-4.1**: Advanced model with enhanced capabilities for detailed and complex queries.
+- **GPT-5**: OpenAI's most advanced model with unified reasoning capabilities, enhanced multimodal support, and superior performance across coding, math, and complex analysis tasks.
 
 ### Claude models
 - **Claude 3.5 Haiku**: Fast and effective for general documentation.  
 - **Claude 3.5 Sonnet**: Designed for nuanced, context-rich answers.  
-- **Claude 3.7 Sonnet**: Latest version designed for nuanced, context-rich answers.  
+- **Claude 3.7 Sonnet**: Advanced model designed for nuanced, context-rich answers.
+- **Claude Sonnet 4.0**: Anthropic's most advanced model with high-performance reasoning capabilities, optimized for complex problem-solving and extended thinking tasks.
 
 ## Model selection guide
 
@@ -38,10 +40,12 @@ Models are categorized based on their primary characteristics:
 - High-traffic sites
 - All subscription plans
 
-### Advanced Models
+### Advanced models
 - GPT-4
 - GPT-4.1
+- GPT-5
 - Claude 3.5/3.7 Sonnet
+- Claude Sonnet 4.0
 
 **Best for:**
 - Highly technical content
@@ -52,14 +56,16 @@ Models are categorized based on their primary characteristics:
 ## Model family comparison
 
 ### GPT models
-- Known for technical depth and precision
-- Strong in code-related queries
-- Excellent for structured, factual responses
+- Excel in structured reasoning and systematic problem-solving
+- Outstanding performance in coding, mathematics, and technical analysis
+- Excellent for factual responses and step-by-step explanations
+- GPT-5 introduces unified reasoning with adaptive processing power
 
 ### Claude models
-- Known for conversational and empathetic tone
-- Strong in explanatory content
-- Excellent for nuanced, context-aware responses
+- Known for natural, human-like conversational tone
+- Superior at contextual understanding and nuanced communication
+- Excellent for creative writing and empathetic responses
+- Strong in handling long-form content and extended conversations
 
 
 ## Changing the model

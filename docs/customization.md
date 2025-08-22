@@ -77,8 +77,8 @@ Learn how to customize and configure Biel AI to meet your specific needs. This s
 <section className="row">
   <article className="docCardListItem_W1sv col col--6">
     <a className="card padding--lg cardContainer_fWXF" href="/customization/sources">
-      <h2 className="text--truncate cardTitle_rnsV" title="Sources">📄️ Sources</h2>
-      <p className="text--truncate cardDescription_PWke" title="Add and manage content sources (URLs, sitemaps, files)">Add and manage content sources (URLs, sitemaps, files)</p>
+               <h2 className="text--truncate cardTitle_rnsV" title="Sources">📄️ Sources</h2>
+         <p className="text--truncate cardDescription_PWke" title="Configure content sources for your AI chatbot and search widget">Configure content sources for your AI chatbot and search widget</p>
     </a>
   </article>
   
