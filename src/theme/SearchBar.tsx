@@ -5,5 +5,5 @@ export default function SearchBar() {
     const projectId = 'dl1kps0old';
     const headerTitle = 'Biel.ai chatbot';
     // @ts-ignore: Not a React component
-    return <biel-search-button project={projectId} button-style="rounded" header-title={headerTitle}>Search</biel-search-button>;
+    return <biel-search-button project={projectId} button-style="rounded" header-title={headerTitle} clean-titles="true">Search</biel-search-button>;
 }
