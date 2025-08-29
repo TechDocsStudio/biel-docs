@@ -45,6 +45,7 @@ The tables below lists all the available properties you can override:
 
     /* Fonts */
     --biel-font-family: "Inter", "Tahoma", "sans-serif";
+    --biel-text-sm-font-size: 12px;
     --biel-text-font-size: 14px;
     --biel-text-lg-font-size: 16px;
     --biel-text-xl-font-size: 18px;
@@ -156,6 +157,7 @@ The tables below lists all the available properties you can override:
     --biel-suggested-questions-padding: 8px 12px;
     --biel-suggested-questions-text-color: var(--biel-dark-color);
     --biel-suggested-questions-text-hover-color: var(--biel-white-color);
+    --biel-suggested-questions-title-font-size: var(--biel-text-font-size);
     --biel-suggested-questions-font-size: var(--biel-text-font-size);
 
     /* Biel bot feedback */
@@ -166,7 +168,7 @@ The tables below lists all the available properties you can override:
     --biel-feedback-text-selected-color: var(--biel-white-color);
     
     /* Biel bot footer */
-    --biel-footer-font-size: 12px;
+    --biel-footer-font-size: var(--biel-text-sm-font-size);
 
     /* Biel search button */
     --biel-search-button-text-display: none;
@@ -176,6 +178,8 @@ The tables below lists all the available properties you can override:
     --biel-search-button-bg-color: var(--biel-white-color);
     --biel-search-button-text-color: var(--biel-dark-color);
     --biel-search-button-icon-size: 20px;
+    --biel-search-button-width: 100%;
+    --biel-search-button-max-width: fit-content;
     --biel-search-button-padding: 8px;
     --biel-search-button-icon-margin-right: 0px;
     --biel-search-button-text-font-size: var(--biel-text-lg-font-size);
@@ -189,6 +193,7 @@ The tables below lists all the available properties you can override:
     --biel-search-content-box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, .30), 0px 2px 6px 2px rgba(60, 64, 67, .15);
     --biel-search-content-font-family: var(--biel-font-family);
     --biel-search-content-max-width: 700px;
+    --biel-search-content-max-height: 100dvh;
     --biel-search-content-position-bottom: 10px;
     --biel-search-content-position-left: 10px;
     --biel-search-content-position-right: 10px;
@@ -196,7 +201,7 @@ The tables below lists all the available properties you can override:
     --biel-search-content-position-top-center: 50px;
     --biel-search-content-text-color: var(--biel-dark-color);
     --biel-search-content-z-index: 300;
-    --biel-search-body-max-height: 250px;
+    --biel-search-body-max-height: calc(80dvh - 30px);
 
     /* Biel search result */
     --biel-search-result-bg-color: var(--biel-secondary-color);
@@ -207,6 +212,8 @@ The tables below lists all the available properties you can override:
     --biel-search-result-mark-color: var(--biel-primary-color);
     --biel-search-result-padding: 10px 8px;
     --biel-search-result-title-color: var(--biel-dark-color);
+    --biel-search-result-title-font-size: var(--biel-text-xl-font-size);
+    --biel-search-result-description-font-size: var(--biel-text-lg-font-size);
 
     /* Biel search ask ai button */
     --biel-search-ask-ai-bg-color: var(--biel-primary-color);
@@ -223,6 +230,17 @@ The tables below lists all the available properties you can override:
 
     /* Biel search footer */
     --biel-search-footer-command-key-border-color: var(--biel-header-border-color);
+
+    /* Biel search toctree */
+    --biel-search-toctree-page-bg-color: var(--biel-secondary-color);
+    --biel-search-toctree-page-border-color: var(--biel-light-color);
+    --biel-search-toctree-page-text-color: var(--biel-dark-color);
+    --biel-search-toctree-count-color: var(--biel-scrollbar-hover-color);
+    --biel-search-toctree-border-color: var(--biel-light-color);
+    --biel-search-toctree-page-title-font-size: var(--biel-text-xl-font-size);
+    --biel-search-toctree-page-title-font-weight: 500;
+    --biel-search-toctree-count-font-size: var(--biel-text-sm-font-size);
+    --biel-search-toctree-title-height: 100%;
 
     /* Biel terms modal */
     --biel-terms-modal-color: var(--biel-dark-color);
@@ -265,6 +283,7 @@ The tables below lists all the available properties you can override:
     --biel-input-button-hover-color: var(--biel-dark-color);
     --biel-input-button-hover-bg-color: var(--biel-white-hover-color);
     --biel-input-button-hover-border-color: var(--biel-white-color);
+    --biel-message-font-size: var(--biel-text-font-size);
     --biel-message-h1-font-size: var(--biel-text-xxl-font-size);
     --biel-message-h2-font-size: var(--biel-text-xl-font-size);
     --biel-message-h3-font-size: var(--biel-text-lg-font-size);
@@ -305,6 +324,11 @@ The tables below lists all the available properties you can override:
     --biel-terms-modal-color: var(--biel-white-color);
     --biel-terms-modal-close-btn-color: var(--biel-white-color);
     --biel-terms-modal-close-btn-color-hover: var(--biel-white-hover-color);
+    --biel-search-toctree-page-bg-color: var(--biel-search-result-bg-color);
+    --biel-search-toctree-page-border-color: var(--biel-search-result-border-color);
+    --biel-search-toctree-page-text-color: var(--biel-white-color);
+    --biel-search-toctree-count-color: var(--biel-text-color);
+    --biel-search-toctree-border-color: var(--biel-search-result-border-color);
 }
 
 @media (min-width: 768px) {
@@ -313,6 +337,8 @@ The tables below lists all the available properties you can override:
         --biel-search-button-ctrl-k-display: block;
         --biel-search-button-padding: 8px 15px;
         --biel-search-button-icon-margin-right: 5px;
+        --biel-search-content-max-height: 80dvh;
+        --biel-search-body-max-height: 50dvh;
     }
 }
 ```
