@@ -77,50 +77,73 @@ Set the following parameters:
 
 For advanced users who prefer to run their own MCP server instance, see the [README](https://github.com/techdocsStudio/biel-mcp) for self-hosting instructions.
 
-## Using the Integration
+## Using the integration
 
-Once configured, the MCP server will monitor your AI assistant's messages and automatically route relevant queries to Biel.ai.
+The MCP server connects your AI assistant to your Biel.ai documentation. Here's exactly how to use it:
 
-### Query triggers
+### Method 1: Automatic usage
 
-By default, the server routes queries to Biel.ai when:
-- The message **includes the keyword `biel_ai`**
-- Or when you've defined custom rules that match the message
+Your IDE will automatically call the MCP server when needed. The AI reads the `description` field to understand when to use the tool.
 
-You can customize these triggers in your MCP configuration.
+**Setup:** Add a clear description to your MCP configuration:
 
-### Example queries
-
-Here are some ways to interact with your documentation through the AI tools:
-
-#### API Documentation
-```
-Can you check in biel_ai what the authentication headers are for the /users endpoint?
-```
-
-#### Framework Usage
-```
-Could you ask biel_ai how we handle API errors in React?
-```
-
-#### Deployment guides
-```
-biel_ai, what's our staging deployment checklist?
+```json
+{
+  "mcpServers": {
+    "biel-ai": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.biel.ai/sse?project_slug=YOUR_PROJECT_SLUG&domain=https://your-docs-domain.com"
+      ],
+      "description": "Query your product's documentation, APIs, and knowledge base. Ask about API specs, guides, and troubleshooting."
+    }
+  }
+}
 ```
 
-#### Troubleshooting
+**Usage:**
 ```
-I'm getting a 403 error from the login API — can biel_ai explain why that might happen?
+You: "How do I authenticate users?"
+AI: [Automatically queries Biel.ai docs → Returns answer with citations]
+
+You: "What's the rate limiting policy?"
+AI: [Sees "API specs" in description → Searches docs → Provides info]
 ```
 
-#### Setup instructions
+### Method 2: Use rules (Cursor example)
+
+Configure [Cursor rules](https://docs.cursor.com/en/context/rules) to automatically invoke the Biel.ai MCP server for specific query types.
+
+**Create a project rule:**
+
+1. Command Palette: `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
+2. Select "New Cursor Rule"
+3. Name: "biel-ai-auto-query"
+4. Content:
+
 ```
-Can you check with biel_ai how to install our plugin in Docusaurus?
+---
+description: Auto-query Biel.ai for documentation and API questions
+globs: ["**/*"]
+---
+
+For questions about our product documentation, API, or troubleshooting: Use the biel-ai MCP server before responding
 ```
 
-#### Team processes
+**File location:** `.cursor/rules/biel-ai-auto-query.mdc`
+
+### Method 3: Manual trigger with keyword
+
+Add `biel_ai` anywhere in your message to explicitly search your documentation:
+
+**Example conversations:**
 ```
-Ask biel_ai what new developers need to install before running the app locally.
+You: "biel_ai, how do I authenticate users?"
+AI: [Searches your Biel.ai docs and provides answer with citations]
+
+You: "What are the rate limits for the API? biel_ai" 
+AI: [Returns rate limit info from your documentation]
 ```
 
 ## Configuration options
