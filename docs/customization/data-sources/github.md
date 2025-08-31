@@ -9,7 +9,7 @@ description: Add GitHub repositories and their documentation
 Add GitHub repositories to include documentation, README files, and code comments in your chatbot's knowledge base.
 
 :::tip
-File content remains private—your chatbot won't expose file links as sources to users.
+File content remains private. Your chatbot won't expose file links as sources to users.
 :::
 
 ## When to use GitHub repositories

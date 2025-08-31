@@ -32,6 +32,10 @@ Add code repositories and their documentation.
 Upload documents in PDF, Word, Excel, and other formats.
 - Use for: Internal docs, offline content, legacy documents
 
+### [OpenAPI specifications](openapi.md)
+Add OpenAPI/Swagger specifications for API documentation.
+- Use for: API endpoints, schemas, parameters
+
 ## Add a source
 
 1. Go to [app.biel.ai](https://app.biel.ai)
