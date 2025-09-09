@@ -1,20 +1,20 @@
 ---
 sidebar_position: 5
-title: OpenAPI specifications
-description: Add OpenAPI/Swagger specifications for optimized API documentation
+title: OpenAPI
+description: Add OpenAPI/Swagger documents for optimized API documentation
 ---
 
-# OpenAPI specifications
+# OpenAPI documents
 
-Add OpenAPI specification files to include API documentation in your project.
+Add OpenAPI document files to include API documentation in your project.
 
 :::tip
 File content remains private. Your chatbot won't expose file links as sources to users.
 :::
 
-## Why use OpenAPI specifications
+## Why use OpenAPI documents
 
-OpenAPI specifications provide structured data that's processed more accurately than crawling documentation websites:
+OpenAPI documents provide structured data that's processed more accurately than crawling documentation websites:
 
 - **Complete API coverage**: All endpoints, parameters, and schemas included automatically
 - **Structured format**: YAML/JSON format enables precise parsing of API details
@@ -27,12 +27,12 @@ OpenAPI specifications provide structured data that's processed more accurately 
 - JSON (`.json`) or YAML (`.yaml`, `.yml`) format
 - Publicly accessible URL
 
-## Add OpenAPI specifications
+## Add OpenAPI documents
 
 1. Go to [app.biel.ai](https://app.biel.ai)
 2. Select **Projects** > your project > **Settings** > **Sources**
 3. Select **OpenAPI**
-4. Enter the specification URL
+4. Enter the document URL
 5. Click **Add OpenAPI URL**
 
 Example URLs:
@@ -44,7 +44,7 @@ https://api.example.com/v1/openapi.yml
 
 ## Troubleshooting
 
-**Specification not loading**
+**Document not loading**
 - Check URL accessibility
 - Verify valid OpenAPI syntax
 
