@@ -22,17 +22,13 @@ The Biel.AI chat widget enables a conversational chat powered by AI in your site
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
-To integrate the Biel.AI chat widget into your MkDocs site:
+1. Create a custom template directory in your project:
 
-1. Navigate to your docs folder and locate the `overrides` directory (create one if it doesn't exist).
+    ```console
+    mkdir -p docs/overrides
+    ```
 
-1. Inside the overrides directory, create or edit the file named `base.html`.
-
-    :::info
-    The file names of the templates to override and the block names you need to override might be different, depending on your theme. This example is specifically for the Material for MkDocs theme. Always refer to your theme's documentation or source templates to ensure accurate customization.
-    :::
-
-1. In this `base.html`, extend the base template and override the necessary sections. Here's what you should add:
+1. Create `docs/overrides/main.html` with the following content:
 
     ```html
     {% extends "base.html" %}
@@ -41,38 +37,76 @@ To integrate the Biel.AI chat widget into your MkDocs site:
     <!-- Biel.ai styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
 
-    <!-- Biel.ai script as ES6 module -->
+    <!-- Biel.ai script -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
     {% endblock %}
 
     {% block content %}
     {{ super() }}
 
-    ```html
     <biel-button project="<YOUR_PROJECT_ID>" 
-        header-title="Biel.ai chatbot"
+        header-title="Documentation AI"
         button-position="bottom-right"
         modal-position="bottom-right"
         button-style="dark">
             Ask AI
     </biel-button>
+    {% endblock %}
     ```
 
-1. Ensure your `mkdocs.yml` points to the overrides directory:
+    Replace `<YOUR_PROJECT_ID>` with your actual project ID from the Biel.ai dashboard.
+
+1. Update your `mkdocs.yml` configuration:
 
     ```yaml
     theme:
-        name: 'material'
-        custom_dir: 'docs/overrides'
+      name: material  # or your preferred theme
+      custom_dir: 'docs/overrides'
     ```
 
-1. Build your MkDocs project:
+1. Test your integration:
 
     ```console
-    mkdocs build
+    mkdocs serve
     ```
 
-    Once it builds successfully, verify that the chatbot  appears and functions correctly on your site.
+    Open your browser to verify the chat button appears in the bottom-right corner.
+
+## Material for MkDocs keyboard shortcut compatibility
+
+If you're using Material for MkDocs and want to prevent conflicts between Material's keyboard shortcuts and Biel.ai's functionality, add this optional configuration:
+
+1. Create the JavaScript directory and file:
+
+    ```console
+    mkdir -p docs/javascripts
+    ```
+
+1. Create `docs/javascripts/disable-search-autofocus.js`:
+
+    ```javascript
+    document.addEventListener('keydown', (e) => {
+      // Block Material's keyboard shortcuts
+      const blockedKeys = ['f', 's', '/', 'p', 'n', ',', '.'];
+      
+      if (blockedKeys.includes(e.key.toLowerCase())) {
+        e.stopPropagation();
+      }
+    });
+    ```
+
+1. Add the script to your `mkdocs.yml`:
+
+    ```yaml
+    theme:
+      name: material
+      custom_dir: 'docs/overrides'
+
+    extra_javascript:
+      - javascripts/disable-search-autofocus.js
+    ```
+
+This disables Material's search shortcuts (`f`, `s`, `/`) and navigation shortcuts (`p`, `n`, `,`, `.`) to prevent conflicts with Biel.ai's keyboard handling.
 
 ## Next steps
 
