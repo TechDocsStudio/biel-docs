@@ -9,7 +9,8 @@ info:
 
     **Key features**
     - AI-powered documentation search and Q&A
-    - Support for multiple documentation sources (files, URLs, sitemaps)
+    - Support for multiple documentation sources (files, URLs, sitemaps, hosted sites)
+    - Complete website hosting with ZIP file uploads
     - Team collaboration and access control
     - Customizable project settings and initial messages
     - Real-time chat interface for documentation queries
@@ -347,14 +348,20 @@ paths:
                       description: Source name or URL
                     type:
                       type: string
-                      enum: ['file', 'url', 'sitemap']
+                      enum: ['file', 'url', 'sitemap', 'site']
                       description: Source type
           description: 'Sources listed successfully'
     post:
       operationId: addSource
       summary: Add project source
       description: |
-        Upload files, URLs, or sitemaps to a specific project. Files are stored securely and indexed for search.
+        Upload files, URLs, sitemaps, or complete websites to a specific project. All sources are indexed for AI-powered search and chat.
+        
+        **Upload types:**
+        - **Individual files:** Upload documents (PDF, MD, TXT, DOCX, XLSX, CSV) for indexing
+        - **URLs:** Add web pages to crawl and index
+        - **Sitemaps:** Bulk import pages from XML sitemaps
+        - **Hosted sites:** Upload complete websites as ZIP files for hosting and indexing
         
         **Required permission:** `project_sources_create`
         
@@ -362,6 +369,15 @@ paths:
         - Supported formats: PDF, MD, TXT, DOCX, XLSX, CSV
         - Maximum file size: 10 MB per file
         - Files are stored securely and processed for search indexing
+        
+        **Hosted site requirements:**
+        - Supported format: ZIP file containing a complete website
+        - Maximum size: 50 MB per ZIP file
+        - Must include HTML files for indexing
+        - Site is hosted securely with access token authentication
+        - Individual HTML pages appear as separate sources in the project
+        - Original URLs are preserved in source listings while hosted URLs are used for parsing
+        
       parameters:
       - in: path
         name: slug
@@ -395,6 +411,17 @@ paths:
                     type: string
                     format: uri
                   description: Sitemap URLs to crawl
+                site_zip:
+                  type: string
+                  format: binary
+                  description: ZIP file containing a complete website to host and index
+                site_name:
+                  type: string
+                  description: Name for the hosted site (required when uploading site_zip)
+                base_url:
+                  type: string
+                  format: uri
+                  description: Original base URL of the site (required when uploading site_zip)
       security:
       - ApiKeyAuth: ['project_sources_create']
       responses:
