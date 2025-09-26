@@ -61,7 +61,7 @@ jobs:
           curl -X POST \
             -H "Authorization: Api-Key ${{ secrets.BIEL_API_KEY }}" \
             -H "Content-Type: application/json" \
-            https://api.biel.ai/api/v1/projects/${{ secrets.BIEL_PROJECT_SLUG }}/sync/
+            https://app.biel.ai/api/v1/projects/${{ secrets.BIEL_PROJECT_SLUG }}/sync/
 ```
 
 ### 2. Configure GitHub secrets
@@ -109,7 +109,7 @@ on:
   workflow_dispatch:
 
 env:
-  BIEL_API_BASE_URL: 'https://api.biel.ai'
+  BIEL_API_BASE_URL: 'https://app.biel.ai'
   BIEL_PROJECT_SLUG: 'your-project-slug'
   BIEL_SITE_NAME: 'wiki'  # Lowercase identifier for your site
   BIEL_BASE_URL: 'https://your-site.com'
