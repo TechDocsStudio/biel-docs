@@ -58,17 +58,22 @@ jobs:
     steps:
       - name: Sync Biel.ai Project
         run: |
-          curl -X POST \
-            -H "Authorization: Api-Key ${{ secrets.BIEL_API_KEY }}" \
+          echo "Syncing Biel.ai project..."
+          if ! curl -f -X POST \
+            -H "Authorization: Api-Key ${{ secrets.BIEL_API_TOKEN }}" \
             -H "Content-Type: application/json" \
-            https://app.biel.ai/api/v1/projects/${{ secrets.BIEL_PROJECT_SLUG }}/sync/
+            https://app.biel.ai/api/v1/projects/${{ secrets.BIEL_PROJECT_SLUG }}/sources/sync/; then
+            echo "❌ Failed to sync Biel.ai project"
+            exit 1
+          fi
+          echo "✅ Project synced successfully"
 ```
 
 ### 2. Configure GitHub secrets
 
 1. In your GitHub repository, go to **Settings** > **Secrets and variables** > **Actions**
 2. Click **New repository secret** and add:
-   - **Name**: `BIEL_API_KEY`
+   - **Name**: `BIEL_API_TOKEN`
    - **Secret**: Your Biel.ai API key
 
 For more information, see the GitHub documentation on [Using secrets in GitHub Actions](https://docs.github.com/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions).
@@ -90,7 +95,7 @@ paths:
 Use this workflow only when your site is not publicly accessible.
 
 :::note
-Site uploads are limited to 50MB. [Contact us](https://biel.ai/contact) for higher limits.
+Site uploads are limited to 250MB. [Contact us](https://biel.ai/contact) for higher limits.
 :::
 
 ### 1. Create the deployment workflow
@@ -130,19 +135,30 @@ jobs:
       #     npm run build
 
       - name: Deploy to Biel AI
+        if: github.ref == 'refs/heads/main'
         run: |
-          cd $BUILD_OUTPUT_DIR && zip -r ../site.zip . && cd ..
+          cd $BUILD_OUTPUT_DIR && zip -r ../docs-site.zip . && cd ..
           
-          curl -X POST \
-            -H "Authorization: Api-Key ${{ secrets.BIEL_API_KEY }}" \
-            -F "site_zip=@site.zip" \
+          echo "Uploading site to Biel AI..."
+          if ! curl -f -X POST \
+            -H "Authorization: Api-Key ${{ secrets.BIEL_API_TOKEN }}" \
+            -F "site_zip=@docs-site.zip" \
             -F "site_name=$BIEL_SITE_NAME" \
             -F "base_url=$BIEL_BASE_URL" \
-            "$BIEL_API_BASE_URL/api/v1/projects/$BIEL_PROJECT_SLUG/sources/"
+            "$BIEL_API_BASE_URL/api/v1/projects/$BIEL_PROJECT_SLUG/sources/"; then
+            echo "❌ Failed to deploy to Biel AI"
+            exit 1
+          fi
+          echo "✅ Site uploaded successfully"
           
-          curl -X POST \
-            -H "Authorization: Api-Key ${{ secrets.BIEL_API_KEY }}" \
-            "$BIEL_API_BASE_URL/api/v1/projects/$BIEL_PROJECT_SLUG/sync/"
+          echo "Syncing site on Biel AI..."
+          if ! curl -f -X POST \
+            -H "Authorization: Api-Key ${{ secrets.BIEL_API_TOKEN }}" \
+            "$BIEL_API_BASE_URL/api/v1/projects/$BIEL_PROJECT_SLUG/sources/sync/"; then
+            echo "❌ Failed to sync on Biel AI"
+            exit 1
+          fi
+          echo "✅ Site synced successfully"
 ```
 
 ### 2. Update environment variables
