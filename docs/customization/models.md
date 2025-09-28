@@ -10,19 +10,23 @@ Biel.ai offers a range of AI models designed to enhance user interactions with y
 
 Biel.ai supports the following models:
 
-### GPT models
-- **GPT-4o Mini (default)**: Optimized for speed and efficiency.
-- **GPT-4**: Advanced capabilities for detailed and complex queries.  
-- **GPT-4.1-nano**: Lightweight version optimized for maximum speed and efficiency.
-- **GPT-4.1-mini**: Enhanced version optimized for speed and efficiency.  
-- **GPT-4.1**: Advanced model with enhanced capabilities for detailed and complex queries.
-- **GPT-5**: OpenAI's most advanced model with unified reasoning capabilities, enhanced multimodal support, and superior performance across coding, math, and complex analysis tasks.
+### OpenAI models
 
-### Claude models
-- **Claude 3.5 Haiku**: Fast and effective for general documentation.  
-- **Claude 3.5 Sonnet**: Designed for nuanced, context-rich answers.  
-- **Claude 3.7 Sonnet**: Advanced model designed for nuanced, context-rich answers.
-- **Claude Sonnet 4.0**: Anthropic's most advanced model with high-performance reasoning capabilities, optimized for complex problem-solving and extended thinking tasks.
+| Category | Model | Description |
+|----------|-------|-------------|
+| Fast | **GPT-4o mini (default)** | Optimized for speed and efficiency. |
+| Fast | **GPT-4.1-mini** | Enhanced version optimized for speed and efficiency. |
+| Advanced | **GPT-4** | Advanced capabilities for detailed and complex queries. |
+| Advanced | **GPT-4.1** | Advanced model with enhanced capabilities for detailed and complex queries. |
+| Advanced | **GPT-5** | OpenAI's most advanced model with unified reasoning capabilities, enhanced multimodal support, and superior performance across coding, math, and complex analysis tasks. |
+
+### Anthropic models
+
+| Category | Model | Description |
+|----------|-------|-------------|
+| Fast | **Claude 3.5 Haiku** | Fast and effective for general documentation. |
+| Advanced | **Claude Sonnet 3.7** | Advanced model designed for nuanced, context-rich answers. |
+| Advanced | **Claude Sonnet 4.0** | Anthropic's most advanced model with high-performance reasoning capabilities, optimized for complex problem-solving and extended thinking tasks. |
 
 ## Model selection guide
 
@@ -30,7 +34,6 @@ Models are categorized based on their primary characteristics:
 
 ### Fast models
 - GPT-4o mini
-- GPT-4.1-nano
 - GPT-4.1 mini
 - Claude 3.5 Haiku
 
@@ -41,10 +44,9 @@ Models are categorized based on their primary characteristics:
 - All subscription plans
 
 ### Advanced models
-- GPT-4
 - GPT-4.1
 - GPT-5
-- Claude 3.5/3.7 Sonnet
+- Claude 3.7 Sonnet
 - Claude Sonnet 4.0
 
 **Best for:**
