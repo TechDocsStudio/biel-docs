@@ -12,21 +12,17 @@ Biel.ai supports the following models:
 
 ### OpenAI models
 
-| Category | Model | Description |
-|----------|-------|-------------|
-| Fast | **GPT-4o mini (default)** | Optimized for speed and efficiency. |
-| Fast | **GPT-4.1-mini** | Enhanced version optimized for speed and efficiency. |
-| Advanced | **GPT-4** | Advanced capabilities for detailed and complex queries. |
-| Advanced | **GPT-4.1** | Advanced model with enhanced capabilities for detailed and complex queries. |
-| Advanced | **GPT-5** | OpenAI's most advanced model with unified reasoning capabilities, enhanced multimodal support, and superior performance across coding, math, and complex analysis tasks. |
+- **GPT-4o mini (default)**: Optimized for speed and efficiency.
+- **GPT-4.1-mini**: Enhanced version optimized for speed and efficiency.
+- **GPT-4o**: Advanced capabilities for detailed and complex queries.
+- **GPT-4.1**: Advanced model with enhanced capabilities for detailed and complex queries.
+- **GPT-5**: OpenAI's most advanced model with unified reasoning capabilities, enhanced multimodal support, and superior performance across coding, math, and complex analysis tasks.
 
 ### Anthropic models
 
-| Category | Model | Description |
-|----------|-------|-------------|
-| Fast | **Claude 3.5 Haiku** | Fast and effective for general documentation. |
-| Advanced | **Claude Sonnet 3.7** | Advanced model designed for nuanced, context-rich answers. |
-| Advanced | **Claude Sonnet 4.0** | Anthropic's most advanced model with high-performance reasoning capabilities, optimized for complex problem-solving and extended thinking tasks. |
+- **Claude Haiku 3.5**: Fast and effective for general documentation.
+- **Claude Sonnet 3.7**: Advanced model designed for nuanced, context-rich answers.
+- **Claude Sonnet 4.0**: Anthropic's most advanced model with high-performance reasoning capabilities, optimized for complex problem-solving and extended thinking tasks.
 
 ## Model selection guide
 
@@ -44,9 +40,10 @@ Models are categorized based on their primary characteristics:
 - All subscription plans
 
 ### Advanced models
+- GPT-4o
 - GPT-4.1
-- GPT-5
-- Claude 3.7 Sonnet
+- GPT-5 
+- Claude Sonnet 3.7
 - Claude Sonnet 4.0
 
 **Best for:**
@@ -87,6 +84,6 @@ Follow these steps to change the AI model used in your Biel.ai project:
 
 Your chatbot will now use the selected model to respond to user queries.  
 
-## Data Privacy
+## Data privacy
 
 Biel.ai prioritizes your data privacy. By default, your chatbot interactions are opted out of training programs, ensuring that your data is not used to train or improve third-party AI models. This guarantees the confidentiality of your documentation and user interactions.
