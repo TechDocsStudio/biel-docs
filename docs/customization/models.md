@@ -22,7 +22,8 @@ Biel.ai supports the following models:
 
 - **Claude Haiku 3.5**: Fast and effective for general documentation.
 - **Claude Sonnet 3.7**: Advanced model designed for nuanced, context-rich answers.
-- **Claude Sonnet 4.0**: Anthropic's most advanced model with high-performance reasoning capabilities, optimized for complex problem-solving and extended thinking tasks.
+- **Claude Sonnet 4.0**: High-performance model with advanced reasoning capabilities, optimized for complex problem-solving and extended thinking tasks.
+- **Claude Sonnet 4.5**: Latest generation model with enhanced reasoning, improved coding capabilities, and superior performance across complex analytical tasks.
 
 ## Model selection guide
 
@@ -45,6 +46,7 @@ Models are categorized based on their primary characteristics:
 - GPT-5 
 - Claude Sonnet 3.7
 - Claude Sonnet 4.0
+- Claude Sonnet 4.5
 
 **Best for:**
 - Highly technical content
