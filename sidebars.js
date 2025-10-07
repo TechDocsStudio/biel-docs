@@ -61,6 +61,7 @@ const sidebars = {
           label: 'Other platforms',
           items: [
             'installation/wordpress',
+            'installation/confluence',
           ],
         },
       ],
