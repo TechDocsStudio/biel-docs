@@ -21,7 +21,7 @@ Before starting, ensure you have:
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **Your project slug** - this is visible in your project URL or dashboard.
 - An AI tool that supports MCP (Cursor IDE, Claude Desktop, or VS Code with MCP extension).
-- **API key** (optional) - only required for private projects. Business/Enterprise plans only.
+- **API key** (optional) - only required for private projects. Professional/Business/Enterprise plans only.
 
 ## Quickstart
 
@@ -176,11 +176,11 @@ If the AI tool isn't querying Biel.ai:
 
 ### API Key issues
 
-**API keys are only required for private projects** and are only available on **Business and Enterprise plans**.
+**API keys are only required for private projects** and are available on **Professional**, **Business, and Enterprise plans**.
 
 If you are getting authentication errors:
 1. **Check if your project is private:** Public projects don't need API keys.
-2. **Upgrade your plan:** API keys require Business or Enterprise plan.
+2. **Upgrade your plan:** API keys require Professional, Business or Enterprise plan.
 3. **Regenerate API key:** Create a new API key in your team settings if needed.
 
 ## Security considerations

@@ -34,7 +34,7 @@ Only users with the **Administrator** or **Maintainer** role can configure proje
 Configure basic project information:
 
 - **Name**: Change the project display name.
-- **Private project**: Mark the project as private to require API key authentication for access. This feature is available for Business and Enterprise plans only.
+- **Private project**: Mark the project as private to require API key authentication for access. This feature is available for Professional, Business and Enterprise plans.
 - **Demo page**: Enable or disable the demo page for testing your chatbot.
 
 ### Sources
