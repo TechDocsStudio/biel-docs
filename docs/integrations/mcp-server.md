@@ -1,33 +1,41 @@
 ---
-sidebar_label: MCP server
-description: Connect AI tools like Cursor, VS Code, and Claude Desktop to your product documentation using Biel.ai's MCP server.
+sidebar_label: MCP Server
+title: MCP Server Integration for Cursor, Claude Desktop, and VS Code
+description: Connect Cursor, Claude Desktop, VS Code, and other AI coding assistants to your documentation using Biel.ai's Model Context Protocol (MCP) server
+keywords: [mcp server, model context protocol, cursor mcp, claude desktop mcp, vs code mcp, ai coding assistant, documentation integration, rag documentation, cursor documentation integration, docs mcp, documentation mcp, mcp docs]
 sidebar_position: 1
 ---
 
-# MCP server integration
+# Integrate documentation with your IDE using Biel.ai MCP server
 
-Connect AI development tools like Cursor, VS Code, and Claude Desktop to your product documentation through Biel.ai's Model Context Protocol (MCP) server. 
+Connect AI coding assistants like Cursor, Claude Desktop, and VS Code to your product documentation using Biel.ai's Model Context Protocol (MCP) server. Your AI assistant can search and reference your docs while helping developers write code.
 
-Biel.ai provides a hosted Retrieval-Augmented Generation (RAG) layer that makes your documentation searchable and useful to AI tools. This enables smarter completions, accurate technical answers, and context-aware suggestions—directly in your IDE or chat environment.
+The MCP server provides a hosted Retrieval-Augmented Generation (RAG) layer that connects AI tools directly to your indexed documentation. This enables context-aware code completions, accurate technical answers, and intelligent suggestions based on your actual documentation—all without leaving your IDE.
 
-![Biel MCP](./images/biel-mcp.png)
+![Biel MCP server connecting AI tools to documentation](./images/biel-mcp.png)
 
-The MCP server acts as a bridge between your AI coding assistant and your Biel.ai project, allowing the AI to query your documentation whenever it needs context about your product or API.
+## How it works
 
-## Prerequisites
+The MCP server acts as a bridge between your AI coding assistant (like Cursor or Claude Desktop) and your Biel.ai project. When your AI needs information about your product or API, it queries your documentation through MCP and receives relevant context to provide better answers.
 
-Before starting, ensure you have:
-- A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
-- **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
-- **Your project slug** - this is visible in your project URL or dashboard.
-- An AI tool that supports MCP (Cursor IDE, Claude Desktop, or VS Code with MCP extension).
-- **API key** (optional) - only required for private projects. Professional/Business/Enterprise plans only.
+## Requirements
 
-## Quickstart
+This integration requires:
 
-The fastest way to get started is using our hosted MCP server. No setup or maintenance required.
+- **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
+- **Project slug** from your Biel.ai dashboard
+- **AI coding assistant** that supports MCP:
+  - Cursor IDE
+  - Claude Desktop
+  - VS Code (with MCP extension)
+  - Other MCP-compatible tools
+- **API key** (optional) - only for private projects on Professional/Business/Enterprise plans
 
-Use this MCP server configuration with your AI tool:
+## Setup
+
+Connect your AI coding assistant to Biel.ai using our hosted MCP server (no installation or maintenance required).
+
+Add this configuration to your AI tool's MCP settings:
 
 ```json
 {
@@ -50,38 +58,39 @@ Set the following parameters:
 - `domain`: Your documentation domain.
 - `api_key`: Optional, API key (only needed for private projects)
 
-## Tool-specific setup
+## Configuration for specific tools
 
-### Cursor IDE
+### Cursor IDE MCP setup
 
 1. Open Cursor Settings: `Ctrl+Shift+J` (Windows/Linux) or `Cmd+Shift+J` (Mac).
 2. Go to **MCP** → **Add new global MCP Server**
 3. Paste the configuration from Step 1
 4. Save and restart Cursor.
 
-### Claude desktop
+### Claude Desktop MCP setup
 
-1. Open your configuration file:
+1. Open your MCP configuration file:
    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 2. Add the configuration from Step 1.
 3. Save and restart Claude Desktop.
 
-### VS Code
+### VS Code MCP setup
 
-1. Install the MCP extension for VS Code.
-2. Open VS Code settings → MCP configuration.
-3. Add the configuration from Step 1.
+1. Install the [MCP extension for VS Code](https://marketplace.visualstudio.com/search?term=mcp&target=VSCode).
+2. Open VS Code settings → Extensions → MCP configuration.
+3. Add the configuration above.
+4. Reload VS Code.
 
-## Advanced: Self-hosted
+## Self-hosted option
 
-For advanced users who prefer to run their own MCP server instance, see the [README](https://github.com/techdocsStudio/biel-mcp) for self-hosting instructions.
+For teams who prefer to host their own MCP server, see the [self-hosting documentation](https://github.com/techdocsStudio/biel-mcp) on GitHub.
 
-## Using the integration
+## Usage
 
-The MCP server connects your AI assistant to your Biel.ai documentation. Here's exactly how to use it:
+Once configured, your AI coding assistant can query your documentation automatically. Here are three ways to use the integration:
 
-### Method 1: Automatic usage
+### Automatic queries (recommended)
 
 Your IDE will automatically call the MCP server when needed. The AI reads the `description` field to understand when to use the tool.
 
@@ -111,7 +120,7 @@ You: "What's the rate limiting policy?"
 AI: [Sees "API specs" in description → Searches docs → Provides info]
 ```
 
-### Method 2: Use rules (Cursor example)
+### Cursor rules integration
 
 Configure [Cursor rules](https://docs.cursor.com/en/context/rules) to automatically invoke the Biel.ai MCP server for specific query types.
 
@@ -133,7 +142,7 @@ For questions about our product documentation, API, or troubleshooting: Use the 
 
 **File location:** `.cursor/rules/biel-ai-auto-query.mdc`
 
-### Method 3: Manual trigger with keyword
+### Manual trigger with keyword
 
 Add `biel_ai` anywhere in your message to explicitly search your documentation:
 
