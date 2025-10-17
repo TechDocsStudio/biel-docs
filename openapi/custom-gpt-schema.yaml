@@ -1,0 +1,143 @@
+openapi: 3.1.1
+info:
+  title: Biel.ai Custom GPT Integration
+  version: 0.1.0
+  description: |
+    Connect your Custom GPT to Biel.ai to answer questions about your company documentation.
+
+    This integration allows ChatGPT to search and retrieve information from your indexed documentation,
+    providing accurate answers based on your actual content.
+
+    For more information, visit [Biel.ai](https://biel.ai)
+servers:
+  - url: https://app.biel.ai
+    description: Biel.ai production
+paths:
+  /api/v1/chats/:
+    post:
+      operationId: sendMessageToChat
+      summary: Send a message to the AI chat
+      x-openai-isConsequential: false
+      description: >
+        Send a message to the bot and get a response. Returns a response with relevant information from your
+        documentation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The message to send to the AI
+                project_slug:
+                  type: string
+                  description: Your project slug
+                chat_uuid:
+                  type: string
+                  format: uuid
+                  description: UUID of existing chat (optional, leave empty for first query)
+                url:
+                  type: string
+                  description: URL where the chat is initiated from
+                email:
+                  type: string
+                  description: User's email address (optional)
+              required:
+                - message
+                - project_slug
+            example:
+              message: How do I get started?
+              project_slug: your-project-slug
+              chat_uuid: ""
+              url: https://docs.example.com
+              email: user@example.com
+      security:
+        - ApiKeyAuth: []
+      responses:
+        "200":
+          description: Message sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_message_id:
+                    type: string
+                  ai_message:
+                    type: object
+                    properties:
+                      from:
+                        type: string
+                      message:
+                        type: string
+                      messageId:
+                        type: string
+                      isPartial:
+                        type: boolean
+                      timestamp:
+                        type: string
+                      sources:
+                        type: array
+                        items:
+                          type: object
+                  chat_uuid:
+                    type: string
+        "201":
+          description: New chat created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_message_id:
+                    type: string
+                  ai_message:
+                    type: object
+                    properties:
+                      from:
+                        type: string
+                      message:
+                        type: string
+                      messageId:
+                        type: string
+                      isPartial:
+                        type: boolean
+                      timestamp:
+                        type: string
+                      sources:
+                        type: array
+                        items:
+                          type: object
+                  chat_uuid:
+                    type: string
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        "403":
+          description: Forbidden - missing permissions or unauthorized domain
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: |
+        API Key authentication using the format: `Api-Key <your-api-key>`
+
+        Create your API key in Team Settings with `chat_create` permission.
+  schemas: {}
