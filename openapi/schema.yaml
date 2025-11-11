@@ -118,6 +118,9 @@ paths:
                 email:
                   type: string
                   description: User's email address (optional)
+                think_mode:
+                  type: boolean
+                  description: Enable reasoning mode for deeper AI analysis (optional, requires project to have reasoning mode plugin enabled)
               required:
                 - message
       security:
@@ -628,6 +631,10 @@ components:
             $ref: '#/components/schemas/Filter'
           readOnly: true
           description: Domain filters configured for the project
+        think_mode:
+          type: boolean
+          readOnly: true
+          description: Whether the project has the reasoning mode plugin enabled for deeper AI reasoning capabilities
         is_private:
           type: boolean
           readOnly: true
@@ -637,6 +644,7 @@ components:
       - initial_message
       - suggested_questions
       - whitelabel
+      - think_mode
       - is_private
   securitySchemes:
     ApiKeyAuth:

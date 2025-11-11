@@ -90,6 +90,7 @@ const sidebars = {
           items: [
             'customization/initial-message',
             'customization/suggested-questions',
+            'customization/think-mode',
             'customization/search',
             'customization/data-privacy',
           ],
