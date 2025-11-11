@@ -26,6 +26,7 @@
   --ifm-link-hover-color: #542895;
   --feedback-primary-color: #18181b;
   --biel-button-dark-bg-color: #18181b;
+  --biel-primary-hover-color: #18181b;
   --ifm-navbar-item-padding-vertical: 0;
 }
 
@@ -43,6 +44,7 @@
   --ifm-color-primary-lighter: #9f7fff;
   --ifm-color-primary-lightest: #c4b1ff;
   --biel-primary-color: #7A4DFF;
+  --biel-primary-hover-color: #542895;
   --biel-button-dark-bg-color: #fff;
   --biel-button-dark-text-color: #18181b;
   --feedback-button-dark-bg-color: #fff;
