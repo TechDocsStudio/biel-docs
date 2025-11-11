@@ -1,84 +1,130 @@
 ---
 sidebar_label: Confluence
-description: Add an AI chatbot to your Confluence space with this step-by-step guide.
+description: Add an AI chatbot to your Confluence pages with this step-by-step guide.
 ---
 
 # AI chat widget for Confluence
 
-Add an AI chatbot to your Confluence space using Biel.ai's data source integration. The chatbot can answer questions based on your Confluence pages and spaces, making your team's knowledge more accessible.
+Add an AI chatbot to your Confluence pages using Biel.ai's web components. The integration works with Confluence Cloud and can be added through custom HTML macros on your pages or spaces.
 
-This guide shows you how to connect your Confluence space to Biel.ai and configure the AI chatbot for your documentation.
+This guide shows you how to add the chat widget to your Confluence pages in minutes.
 
 ## Prerequisites
 
 Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
-- **Admin access to your Confluence space** to generate API tokens. Only account owners can create API keys.
-- **A Confluence Cloud instance** (Confluence Server support coming soon).
-
-## Setup Confluence integration
-
-The Confluence integration allows Biel.ai to index your Confluence pages and provide AI-powered answers based on your team's documentation.
-
-### 1. Generate Confluence API token
-
-First, you'll need to create an API token for Biel.ai to access your Confluence content:
-
-1. In Confluence, select your avatar from the bottom left of the management screen.
-1. Select API info from the menu that appears.
-1. Select **Create key**.
-1. Enter a key name.
-1. Copy the generated token (you won't be able to see it again)
-
-For detailed instructions, see the [Create and manage API keys](https://support.atlassian.com/statuspage/docs/create-and-manage-api-keys/) on managing API tokens.
-
-### 2. Configure Confluence in Biel.ai
-
-Now connect your Confluence space to your Biel.ai project:
-
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Select **Confluence**
-4. Fill in the required information:
-   - **Space URL**: Your Confluence space URL (e.g., `https://yourcompany.atlassian.net/wiki/spaces/DOCS`)
-   - **Email**: The email address associated with your Atlassian account
-   - **API Token**: The token you generated in step 1
-5. Click **Save**
+- **A Confluence Cloud instance** with permissions to edit pages.
+- **Admin access** (recommended) to add the widget site-wide, or page edit permissions for specific pages.
 
 :::tip
-You can find your space URL by navigating to any page in your Confluence space and copying the URL up to `/spaces/SPACENAME`.
+Looking to connect Confluence as a data source instead? See [Confluence as a data source](../customization/data-sources/confluence.md) to index your Confluence pages for AI answers.
 :::
 
-### 3. Test the connection
+## Installation
 
-After saving your configuration:
+The Biel.AI chat widget enables a conversational chat powered by AI in your site.
 
-1. Biel.ai will automatically start indexing your Confluence pages
-2. You can monitor the indexing progress in the **Sources** section
-3. Once indexing completes, test the chatbot by asking questions about your Confluence content
+![Chatbot widget for docs](./images/biel-widget-docs.png)
+
+### Option 1: Add to specific pages
+
+To add the Biel.ai chatbot to specific Confluence pages:
+
+1. Navigate to the Confluence page where you want to add the chatbot.
+
+2. Click **Edit** to enter edit mode.
+
+3. Type `/html` to insert an HTML macro, or click the **+** button and search for **HTML**.
+
+4. In the HTML macro, paste the following code:
+
+    ```html
+    <!-- Initialize the Biel.AI chat widget -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
+
+    <biel-button project="<YOUR_PROJECT_ID>" 
+        header-title="Biel.ai chatbot"
+        button-position="bottom-right"
+        modal-position="bottom-right"
+        button-style="dark">
+            Ask AI
+    </biel-button>
+    ```
+
+    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
+
+5. Click **Save** to publish the page.
+
+6. View the page to verify the chatbot appears and works correctly.
+
+### Option 2: Add to all pages (Space-wide)
+
+To add the chatbot to all pages in a Confluence space, you can use a custom theme or header/footer:
+
+:::info
+This method requires Confluence admin permissions and may vary based on your Confluence version and configuration.
+:::
+
+1. Navigate to **Space settings** for your Confluence space.
+
+2. Click **Look and Feel** in the sidebar.
+
+3. Select the **Custom HTML** tab.
+
+4. In the **At end of HEAD** section, add:
+
+    ```html
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
+    ```
+
+5. In the **At end of BODY** section, add:
+
+    ```html
+    <biel-button project="<YOUR_PROJECT_ID>" 
+        header-title="Biel.ai chatbot"
+        button-position="bottom-right"
+        modal-position="bottom-right"
+        button-style="dark">
+            Ask AI
+    </biel-button>
+    ```
+
+    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
+
+6. Click **Save** to apply the changes to all pages in the space.
+
+## Limitations
+
+**Confluence Cloud restrictions**
+- Custom HTML features may be limited based on your Confluence plan
+- Some Confluence Cloud instances restrict script execution for security
+- The HTML macro may not be available on all Confluence plans
+
+**Alternative approach**
+- If HTML macros are restricted, consider using the [Confluence data source integration](../customization/data-sources/confluence.md) and embedding the chatbot on an external documentation site that links to your Confluence content.
 
 ## Troubleshooting
 
-**Authentication failed**
-- Verify your email address matches your Atlassian account
-- Check that the API token is correct and hasn't expired
-- Ensure you have access to the specified Confluence space
+**HTML macro not available**
+- Verify your Confluence plan includes HTML macro support
+- Contact your Confluence admin to enable HTML macros
+- Some organizations disable HTML macros for security reasons
 
-**Pages not indexing**
-- Check if pages are published (not drafts)
-- Verify space permissions allow API access
-- Review URL filters for over-exclusion
-- Large spaces may take time to process completely
+**Chatbot not appearing**
+- Check that both the CSS and JavaScript links are properly added
+- Verify your project ID is correct
+- Check browser console for any error messages
 
-**Content quality issues**
-- Some pages may have minimal text content
-- Confluence macros may not render properly in AI responses
-- Consider excluding template or boilerplate pages
+**Styling issues**
+- Confluence's default styling may conflict with the widget
+- Try adjusting the `button-position` attribute (e.g., `center-right`, `bottom-left`)
+- See the [customization section](../customization/layout.mdx) for style overrides
 
-**Rate limiting**
-- Contact support if indexing stalls for extended periods
+## Next steps
 
-## Need help?
+For more about customization and additional features exploration, check out the [customization](/customization) section.
 
-We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact) if you need assistance with your Confluence integration.
+Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
