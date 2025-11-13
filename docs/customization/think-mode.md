@@ -4,39 +4,47 @@
 The think mode is currently in beta and available for early adopters. We're actively working on improving its performance.
 :::
 
-Enable deeper AI reasoning for complex questions that require comprehensive analysis.
+Control how the AI reasons through questions with three distinct modes: Auto, Instant, and Think.
 
-![Think mode toggle in chat widget](./images/think-mode.png)
+![Think mode settings in chat widget](./images/think-mode.png)
 
-## What is think mode?
+## Reasoning modes
 
+Your chat widget includes a settings button that lets users choose their preferred reasoning depth:
 
-**When to use it:**
-- Complex technical questions requiring multiple sources
-- Implementation tasks needing complete context
-- Questions where accuracy matters more than speed
+**Auto (default)**
+- Balances speed and quality
+- Lets the system determine the appropriate reasoning depth
+- Good for most questions
 
-**When to skip it:**
-- Simple lookups or quick references
-- Single parameter definitions
+**Instant**
+- Instant answers for quick lookups
+- Best for simple questions and single parameter definitions
+- Uses minimal computational resources
+
+**Think**
+- Takes longer for better accuracy
+- Deep reasoning for complex technical questions
+- Best when accuracy matters more than speed
+- Uses 4-8x more interactions per question
 
 ## Performance trade-offs
 
-Think mode provides higher quality answers at the cost of speed and usage:
+Each reasoning mode has different speed and usage characteristics:
 
-| Metric | Standard Mode | think mode |
-|--------|--------------|------------|
+| Metric | Auto/Fast | Think |
+|--------|-----------|-------|
 | Response time | ~1-4 seconds | ~8 seconds - 1 minute |
 | Interactions used | 1 per question | 4-8 per question |
 | Best for | Quick lookups | Complex analysis |
 
 :::info
-Each interaction counts toward your plan's usage limits. think mode uses 4-8x more interactions than standard mode.
+Each interaction counts toward your plan's usage limits. Think mode uses 4-8x more interactions than Auto or Fast mode.
 :::
 
 ## Availability
 
-think mode is available on:
+Think mode is available on:
 - ✅ **Growth, Professional, and Business plans**
 - ✅ **Demo mode** (for testing)
 - ❌ **Starter plan** (not available due to higher computational cost)
