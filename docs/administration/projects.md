@@ -5,29 +5,82 @@ title: Manage projects
 
 # Manage projects
 
-Projects are the core organizational unit in Biel.ai where you configure your chatbot's behavior, data sources, and security settings. This guide explains how to view, configure, and manage your projects.
-
+Projects are the core organizational unit in Biel.ai where you configure your chatbot's behavior, data sources, and security settings.
+This guide explains how to view, configure, and manage your projects.
 
 ## View all projects
 
-From the **Projects** dashboard, you can:
+The **Projects** dashboard displays a list of all your projects.
 
-- View all your projects at a glance
-- Access individual project settings
-- Monitor project activity and analytics
+![Projects list](./images/project-list.png)
 
-Within a specific project, you can:
+**To view project details:** Click on any project name in the list.
 
-- View chat entries and conversation history
-- Filter conversations by sentiment
-- Delete chat entries when needed
+## Project detail page
+
+From the **Projects** dashboard, click on a project name to open its detail page.
+
+![Project details](./images/project-details.png)
+
+Here you can:
+
+**Project information:**
+- View the project ID
+- Access the code snippet to embed the chatbot widget
+- Access the project details using the **Settings** button
+
+**Testing and monitoring:**
+- Test your chatbot widget using the **New chat** button
+- Recrawl sources to update indexed content
+- View crawl logs to troubleshoot indexing issues
 - Access detailed project analytics
 
-## Configure project settings
+**Chat management:**
+- View all chat entries and conversation history
+- Filter conversations by sentiment
+- Click on any chat entry to view its details
 
-:::important  
-Only users with the **Administrator** or **Maintainer** role can configure project settings. For more details, see [Manage roles](roles.md).  
-:::  
+**Project actions:**
+- Delete the project
+
+### Chat detail view
+
+From the project detail page, click on any chat entry in the conversation list to view its full details.
+
+![Chat details](./images/chat-details.png)
+
+This view shows detailed information about that specific conversation:
+
+**User information:**
+- Email address (if provided)
+- Country and IP address
+- Sentiment analysis of the conversation
+
+**Conversation metadata:**
+- URL where the chat originated
+- Date and time of the conversation
+- Full conversation history
+
+**Actions:**
+- **Download**: Export the chat in PDF, Excel, or CSV format
+- **Delete**: Remove the chat entry
+
+### Bulk actions
+
+Select multiple chat entries using the checkboxes and access the **Select action** dropdown to perform bulk operations:
+
+- **Archive chat entries**: Archive conversation history to keep your project organized while preserving data.
+- **Export chat entries**: Download conversation data in bulk for analysis or record-keeping. Available formats include CSV, PDF, and Excel.
+
+## Project settings
+
+From the project detail page, click the **Settings** button (located in the top right) to access the configuration options.
+
+![Project settings](./images/project-settings.png)
+
+:::important
+Only users with the **Administrator** or **Maintainer** role can configure project settings. For more details, see [Manage roles](roles.md).
+:::
 
 ### Project details
 
@@ -43,8 +96,10 @@ Select and configure data sources for your project. Sources determine what infor
 
 Available source types:
 - **URLs**: Index specific web pages.
-- **Sitemaps**: Index entire websites using XML sitemaps.  
+- **Sitemaps**: Index entire websites using XML sitemaps.
 - **GitHub**: Index GitHub repositories directly.
+- **Confluence**: Connect your Confluence workspace to index documentation.
+- **OpenAPI files**: Import API specifications to provide accurate API documentation.
 - **Files**: Upload documents (PDF, CSV, Excel, Word, TXT, MD).
 
 For detailed configuration instructions, see [Sources](../customization/data-sources/overview.md).
@@ -72,6 +127,7 @@ Configure the AI model and behavior:
 
 - **Select model**: Choose from GPT or Claude models based on your needs and subscription plan. For more details, see [Models](../customization/models.md).
 - **Define prompt**: Extend the default AI Assistant or create a custom prompt for specialized behavior. For more details, see [Custom prompt](../customization/custom-prompt.md).
+- **Enable think mode**: Activate deeper AI reasoning for complex questions. Available on Growth, Professional, and Business plans. For more details, see [Think mode](../customization/think-mode.md).
 
 
 ### Data privacy
