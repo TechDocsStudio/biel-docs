@@ -54,11 +54,11 @@ The table below lists all the available properties that modify the chatbot modal
 | `hide-refresh-button`  | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, the refresh button hides. |
 | `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, removes the feedback options (like thumbs up/down) that users can use to rate AI responses. |
 | `hide-sources`         | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the sources section from AI responses in the chat interface. |
-| `hide-think-mode-button` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the Think Mode button from the chatbot header. Only visible if your project has the reasoning mode plugin enabled. |
+| `hide-settings-button` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the settings button (reasoning mode selector) from the chatbot header. Only applies if your project has the reasoning mode plugin enabled. |
 | `hide-tooltips`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the tooltips that appear when hovering over header icons. |
 | `modal-position`       | **Type**: `string`<br />**Default value**: `center`<br />**Available values:** `center`, `top-center`, `bottom-right`, `bottom-left`<br /><br />Determines where the chat modal appears on the screen when opened. Choose the position that best fits your website's layout.|
 | `show-terms-modal` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, displays a terms and conditions modal before starting the chat. |
-| `think-mode-enabled`   | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, enables Think Mode by default for deeper AI reasoning. Requires the reasoning mode plugin to be enabled for your project. See [Think Mode](./think-mode) for details. |
+| `think-mode-enabled`   | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, selects Think mode by default (instead of Auto) for deeper AI reasoning. Users can still change modes via the settings dropdown unless you also set `hide-settings-button` to `true`. Requires the reasoning mode plugin to be enabled for your project. See [Think Mode](./think-mode) for details. |
 | **Text**             |  |  |
 | `assistant-label`      | **Type**: `string`<br />**Default value**: `Assistant`<br /><br />Label text displayed above AI responses in the chat. |
 | `close-button-text`    | **Type**: `string`<br />**Default value**: `Close`<br /><br />Tooltip text for the close button in the chatbot header. |
@@ -75,10 +75,10 @@ The table below lists all the available properties that modify the chatbot modal
 | `sources-text`           | **Type**: `string`<br />**Default value**: `Sources`<br /><br />Text displayed for introducing sources in messages. |
 | `suggested-questions`    | **Type**: `array`<br />**Default value**: `[]`<br /><br />An array of strings containing questions that will be shown to users when they open the chat. These questions help guide users on what they can ask the AI. |
 | `suggested-questions-title` | **Type**: `string`<br />**Default value**: `Suggested questions`<br /><br />The heading text that appears above the list of suggested questions in the chat interface. |
+| `settings-button-text`   | **Type**: `string`<br />**Default value**: `Settings`<br /><br />Tooltip text for the settings button (reasoning mode selector) in the chatbot header. Only visible if your project has the reasoning mode plugin enabled. |
 | `terms-checkbox-text`    | **Type**: `string`<br />**Default value**: `I have read and agree to the Terms & Conditions.`<br /><br />Text displayed next to the terms acceptance checkbox. |
 | `terms-description`      | **Type**: `string`<br />**Default value**: `Please review our <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Terms & Conditions</a> before proceeding.`<br /><br />Description text shown in the terms and conditions modal. |
 | `terms-title`            | **Type**: `string`<br />**Default value**: `Chatbot Terms & Conditions`<br /><br />Title text for the terms and conditions modal. |
-| `think-mode-button-text` | **Type**: `string`<br />**Default value**: `Enable deeper reasoning (takes more time)`<br /><br />Tooltip text for the Think Mode button in the chatbot header. |
 | `welcome-message`        | **Type**: `string`<br />**Default value**: ""<br /><br />A custom greeting message that appears when users first open the chat. Use this to set the tone and provide initial guidance for the conversation. |
 
 ## biel-search-button

@@ -32,14 +32,14 @@ Your chat widget includes a settings button that lets users choose their preferr
 
 Each reasoning mode has different speed and usage characteristics:
 
-| Metric | Auto/Fast | Think |
+| Metric | Auto/Instant | Think |
 |--------|-----------|-------|
 | Response time | ~1-4 seconds | ~8 seconds - 1 minute |
 | Interactions used | 1 per question | 4-8 per question |
 | Best for | Quick lookups | Complex analysis |
 
 :::info
-Each interaction counts toward your plan's usage limits. Think mode uses 4-8x more interactions than Auto or Fast mode.
+Each interaction counts toward your plan's usage limits. Think mode uses 4-8x more interactions than Auto or Instant mode.
 :::
 
 ## Availability
@@ -67,44 +67,51 @@ Only users with the Administrator or Maintainer role can manage projects. For mo
 
 This makes think mode available as an option for users in your chat interface.
 
-### Step 2: Using think mode
+### Step 2: Using the reasoning modes
 
-Once enabled, users can activate think mode for specific questions:
+Once enabled, users can choose their preferred reasoning mode:
 
 **In the Chat Widget:**
-- Look for the lightbulb icon (💡) in the header
-- Click to toggle think mode on/off
-- Preference is saved across page reloads
+- Look for the settings icon (⚙️) in the header
+- Click to open the reasoning mode dropdown
+- Select Auto, Instant, or Think mode
+- Your selection is saved across page reloads
 
-![Think mode toggle in chat widget](./images/think-mode.png)
+![Think mode settings in chat widget](./images/think-mode.png)
 
 ## Customization options
 
-You can customize think mode behavior:
+You can customize the reasoning mode settings:
 
 ```html
-<!-- Hide the think mode button entirely -->
-<biel-search
+<!-- Hide the settings button entirely -->
+<biel-button
   project="my-project"
-  hideThinkModeButton="true"
-></biel-search>
+  hideSettingsButton="true"
+>Ask AI</biel-button>
 
-<!-- Enable think mode by default -->
-<biel-search
+<!-- Set Think mode as default -->
+<biel-button
   project="my-project"
   thinkModeEnabled="true"
-></biel-search>
+>Ask AI</biel-button>
+
+<!-- Customize the settings button tooltip -->
+<biel-button
+  project="my-project"
+  settingsButtonText="AI Settings"
+>Ask AI</biel-button>
 ```
 
 :::tip
-To force think mode on for all questions without letting users toggle it off, combine both options:
+To force Think mode on for all questions without letting users change it, combine both options:
 
 ```html
-<biel-search
+<biel-button
   project="my-project"
   thinkModeEnabled="true"
-  hideThinkModeButton="true"
-></biel-search>
+  hideSettingsButton="true"
+>Ask AI</biel-button>
 ```
 
 This ensures maximum answer quality but increases interaction usage by 4-8x for every question.
