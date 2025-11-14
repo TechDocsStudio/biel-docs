@@ -207,6 +207,8 @@ h3.openapi-tabs__heading {
   font-size: 1rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
   line-height: 1.3;
   font-weight: 700;
 }
@@ -216,8 +218,16 @@ h4.openapi-security__summary-header {
   font-size: 1rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
   line-height: 1.4;
   font-weight: 600;
+}
+
+h3.openapi-markdown__details-summary-header-body {
+  font-size: 12px !important;
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .markdown h2 {
