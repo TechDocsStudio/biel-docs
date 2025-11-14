@@ -94,7 +94,7 @@ paths:
 
 Use this workflow only when your site is not publicly accessible.
 
-:::note
+:::important
 Site uploads are limited to 250MB. [Contact us](https://biel.ai/contact) for higher limits.
 :::
 

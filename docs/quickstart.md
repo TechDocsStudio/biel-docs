@@ -71,4 +71,4 @@ If the chatbot does not provide accurate or helpful responses, try the following
 
 Congratulations! You've successfully created your first chatbot.
 
-To integrate the chatbot widget into your website, check out the [Installation](/category/installation) guides. You'll find detailed instructions for embedding the chatbot in your site, customizing its appearance, and configuring advanced integration options.
+To integrate the chatbot widget into your website, check out the [Installation](/installation) guides. You'll find detailed instructions for embedding the chatbot in your site, customizing its appearance, and configuring advanced integration options.

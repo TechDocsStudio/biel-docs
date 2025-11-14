@@ -1,18 +1,21 @@
 ---
-sidebar_label: MCP Server
+sidebar_label: Docs MCP Server
 title: MCP Server Integration for Cursor, Claude Desktop, and VS Code
 description: Connect Cursor, Claude Desktop, VS Code, and other AI coding assistants to your documentation using Biel.ai's Model Context Protocol (MCP) server
 keywords: [mcp server, model context protocol, cursor mcp, claude desktop mcp, vs code mcp, ai coding assistant, documentation integration, rag documentation, cursor documentation integration, docs mcp, documentation mcp, mcp docs]
 sidebar_position: 1
 ---
 
-# Integrate documentation with your IDE using Biel.ai MCP server
+# Docs MCP server
 
-Connect AI coding assistants like Cursor, Claude Desktop, and VS Code to your product documentation using Biel.ai's Model Context Protocol (MCP) server. Your AI assistant can search and reference your docs while helping developers write code.
-
-The MCP server provides a hosted Retrieval-Augmented Generation (RAG) layer that connects AI tools directly to your indexed documentation. This enables context-aware code completions, accurate technical answers, and intelligent suggestions based on your actual documentation—all without leaving your IDE.
+Connect AI coding assistants like Cursor, Claude Desktop, and VS Code to your product documentation using Biel.ai's Model Context Protocol (MCP) server.
+Your AI assistant can search and reference your docs while helping developers write code.
 
 ![Biel MCP server connecting AI tools to documentation](./images/biel-mcp.png)
+
+
+The MCP server provides a hosted Retrieval-Augmented Generation (RAG) layer that connects AI tools directly to your indexed documentation.
+This enables context-aware code completions, accurate technical answers, and intelligent suggestions based on your actual documentation—all without leaving your IDE.
 
 ## How it works
 

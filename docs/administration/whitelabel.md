@@ -5,15 +5,16 @@ title: Whitelabel
 
 # Whitelabel
 
-:::note
-This feature is available on the **Professional** plan and above.
-:::
 
 Biel.ai offers a white labeling option which allows you to hide the "Powered by Biel.ai" text, link, and logo from the chatbot widget. This feature is useful when you want to maintain a consistent brand experience on your website without any third-party branding.
 
+:::important
+This feature is available on the **Professional** plan and above.
+:::
+
 ## Remove Biel.ai branding
 
-:::important  
+:::important
 Only users with the **Administrator** or **Maintainer** role can enable this feature. For more details, see [Manage roles](roles.md).  
 :::
 

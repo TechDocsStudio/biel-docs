@@ -1,14 +1,14 @@
-# Think mode
-
-:::note Beta feature
-The think mode is currently in beta and available for early adopters. We're actively working on improving its performance.
-:::
+# Reasoning modes
 
 Control how the AI reasons through questions with three distinct modes: Auto, Instant, and Think.
 
-![Think mode settings in chat widget](./images/think-mode.png)
+![Reasoning mode settings in chat widget](./images/think-mode.png)
 
-## Reasoning modes
+:::important Beta feature
+Reasoning modes are currently in beta and available for early adopters (Professional plan and above). We're actively working on improving performance.
+:::
+
+## Available modes
 
 Your chat widget includes a settings button that lets users choose their preferred reasoning depth:
 
@@ -38,23 +38,12 @@ Each reasoning mode has different speed and usage characteristics:
 | Interactions used | 1 per question | 4-8 per question |
 | Best for | Quick lookups | Complex analysis |
 
-:::info
-Each interaction counts toward your plan's usage limits. Think mode uses 4-8x more interactions than Auto or Instant mode.
-:::
-
-## Availability
-
-Think mode is available on:
-- ✅ **Growth, Professional, and Business plans**
-- ✅ **Demo mode** (for testing)
-- ❌ **Starter plan** (not available due to higher computational cost)
-
 ## How to enable
 
 ### Step 1: Enable in Project Settings
 
-:::note
-Only users with the Administrator or Maintainer role can manage projects. For more details, see [Manage roles](../administration/roles.md).
+:::important
+Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](../administration/roles.md).
 :::
 
 1. Navigate to your project page
@@ -69,15 +58,14 @@ This makes think mode available as an option for users in your chat interface.
 
 ### Step 2: Using the reasoning modes
 
+![Reasoning mode settings in chat widget](./images/think-mode.png)
+
 Once enabled, users can choose their preferred reasoning mode:
 
-**In the Chat Widget:**
 - Look for the settings icon (⚙️) in the header
 - Click to open the reasoning mode dropdown
 - Select Auto, Instant, or Think mode
 - Your selection is saved across page reloads
-
-![Think mode settings in chat widget](./images/think-mode.png)
 
 ## Customization options
 
@@ -95,12 +83,6 @@ You can customize the reasoning mode settings:
   project="my-project"
   thinkModeEnabled="true"
 >Ask AI</biel-button>
-
-<!-- Customize the settings button tooltip -->
-<biel-button
-  project="my-project"
-  settingsButtonText="AI Settings"
->Ask AI</biel-button>
 ```
 
 :::tip
@@ -116,3 +98,4 @@ To force Think mode on for all questions without letting users change it, combin
 
 This ensures maximum answer quality but increases interaction usage by 4-8x for every question.
 :::
+

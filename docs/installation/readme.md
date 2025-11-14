@@ -1,5 +1,6 @@
 ---
 sidebar_label: ReadMe
+slug: /installation/readmeio
 description: Add an AI chatbot to your ReadMe documentation with this step-by-step guide.
 ---
 

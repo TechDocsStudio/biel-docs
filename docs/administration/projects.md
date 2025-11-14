@@ -71,6 +71,7 @@ Select multiple chat entries using the checkboxes and access the **Select action
 
 - **Archive chat entries**: Archive conversation history to keep your project organized while preserving data.
 - **Export chat entries**: Download conversation data in bulk for analysis or record-keeping. Available formats include CSV, PDF, and Excel.
+- **Delete chat entries**: Permanently remove selected conversations from your project.
 
 ## Project settings
 
@@ -127,7 +128,7 @@ Configure the AI model and behavior:
 
 - **Select model**: Choose from GPT or Claude models based on your needs and subscription plan. For more details, see [Models](../customization/models.md).
 - **Define prompt**: Extend the default AI Assistant or create a custom prompt for specialized behavior. For more details, see [Custom prompt](../customization/custom-prompt.md).
-- **Enable think mode**: Activate deeper AI reasoning for complex questions. Available on Growth, Professional, and Business plans. For more details, see [Think mode](../customization/think-mode.md).
+- **Enable think mode**: Activate deeper AI reasoning for complex questions. Available on Growth, Professional, and Business plans. For more details, see [Reasoning modes](../customization/reasoning-modes.md).
 
 
 ### Data privacy
