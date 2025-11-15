@@ -15,7 +15,8 @@ Your AI assistant can search and reference your docs while helping developers wr
 
 
 The MCP server provides a hosted Retrieval-Augmented Generation (RAG) layer that connects AI tools directly to your indexed documentation.
-This enables context-aware code completions, accurate technical answers, and intelligent suggestions based on your actual documentation—all without leaving your IDE.
+This enables context-aware code completions, accurate technical answers, and intelligent suggestions based on your actual documentation.
+All without leaving your IDE.
 
 ## How it works
 
