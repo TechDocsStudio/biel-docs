@@ -88,7 +88,7 @@ Only users with the **Administrator** or **Maintainer** role can configure proje
 Configure basic project information:
 
 - **Name**: Change the project display name.
-- **Private project**: Mark the project as private to require API key authentication for access. This feature is available for Professional, Business and Enterprise plans.
+- **Private project**: Mark the project as private to require API key authentication for access. This feature is available from **Business** plan.
 - **Demo page**: Enable or disable the demo page for testing your chatbot.
 
 ### Sources
@@ -128,7 +128,7 @@ Configure the AI model and behavior:
 
 - **Select model**: Choose from GPT or Claude models based on your needs and subscription plan. For more details, see [Models](../customization/models.md).
 - **Define prompt**: Extend the default AI Assistant or create a custom prompt for specialized behavior. For more details, see [Custom prompt](../customization/custom-prompt.md).
-- **Enable think mode**: Activate deeper AI reasoning for complex questions. Available on Growth, Professional, and Business plans. For more details, see [Reasoning modes](../customization/reasoning-modes.md).
+- **Enable think mode**: Activate deeper AI reasoning for complex questions. Available from **Professional** plan. For more details, see [Reasoning modes](../customization/reasoning-modes.md).
 
 
 ### Data privacy

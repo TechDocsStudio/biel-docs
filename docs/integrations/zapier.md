@@ -22,7 +22,7 @@ Common use cases for Biel.ai in Zapier Zaps:
 - **API documentation bots**: Help developers find API information quickly
 
 :::info API Access Required
-This integration requires API access, which is available on **Professional**, **Business**, and **Enterprise** plans. [Upgrade your plan](https://app.biel.ai) to get started.
+This integration requires API access, which is available on **Business** and **Enterprise** plans. [Upgrade your plan](https://app.biel.ai) to get started.
 :::
 
 ## Prerequisites
@@ -30,7 +30,7 @@ This integration requires API access, which is available on **Professional**, **
 Before starting, ensure you have:
 
 - **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
-- **Professional, Business, or Enterprise plan** for API access
+- **Business, or Enterprise plan** for API access
 - **Zapier account** (free or paid)
 - **Project ID** from your Biel.ai dashboard
 - **API key** from your team settings

@@ -15,7 +15,7 @@ This feature is available on the **Professional** plan and above.
 ## Remove Biel.ai branding
 
 :::important
-Only users with the **Administrator** or **Maintainer** role can enable this feature. For more details, see [Manage roles](roles.md).  
+Only users with the **Administrator** or **Maintainer** role can enable this feature. For more details, see [Manage roles](roles.md).
 :::
 
 To remove the Biel.ai logo from the widget, follow these steps:

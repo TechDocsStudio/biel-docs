@@ -33,7 +33,7 @@ This integration requires:
   - Claude Desktop
   - VS Code (with MCP extension)
   - Other MCP-compatible tools
-- **API key** (optional) - only for private projects on Professional/Business/Enterprise plans
+- **API key** (optional) - only for private projects on Business/Enterprise plans
 
 ## Setup
 
@@ -189,11 +189,11 @@ If the AI tool isn't querying Biel.ai:
 
 ### API Key issues
 
-**API keys are only required for private projects** and are available on **Professional**, **Business, and Enterprise plans**.
+**API keys are only required for private projects** and are available on **Business, and Enterprise plans**.
 
 If you are getting authentication errors:
 1. **Check if your project is private:** Public projects don't need API keys.
-2. **Upgrade your plan:** API keys require Professional, Business or Enterprise plan.
+2. **Upgrade your plan:** API keys require Business or Enterprise plan.
 3. **Regenerate API key:** Create a new API key in your team settings if needed.
 
 ## Security considerations

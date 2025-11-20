@@ -17,7 +17,7 @@ info:
 
     For more information, visit [Biel.ai](https://biel.ai)
 
-    > **Note:** The API is available for **Professional**, **Business**, and **Enterprise** users. If you're interested in using the API, [contact us](https://biel.ai/contact) to upgrade your plan.
+    > **Note:** The API is available for **Business**, and **Enterprise** users. If you're interested in using the API, [contact us](https://biel.ai/contact) to upgrade your plan.
 
     ## Authorization & permissions
 
@@ -27,7 +27,7 @@ info:
     - **Read operations** (like searching, getting project details) don't require authentication
     - **Write operations** (like uploading sources, creating chats) always require a valid API key with appropriate permissions
 
-    ### Private projects  
+    ### Private projects
     - All operations require a valid API key with appropriate permissions
 
     > **Note:** You can configure whether your project is public or private in **Project settings**. Projects are public by default.
