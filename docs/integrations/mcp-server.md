@@ -189,7 +189,7 @@ If the AI tool isn't querying Biel.ai:
 
 ### API Key issues
 
-**API keys are only required for private projects** and are available on **Business, and Enterprise plans**.
+**API keys are only required for private projects** and are available on **Business** and **Enterprise** plans.
 
 If you are getting authentication errors:
 1. **Check if your project is private:** Public projects don't need API keys.

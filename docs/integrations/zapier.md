@@ -30,7 +30,7 @@ This integration requires API access, which is available on **Business** and **E
 Before starting, ensure you have:
 
 - **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
-- **Business, or Enterprise plan** for API access
+- **Business or Enterprise plan** for API access
 - **Zapier account** (free or paid)
 - **Project ID** from your Biel.ai dashboard
 - **API key** from your team settings
