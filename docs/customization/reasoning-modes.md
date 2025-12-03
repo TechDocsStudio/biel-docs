@@ -4,10 +4,6 @@ Control how the AI reasons through questions with three distinct modes: Auto, In
 
 ![Reasoning mode settings in chat widget](./images/think-mode.png)
 
-:::important Beta feature
-Reasoning modes are currently in beta and available for early adopters (Professional plan and above). We're actively working on improving performance.
-:::
-
 ## Available modes
 
 Your chat widget includes a settings button that lets users choose their preferred reasoning depth:
