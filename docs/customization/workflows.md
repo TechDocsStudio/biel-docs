@@ -33,7 +33,7 @@ This feature is available exclusively on **Enterprise** plans. [Contact us](http
 
 Workflows use multiple specialized agents instead of a single knowledge base.
 
-**Traditional single project:**
+**Single project:**
 
 ```mermaid
 graph LR
@@ -103,21 +103,22 @@ Use a single project instead if:
 - Documentation under 1000 pages covering one cohesive topic
 - Content is naturally interconnected (all features of one product)
 - No need for custom actions or external integrations
-- Users frequently need information spanning multiple areas
 
 ## Setting up a workflow
 
 :::tip Enterprise setup included
-As part of your enterprise agreement, our team handles the initial workflow configuration to ensure everything works correctly from the start. We'll work with you to define routing rules, configure integrations, and test the setup before going live.
+As part of your enterprise agreement, our team handles the initial workflow configuration to ensure everything works correctly from the start.
+
+We'll work with you to define routing rules, configure integrations, and test the setup before going live.
 :::
 
 ### Prerequisites
 
 Before creating a workflow, ensure you have:
 
-1. At least two existing projects with indexed content
-2. A clear understanding of how queries should be routed
-3. (Optional) Webhook endpoints ready if you plan to use custom actions
+* At least two existing projects with indexed content
+* A clear understanding of how queries should be routed
+* (Optional) Webhook endpoints ready if you plan to use custom actions
 
 ### Create your workflow
 
