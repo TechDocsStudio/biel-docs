@@ -3,7 +3,7 @@ sidebar_label: Next.js
 description: Add an AI chatbot to your Next.js site with this step-by-step guide.
 ---
 
-# AI chat widget for Next.js
+# Ask AI chatbot widget for Next.js
 
 Add an AI chatbot to your Next.js site using Biel.ai's React components. The integration works with both client and server-side rendering, and supports all Next.js versions including the App Router.
 

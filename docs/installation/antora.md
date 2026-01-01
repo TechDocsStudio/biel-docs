@@ -3,7 +3,7 @@ sidebar_label: Antora
 description: Add an AI chatbot to your Antora documentation site with this step-by-step guide.
 ---
 
-# AI chat widget for Antora
+# Ask AI chatbot widget for Antora
 
 Add an AI chatbot to your Antora documentation using Biel.ai's web components. The integration works with any Antora UI bundle and requires only adding a few lines to your templates.
 

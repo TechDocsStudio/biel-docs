@@ -3,7 +3,7 @@ sidebar_label: GitBook
 description: Add an AI chatbot to your GitBook documentation with this step-by-step guide.
 ---
 
-# AI chat widget for GitBook
+# Ask AI chatbot widget for GitBook
 
 Add an AI chatbot to your GitBook documentation using Biel.ai's web components. The integration works with GitBook's custom script feature, available on paid plans, and adds conversational AI capabilities to your documentation.
 

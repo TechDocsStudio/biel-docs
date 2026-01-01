@@ -3,7 +3,7 @@ sidebar_label: Hugo
 description: Add an AI chatbot to your Hugo site with this step-by-step guide.
 ---
 
-# AI chat widget for Hugo
+# Ask AI chatbot widget for Hugo
 
 Add an AI chatbot to your Hugo site using Biel.ai's web components. The integration works with any Hugo theme and requires only adding a few lines to your templates.
 

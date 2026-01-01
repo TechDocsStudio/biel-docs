@@ -3,7 +3,7 @@ sidebar_label: Jekyll
 description: Add an AI chatbot to your Jekyll site with this step-by-step guide.
 ---
 
-# AI chat widget for Jekyll
+# Ask AI chatbot widget for Jekyll
 
 Add an AI chatbot to your Jekyll site using Biel.ai's web components. The integration works with any Jekyll theme, including GitHub Pages, and requires only adding a few lines to your includes.
 

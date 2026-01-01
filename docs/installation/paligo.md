@@ -3,7 +3,7 @@ sidebar_label: Paligo
 description: Add an AI chatbot to your Paligo documentation with this step-by-step guide.
 ---
 
-# AI chat widget for Paligo
+# Ask AI chatbot widget for Paligo
 
 Add an AI chatbot to your Paligo documentation using Biel.ai's web components. The integration works with Paligo's custom JavaScript feature and adds conversational AI capabilities to your published HTML5 documentation.
 

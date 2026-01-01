@@ -3,7 +3,7 @@ sidebar_label: Mintlify
 description: Add an AI chatbot to your Mintlify docs with this step-by-step guide.
 ---
 
-# AI chat widget for Mintlify
+# Ask AI chatbot widget for Mintlify
 
 Add an AI chatbot to your Mintlify documentation using Biel.ai's web components. The integration works with any Mintlify project and can be added through custom script configuration in your mint.json file.
 

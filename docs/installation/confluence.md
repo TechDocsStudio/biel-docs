@@ -3,7 +3,7 @@ sidebar_label: Confluence
 description: Add an AI chatbot to your Confluence pages with this step-by-step guide.
 ---
 
-# AI chat widget for Confluence
+# Ask AI chatbot widget for Confluence
 
 Add an AI chatbot to your Confluence space using Biel.ai's web components. The integration works with Confluence Cloud and can be added space-wide using custom HTML configuration.
 

@@ -3,7 +3,7 @@ sidebar_label: Gatsby
 description: Add an AI chatbot to your Gatsby site with this step-by-step guide.
 ---
 
-# AI chat widget for Gatsby
+# Ask AI chatbot widget for Gatsby
 
 Add an AI chatbot to your Gatsby site using Biel.ai's React components. The integration works with any Gatsby version and automatically adapts to your site's styling.
 

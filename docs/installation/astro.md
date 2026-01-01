@@ -3,7 +3,7 @@ sidebar_label: Astro
 description: Add an AI chatbot to your Astro site with this step-by-step guide.
 ---
 
-# AI chat widget for Astro
+# Ask AI chatbot widget for Astro
 
 Add an AI chatbot to your Astro site using Biel.ai's web components. The integration works with any Astro theme or template, and requires only a few lines of code in your layout file.
 

@@ -3,7 +3,7 @@ sidebar_label: MadCap Flare
 description: Add an AI chatbot to your MadCap Flare documentation with this step-by-step guide.
 ---
 
-# AI chat widget for MadCap Flare
+# Ask AI chatbot widget for MadCap Flare
 
 Add an AI chatbot to your MadCap Flare documentation using Biel.ai's web components. The integration works with Flare's master page system and adds conversational AI capabilities to your published HTML5 or Top Navigation output.
 

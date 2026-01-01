@@ -3,7 +3,7 @@ sidebar_label: Nextra
 description: Add an AI chatbot to your Nextra documentation with this step-by-step guide.
 ---
 
-# AI chat widget for Nextra
+# Ask AI chatbot widget for Nextra
 
 Add an AI chatbot to your Nextra documentation using Biel.ai's React components. The integration works seamlessly with Nextra's Next.js framework, adding both chat and search capabilities to your documentation site.
 

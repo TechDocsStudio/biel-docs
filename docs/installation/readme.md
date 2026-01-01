@@ -4,7 +4,7 @@ slug: /installation/readmeio
 description: Add an AI chatbot to your ReadMe documentation with this step-by-step guide.
 ---
 
-# AI chat widget for ReadMe
+# Ask AI chatbot widget for ReadMe
 
 Add an AI chatbot to your ReadMe documentation using Biel.ai's web components. The integration works with ReadMe's custom JavaScript feature, available on paid plans, adding conversational AI capabilities to your API documentation.
 

@@ -3,7 +3,7 @@ sidebar_label: Read the Docs
 description: Add an AI chatbot to your Read the Docs site with this step-by-step guide.
 ---
 
-# AI chat widget for Read the Docs
+# Ask AI chatbot widget for Read the Docs
 
 Add an AI chatbot to your Read the Docs documentation using Biel.ai's web components. The integration works with both Sphinx and MkDocs projects hosted on Read the Docs, adding conversational AI capabilities to your documentation.
 

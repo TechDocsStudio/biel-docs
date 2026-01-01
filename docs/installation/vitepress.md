@@ -3,7 +3,7 @@ sidebar_label: VitePress
 description: Add an AI chatbot to your VitePress documentation with this step-by-step guide.
 ---
 
-# AI chat widget for VitePress
+# Ask AI chatbot widget for VitePress
 
 Add an AI chatbot to your VitePress documentation using Biel.ai's web components. The integration works seamlessly with VitePress's Vue-powered framework, adding both chat and search capabilities to your documentation site.
 

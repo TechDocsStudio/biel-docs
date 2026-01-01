@@ -3,7 +3,7 @@ sidebar_label: Vue.js
 description: Add an AI chatbot to your Vue.js site with this step-by-step guide.
 ---
 
-# AI chat widget for Vue.js
+# Ask AI chatbot widget for Vue.js
 
 Add an AI chatbot to your Vue.js application using Biel.ai's Vue components. The integration works with both Vue 2 and Vue 3, and is compatible with Vue CLI, Vite, and other common Vue setups.
 

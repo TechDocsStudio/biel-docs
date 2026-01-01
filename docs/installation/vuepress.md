@@ -3,7 +3,7 @@ sidebar_label: VuePress
 description: Add an AI chatbot to your VuePress documentation with this step-by-step guide.
 ---
 
-# AI chat widget for VuePress
+# Ask AI chatbot widget for VuePress
 
 Add an AI chatbot to your VuePress documentation using Biel.ai's web components. The integration works with both VuePress 1.x and 2.x, adding conversational AI capabilities to your Vue-powered documentation site.
 

@@ -3,7 +3,7 @@ sidebar_label: Fumadocs
 description: Add an AI chatbot to your Fumadocs site with this step-by-step guide.
 ---
 
-# AI chat widget for Fumadocs
+# Ask AI chatbot widget for Fumadocs
 
 Add an AI chatbot to your Fumadocs site using Biel.ai's React components. The integration works seamlessly with Fumadocs, the Next.js-powered documentation framework, adding both chat and search capabilities to your documentation.
 

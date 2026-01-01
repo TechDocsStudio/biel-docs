@@ -3,7 +3,7 @@ sidebar_label: NPM
 description: Add an AI chatbot to your site with this step-by-step guide.
 ---
 
-# AI chat widget for NPM projects
+# Ask AI chatbot widget for NPM projects
 
 Add an AI chatbot to your JavaScript project using Biel.ai's NPM package. The integration works with any JavaScript framework or build system that supports NPM packages.
 

@@ -3,7 +3,7 @@ sidebar_label: WordPress
 description: Add an AI chatbot to your WordPress site with this step-by-step guide.
 ---
 
-# AI chat widget for WordPress
+# Ask AI chatbot widget for WordPress
 
 Add an AI chatbot to your WordPress site using Biel.ai's web components. The integration works with any WordPress theme and can be added through a plugin or by editing your theme files.
 

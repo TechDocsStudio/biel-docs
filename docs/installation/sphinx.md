@@ -3,7 +3,7 @@ sidebar_label: Sphinx
 description: Add an AI chatbot to your Sphinx documentation site with this step-by-step guide.
 ---
 
-# AI chat widget for Sphinx
+# Ask AI chatbot widget for Sphinx
 
 Add an AI chatbot to your Sphinx documentation using Biel.ai's Python package. The integration works with any Sphinx theme, including Read the Docs, and adds both chat and search capabilities.
 

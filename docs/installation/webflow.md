@@ -3,7 +3,7 @@ sidebar_label: Webflow
 description: Add an AI chatbot to your Webflow site with this step-by-step guide.
 ---
 
-# AI chat widget for Webflow
+# Ask AI chatbot widget for Webflow
 
 Add an AI chatbot to your Webflow site using Biel.ai's web components. The integration works with any Webflow template and can be added through the custom code editor in your site settings.
 

@@ -3,7 +3,7 @@ sidebar_label: React
 description: Add an AI chatbot to your React site with this step-by-step guide.
 ---
 
-# AI chat widget for React
+# Ask AI chatbot widget for React
 
 Add an AI chatbot to your React application using Biel.ai's React components. The integration works with both functional and class components, and is compatible with Create React App, Vite, and other common React setups.
 
