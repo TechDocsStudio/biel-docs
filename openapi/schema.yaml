@@ -121,6 +121,9 @@ paths:
                 think_mode:
                   type: boolean
                   description: Enable reasoning mode for deeper AI analysis (optional, requires project to have reasoning mode plugin enabled)
+                metadata:
+                  type: string
+                  description: Metadata field to tag the source or origin of the conversation (optional)
               required:
                 - message
       security:
