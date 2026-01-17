@@ -4,9 +4,16 @@ sidebar_position: 2
 
 # Styles
 
-This page lists all the available CSS custom properties that can be overridden to match your website's design.
+Biel.ai offers two main approaches for customizing component styles:
 
-## Usage
+1. **CSS custom properties** (Recommended) - For standard customization needs
+2. **CSS parts** (Advanced) - For fine-grained control over specific elements
+
+## CSS custom properties
+
+This is the standard and recommended way to customize the widget appearance. CSS custom properties provide a simple interface for theming colors, fonts, spacing, and other common design properties.
+
+### Usage
 
 To customize these properties, define them in your website's CSS using the `:root` selector for global changes or a specific selector to target particular areas:
 
@@ -17,7 +24,7 @@ To customize these properties, define them in your website's CSS using the `:roo
 }
 ```
 
-## Properties
+### Properties
 
 The tables below lists all the available properties you can override:
 
@@ -369,4 +376,114 @@ The tables below lists all the available properties you can override:
     }
 }
 ```
+
+## Advanced: CSS parts
+
+For fine-grained control over specific component internals, the widget exposes **CSS parts** that allow you to style elements within Shadow DOM components using the `::part()` pseudo-element.
+
+:::info
+This approach is more advanced and requires familiarity with Web Components and Shadow DOM.
+:::
+
+### How it works
+
+Biel.ai components expose internal elements via the `part` attribute. You can target these from your CSS using the `::part()` selector.
+
+**Basic syntax:**
+
+```css
+/* Styling a component's own parts */
+component-name::part(part-name) {
+  /* your styles */
+}
+
+/* Styling nested component parts (with prefix) */
+parent-component::part(child-component-part-name) {
+  /* your styles */
+}
+```
+
+**Key concepts:**
+
+- **Main parts use simple names** to avoid redundancy:
+  - `biel-bot::part(modal)` (instead of `biel-bot-modal`)
+  - `biel-button::part(button)` (instead of `biel-button-button`)
+
+- **Child parts use prefixed names** for clarity when styled from a parent:
+  - `biel-bot::part(biel-message-bubble)` (clearly from the `biel-message` component)
+  - `biel-search::part(biel-search-result-title)` (clearly from the results list)
+
+### Finding available parts
+
+The easiest way to discover available parts is using your browser's developer tools:
+
+1. Right-click the component you want to style and select **Inspect**.
+2. Locate the component tag (e.g., `<biel-bot>` or `<biel-search>`).
+3. Expand its `#shadow-root`.
+4. Look for elements with the `part="..."` attribute.
+
+For example:
+- **Direct parts**: If you see `<div part="modal">` directly inside `biel-bot`, style it with `biel-bot::part(modal)`.
+- **Nested parts**: If you see `<div part="bubble">` inside a nested component (e.g., `<biel-message>`), you must prefix it with the component name: `biel-bot::part(biel-message-bubble)`.
+
+### Examples
+
+#### Custom biel button
+
+```css
+/* Square button with custom color */
+biel-button::part(button) {
+  border-radius: 8px;
+  background-color: #ff5722;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+biel-button::part(button):hover {
+  background-color: #f4511e;
+  transform: translateY(-2px);
+}
+```
+
+#### Custom chat message styling
+
+```css
+/* Modern chat bubble design */
+biel-bot::part(biel-message-bubble) {
+  border-radius: 18px 18px 18px 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Message content spacing */
+biel-bot::part(biel-message-content) {
+  line-height: 1.6;
+  padding: 4px 0;
+}
+```
+
+#### Branded search interface
+
+```css
+/* Rounded search input */
+biel-search::part(biel-search-input-input) {
+  border-radius: 50px;
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+}
+
+/* Highlighted results */
+biel-search::part(biel-search-result-container) {
+  border-left: 3px solid #667eea;
+  transition: all 0.2s ease;
+}
+
+biel-search::part(biel-search-result-container):hover {
+  transform: translateX(4px);
+}
+```
+
 
