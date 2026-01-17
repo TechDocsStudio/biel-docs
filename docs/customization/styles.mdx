@@ -4,14 +4,14 @@ sidebar_position: 2
 
 # Styles
 
-Biel offers two main approaches for customizing component styles:
+Biel.ai offers two main approaches for customizing component styles:
 
 1. **CSS custom properties** (Recommended) - For standard customization needs
 2. **CSS parts** (Advanced) - For fine-grained control over specific elements
 
 ## CSS custom properties
 
-This is the standard and recommended way to customize Biel's appearance. CSS custom properties provide a simple interface for theming colors, fonts, spacing, and other common design properties.
+This is the standard and recommended way to customize the widget appearance. CSS custom properties provide a simple interface for theming colors, fonts, spacing, and other common design properties.
 
 ### Usage
 
@@ -379,15 +379,15 @@ The tables below lists all the available properties you can override:
 
 ## Advanced: CSS parts
 
-For fine-grained control over specific component internals, Biel exposes **CSS parts** that allow you to style elements within Shadow DOM components using the `::part()` pseudo-element.
+For fine-grained control over specific component internals, the widget exposes **CSS parts** that allow you to style elements within Shadow DOM components using the `::part()` pseudo-element.
 
 :::info
-This approach is more advanced and requires familiarity with Web Components and Shadow DOM. For most use cases, CSS custom properties are sufficient.
+This approach is more advanced and requires familiarity with Web Components and Shadow DOM.
 :::
 
 ### How it works
 
-Biel components expose internal elements via the `part` attribute. You can target these from your CSS using the `::part()` selector.
+Biel.ai components expose internal elements via the `part` attribute. You can target these from your CSS using the `::part()` selector.
 
 **Basic syntax:**
 
@@ -405,7 +405,7 @@ parent-component::part(child-component-part-name) {
 
 **Key concepts:**
 
-- **Own parts use simple names** to avoid redundancy:
+- **Main parts use simple names** to avoid redundancy:
   - `biel-bot::part(modal)` (instead of `biel-bot-modal`)
   - `biel-button::part(button)` (instead of `biel-button-button`)
 
