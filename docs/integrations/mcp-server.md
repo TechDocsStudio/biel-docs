@@ -31,7 +31,7 @@ This integration requires:
 - **AI coding assistant** that supports MCP:
   - Cursor IDE
   - Claude Desktop
-  - VS Code (with MCP extension)
+  - VS Code
   - Other MCP-compatible tools
 - **API key** (optional) - only for private projects on Business/Enterprise plans
 
@@ -39,7 +39,37 @@ This integration requires:
 
 Connect your AI coding assistant to Biel.ai using our hosted MCP server (no installation or maintenance required).
 
-Add this configuration to your AI tool's MCP settings:
+### Option 1: Streamable HTTP - Recommended
+
+This is the most reliable and fastest connection method.
+
+We have simplified the setup process with a "One-Click" configuration.
+
+1. Go to your **Biel.ai Widget**.
+2. Click on the **Connect** button.
+3. Choose your preferred option:
+   - **Copy MCP server URL**: Copies the HTTP URL for manual configuration.
+   - **Connect to Claude Code**: Copies the installation command to your clipboard.
+   - **Connect to Copilot**: Automatically opens VS Code and adds the MCP server.
+   - **Connect to Cursor**: Automatically opens Cursor and adds the MCP server.
+
+**Manual Configuration (if needed):**
+
+```json
+{
+  "mcpServers": {
+    "biel-ai": {
+      "name": "Biel.ai",
+      "type": "http",
+      "url": "https://mcp.biel.ai/v2/YOUR_PROJECT_SLUG/mcp"
+    }
+  }
+}
+```
+
+### Option 2: Legacy SSE - Deprecated
+
+Use this if your client doesn't support the Streamable HTTP protocol.
 
 ```json
 {
@@ -49,18 +79,24 @@ Add this configuration to your AI tool's MCP settings:
       "command": "npx",
       "args": [
         "mcp-remote",
-        "https://mcp.biel.ai/sse?project_slug=YOUR_PROJECT_SLUG&domain=https://your-docs-domain.com"
+        "https://mcp.biel.ai/sse?project_slug=YOUR_PROJECT_SLUG"
       ]
     }
   }
 }
 ```
 
-Set the following parameters:
+## Configuration Parameters
 
-- `project_slug:` Your Biel.ai project slug from your dashboard.
-- `domain`: Your documentation domain.
-- `api_key`: Optional, API key (only needed for private projects)
+You can append query parameters to the URL to customize the connection:
+
+- `project_slug`: Your Biel.ai project slug from your dashboard.
+- `domain`: Optional, domain URL to pass as context. Required only if 'Allowed domains' is enabled in project settings.
+- `api_key`: Optional, API key (only needed for private projects).
+- `metadata`: Optional, tag to identify the conversation source (e.g., `?metadata=cursor`).
+
+**Example URL with parameters:**
+`https://mcp.biel.ai/v2/YOUR_PROJECT_SLUG/mcp?api_key=sk_...&domain=docs.example.com`
 
 ## Configuration for specific tools
 
@@ -104,12 +140,9 @@ Your IDE will automatically call the MCP server when needed. The AI reads the `d
 {
   "mcpServers": {
     "biel-ai": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://mcp.biel.ai/sse?project_slug=YOUR_PROJECT_SLUG&domain=https://your-docs-domain.com"
-      ],
-      "description": "Query your product's documentation, APIs, and knowledge base. Ask about API specs, guides, and troubleshooting."
+      "type": "http",
+      "url": "https://mcp.biel.ai/v2/YOUR_PROJECT_SLUG/mcp?domain=docs.example.com",
+      "name": "Biel.ai"
     }
   }
 }
@@ -168,6 +201,7 @@ The MCP server supports several configuration parameters:
 - **`base_url`** (optional): Defaults to `https://app.biel.ai`
 - **`domain`** (optional): Your documentation domain for additional context
 - **`chat_uuid`** (optional): To continue previous conversations
+- **`metadata`** (optional): Tag to identify the conversation source (e.g., `?metadata=cursor`)
 
 ## Troubleshooting
 
