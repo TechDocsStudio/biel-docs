@@ -22,7 +22,7 @@ The Biel.AI chat widget enables a conversational chat powered by AI in your site
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
-To integrate the PushFeedback widget into your Starlight site:
+To integrate the Biel.ai widget into your Starlight site:
 
 1. Go to `src/components`. If `components` does not exist, create the directory.
 1. Create a new file `CustomFooter.astro` under your docs project `src/components` directory with the following content:
@@ -100,7 +100,7 @@ To integrate the PushFeedback widget into your Starlight site:
     </style>
     ```
     
-    This code snippet shows how to integrate the PushFeedback widget. Pay special attention to the lines:
+    This code snippet shows how to integrate the Biel.ai widget. Pay special attention to the lines:
 
     ```astro
     <biel-button project="<YOUR_PROJECT_ID>" 
@@ -112,7 +112,7 @@ To integrate the PushFeedback widget into your Starlight site:
     </biel-button>
     ```
 
-    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [PushFeedback dashboard](../quickstart.md#2-create-a-project).
+    Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
     And the global style:
 
@@ -125,7 +125,7 @@ To integrate the PushFeedback widget into your Starlight site:
     ```
 
     This is required to make sure the button is placed on top of the right sidebar.
-    
+
 1. Load the dependencies in your Astro configuration file (`astro.config.mjs`):
 
     ```js
