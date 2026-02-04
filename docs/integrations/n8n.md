@@ -32,7 +32,7 @@ Before starting, ensure you have:
 - **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
 - **Business or Enterprise plan** for API access
 - **n8n instance** (cloud or self-hosted)
-- **Project ID** from your Biel.ai dashboard
+- **Project slug** from your Biel.ai dashboard
 - **API key** from your team settings
 
 ## Setup: Get AI-powered answers
@@ -53,9 +53,7 @@ Add an **HTTP Request** node with these settings:
 
 **Method:** `POST`
 
-**URL:** `https://app.biel.ai/api/v1/projects/YOUR_PROJECT_ID/chat/`
-
-Replace `YOUR_PROJECT_ID` with your project ID from the Biel.ai dashboard.
+**URL:** `https://docs.biel.ai/api/v1/chats/`
 
 **Headers:**
 ```json
@@ -70,14 +68,12 @@ Replace `YOUR_API_KEY` with your API key from your Biel.ai team settings.
 **Body (JSON):**
 ```json
 {
-  "messages": [
-    {
-      "role": "user",
-      "content": "={{ $json.question }}"
-    }
-  ]
+  "message": "={{ $json.question }}",
+  "project_slug": "YOUR_PROJECT_SLUG"
 }
 ```
+
+Replace `YOUR_PROJECT_SLUG` with your project slug from the Biel.ai dashboard.
 
 For complete API documentation, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
 
@@ -87,14 +83,20 @@ The chat API returns a structured response:
 
 ```json
 {
-  "answer": "AI-generated answer based on your documentation...",
-  "sources": [
-    {
-      "title": "Source page title",
-      "url": "https://docs.example.com/source",
-      "content": "Relevant excerpt..."
-    }
-  ],
+  "user_message_id": "message-id",
+  "ai_message": {
+    "from": "ai",
+    "message": "AI-generated answer based on your documentation...",
+    "messageId": "ai-message-id",
+    "isPartial": false,
+    "timestamp": "2024-01-01T00:00:00Z",
+    "sources": [
+      {
+        "title": "Source page title",
+        "url": "https://docs.example.com/source"
+      }
+    ]
+  },
   "chat_uuid": "unique-conversation-id"
 }
 ```
@@ -105,12 +107,8 @@ To maintain context in multi-turn conversations, include the `chat_uuid`:
 
 ```json
 {
-  "messages": [
-    {
-      "role": "user",
-      "content": "={{ $json.question }}"
-    }
-  ],
+  "message": "={{ $json.question }}",
+  "project_slug": "YOUR_PROJECT_SLUG",
   "chat_uuid": "={{ $json.previousChatId }}"
 }
 ```

@@ -32,7 +32,7 @@ Before starting, ensure you have:
 - **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
 - **Business or Enterprise plan** for API access
 - **Make account** (free or paid)
-- **Project ID** from your Biel.ai dashboard
+- **Project slug** from your Biel.ai dashboard
 - **API key** from your team settings
 
 ## Setup: Get AI-powered answers
@@ -51,9 +51,7 @@ In Make, create a new scenario and add the following modules:
 
 Add an **HTTP > Make a request** module with these settings:
 
-**URL:** `https://app.biel.ai/api/v1/projects/YOUR_PROJECT_ID/chat/`
-
-Replace `YOUR_PROJECT_ID` with your project ID from the Biel.ai dashboard.
+**URL:** `https://docs.biel.ai/api/v1/chats/`
 
 **Method:** `POST`
 
@@ -69,16 +67,12 @@ Replace `YOUR_API_KEY` with your API key from your Biel.ai team settings.
 **Body:**
 ```json
 {
-  "messages": [
-    {
-      "role": "user",
-      "content": "{{1.question}}"
-    }
-  ]
+  "message": "{{1.question}}",
+  "project_slug": "YOUR_PROJECT_SLUG"
 }
 ```
 
-Replace `{{1.question}}` with the appropriate variable from your trigger module.
+Replace `{{1.question}}` with the appropriate variable from your trigger module. Replace `YOUR_PROJECT_SLUG` with your project slug from the Biel.ai dashboard.
 
 For complete API documentation, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
 
@@ -88,21 +82,27 @@ The chat API returns a structured response:
 
 ```json
 {
-  "answer": "AI-generated answer based on your documentation...",
-  "sources": [
-    {
-      "title": "Source page title",
-      "url": "https://docs.example.com/source",
-      "content": "Relevant excerpt..."
-    }
-  ],
+  "user_message_id": "message-id",
+  "ai_message": {
+    "from": "ai",
+    "message": "AI-generated answer based on your documentation...",
+    "messageId": "ai-message-id",
+    "isPartial": false,
+    "timestamp": "2024-01-01T00:00:00Z",
+    "sources": [
+      {
+        "title": "Source page title",
+        "url": "https://docs.example.com/source"
+      }
+    ]
+  },
   "chat_uuid": "unique-conversation-id"
 }
 ```
 
 Use the returned data in subsequent modules:
-- `{{2.answer}}` - The AI-generated answer
-- `{{2.sources}}` - Array of source documents with citations
+- `{{2.ai_message.message}}` - The AI-generated answer
+- `{{2.ai_message.sources}}` - Array of source documents with citations
 - `{{2.chat_uuid}}` - Conversation ID for multi-turn chats
 
 ### 4. Continue the conversation (optional)
@@ -111,12 +111,8 @@ To maintain context in multi-turn conversations, include the `chat_uuid` in your
 
 ```json
 {
-  "messages": [
-    {
-      "role": "user",
-      "content": "{{1.question}}"
-    }
-  ],
+  "message": "{{1.question}}",
+  "project_slug": "YOUR_PROJECT_SLUG",
   "chat_uuid": "{{2.chat_uuid}}"
 }
 ```
