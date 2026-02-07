@@ -140,7 +140,7 @@ const config = {
       }
     ],
     scripts: [
-      'https://www.googletagmanager.com/gtag/js?id=G-CWY6XSMG75',
+      'https://www.googletagmanager.com/gtag/js?id=G-WXGQ5EZHVC',
       '/analytics.js'
     ],
   
