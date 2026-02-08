@@ -98,6 +98,72 @@ You can append query parameters to the URL to customize the connection:
 **Example URL with parameters:**
 `https://mcp.biel.ai/v2/YOUR_PROJECT_SLUG/mcp?api_key=sk_...&domain=docs.example.com`
 
+## Widget customization
+
+You can control how the MCP integration appears in your Biel.ai widget using the following properties:
+
+### Hide Connect button
+
+Use the `hide-connect-button` property to hide the Connect button from the widget header. This is useful when you want MCP to be enabled for your project, but don't want to show the connection options to your users:
+
+**biel-button example:**
+```html
+<biel-button 
+  project="YOUR_PROJECT_ID" 
+  hide-connect-button="true"
+>
+  Ask AI
+</biel-button>
+```
+
+**biel-search-button example:**
+```html
+<biel-search-button 
+  project="YOUR_PROJECT_ID" 
+  hide-connect-button="true"
+>
+  Search
+</biel-search-button>
+```
+
+**Priority:** When `hide-connect-button` is set to `true`, the Connect button will be hidden regardless of whether MCP is enabled in your project settings. This gives you full control over the user interface.
+
+### Custom MCP server URL
+
+Use the `mcp-server-url` property to manually specify a custom MCP server URL. This is useful when:
+- Your MCP server requires authentication (e.g., API keys)
+- You're running a custom or self-hosted MCP server
+- You need to override the default MCP server provided by the API
+
+**biel-button example:**
+```html
+<biel-button 
+  project="YOUR_PROJECT_ID" 
+  mcp-server-url="https://mcp.biel.ai/v2/YOUR_PROJECT/mcp?api_key=sk_..."
+>
+  Ask AI
+</biel-button>
+```
+
+**biel-search-button example:**
+```html
+<biel-search-button 
+  project="YOUR_PROJECT_ID" 
+  mcp-server-url="https://custom-mcp-server.example.com/mcp"
+>
+  Search
+</biel-search-button>
+```
+
+**Priority:** When `mcp-server-url` is specified, it takes priority over the MCP URL provided by the API response. This ensures your custom configuration is always used.
+
+**Use cases:**
+- **API Key Authentication**: Add your API key directly to the URL for private projects
+- **Custom MCP Servers**: Point to your own self-hosted or custom MCP implementation
+- **Testing**: Override the production MCP URL with a staging or development server
+
+For more details on available widget properties, see [Widget Customization](/customization/layout).
+
 ## Configuration for specific tools
 
 ### Cursor IDE MCP setup
