@@ -77,9 +77,9 @@ https://yoursite.com/wp-sitemap.xml
 
 Check `robots.txt` at `https://yoursite.com/robots.txt` for sitemap declarations.
 
-## Filter sitemap content
+## Filter URLs
 
-Control which pages get indexed from the sitemap by adding URL filter rules. Each rule has a **glob pattern** and an **action** (include or exclude).
+Control which pages from the sitemap get indexed by adding URL filter rules. Each rule has a **glob pattern** and an **action** (include or exclude).
 
 1. Go to **Projects** > your project > **Settings** > **Sources** > **Restrictions** > **Filter URLs**.
 2. Add one or more filter rules.
