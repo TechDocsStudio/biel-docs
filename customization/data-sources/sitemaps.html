@@ -11,7 +11,7 @@
 <script type="module" src="https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.esm.js"></script>
 <script src="https://www.googletagmanager.com/gtag/js?id=G-WXGQ5EZHVC"></script>
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.25f25e21.css">
-<script src="/assets/js/runtime~main.4aae8160.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8c0a9ab0.js" defer="defer"></script>
 <script src="/assets/js/main.6a3504bc.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -65,22 +65,19 @@
 <p><strong>Custom sites</strong></p>
 <p>Check <code>robots.txt</code> at <code>https://yoursite.com/robots.txt</code> for sitemap declarations.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="filter-sitemap-content">Filter sitemap content<a href="#filter-sitemap-content" class="hash-link" aria-label="Direct link to Filter sitemap content" title="Direct link to Filter sitemap content">​</a></h2>
-<p>Control which pages get indexed from the sitemap:</p>
+<p>Control which pages get indexed from the sitemap by adding URL filter rules. Each rule has a <strong>glob pattern</strong> and an <strong>action</strong> (include or exclude).</p>
 <ol>
-<li>Go to <strong>Projects</strong> &gt; your project &gt; <strong>Settings</strong> &gt; <strong>Sources</strong> &gt; <strong>Restrictions</strong> &gt; <strong>Filter URLs</strong></li>
-<li>Add patterns:<!-- -->
-<ul>
-<li><strong>Include</strong>: <code>**/docs/**</code> (documentation only)</li>
-<li><strong>Exclude</strong>: <code>**/api/**</code> (skip API reference)</li>
-<li><strong>Exclude</strong>: <code>**/deprecated/**</code> (skip old content)</li>
-</ul>
-</li>
+<li>Go to <strong>Projects</strong> &gt; your project &gt; <strong>Settings</strong> &gt; <strong>Sources</strong> &gt; <strong>Restrictions</strong> &gt; <strong>Filter URLs</strong>.</li>
+<li>Add one or more filter rules.</li>
 </ol>
-<p>For multi-language sites:</p>
+<p><strong>How filtering works:</strong></p>
 <ul>
-<li><strong>Include</strong>: <code>**/en/**</code>, <code>**/fr/**</code> (specific languages)</li>
-<li><strong>Exclude</strong>: <code>**/es/**</code>, <code>**/de/**</code> (unwanted languages)</li>
+<li>If no include rules exist, all URLs are included by default.</li>
+<li>If include rules exist, only URLs matching at least one include pattern are kept.</li>
+<li>Exclude rules are applied after include rules — any matching URL is skipped.</li>
 </ul>
+<p><strong>Examples:</strong></p>
+<table><thead><tr><th>Pattern</th><th>Action</th><th>Effect</th></tr></thead><tbody><tr><td><code>**/docs/**</code></td><td>Include</td><td>Only index pages under <code>/docs/</code></td></tr><tr><td><code>**/api/**</code></td><td>Exclude</td><td>Skip API reference pages</td></tr><tr><td><code>**/deprecated/**</code></td><td>Exclude</td><td>Skip old content</td></tr><tr><td><code>**/en/**</code></td><td>Include</td><td>Only index English pages</td></tr><tr><td><code>**/*.pdf</code></td><td>Exclude</td><td>Skip PDF files</td></tr><tr><td><code>**/[0-9]*.[0-9]*.[0-9]*/**</code></td><td>Exclude</td><td>Skip versioned paths like <code>/1.2.3/</code></td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="sitemap-index-files">Sitemap index files<a href="#sitemap-index-files" class="hash-link" aria-label="Direct link to Sitemap index files" title="Direct link to Sitemap index files">​</a></h2>
 <p>Large sites often use index files that reference multiple sitemaps:</p>
 <div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">sitemapindex</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">xmlns</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">http://www.sitemaps.org/schemas/sitemap/0.9</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">sitemap</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">loc</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">https://example.com/docs-sitemap.xml</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">loc</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">sitemap</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">sitemap</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">loc</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">https://example.com/blog-sitemap.xml</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">loc</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">sitemap</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">sitemapindex</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
