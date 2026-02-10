@@ -99,6 +99,7 @@ Control which pages get indexed from the sitemap by adding URL filter rules. Eac
 | `**/deprecated/**` | Exclude | Skip old content |
 | `**/en/**` | Include | Only index English pages |
 | `**/*.pdf` | Exclude | Skip PDF files |
+| `**/[0-9]*.[0-9]*.[0-9]*/**` | Exclude | Skip versioned paths like `/1.2.3/` |
 
 ## Sitemap index files
 
