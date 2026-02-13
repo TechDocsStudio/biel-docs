@@ -63,6 +63,17 @@ const config = {
     ],
   ],
   plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/customization/think-mode',
+            to: '/customization/reasoning-modes',
+          },
+        ],
+      },
+    ],
     'docusaurus-plugin-image-zoom',
     [
       'docusaurus-biel',{

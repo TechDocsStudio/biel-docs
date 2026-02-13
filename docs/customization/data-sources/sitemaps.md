@@ -81,8 +81,8 @@ Check `robots.txt` at `https://yoursite.com/robots.txt` for sitemap declarations
 
 Control which pages from the sitemap get indexed by adding URL filter rules. Each rule has a **glob pattern** and an **action** (include or exclude).
 
-1. Go to **Projects** > your project > **Settings** > **Sources** > **Restrictions** > **Filter URLs**.
-2. Add one or more filter rules.
+1. Go to **Projects** > your project > **Settings** > **Sources** > **Sitemaps**.
+2. Add one or more filter rules under **Filter URLs**.
 
 **How filtering works:**
 

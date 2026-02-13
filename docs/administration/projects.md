@@ -88,7 +88,6 @@ Only users with the **Administrator** or **Maintainer** role can configure proje
 Configure basic project information:
 
 - **Name**: Change the project display name.
-- **Private project**: Mark the project as private to require API key authentication for access. This feature is available from **Business** plan.
 - **Demo page**: Enable or disable the demo page for testing your chatbot.
 
 ### Sources
@@ -107,12 +106,10 @@ For detailed configuration instructions, see [Sources](../customization/data-sou
 
 ### Restrictions
 
-Control which domains and URLs can access your chatbot:
+Control access to your chatbot:
 
+- **Require authentication for all API access**: When enabled, all API access requires authentication. This feature is available from **Business** plan. For more details, see [API authorization](/api/biel-ai-rest-api-beta#authorization--permissions).
 - **Allowed domains**: Only domains from this list will be able to use your chatbot widget.
-- **Filter URLs**: Use regex patterns to include or exclude specific URLs from indexing.
-
-For more details on URL filtering and domain restrictions, see [URLs](../customization/data-sources/urls.md).
 
 ### UI settings
 
@@ -139,3 +136,13 @@ Enhance user privacy and comply with regulations:
 - **Disable IP collection**: Stop collecting IP addresses to enhance privacy (affects some analytics features).
 
 For comprehensive privacy configuration, see [Data privacy](../customization/data-privacy.mdx).
+
+### MCP settings
+
+Configure Model Context Protocol integration to connect AI coding assistants to your project:
+
+- **Enable MCP server**: Allow access to this project through the Model Context Protocol.
+- **MCP server name**: Set a custom name for the MCP server.
+- **Metadata tag**: Define a tag to identify conversations originating from MCP.
+
+For setup instructions and usage details, see [MCP server](../integrations/mcp-server.md).

@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# Custom prompt
+# Prompt customization
 
 A prompt is the instruction given to the chatbot that guides how it processes and responds to user input.
 
