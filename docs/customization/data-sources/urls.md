@@ -42,30 +42,6 @@ https://docs.example.com/api-reference
 https://support.example.com/troubleshooting
 ```
 
-## Filter URLs
-
-Control which URLs get indexed using include and exclude patterns:
-
-1. Go to **Projects** > your project > **Settings** > **Sources** > **Restrictions** > **Filter URLs**
-2. Add patterns:
-
-**Exclude patterns** - Skip URLs that match:
-- `**/es/**` - Skip Spanish content
-- `**/old/**` - Skip archived content
-- `**/_internal/**` - Skip internal pages
-
-**Include patterns** - Only index URLs that match:
-- `**/docs/**` - Only documentation
-- `**/blog/**` - Only blog posts
-- `**/help/**` - Only help content
-
-**Regex patterns** - Advanced filtering:
-- `^https://example\.com/old/.*$` - Skip `/old/` path
-- `^https://[^/]+/(en|fr)/.*$` - English and French only
-
-3. Click **Save**
-
-
 ## Best practices
 
 - Use canonical URLs (primary version of each page)

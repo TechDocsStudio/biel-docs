@@ -88,7 +88,6 @@ Only users with the **Administrator** or **Maintainer** role can configure proje
 Configure basic project information:
 
 - **Name**: Change the project display name.
-- **Private project**: Mark the project as private to require API key authentication for access. This feature is available from **Business** plan.
 - **Demo page**: Enable or disable the demo page for testing your chatbot.
 
 ### Sources
@@ -107,12 +106,10 @@ For detailed configuration instructions, see [Sources](../customization/data-sou
 
 ### Restrictions
 
-Control which domains and URLs can access your chatbot:
+Control access to your chatbot:
 
+- **Require authentication for all API access**: When enabled, all API access requires authentication. This feature is available from **Business** plan. For more details, see [API authorization](/api/biel-ai-rest-api-beta#authorization--permissions).
 - **Allowed domains**: Only domains from this list will be able to use your chatbot widget.
-- **Filter URLs**: Use regex patterns to include or exclude specific URLs from indexing.
-
-For more details on URL filtering and domain restrictions, see [URLs](../customization/data-sources/urls.md).
 
 ### UI settings
 
@@ -128,7 +125,7 @@ Configure the AI model and behavior:
 
 - **Select model**: Choose from GPT or Claude models based on your needs and subscription plan. For more details, see [Models](../customization/models.md).
 - **Define prompt**: Extend the default AI Assistant or create a custom prompt for specialized behavior. For more details, see [Custom prompt](../customization/custom-prompt.md).
-- **Enable think mode**: Activate deeper AI reasoning for complex questions. Available from **Professional** plan. For more details, see [Reasoning modes](../customization/reasoning-modes.md).
+- **Enable think mode**: Activate deeper AI reasoning for complex questions. For more details, see [Reasoning modes](../customization/reasoning-modes.md).
 
 
 ### Data privacy
@@ -142,8 +139,11 @@ For comprehensive privacy configuration, see [Data privacy](../customization/dat
 
 ### MCP settings
 
-Configure Model Context Protocol (MCP) integration to allow AI coding assistants to access your project's documentation. For setup instructions, see [Docs MCP server](../integrations/mcp-server.mdx).
+
+Configure Model Context Protocol integration to connect AI coding assistants to your project:
 
 - **Enable MCP server**: Allow access to this project through the Model Context Protocol.
-- **MCP server name**: Custom name for the MCP server. Leave blank to use the project name.
-- **Metadata tag**: Tag used to identify conversations from MCP (default: `mcp`).
+- **MCP server name**: Set a custom name for the MCP server.
+- **Metadata tag**: Define a tag to identify conversations originating from MCP.
+
+For setup instructions and usage details, see [MCP server](../integrations/mcp-server.md).

@@ -35,17 +35,17 @@ To integrate the Biel.AI chat widget into your site:
 2. With your terminal still open, run the following command to install Biel.ai:
 
     ```console
-    npm install pushfeedback
+    npm install biel-search
     ```
 
 3. Make sure you embed the styles and scripts in your primary JS or entry file:
 
     ```js
     // Incorporate Biel.ai styles
-    import 'pushfeedback/dist/biel-search/biel-search.css';
+    import 'biel-search/dist/biel-search/biel-search.css';
 
     // Initialize the Biel.AI chat widget
-    import 'pushfeedback/dist/biel-search/biel-search.esm.js';
+    import 'biel-search/dist/biel-search/biel-search.esm.js';
     ```
 
 4. Just before the closing `</body>` tag of your website's HTML, add the following snippet:

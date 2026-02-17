@@ -22,12 +22,13 @@
   --ifm-menu-color-background-active: #f3f4f6;
   --ifm-z-index-fixed: 100;
   --biel-primary-color: #18181b;
-  --ifm-link-color: #542895;
-  --ifm-link-hover-color: #542895;
+  --ifm-link-color: #18181b;
+  --ifm-link-hover-color: #18181b;
   --feedback-primary-color: #18181b;
   --biel-button-dark-bg-color: #18181b;
   --biel-primary-hover-color: #18181b;
   --ifm-navbar-item-padding-vertical: 0;
+  --ifm-link-decoration: underline;
   
   /* Typography improvements */
   --ifm-font-size-base: 16px;
@@ -50,20 +51,21 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --biel-search-button-border-color: #7A4DFF;
-  --ifm-link-color: #7A4DFF;
-  --ifm-link-hover-color: #7A4DFF;
-  --ifm-color-primary: #7A4DFF;
-  --ifm-color-primary-dark: #612cff;
-  --ifm-color-primary-darker: #551bff;
-  --ifm-color-primary-darkest: #3b00e8;
-  --ifm-color-primary-light: #936eff;
-  --ifm-color-primary-lighter: #9f7fff;
-  --ifm-color-primary-lightest: #c4b1ff;
-  --biel-primary-color: #7A4DFF;
-  --biel-primary-hover-color: #542895;
+  --biel-search-button-border-color: #fff;
+  --ifm-link-color: #fff;
+  --ifm-link-hover-color: #fff;
+  --ifm-color-primary: #fff;
+  --ifm-color-primary-dark: #fff;
+  --ifm-color-primary-darker: #fff;
+  --ifm-color-primary-darkest: #fff;
+  --ifm-color-primary-light: #fff;
+  --ifm-color-primary-lighter: #fff;
+  --ifm-color-primary-lightest: #fff;
+  --biel-primary-color: #fff;
+  --biel-primary-hover-color: #fff;
   --biel-button-dark-bg-color: #fff;
   --biel-button-dark-text-color: #18181b;
+  --biel-suggested-questions-text-color: #181818;
   --feedback-button-dark-bg-color: #fff;
   --feedback-button-dark-text-color: #18181b;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -105,6 +107,12 @@
   padding: 0.375rem 0.75rem;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.table-of-contents__link,
+.pagination-nav__link,
+.menu__link {
+  text-decoration: none;
 }
 
 .menu__link--active {
@@ -321,6 +329,7 @@ h3.openapi-markdown__details-summary-header-body {
 [data-theme='dark'] .markdown > ol > li::before,
 [data-theme='dark'] .markdown > ol ol > li::before {
   background: var(--ifm-color-primary-dark);
+  color: #18181b;
 }
 
 

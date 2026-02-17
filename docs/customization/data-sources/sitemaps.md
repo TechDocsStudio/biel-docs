@@ -77,19 +77,29 @@ https://yoursite.com/wp-sitemap.xml
 
 Check `robots.txt` at `https://yoursite.com/robots.txt` for sitemap declarations.
 
-## Filter sitemap content
+## Filter URLs
 
-Control which pages get indexed from the sitemap:
+Control which pages from the sitemap get indexed by adding URL filter rules. Each rule has a **glob pattern** and an **action** (include or exclude).
 
-1. Go to **Projects** > your project > **Settings** > **Sources** > **Restrictions** > **Filter URLs**
-2. Add patterns:
-   - **Include**: `**/docs/**` (documentation only)
-   - **Exclude**: `**/api/**` (skip API reference)
-   - **Exclude**: `**/deprecated/**` (skip old content)
+1. Go to **Projects** > your project > **Settings** > **Sources** > **Sitemaps**.
+2. Add one or more filter rules under **Filter URLs**.
 
-For multi-language sites:
-- **Include**: `**/en/**`, `**/fr/**` (specific languages)
-- **Exclude**: `**/es/**`, `**/de/**` (unwanted languages)
+**How filtering works:**
+
+- If no include rules exist, all URLs are included by default.
+- If include rules exist, only URLs matching at least one include pattern are kept.
+- Exclude rules are applied after include rules — any matching URL is skipped.
+
+**Examples:**
+
+| Pattern | Action | Effect |
+|---|---|---|
+| `**/docs/**` | Include | Only index pages under `/docs/` |
+| `**/api/**` | Exclude | Skip API reference pages |
+| `**/deprecated/**` | Exclude | Skip old content |
+| `**/en/**` | Include | Only index English pages |
+| `**/*.pdf` | Exclude | Skip PDF files |
+| `**/[0-9]*.[0-9]*.[0-9]*/**` | Exclude | Skip versioned paths like `/1.2.3/` |
 
 ## Sitemap index files
 

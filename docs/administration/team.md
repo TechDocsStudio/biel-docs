@@ -10,8 +10,8 @@ title: Manage team
 From the **Team** view, you can:  
 
 * Change the team name.  
-* Enable or disable the PushFeedback logo (whitelabel).  
-* Invite new members.  
+* Enable or disable the Biel.ai logo (whitelabel).  
+* Invite new members.
 * Remove members.  
 * Manage member roles and permissions.  
 * Manage your subscription.  

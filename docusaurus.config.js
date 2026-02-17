@@ -63,6 +63,17 @@ const config = {
     ],
   ],
   plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/customization/think-mode',
+            to: '/customization/reasoning-modes',
+          },
+        ],
+      },
+    ],
     'docusaurus-plugin-image-zoom',
     [
       'docusaurus-biel',{
@@ -140,7 +151,7 @@ const config = {
       }
     ],
     scripts: [
-      'https://www.googletagmanager.com/gtag/js?id=G-CWY6XSMG75',
+      'https://www.googletagmanager.com/gtag/js?id=G-WXGQ5EZHVC',
       '/analytics.js'
     ],
   

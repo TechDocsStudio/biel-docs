@@ -32,7 +32,7 @@ Before starting, ensure you have:
 - **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
 - **Business or Enterprise plan** for API access
 - **Zapier account** (free or paid)
-- **Project ID** from your Biel.ai dashboard
+- **Project slug** from your Biel.ai dashboard
 - **API key** from your team settings
 
 ## Setup: Get AI-powered answers
@@ -51,9 +51,7 @@ In Zapier, create a new Zap and add the following steps:
 
 Add a **Webhooks by Zapier > POST** action with these settings:
 
-**URL:** `https://app.biel.ai/api/v1/projects/YOUR_PROJECT_ID/chat/`
-
-Replace `YOUR_PROJECT_ID` with your project ID from the Biel.ai dashboard.
+**URL:** `https://docs.biel.ai/api/v1/chats/`
 
 **Payload Type:** `json`
 
@@ -61,9 +59,10 @@ Replace `YOUR_PROJECT_ID` with your project ID from the Biel.ai dashboard.
 
 | Key | Value |
 |-----|-------|
-| `messages` | `[{"role": "user", "content": "Question from step 1"}]` |
+| `message` | `Question from step 1` |
+| `project_slug` | `YOUR_PROJECT_SLUG` |
 
-Replace `Question from step 1` with the field from your trigger that contains the user's question.
+Replace `Question from step 1` with the field from your trigger that contains the user's question. Replace `YOUR_PROJECT_SLUG` with your project slug from the Biel.ai dashboard.
 
 **Headers:**
 
@@ -86,21 +85,27 @@ The chat API returns a structured response:
 
 ```json
 {
-  "answer": "AI-generated answer based on your documentation...",
-  "sources": [
-    {
-      "title": "Source page title",
-      "url": "https://docs.example.com/source",
-      "content": "Relevant excerpt..."
-    }
-  ],
+  "user_message_id": "message-id",
+  "ai_message": {
+    "from": "ai",
+    "message": "AI-generated answer based on your documentation...",
+    "messageId": "ai-message-id",
+    "isPartial": false,
+    "timestamp": "2024-01-01T00:00:00Z",
+    "sources": [
+      {
+        "title": "Source page title",
+        "url": "https://docs.example.com/source"
+      }
+    ]
+  },
   "chat_uuid": "unique-conversation-id"
 }
 ```
 
 Use the returned data in subsequent steps:
-- `Answer` - The AI-generated answer
-- `Sources` - Array of source documents with citations
+- `Ai Message Message` - The AI-generated answer
+- `Ai Message Sources` - Array of source documents with citations
 - `Chat Uuid` - Conversation ID for multi-turn chats
 
 ### 4. Continue the conversation (optional)
@@ -111,7 +116,8 @@ To maintain context in multi-turn conversations, store the `chat_uuid` using **S
 
 | Key | Value |
 |-----|-------|
-| `messages` | `[{"role": "user", "content": "Question from step 1"}]` |
+| `message` | `Question from step 1` |
+| `project_slug` | `YOUR_PROJECT_SLUG` |
 | `chat_uuid` | `Chat Uuid from step 2` |
 
 Need help? [Contact us](https://biel.ai/contact) to discuss your Zap.
