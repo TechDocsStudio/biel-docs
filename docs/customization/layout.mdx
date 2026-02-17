@@ -64,10 +64,13 @@ The table below lists all the available properties that modify the chatbot modal
 | `hide-feedback`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, removes the feedback options (like thumbs up/down) that users can use to rate AI responses. |
 | `hide-sources`         | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the sources section from AI responses in the chat interface. |
 | `hide-settings-button` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the settings button (reasoning mode selector) from the chatbot header. Only applies if your project has the reasoning mode plugin enabled. |
+| `hide-connect-button`  | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the Connect button from the chatbot header. This button allows users to connect to MCP (Model Context Protocol) servers. When hidden, users won't be able to access MCP connection options even if MCP is enabled for the project. |
 | `hide-tooltips`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides the tooltips that appear when hovering over header icons. |
 | `modal-position`       | **Type**: `string`<br />**Default value**: `center`<br />**Available values:** `center`, `top-center`, `bottom-right`, `bottom-left`<br /><br />Determines where the chat modal appears on the screen when opened. Choose the position that best fits your website's layout.|
 | `show-terms-modal` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, displays a terms and conditions modal before starting the chat. |
 | `think-mode-enabled`   | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, selects Think mode by default (instead of Auto) for deeper AI reasoning. Users can still change modes via the settings dropdown unless you also set `hide-settings-button` to `true`. Requires the reasoning mode plugin to be enabled for your project. See [Reasoning modes](./reasoning-modes) for details. |
+| **MCP Integration**  |  |  |
+| `mcp-server-url`       | **Type**: `string`<br />**Default value**: ``<br /><br />Manually override the MCP (Model Context Protocol) server URL. Use this when you need to connect to a custom MCP server or when your MCP server requires authentication (e.g., API keys). Takes priority over the API-provided MCP URL. Example: `https://mcp.biel.ai/v2/YOUR_PROJECT/mcp?api_key=sk_...` See [MCP Server Integration](/integrations/mcp-server) for details. |
 | **Text**             |  |  |
 | `assistant-label`      | **Type**: `string`<br />**Default value**: `Assistant`<br /><br />Label text displayed above AI responses in the chat. |
 | `close-button-text`    | **Type**: `string`<br />**Default value**: `Close`<br /><br />Tooltip text for the close button in the chatbot header. |
@@ -79,6 +82,18 @@ The table below lists all the available properties that modify the chatbot modal
 | `footer-text`          | **Type**: `string`<br />**Default value**: `AI-generated answers may contain errors. Verify official sources before use.`<br /><br />Footer text. |
 | `header-title`         | **Type**: `string`<br />**Default value**: `Company Name AI`<br /><br />Title text for the chatbot header. |
 | `input-placeholder-text` | **Type**: `string`<br />**Default value**: `Type your message`<br /><br />Placeholder text displayed in the chatbot's input field. |
+| `connect-button-text`  | **Type**: `string`<br />**Default value**: `Connect`<br /><br />Tooltip text for the Connect button in the chatbot header. |
+| `mcp-url-text`         | **Type**: `string`<br />**Default value**: `MCP URL`<br /><br />Label for the MCP URL option in the connect dialog. |
+| `mcp-url-description`  | **Type**: `string`<br />**Default value**: `Copy to clipboard`<br /><br />Description text for the MCP URL option in the connect dialog. |
+| `mcp-claude-text`      | **Type**: `string`<br />**Default value**: `Claude Code`<br /><br />Label for the Claude Code option in the connect dialog. |
+| `mcp-claude-description` | **Type**: `string`<br />**Default value**: `CLI command`<br /><br />Description text for the Claude Code option in the connect dialog. |
+| `mcp-copilot-text`     | **Type**: `string`<br />**Default value**: `Copilot (VS code)`<br /><br />Label for the Copilot option in the connect dialog. |
+| `mcp-copilot-description` | **Type**: `string`<br />**Default value**: `Opens in a new tab`<br /><br />Description text for the Copilot option in the connect dialog. |
+| `mcp-cursor-text`      | **Type**: `string`<br />**Default value**: `Cursor`<br /><br />Label for the Cursor option in the connect dialog. |
+| `mcp-cursor-description` | **Type**: `string`<br />**Default value**: `Opens in a new tab`<br /><br />Description text for the Cursor option in the connect dialog. |
+| `mcp-copied-text`      | **Type**: `string`<br />**Default value**: `Copied!`<br /><br />Confirmation text shown after copying an MCP value to the clipboard. |
+| `mcp-url-copied-description` | **Type**: `string`<br />**Default value**: `URL copied to clipboard`<br /><br />Description text shown after copying the MCP URL. |
+| `mcp-claude-copied-description` | **Type**: `string`<br />**Default value**: `Command copied to clipboard`<br /><br />Description text shown after copying the Claude Code command. |
 | `refresh-button-text`  | **Type**: `string`<br />**Default value**: `Refresh`<br /><br />Tooltip text for the refresh button in the chatbot header. |
 | `send-button-text`       | **Type**: `string`<br />**Default value**: `Send`<br /><br />Text displayed on the send button next to the input field. |
 | `sources-text`           | **Type**: `string`<br />**Default value**: `Sources`<br /><br />Text displayed for introducing sources in messages. |

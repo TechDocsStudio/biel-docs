@@ -139,6 +139,7 @@ For comprehensive privacy configuration, see [Data privacy](../customization/dat
 
 ### MCP settings
 
+
 Configure Model Context Protocol integration to connect AI coding assistants to your project:
 
 - **Enable MCP server**: Allow access to this project through the Model Context Protocol.
