@@ -139,3 +139,11 @@ Enhance user privacy and comply with regulations:
 - **Disable IP collection**: Stop collecting IP addresses to enhance privacy (affects some analytics features).
 
 For comprehensive privacy configuration, see [Data privacy](../customization/data-privacy.mdx).
+
+### MCP settings
+
+Configure Model Context Protocol (MCP) integration to allow AI coding assistants to access your project's documentation. For setup instructions, see [Docs MCP server](../integrations/mcp-server.mdx).
+
+- **Enable MCP server**: Allow access to this project through the Model Context Protocol.
+- **MCP server name**: Custom name for the MCP server. Leave blank to use the project name.
+- **Metadata tag**: Tag used to identify conversations from MCP (default: `mcp`).
