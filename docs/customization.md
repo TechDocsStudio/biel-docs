@@ -91,6 +91,13 @@ Learn how to customize and configure Biel AI to meet your specific needs. This s
       <p className="text--truncate" title="Configure search functionality and behavior">Configure search functionality and behavior</p>
     </a>
   </article>
+
+  <article className="col col--6">
+    <a className="card padding--lg" href="/customization/search-filters">
+      <h2 className="text--truncate" title="Search filters">📄️ Search filters</h2>
+      <p className="text--truncate" title="Filter search results by category">Filter search results by category</p>
+    </a>
+  </article>
   
   <article className="col col--6">
     <a className="card padding--lg" href="/customization/workflows">

@@ -104,6 +104,7 @@ const sidebars = {
             'customization/reasoning-modes',
             'customization/data-privacy',
             'customization/search',
+            'customization/search-filters',
             'customization/workflows',
             ],
         },
