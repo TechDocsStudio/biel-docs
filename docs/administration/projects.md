@@ -124,8 +124,7 @@ Customize the user interface and initial user experience:
 Configure filters that allow users to narrow search results by category in the search widget:
 
 - **Title**: The label shown to users (for example, `API`, `Guides`, `Blog`).
-- **Pattern**: A regex or glob-style pattern matched against page URLs, titles, and descriptions to determine which results are included.
-- **Active**: Enable or disable individual filters without deleting them.
+- **Pattern**: A regex or glob-style pattern matched against page URLs, titles, and descriptions to determine which results are included. For example, `.*\/tutorials\/.*` matches all pages under `/tutorials`.
 
 Filters appear in the search widget only when `hide-filters` is set to `false` on the widget and the user has started typing a query. For more details, see [Search filters](../customization/search-filters.md).
 

@@ -31,8 +31,7 @@ Only users with the **Administrator** or **Maintainer** role can configure proje
 4. Add one or more filters. Each filter requires:
    - **Title**: The label shown in the widget (for example, `API`, `Guides`, `Blog`).
    - **Pattern**: A regex pattern used to match page URLs. For example, `/docs/api/` matches all pages under that path.
-5. Use the **Active** toggle to enable or disable individual filters without deleting them.
-6. Click **Save**.
+5. Click **Save**.
 
 :::tip
 You can use a glob-style wildcard at the start of a pattern. For example, `*.example.com` is automatically converted to `.*\.example\.com`. For more advanced matching, use standard regular expressions such as `docs\.acme\.com/api`.
