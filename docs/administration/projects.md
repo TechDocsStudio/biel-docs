@@ -146,4 +146,4 @@ Configure Model Context Protocol integration to connect AI coding assistants to 
 - **MCP server name**: Set a custom name for the MCP server.
 - **Metadata tag**: Define a tag to identify conversations originating from MCP.
 
-For setup instructions and usage details, see [MCP server](../integrations/mcp-server.md).
+For setup instructions and usage details, see [MCP server](../integrations/mcp-server.mdx).
