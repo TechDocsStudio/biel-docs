@@ -54,7 +54,7 @@ Search for relevant sources within a project using AI-powered semantic search.
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"slug","schema":{"type":"string"},"required":true,"description":"Project slug identifier"},{"in":"query","name":"q","schema":{"type":"string"},"required":true,"description":"Search query"},{"in":"query","name":"domain_filter","schema":{"type":"string"},"description":"Optional domain filter to restrict search results"},{"in":"query","name":"url","schema":{"type":"string"},"description":"URL where the search is initiated from (for domain validation)"}]}
+  parameters={[{"in":"path","name":"slug","schema":{"type":"string"},"required":true,"description":"Project slug identifier"},{"in":"query","name":"q","schema":{"type":"string"},"required":true,"description":"Search query"},{"in":"query","name":"url","schema":{"type":"string"},"required":false,"description":"URL from where the search was initiated."},{"in":"query","name":"filter_title","schema":{"type":"string"},"required":false,"description":"Optional filter to restrict search results to documents matching this filter title."}]}
 >
   
 </ParamsDetails>
@@ -66,10 +66,12 @@ Search for relevant sources within a project using AI-powered semantic search.
   
 </RequestSchema>
 
+export const searchResultItems = {"type":"object","properties":{"title":{"type":"string","description":"The page title related to the document."},"fragment":{"type":"string","description":"A snippet of text containing the search query or a relevant section of the document."},"url":{"type":"string","format":"uri","description":"The URL to the original document containing the fragment."},"score":{"type":"integer","description":"Relevance score."},"domain":{"type":"string","format":"uri","description":"The root domain name of the source."},"is_title_match":{"type":"boolean","description":"Whether the page title contains the exact search query."}}};
+
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"content":{"type":"string","description":"Relevant content snippet"},"metadata":{"type":"object","additionalProperties":{},"description":"Additional metadata about the source"}},"required":["content","metadata"],"title":"SearchResult"}}}},"description":"Search results retrieved successfully"},"400":{"content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}},"description":"Bad request - missing query parameter"},"403":{"content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}},"description":"Forbidden - missing permissions or unauthorized domain"}}}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"results":{"type":"array","items":searchResultItems}}}}},"description":"Search results"},"400":{"description":"Bad request - missing query parameter"},"403":{"description":"Forbidden"},"404":{"description":"Project not found"}}}
 >
   
 </StatusCodes>
