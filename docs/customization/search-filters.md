@@ -19,8 +19,8 @@ Only users with the **Administrator** or **Maintainer** role can configure proje
 2. Click the **Settings** button.
 3. Scroll to the **Search filters** section.
 4. Add one or more filters. Each filter requires:
-   - **Title**: The label shown in the widget (for example, `API`, `Guides`, `Blog`).
-   - **Pattern**: A case-insensitive regular expression matched against result URLs. Use `\.` to match a literal dot and `.*` to match any characters. See [Pattern examples](#pattern-examples) for common use cases.
+   - **Title:** The label shown in the widget (for example, `API`, `Guides`, `Blog`).
+   - **Pattern:** A case-insensitive regular expression matched against result URLs. Use `\.` to match a literal dot and `.*` to match any characters. See [Pattern examples](#pattern-examples) for common use cases.
 5. Click **Save**.
 
 ### Pattern examples
