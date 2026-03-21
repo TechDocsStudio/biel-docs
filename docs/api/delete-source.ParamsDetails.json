@@ -1,0 +1,1 @@
+{"parameters":[{"in":"path","name":"slug","schema":{"type":"string"},"required":true,"description":"Project slug identifier"},{"in":"path","name":"source_uuid","schema":{"type":"string","format":"uuid"},"required":true,"description":"UUID of the source to delete"}]}

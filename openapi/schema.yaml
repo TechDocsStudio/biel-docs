@@ -275,15 +275,16 @@ paths:
         required: true
         description: Search query
       - in: query
-        name: domain_filter
-        schema:
-          type: string
-        description: Optional domain filter to restrict search results
-      - in: query
         name: url
         schema:
           type: string
-        description: URL where the search is initiated from (for domain validation)
+        description: URL from where the search was initiated.
+      - in: query
+        name: filter_title
+        schema:
+          type: string
+        required: false
+        description: Optional filter to restrict search results to documents matching this filter title.
       tags:
       - Projects
       security:
@@ -294,10 +295,13 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/SearchResult'
-          description: 'Search results retrieved successfully'
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SearchResult'
+          description: 'Search results'
         '400':
           content:
             application/json:
@@ -308,14 +312,9 @@ paths:
                     type: string
           description: 'Bad request - missing query parameter'
         '403':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-          description: 'Forbidden - missing permissions or unauthorized domain'
+          description: 'Forbidden'
+        '404':
+          description: 'Project not found'
   /api/v1/projects/{slug}/sources/:
     get:
       operationId: listSources
@@ -362,20 +361,20 @@ paths:
       summary: Add project source
       description: |
         Upload files, URLs, sitemaps, or complete websites to a specific project. All sources are indexed for AI-powered search and chat.
-        
+
         **Upload types:**
         - **Individual files:** Upload documents (PDF, MD, TXT, DOCX, XLSX, CSV) for indexing
         - **URLs:** Add web pages to crawl and index
         - **Sitemaps:** Bulk import pages from XML sitemaps
         - **Hosted sites:** Upload complete websites as ZIP files for hosting and indexing
-        
+
         **Required permission:** `project_sources_create`
-        
+
         **File requirements:**
         - Supported formats: PDF, MD, TXT, DOCX, XLSX, CSV
         - Maximum file size: 10 MB per file
         - Files are stored securely and processed for search indexing
-        
+
         **Hosted site requirements:**
         - Supported format: ZIP file containing a complete website
         - Maximum size: 50 MB per ZIP file
@@ -586,34 +585,34 @@ components:
     SearchResult:
       type: object
       properties:
-        content:
+        title:
           type: string
-          description: Relevant content snippet
-        metadata:
-          type: object
-          additionalProperties: {}
-          description: Additional metadata about the source
-      required:
-      - content
-      - metadata
-    Filter:
-      type: object
-      properties:
+          description: The page title related to the document.
+        fragment:
+          type: string
+          description: A snippet of text containing the search query or a relevant section of the document.
         url:
           type: string
           format: uri
-          maxLength: 200
-        position:
+          description: The URL to the original document containing the fragment.
+        score:
           type: integer
-          maximum: 2147483647
-          minimum: 0
+          description: Relevance score.
+        domain:
+          type: string
+          format: uri
+          description: The root domain name of the source.
+        is_title_match:
+          type: boolean
+          description: Whether the page title contains the exact search query.
+    Filter:
+      type: object
+      properties:
         title:
           type: string
-          maxLength: 255
+          description: Display title of the filter.
       required:
-      - position
       - title
-      - url
     Project:
       type: object
       properties:
@@ -633,7 +632,7 @@ components:
           items:
             $ref: '#/components/schemas/Filter'
           readOnly: true
-          description: Domain filters configured for the project
+          description: List of search filters available for the project.
         think_mode:
           type: boolean
           readOnly: true
@@ -642,6 +641,15 @@ components:
           type: boolean
           readOnly: true
           description: Whether the project requires authentication to access
+        mcp_enabled:
+          type: boolean
+          description: True if the MCP server integration is enabled for this project.
+        mcp_server_name:
+          type: string
+          description: The name of the MCP server associated with this project.
+        mcp_metadata_tag:
+          type: string
+          description: Metadata tag used to identify MCP-originated messages.
       required:
       - filters
       - initial_message
@@ -649,6 +657,9 @@ components:
       - whitelabel
       - think_mode
       - is_private
+      - mcp_enabled
+      - mcp_server_name
+      - mcp_metadata_tag
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
