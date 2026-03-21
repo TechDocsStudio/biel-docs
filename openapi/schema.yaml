@@ -596,7 +596,7 @@ components:
           format: uri
           description: The URL to the original document containing the fragment.
         score:
-          type: integer
+          type: number
           description: Relevance score.
         domain:
           type: string
