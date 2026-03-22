@@ -195,7 +195,7 @@
 
 /* Color mode toggle — clean sun/moon icon */
 .clean-color-toggle {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 32px;
@@ -207,6 +207,12 @@
   color: rgba(24, 24, 27, 0.5);
   border-radius: 6px;
   transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+@media (min-width: 997px) {
+  .clean-color-toggle {
+    display: flex;
+  }
 }
 
 .clean-color-toggle:hover {
@@ -431,7 +437,6 @@ html[class*="plugin-@scalar"] .main-wrapper {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  padding-top: 0 !important;
 }
 
 html[class*="plugin-@scalar"] .footer {
@@ -495,15 +500,15 @@ html[class*="plugin-@scalar"] .uppercase.text-xs.font-medium.border {
 }
 
 /* Beautiful numbered list styling (docs pages only, not Scalar) */
-.markdown > ol,
-.markdown > ol ol {
+html:not([class*="plugin-@scalar"]) .markdown > ol,
+html:not([class*="plugin-@scalar"]) .markdown > ol ol {
   list-style: none;
   counter-reset: item;
   padding-left: 0;
 }
 
-.markdown > ol > li,
-.markdown > ol ol > li {
+html:not([class*="plugin-@scalar"]) .markdown > ol > li,
+html:not([class*="plugin-@scalar"]) .markdown > ol ol > li {
   counter-increment: item;
   position: relative;
   padding-left: 3rem;
@@ -511,7 +516,7 @@ html[class*="plugin-@scalar"] .uppercase.text-xs.font-medium.border {
 }
 
 /* Vertical line connecting badges */
-.markdown > ol > li::after {
+html:not([class*="plugin-@scalar"]) .markdown > ol > li::after {
   content: '';
   position: absolute;
   left: 0.875rem;
@@ -521,13 +526,13 @@ html[class*="plugin-@scalar"] .uppercase.text-xs.font-medium.border {
   background: var(--ifm-toc-border-color);
 }
 
-.markdown > ol > li:last-child::after {
+html:not([class*="plugin-@scalar"]) .markdown > ol > li:last-child::after {
   display: none;
 }
 
 /* Circular number badge */
-.markdown > ol > li::before,
-.markdown > ol ol > li::before {
+html:not([class*="plugin-@scalar"]) .markdown > ol > li::before,
+html:not([class*="plugin-@scalar"]) .markdown > ol ol > li::before {
   content: counter(item);
   position: absolute;
   left: 0;
@@ -546,8 +551,8 @@ html[class*="plugin-@scalar"] .uppercase.text-xs.font-medium.border {
   z-index: 1;
 }
 
-[data-theme='dark'] .markdown > ol > li::before,
-[data-theme='dark'] .markdown > ol ol > li::before {
+html[data-theme='dark']:not([class*="plugin-@scalar"]) .markdown > ol > li::before,
+html[data-theme='dark']:not([class*="plugin-@scalar"]) .markdown > ol ol > li::before {
   background: var(--ifm-color-primary-dark);
   color: #18181b;
 }
