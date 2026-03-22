@@ -17,12 +17,10 @@ This integration connects ChatGPT's interface to your knowledge base through the
 
 ## Requirements
 
-This integration requires:
-
-- **ChatGPT Plus, Team, or Enterprise** account (Custom GPT creation access)
-- **Biel.ai Business or Enterprise** plan (API access)
-- **API key** with `chat_create` permission (from [Team Settings](https://app.biel.ai))
-- **Documentation or content** already indexed in your Biel.ai project
+- A ChatGPT Plus, Team, or Enterprise account.
+- A Biel.ai Business or Enterprise plan.
+- An API key with `chat_create` permission (from [Team Settings](https://app.biel.ai)).
+- Documentation already indexed in your Biel.ai project.
 
 ## How it works
 
@@ -38,9 +36,7 @@ This keeps responses grounded in your actual documentation rather than relying o
 
 ## 1. Create an API key
 
-Before setting up your Custom GPT, you need an API key from Biel.ai:
-
-1. Log in to your Biel account at [app.biel.ai](https://app.biel.ai).
+1. Log in to your Biel.ai account at [app.biel.ai](https://app.biel.ai).
 2. Navigate to **Team** in the sidebar.
 3. Scroll to the **API Keys** section.
 4. Click **Create API Key**.
@@ -59,8 +55,6 @@ Keep your API key secure. You'll need it in step 6 when configuring authenticati
 ## 2. Create your Custom GPT
 
 ![Create a new Custom GPT](./images/custom-gpt-step2-create-gpt.png)
-
-Navigate to the ChatGPT GPT creation page and start building your Custom GPT:
 
 1. Go to [chatgpt.com/gpts](https://chatgpt.com/gpts).
 2. Click **Create** in the top right.
@@ -125,7 +119,7 @@ For a basic documentation assistant, you can disable all capabilities to keep re
 
 ## 5. Add the Biel.ai action
 
-Connect your Custom GPT to Biel.ai by adding an action that calls the API. You can import the schema from a URL or paste it directly:
+Import the OpenAPI schema to connect your GPT to the Biel.ai API:
 
 ![Add Biel.ai action to Custom GPT](./images/custom-gpt-step5-add-action.png)
 
@@ -150,8 +144,6 @@ The schema includes `x-openai-isConsequential: false` which prevents ChatGPT fro
 
 ## 6. Add API authentication
 
-Secure your Custom GPT by configuring API key authentication with Bearer token:
-
 ![Configure authentication with API key](./images/custom-gpt-step6-configure-auth.png)
 
 1. Under **Authentication**, select **API Key**.
@@ -170,38 +162,22 @@ Secure your Custom GPT by configuring API key authentication with Bearer token:
 
 ![Test your Custom GPT in the preview panel](./images/custom-gpt-step7-test-preview.png)
 
-Use the preview panel on the right side of the screen to test your GPT:
+Use the preview panel to test your GPT:
 
-1. Enter a question in the preview panel.
-2. Try one of your conversation starters.
-3. Ask follow-up questions.
-4. Verify sources are cited correctly.
-
-Example conversation:
-
-```
-You: How do I get started?
-GPT: [Provides answer based on your documentation with source links]
-
-You: What authentication methods are supported?
-GPT: [Continues conversation with relevant information]
-```
-
+1. Try one of your conversation starters.
+2. Ask follow-up questions.
+3. Verify sources are cited correctly.
 
 ## 8. Publish your GPT
 
 ![Publish and share your Custom GPT](./images/custom-gpt-step8-publish-share.png)
 
-Make your Custom GPT available by publishing it and choosing who can access it:
-
 1. Click **Create** or **Update** in the top right.
 2. Choose who can access:
    - **Only me**: Private, just for you
    - **Anyone with a link**: Share with specific people
-   - **GPT Store**: Listed in GPT store
+   - **GPT Store**: Listed publicly
 3. Click **Save**.
-
-After publishing, you'll receive a shareable link. Share this with your team or customers to give them access to your documentation assistant.
 
 :::tip Try it out!
 Here's a [Custom GPT for Biel.ai documentation](https://chatgpt.com/g/g-68f25ff499f881919172b80885717e20-biel-ai-docs-assistant) you can try.
@@ -209,28 +185,28 @@ Here's a [Custom GPT for Biel.ai documentation](https://chatgpt.com/g/g-68f25ff4
 
 ## Troubleshooting
 
-**GPT returns generic answers instead of your docs**
+### GPT returns generic answers instead of your docs
 
-- Verify your API key has `chat_create` permission
-- Check that `project_slug` in Instructions matches your Biel.ai project
-- Ensure your project has indexed sources
+- Verify your API key has `chat_create` permission.
+- Check that `project_slug` in Instructions matches your Biel.ai project.
+- Ensure your project has indexed sources.
 
-**Authentication errors**
+### Authentication errors
 
-- Confirm API key format: `Api-Key your-key-here` (note the space)
-- Regenerate your API key if compromised
-- Verify your Biel.ai plan includes API access
+- Confirm API key format: `Api-Key your-key-here` (note the space).
+- Regenerate your API key if compromised.
+- Verify your Biel.ai plan includes API access.
 
-**Responses seem outdated**
+### Responses seem outdated
 
-- Sync your project sources in Biel.ai (Settings > Sources > Sync)
-- Wait a few minutes for re-indexing to complete
+- Sync your project sources in Biel.ai (**Settings** > **Sources** > **Sync**).
+- Wait a few minutes for re-indexing to complete.
 
-**Action not working**
+### Action not working
 
-- Verify the OpenAPI schema imported correctly
-- Check that the server URL is `https://app.biel.ai`
-- Confirm `x-openai-isConsequential: false` is present in the schema
+- Verify the OpenAPI schema imported correctly.
+- Check that the server URL is `https://app.biel.ai`.
+- Confirm `x-openai-isConsequential: false` is present in the schema.
 
 ## Advanced customization
 
@@ -262,9 +238,4 @@ If you have multiple Biel.ai projects, create separate Custom GPTs for each:
 - Internal knowledge base GPT
 - Help center and guides GPT
 
-## Need help?
-
-- **API issues**: Contact [support@biel.ai](mailto:support@biel.ai)
-- **Custom GPT questions**: Check [OpenAI's Custom GPT documentation](https://help.openai.com/en/articles/8554397-creating-a-gpt)
-- **Upgrade your plan**: Visit [app.biel.ai](https://app.biel.ai) to access API features
 

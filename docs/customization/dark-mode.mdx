@@ -1,20 +1,16 @@
 ---
 sidebar_position: 9
+description: Enable dark mode for the Biel.ai chatbot widget.
 ---
 
 # Dark mode
 
-This document provides detailed instructions on how to enable the dark mode feature for Biel.ai on your website.
-By following these steps, you can enhance the visual experience for users who prefer a darker color scheme.
+The Biel.ai widget automatically switches to dark mode when it detects `data-theme="dark"` on the `<html>` tag.
 
-## Enable the dark mode
-
-To activate dark mode for Biel.ai, you will need to modify the HTML structure of your website. 
-
-This involves adding a specific attribute to the main `<html>` tag of your site's HTML code.
+Add the attribute to your site's `<html>` tag:
 
 ```html
 <html data-theme="dark">
-<!-- Your existing HTML content -->
-</html>
 ```
+
+Most documentation frameworks (Docusaurus, MkDocs Material, VitePress) set this attribute automatically when the user toggles dark mode — no additional configuration needed.

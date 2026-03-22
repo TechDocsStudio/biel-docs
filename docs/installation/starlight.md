@@ -1,24 +1,19 @@
 ---
 sidebar_label: Starlight
-description: Add an AI chatbot to your Starlight documentation site with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Starlight documentation site with this step-by-step guide.
 ---
 
 # Ask AI chatbot widget for Starlight
 
-Add an AI chatbot to your Starlight documentation using Biel.ai's web components. The integration works with any Starlight theme and requires only adding a few lines to your components.
-
-This guide shows you how to add the chat widget to your Starlight site in minutes using component overrides.
+Add an [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Starlight documentation using Biel.ai's web components.
 
 ## Prerequisites
 
-Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **A Starlight site** ready to install Biel.ai.
 
-## Installation
-
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+## Add the chatbot widget
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
@@ -32,13 +27,14 @@ To integrate the Biel.ai widget into your Starlight site:
     import type { Props } from '@astrojs/starlight/props';
 
     import EditLink from 'virtual:starlight/components/EditLink';
+    import Icon from 'virtual:starlight/components/Icon';
     import LastUpdated from 'virtual:starlight/components/LastUpdated';
     import Pagination from 'virtual:starlight/components/Pagination';
     import config from 'virtual:starlight/user-config';
     ---
 
     <footer class="sl-flex">
-        <biel-button project="<YOUR_PROJECT_ID>" 
+        <biel-button project="<YOUR_PROJECT_ID>"
             header-title="Biel.ai chatbot"
             button-position="bottom-right"
             modal-position="bottom-right"
@@ -64,7 +60,7 @@ To integrate the Biel.ai widget into your Starlight site:
     <style is:global>
         .right-sidebar-container{
             z-index: -1;
-        } 
+        }
     </style>
 
     <style>
@@ -99,32 +95,10 @@ To integrate the Biel.ai widget into your Starlight site:
         }
     </style>
     ```
-    
-    This code snippet shows how to integrate the Biel.ai widget. Pay special attention to the lines:
-
-    ```astro
-    <biel-button project="<YOUR_PROJECT_ID>" 
-        header-title="Biel.ai chatbot"
-        button-position="bottom-right"
-        modal-position="bottom-right"
-        button-style="dark">
-            Ask AI
-    </biel-button>
-    ```
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-    And the global style:
-
-    ```astro
-    <style is:global>
-        .right-sidebar-container{
-            z-index: -1;
-        } 
-    </style>
-    ```
-
-    This is required to make sure the button is placed on top of the right sidebar.
+    The global style sets `z-index: -1` on `.right-sidebar-container` to ensure the button is placed on top of the right sidebar.
 
 1. Load the dependencies in your Astro configuration file (`astro.config.mjs`):
 
@@ -177,3 +151,8 @@ To integrate the Biel.ai widget into your Starlight site:
     ```
 
 1. Start your Starlight project by running `npm run dev` in your terminal. Once it compiles successfully, verify that the chatbot widget appears and functions correctly on your site.
+
+## Next steps
+
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.

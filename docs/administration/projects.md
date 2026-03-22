@@ -1,20 +1,18 @@
 ---
 sidebar_position: 3
 title: Manage projects
+description: View, configure, and manage your Biel.ai projects.
 ---
 
 # Manage projects
 
 Projects are the core organizational unit in Biel.ai where you configure your chatbot's behavior, data sources, and security settings.
-This guide explains how to view, configure, and manage your projects.
 
 ## View all projects
 
 The **Projects** dashboard displays a list of all your projects.
 
 ![Projects list](./images/project-list.png)
-
-**To view project details:** Click on any project name in the list.
 
 ## Project detail page
 
@@ -24,23 +22,27 @@ From the **Projects** dashboard, click on a project name to open its detail page
 
 Here you can:
 
-**Project information:**
+### Project information
+
 - View the project ID
 - Access the code snippet to embed the chatbot widget
 - Access the project details using the **Settings** button
 
-**Testing and monitoring:**
+### Testing and monitoring
+
 - Test your chatbot widget using the **New chat** button
 - Recrawl sources to update indexed content
 - View crawl logs to troubleshoot indexing issues
 - Access detailed project analytics
 
-**Chat management:**
+### Chat management
+
 - View all chat entries and conversation history
 - Filter conversations by sentiment
 - Click on any chat entry to view its details
 
-**Project actions:**
+### Project actions
+
 - Delete the project
 
 ### Chat detail view
@@ -51,17 +53,20 @@ From the project detail page, click on any chat entry in the conversation list t
 
 This view shows detailed information about that specific conversation:
 
-**User information:**
+### User information
+
 - Email address (if provided)
 - Country and IP address
 - Sentiment analysis of the conversation
 
-**Conversation metadata:**
+### Conversation metadata
+
 - URL where the chat originated
 - Date and time of the conversation
 - Full conversation history
 
-**Actions:**
+### Actions
+
 - **Download**: Export the chat in PDF, Excel, or CSV format
 - **Delete**: Remove the chat entry
 
@@ -80,7 +85,7 @@ From the project detail page, click the **Settings** button (located in the top 
 ![Project settings](./images/project-settings.png)
 
 :::important
-Only users with the **Administrator** or **Maintainer** role can configure project settings. For more details, see [Manage roles](roles.md).
+Only **Administrator** or **Maintainer** roles can manage project settings. See [Manage roles](roles.md).
 :::
 
 ### Project details
@@ -108,16 +113,15 @@ For detailed configuration instructions, see [Sources](../customization/data-sou
 
 Control access to your chatbot:
 
-- **Require authentication for all API access**: When enabled, all API access requires authentication. This feature is available from **Business** plan. For more details, see [API authorization](/api/biel-ai-rest-api-beta#authorization--permissions).
+- **Require authentication for all API access**: When enabled, all API access requires authentication. Available from **Business** plan. See [API authorization](/api/biel-ai-rest-api-beta#authorization--permissions).
 - **Allowed domains**: Only domains from this list will be able to use your chatbot widget.
 
 ### UI settings
 
 Customize the user interface and initial user experience:
 
-- **Initial message**: Set a custom greeting message displayed when users first open the chat. For more details, see [Initial message](../customization/initial-message.mdx).
-- **Suggested questions**: Configure predefined questions to guide user interactions. For more details, see [Suggested questions](../customization/suggested-questions.mdx).
-
+- **Initial message**: Set a custom greeting. See [Initial message](../customization/initial-message.mdx).
+- **Suggested questions**: Configure predefined questions to guide user interactions. See [Suggested questions](../customization/suggested-questions.mdx).
 
 ### Search filters
 
@@ -133,10 +137,9 @@ Filters appear in the search widget only when `hide-filters` is set to `false` o
 
 Configure the AI model and behavior:
 
-- **Select model**: Choose from GPT or Claude models based on your needs and subscription plan. For more details, see [Models](../customization/models.md).
-- **Define prompt**: Extend the default AI Assistant or create a custom prompt for specialized behavior. For more details, see [Custom prompt](../customization/custom-prompt.md).
-- **Enable think mode**: Activate deeper AI reasoning for complex questions. For more details, see [Reasoning modes](../customization/reasoning-modes.md).
-
+- **Select model**: Choose from GPT or Claude models based on your needs and subscription plan. See [Models](../customization/models.md).
+- **Define prompt**: Extend the default AI Assistant or create a custom prompt for specialized behavior. See [Custom prompt](../customization/custom-prompt.md).
+- **Enable think mode**: Activate deeper AI reasoning for complex questions. See [Reasoning modes](../customization/reasoning-modes.md).
 
 ### Data privacy
 
@@ -149,11 +152,10 @@ For comprehensive privacy configuration, see [Data privacy](../customization/dat
 
 ### MCP settings
 
-
 Configure Model Context Protocol integration to connect AI coding assistants to your project:
 
 - **Enable MCP server**: Allow access to this project through the Model Context Protocol.
 - **MCP server name**: Set a custom name for the MCP server.
 - **Metadata tag**: Define a tag to identify conversations originating from MCP.
 
-For setup instructions and usage details, see [MCP server](../integrations/mcp-server.mdx).
+For setup instructions, see [MCP server](../integrations/mcp-server.mdx).

@@ -1,29 +1,22 @@
 ---
 sidebar_label: Paligo
-description: Add an AI chatbot to your Paligo documentation with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Paligo documentation with this step-by-step guide.
 ---
 
 # Ask AI chatbot widget for Paligo
 
-Add an AI chatbot to your Paligo documentation using Biel.ai's web components. The integration works with Paligo's custom JavaScript feature and adds conversational AI capabilities to your published HTML5 documentation.
-
-This guide shows you how to add the chat widget to your Paligo HTML5 output in minutes.
+Add an [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Paligo documentation using Biel.ai's web components.
 
 ## Prerequisites
 
-Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **A Paligo account** with HTML5 output capability.
 - **Access to your Paligo publication settings** to add custom JavaScript.
 
-## Installation
-
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+## Add the chatbot widget
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
-
-To integrate the Biel.AI chat widget into your Paligo documentation:
 
 1. Log in to your Paligo account and open your publication.
 
@@ -39,21 +32,17 @@ To integrate the Biel.AI chat widget into your Paligo documentation:
     * In the **Custom JavaScript** field, add the following code:
 
         ```javascript
-        // Initialize the Biel.AI chat widget
         (function() {
-          // Load CSS
           var link = document.createElement('link');
           link.rel = 'stylesheet';
           link.href = 'https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css';
           document.head.appendChild(link);
 
-          // Load JavaScript module
           var script = document.createElement('script');
           script.type = 'module';
           script.src = 'https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js';
           document.head.appendChild(script);
 
-          // Add the chatbot button after page loads
           script.onload = function() {
             var button = document.createElement('biel-button');
             button.setAttribute('project', '<YOUR_PROJECT_ID>');
@@ -95,7 +84,7 @@ If you prefer more control or need to customize the HTML structure:
 3. Add the widget code before the closing `</body>` tag:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" 
+    <biel-button project="<YOUR_PROJECT_ID>"
         header-title="Biel.ai chatbot"
         button-position="bottom-right"
         modal-position="bottom-right"
@@ -129,7 +118,5 @@ If you prefer more control or need to customize the HTML structure:
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/customization) section.
-
-Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
-
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.

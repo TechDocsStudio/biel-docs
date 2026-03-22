@@ -1,98 +1,65 @@
+---
+sidebar_position: 8
+description: Control how the Biel.ai chatbot reasons through questions with Auto, Instant, and Think modes.
+---
+
 # Reasoning modes
 
-Control how the AI reasons through questions with three distinct modes: Auto, Instant, and Think.
+Control how the chatbot reasons through questions with three modes: Auto, Instant, and Think.
 
 ![Reasoning mode settings in chat widget](./images/think-mode.png)
 
 ## Available modes
 
-Your chat widget includes a settings button that lets users choose their preferred reasoning depth:
+| Mode | Description | Interactions per question |
+|------|-------------|--------------------------|
+| **Auto** (default) | Balances speed and quality. The system determines the appropriate reasoning depth. | 1 |
+| **Instant** | Fast answers for simple questions and quick lookups. | 1 |
+| **Think** | Deep reasoning for complex technical questions. Takes longer but more accurate. | 4-8 |
 
-**Auto (default)**
-- Balances speed and quality
-- Lets the system determine the appropriate reasoning depth
-- Good for most questions
-
-**Instant**
-- Instant answers for quick lookups
-- Best for simple questions and single parameter definitions
-- Uses minimal computational resources
-
-**Think**
-- Takes longer for better accuracy
-- Deep reasoning for complex technical questions
-- Best when accuracy matters more than speed
-- Uses 4-8x more interactions per question
-
-## Performance trade-offs
-
-Each reasoning mode has different speed and usage characteristics:
-
-| Metric | Auto/Instant | Think |
-|--------|-----------|-------|
-| Response time | ~1-4 seconds | ~8 seconds - 1 minute |
-| Interactions used | 1 per question | 4-8 per question |
-| Best for | Quick lookups | Complex analysis |
-
-## How to enable
-
-### Step 1: Enable in Project Settings
+## Enable reasoning modes
 
 :::important
-Only users with the **Administrator** or **Maintainer** role can manage projects. For more details, see [Manage roles](../administration/roles.md).
+Only **Administrator** or **Maintainer** roles can manage projects. See [Manage roles](../administration/roles.md).
 :::
 
-1. Navigate to your project page
-2. Click the **Settings** button
-3. Scroll to the **LLM Settings** section
-4. Check **Enable think mode**
-5. Click **Save**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Click **Settings**.
+3. Under **LLM Settings**, check **Enable think mode**.
+4. Click **Save**.
 
 ![Enable think mode in project settings](./images/enable-think-mode.png)
 
-This makes think mode available as an option for users in your chat interface.
+Once enabled, users can select their preferred mode from the settings icon in the chat widget header. The selection persists across page reloads.
 
-### Step 2: Using the reasoning modes
+## Widget attributes
 
-![Reasoning mode settings in chat widget](./images/think-mode.png)
+Control reasoning mode behavior with these `<biel-button>` attributes:
 
-Once enabled, users can choose their preferred reasoning mode:
+| Attribute | Default | Description |
+|-----------|---------|-------------|
+| `think-mode-enabled` | `false` | Set Think mode as the default instead of Auto. |
+| `hide-settings-button` | `false` | Hide the settings button so users can't change the mode. |
 
-- Look for the settings icon (⚙️) in the header
-- Click to open the reasoning mode dropdown
-- Select Auto, Instant, or Think mode
-- Your selection is saved across page reloads
-
-## Customization options
-
-You can customize the reasoning mode settings:
-
-```html
-<!-- Hide the settings button entirely -->
-<biel-button
-  project="my-project"
-  hideSettingsButton="true"
->Ask AI</biel-button>
-
-<!-- Set Think mode as default -->
-<biel-button
-  project="my-project"
-  thinkModeEnabled="true"
->Ask AI</biel-button>
-```
-
-:::tip
-To force Think mode on for all questions without letting users change it, combine both options:
+**Set Think mode as default:**
 
 ```html
 <biel-button
   project="my-project"
-  thinkModeEnabled="true"
-  hideSettingsButton="true"
+  think-mode-enabled="true"
 >Ask AI</biel-button>
 ```
 
-This ensures maximum answer quality but increases interaction usage by 4-8x for every question.
+:::tip[Force Think mode for all questions]
+Combine both attributes to always use Think mode without letting users change it. This increases interaction usage by 4-8x per question.
+
+```html
+<biel-button
+  project="my-project"
+  think-mode-enabled="true"
+  hide-settings-button="true"
+>Ask AI</biel-button>
+```
 :::
 
 

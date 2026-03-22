@@ -1,6 +1,6 @@
 ---
 sidebar_label: Docusaurus
-description: Add an AI chatbot to your Docusaurus documentation site with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Docusaurus v3 site with Biel.ai.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,41 +8,28 @@ import TabItem from '@theme/TabItem';
 
 # Ask AI chatbot widget for Docusaurus
 
-Add an AI chatbot to your Docusaurus site using Biel.ai's official plugin. The integration works with any Docusaurus v3 site and adds both chat and search capabilities to your documentation.
-
-This guide shows you how to install and configure the plugin using NPM in just a few minutes.
+Add a Biel.ai [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Docusaurus v3 site using the `docusaurus-biel` plugin.
 
 ## Prerequisites
 
-Before starting, ensure you have:
-- A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
-- **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
-- **A Docusaurus documentation site** ready to install Biel.ai.  
-- **Node.js** installed.
+- A [Biel.ai account](https://app.biel.ai/accounts/signup/).
+- A [project](../quickstart.md#2-create-a-project) with indexed content.
+- A Docusaurus v3 site.
+- Node.js installed.
 
-## Installation
+## Add the chatbot widget
 
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+The `docusaurus-biel` plugin adds a floating chat button to your site.
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
-To integrate the Biel.AI chat widget into your Docusaurus site:
-
-1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
-
-    ```console
-    cd path/to/your/project
-    ```
-    
-    Replace `path/to/your/project` with your project's actual directory path.
-
-1. With your terminal still open, run the following command to install Biel.ai extension for Docusaurus:
+1. Install the plugin:
 
     ```console
     npm install docusaurus-biel
     ```
-    
-1. Add the plugin to your Docusaurus config file `docusaurus.config.js`:
+
+2. Add the plugin to `docusaurus.config.js`:
 
     ```js
     plugins: [
@@ -58,15 +45,11 @@ To integrate the Biel.AI chat widget into your Docusaurus site:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
+3. Run `npm start` and verify the chatbot appears on your site.
 
 ## Customization
 
-You can customize the Biel.AI chat widget to suit your needs. For example, you can change the widget's position, color, and more.
-
-To do so, you can add any of the following [customization](../customization/layout.mdx) options to the plugin or formatted as camelCase.
-
-Here's an example:
+Pass [layout options](../customization/layout.mdx) to the plugin as camelCase properties:
 
 ```js
 plugins: [
@@ -77,82 +60,66 @@ plugins: [
             bielButtonText: 'ASK AI',
             buttonPosition: 'center-right',
             modalPosition: 'sidebar-right',
-            headerTitle: 'Biel.ai chatbot'
+            headerTitle: 'Biel.ai chatbot',
             buttonStyle: 'dark',
         }
     ]
 ],
 ```
 
-To further customize the style of the Biel.AI chat widget in Docusaurus, such as altering the widget's background color, you can override specific CSS properties. This is done by defining these properties in a custom stylesheet. Here's how you can do it:
+To override the widget's styles (colors, fonts, etc.), add CSS custom properties to your `src/css/custom.css` file:
 
-1. In your project's `src` directory, create the file `css/custom.css`.
+```css
+:root {
+    --biel-primary-color: #FF0000;
+}
+```
 
-1. In the `custom.css` file, you can define your custom CSS properties. For example, to change the widget's primary color, add the following CSS rule:
+See [Styles](../customization/styles) for the full list of CSS properties.
 
-    ```css
-    :root {
-        --biel-primary-color: #FF0000; /* Replace #FF0000 with the hex color code of your choice */
-    }
-    ```
+:::tip[Docusaurus not loading your custom CSS?]
+Make sure `custom.css` is referenced in `docusaurus.config.js` under the `classic` preset:
 
-    For a complete reference of properties you can modify, see the [Styles](../customization/styles) documentation.
-
-1. Open your `docusaurus.config.js` file and locate the `presets` array and within it, the `classic` preset configuration. Then, add a reference to your custom stylesheet in the theme configuration. It should look something like this:
-
-    ```js
-    presets: [
-        [
-            'classic',
-            {
-            // ... other configurations ...
+```js
+presets: [
+    [
+        'classic',
+        {
             theme: {
-                customCss: require.resolve('./src/css/custom.css'), // Add this line
+                customCss: require.resolve('./src/css/custom.css'),
             },
-            // ... other configurations ...
-            },
-        ],
+        },
     ],
-    ```
+],
+```
+:::
 
-## Advanced: Enable AI search
+## Add the search widget
 
-Biel.ai's search widget offers a search-based interaction that allows users to query documentation or other indexed content.
+The search widget replaces the default Docusaurus search bar with Biel.ai's AI-powered search.
 
 ![Biel search](./images/biel-search-widget.png)
 
-To integrate the search widget into your Docusaurus site, follow these steps:
-
-1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
-
-    ```console
-    cd path/to/your/project
-    ```
-    
-    Replace `path/to/your/project` with your project's actual directory path.
-
-2. With your terminal still open, run the following command to install Biel.ai extension for Docusaurus:
+1. Install the plugin:
 
     ```console
     npm install docusaurus-biel
     ```
 
-3. Swizzling allows you to customize the `SearchBar` component. Run this command:
+2. Eject the `SearchBar` component using [swizzling](https://docusaurus.io/docs/swizzling):
 
     ```console
     npm run swizzle @docusaurus/theme-classic SearchBar
     ```
-    
-    * When prompted with the question: `Which language do you want to use?`, choose **TypeScript**.
-    * When prompted with the question: `Which swizzle action do you want to do?`, choose **Eject** to extract the `SearchBar` component into the `src/theme` directory.
 
-4. Open the file at `src/theme/SearchBar.tsx` and replace its content with the following:
+    When prompted, choose **TypeScript** and **Eject**.
+
+3. Open `src/theme/SearchBar.tsx` and replace its content with:
 
     ```tsx
     import React from 'react';
 
     export default function SearchBar() {
-        // Replace with your <PROJECT_ID>
         const projectId = '<PROJECT_ID>';
         const headerTitle = 'Documentation chatbot';
         // @ts-ignore: Not a React component
@@ -162,76 +129,50 @@ To integrate the search widget into your Docusaurus site, follow these steps:
 
     Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
+4. Run `npm start` and verify the search widget appears in the navbar.
 
-5. Run your Docusaurus site to verify the changes:
+:::tip[Using search without the chatbot?]
+Set `enable: false` in the `docusaurus-biel` plugin config to hide the floating chat button:
 
-    ```console
-    npm run start
-    ```
+```js
+plugins: [
+    [
+        'docusaurus-biel', {
+            enable: false,
+            project: '<YOUR_PROJECT_ID>',
+            headerTitle: 'Biel.ai chatbot',
+            version: 'latest'
+        }
+    ]
+],
+```
+:::
 
-6. Check that the Biel.ai search widget appears and functions correctly on your site.
+## Multilingual support
 
-7. (Optional) If you want to hide the floating widget and use only the Biel.ai search bar, you can disable the floating button by adding the following option to your `docusaurus.config.js` file:
-
-    ```js
-    plugins: [
-        [
-            'docusaurus-biel', {
-                enable: false,
-                project: '<YOUR_PROJECT_ID>',
-                headerTitle: 'Biel.ai chatbot',
-                version: 'latest'
-            }
-        ]
-    ],
-    ```
-
-## Advanced:  Multilingual support
-
-This installation method is best for projects that need to support multiple languages.
-
-Example:
+If your Docusaurus site uses [i18n](https://docusaurus.io/docs/i18n/tutorial), you can localize the chatbot's UI strings per locale. This approach uses `biel-react` instead of the `docusaurus-biel` plugin.
 
 ![Chatbot widget i18n](./images/biel-i18n.png)
 
-
-:::info
-Before you start with this guide, your docusaurus site must have [i18n](https://docusaurus.io/docs/i18n/tutorial) enabled.
-:::
-
-To integrate the Biel.ai widget into your Docusaurus site:
-
-1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
-
-    ```console
-    cd path/to/your/project
-    ```
-
-    Replace `path/to/your/project` with your project's actual directory path.
-
-2. With your terminal still open, run the following command to install Biel.ai:
+1. Install `biel-react`:
 
     ```bash
     npm install biel-react
     ```
 
-    :::tip
-    In this setup, the `docusaurus-biel` package is not required. You can uninstall it by running `npm uninstall docusaurus-biel`.
+    :::tip[Already using docusaurus-biel?]
+    This setup replaces it. Run `npm uninstall docusaurus-biel` to remove the plugin.
     :::
 
-
-1. For Docusaurus, the best approach is to swizzle the original footer component to embed the chatbot button. This ensures the feedback button is loaded just before the closing body tag for optimal performance. Begin by using the npm run swizzle command to start the swizzle process:
+2. Wrap the Footer component using [swizzling](https://docusaurus.io/docs/swizzling) to inject the chatbot before the closing `</body>` tag:
 
     ```bash
     npm run swizzle @docusaurus/theme-classic Footer
     ```
 
-    When prompted with the question: `Which swizzle action do you want to do?`, choose **Wrap**.
+    When prompted, choose **Wrap**.
 
-    By choosing to wrap, Docusaurus will create a wrapper component for the Footer in the `src/theme` directory. This allows you to extend the original footer component without modifying its intrinsic content.
-
-
-1. After swizzling, navigate to `src/theme/Footer/index.js` in your project directory. Replace the content with the following to integrate the chatbot button:
+3. Open `src/theme/Footer/index.js` and replace its content with:
 
     ```js
     import React, { useEffect } from 'react';
@@ -345,11 +286,11 @@ To integrate the Biel.ai widget into your Docusaurus site:
     }
     ```
 
-    Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project) and the placeholder strings with your project's supported languages.
+    Replace `<PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project). Update the `placeholders` object with your supported languages.
 
-1. Start your Docusaurus project by running `npm start` or `yarn start` in your terminal. Once it compiles successfully, verify that the feedback button appears and functions correctly on your site.
+4. Run `npm start` and verify the chatbot displays localized strings when you switch locales.
 
+## Next steps
 
-## Need help?
-
-We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.

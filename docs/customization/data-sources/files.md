@@ -33,71 +33,42 @@ Use file uploads for:
 
 ## Requirements
 
-- Maximum file size: 10 MB per file
-- Files must contain searchable text (not just images)
-- Use descriptive file names
+- Maximum file size: 10 MB per file.
+- Files must contain searchable text (not scanned images).
+- Up to 20 files per upload.
 
 ## Upload files
 
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Select **Files**
-4. Choose upload method:
-   - Drag files into the upload area
-   - Click to browse and select files
-5. Wait for upload to complete
-6. Click **Save**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Sources** > **Files**.
+3. Drag files into the upload area, or click to browse.
+4. Click **Save**.
 
-You can upload multiple files at once (up to 20 files simultaneously).
+## Manage files
 
-## Manage uploaded files
+To update a file, delete the old version and upload the new one. Content is re-indexed automatically.
 
-**View files**:
+To remove a file, click the delete button next to it in **Settings** > **Sources** > **Files**.
 
-Go to **Projects** > your project > **Settings** > **Sources** > **Files**
+## File type notes
 
-**Update files**:
-1. Delete the old file (optional but recommended)
-2. Upload new version with same name
-3. Content gets re-indexed automatically
-
-**Remove files**:
-1. Go to **Projects** > your project > **Settings** > **Sources** > **Files**
-2. Click delete button
-3. Confirm removal
-
-## Best practices
-
-- Use descriptive file names: `employee-handbook-2024.pdf`
-- Include version numbers: `policy-v2.1.pdf`
-- Ensure documents have searchable text (not scanned images)
-- Use simple formatting for better text extraction
-- Remove passwords before uploading
-
-### File type notes
-
-* **PDF files**: Text-based PDFs work best; scanned PDFs have limited searchability
-* **Word documents**: `.docx` files work better than legacy `.doc` files
-* **Excel spreadsheets**: Each sheet is processed separately
-* **CSV files**: Include clear column headers
-
+| Format | Notes |
+|--------|-------|
+| PDF | Text-based PDFs work best. Scanned PDFs have limited searchability. |
+| Word | `.docx` works better than legacy `.doc`. |
+| Excel | Each sheet is processed separately. |
+| CSV | Include clear column headers. |
 
 ## Troubleshooting
 
-**Upload failures**
-- Check file size (under 10 MB)
-- Verify file format is supported
-- Try smaller batches (fewer files at once)
+### Upload failures
 
-**Content not indexing**
-- Wait 5-10 minutes for processing
-- Ensure files contain searchable text
-- Check file isn't corrupted
+- Check file size is under 10 MB.
+- Verify the file format is [supported](#supported-formats).
+- Try uploading fewer files at once.
 
-**Poor results**
-- Use descriptive file names
-- Ensure files have clear, readable text
+### Content not indexing
 
-**Need help?** Contact support at [support@biel.ai](mailto:support@biel.ai) if you experience issues with content processing or indexing takes too long.
-
- 
+- Wait 5-10 minutes for processing.
+- Ensure files contain searchable text (not scanned images).
+- Check the file isn't corrupted or password-protected.

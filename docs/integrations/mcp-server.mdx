@@ -20,32 +20,26 @@ When your AI needs information about your product or API, it queries your docume
 
 ## Requirements
 
-This integration requires:
-
-- **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
-- **Project slug** from your Biel.ai dashboard
-- **AI coding assistant** that supports MCP:
-  - Cursor IDE
-  - Claude Code
-  - VS Code (Copilot)
-  - Other MCP-compatible tools
-- **API key** (optional) — only for private projects on Business/Enterprise plans
+- A [Biel.ai account](https://app.biel.ai) with documentation indexed.
+- Your **project slug** from the Biel.ai dashboard.
+- An AI coding assistant that supports MCP (Cursor, Claude Code, VS Code / Copilot, or any MCP-compatible tool).
+- **API key** (optional) — only for private projects on Business/Enterprise plans.
 
 ## Setup
 
-Connect your AI coding assistant to Biel.ai using our hosted MCP server (no installation or maintenance required).
+Biel.ai provides a hosted MCP server — no installation or maintenance required.
 
-**One-click configuration:**
+### One-click configuration
 
 1. Go to your **Biel.ai Widget**.
-2. Click on the **Connect** button.
+2. Click the **Connect** button.
 3. Choose your preferred option:
    - **MCP server URL**: Copies the HTTP URL for manual configuration.
    - **Claude Code**: Copies the installation command to your clipboard.
-   - **Copilot (VS Code)**: Automatically opens VS Code and adds the MCP server.
-   - **Cursor**: Automatically opens Cursor and adds the MCP server.
+   - **Copilot (VS Code)**: Opens VS Code and adds the MCP server.
+   - **Cursor**: Opens Cursor and adds the MCP server.
 
-**Manual configuration:**
+### Manual configuration
 
 <Tabs>
   <TabItem value="http" label="Streamable HTTP (Recommended)" default>
@@ -62,7 +56,7 @@ Connect your AI coding assistant to Biel.ai using our hosted MCP server (no inst
 }
 ```
 
-This is the most reliable and fastest connection method.
+Streamable HTTP is the recommended connection method — it's the most reliable and fastest.
 
   </TabItem>
   <TabItem value="sse" label="Legacy SSE (Deprecated)">
@@ -89,9 +83,9 @@ Use this if your client doesn't support the Streamable HTTP protocol.
 
 For IDE-specific setup instructions, refer to the official documentation:
 
-- [Cursor MCP setup](https://cursor.com/es/docs/context/mcp)
+- [Cursor MCP setup](https://docs.cursor.com/context/mcp)
 - [VS Code / Copilot MCP setup](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
-- [Claude Code MCP setup](https://code.claude.com/docs/en/mcp)
+- [Claude Code MCP setup](https://docs.anthropic.com/en/docs/claude-code/mcp)
 
 ## Usage
 
@@ -121,36 +115,42 @@ Where to add instructions in each tool:
 
 | Tool | File location | Documentation |
 |------|--------------|---------------|
-| Cursor | `.cursor/rules/*.mdc` | [Cursor rules](https://docs.cursor.com/en/context/rules) |
+| Cursor | `.cursor/rules/*.mdc` | [Cursor rules](https://docs.cursor.com/context/rules) |
 | Claude Code | `.claude/CLAUDE.md` | [Claude Code instructions](https://docs.anthropic.com/en/docs/claude-code/memory) |
 | Copilot (VS Code) | `.github/copilot-instructions.md` | [Copilot instructions](https://code.visualstudio.com/docs/copilot/customization/instructions) |
 
 ## Configuration parameters
 
-You can append query parameters to the MCP URL to customize the connection:
+The Streamable HTTP URL includes the `project_slug` as a path parameter:
+
+```
+https://mcp.biel.ai/v2/{project_slug}/mcp
+```
+
+You can append these query parameters to customize the connection:
 
 | Parameter | Required | Description |
 |-----------|----------|-------------|
-| `project_slug` | Yes | Your Biel.ai project identifier from your dashboard. |
-| `api_key` | No | API key for private projects (Business/Enterprise plans). If you've already set the `api-key` attribute on your [`<biel-button>` or `<biel-search-button>`](/customization/layout), the widget handles authentication automatically and you don't need to pass it here. |
+| `api_key` | No | API key for private projects (Business/Enterprise plans). Not needed if you've already set the `api-key` attribute on your [`<biel-button>` or `<biel-search-button>`](/customization/layout). |
 | `domain` | No | Domain URL to pass as context. Required only if "Allowed domains" is enabled in project settings. |
 | `metadata` | No | Tag to identify the conversation source (e.g., `cursor`). |
 | `base_url` | No | Override the default API base URL. Defaults to `https://app.biel.ai`. |
 | `chat_uuid` | No | UUID to continue a previous conversation. |
 
-**Example URL with parameters:**
+**Example:**
 
-`https://mcp.biel.ai/v2/YOUR_PROJECT_SLUG/mcp?api_key=sk_...&domain=docs.example.com`
+```
+https://mcp.biel.ai/v2/my-project/mcp?api_key=sk_...&domain=docs.example.com
+```
 
 ## Widget customization
 
-You can control how the MCP integration appears in your Biel.ai widget using the following properties:
+These properties control how the MCP integration appears in your `<biel-button>` or `<biel-search-button>` widget.
 
 ### Hide connect button
 
-Use the `hide-connect-button` property to hide the Connect button from the widget header. This is useful when you want MCP to be enabled for your project, but don't want to show the connection options to your users:
+Set `hide-connect-button="true"` to hide the **Connect** button from the widget header. Use this when MCP is enabled for your project but you don't want to expose connection options to users.
 
-**biel-button example:**
 ```html
 <biel-button
   project="YOUR_PROJECT_ID"
@@ -160,26 +160,12 @@ Use the `hide-connect-button` property to hide the Connect button from the widge
 </biel-button>
 ```
 
-**biel-search-button example:**
-```html
-<biel-search-button
-  project="YOUR_PROJECT_ID"
-  hide-connect-button="true"
->
-  Search
-</biel-search-button>
-```
-
-**Priority:** When `hide-connect-button` is set to `true`, the **Connect** button will be hidden regardless of whether MCP is enabled in your project settings.
+The button is hidden regardless of whether MCP is enabled in your project settings.
 
 ### Custom MCP server URL
 
-Use the `mcp-server-url` property to manually specify a custom MCP server URL. This is useful when:
-- Your MCP server requires authentication (e.g., API keys)
-- You're running a custom or self-hosted MCP server
-- You need to override the default MCP server provided by the API
+Set `mcp-server-url` to override the default MCP URL. Use this for private projects that require an API key, self-hosted MCP servers, or testing with a staging server.
 
-**biel-button example:**
 ```html
 <biel-button
   project="YOUR_PROJECT_ID"
@@ -189,24 +175,9 @@ Use the `mcp-server-url` property to manually specify a custom MCP server URL. T
 </biel-button>
 ```
 
-**biel-search-button example:**
-```html
-<biel-search-button
-  project="YOUR_PROJECT_ID"
-  mcp-server-url="https://custom-mcp-server.example.com/mcp"
->
-  Search
-</biel-search-button>
-```
+When specified, this URL takes priority over the MCP URL provided by the API response.
 
-**Priority:** When `mcp-server-url` is specified, it takes priority over the MCP URL provided by the API response.
-
-**Use cases:**
-- **API Key Authentication**: Add your API key directly to the URL for private projects
-- **Custom MCP Servers**: Point to your own self-hosted or custom MCP implementation
-- **Testing**: Override the production MCP URL with a staging or development server
-
-For more details on available widget properties, see [Widget Customization](/customization/layout).
+See [Widget Customization](/customization/layout) for all available widget properties.
 
 ## Self-hosted option
 
@@ -239,5 +210,3 @@ If you are getting authentication errors:
 1. **Check if your project is private:** Public projects don't need API keys.
 2. **Upgrade your plan:** API keys require Business or Enterprise plan.
 3. **Regenerate API key:** Create a new API key in your team settings if needed.
-
-For additional configuration options and advanced usage, check out our [API documentation](/api/biel-ai-rest-api-beta).

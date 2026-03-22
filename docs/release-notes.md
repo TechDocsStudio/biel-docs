@@ -1,10 +1,14 @@
+---
+description: Release notes for Biel.ai and its ecosystem packages.
+---
+
 # Release notes
 
-Stay up-to-date with the latest features, improvements, and updates to Biel.ai and its ecosystem of packages.
+Track changes to the Biel.ai platform and its open-source packages.
 
 ## Product updates
 
-For comprehensive release notes and product announcements, visit our [Blog](http://biel.ai/blog?category=release-notes). We publish bimonthly updates highlighting the most relevant product features and improvements.
+Product announcements and feature highlights are published bimonthly on the [Biel.ai blog](https://biel.ai/blog?category=release-notes).
 
 ## Package updates
 
@@ -24,10 +28,10 @@ For comprehensive release notes and product announcements, visit our [Blog](http
 
 <section className="row">
   <article className="docCardListItem_W1sv col col--6">
-    <a className="card padding--lg cardContainer_fWXF" href="https://github.com/TechDocsStudio/biel-react">
+    <a className="card padding--lg cardContainer_fWXF" href="https://github.com/TechDocsStudio/biel-react/blob/master/CHANGELOG.md">
       <h2 className="text--truncate cardTitle_rnsV" title="biel-react">⚛️ biel-react</h2>
       <p className="text--truncate cardDescription_PWke" title="AI chatbot component for React applications">AI chatbot component for React applications</p>
-      <div className="badge badge badge--secondary">CHANGELOG</div>
+      <div className="badge badge--secondary">CHANGELOG</div>
     </a>
   </article>
   

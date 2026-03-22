@@ -1,45 +1,36 @@
 ---
 sidebar_label: Nextra
-description: Add an AI chatbot to your Nextra documentation with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Nextra site with Biel.ai.
 ---
 
 # Ask AI chatbot widget for Nextra
 
-Add an AI chatbot to your Nextra documentation using Biel.ai's React components. The integration works seamlessly with Nextra's Next.js framework, adding both chat and search capabilities to your documentation site.
+Add a Biel.ai [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Nextra documentation using the `biel-react` package.
 
-This guide shows you how to install and configure Biel.ai in your Nextra project using NPM in just a few minutes.
+:::info
+This guide covers **Nextra v2** (Pages Router). If your project uses Nextra v3 (App Router with `app/layout.tsx`), see the [Next.js installation guide](./nextjs.md) instead.
+:::
 
 ## Prerequisites
 
-Before starting, ensure you have:
-- A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
-- **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
-- **A Nextra site** ready to install Biel.ai.
-- **Node.js** installed.
+- A [Biel.ai account](https://app.biel.ai/accounts/signup/).
+- A [project](../quickstart.md#2-create-a-project) with indexed content.
+- A Nextra v2 site.
+- Node.js installed.
 
-## Installation
+## Add the chatbot widget
 
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+The `BielButton` React component adds a floating chat button to your site.
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
-To integrate the Biel.AI chat widget into your Nextra site:
-
-1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
-
-    ```console
-    cd path/to/your/project
-    ```
-    
-    Replace `path/to/your/project` with your project's actual directory path.
-
-2. With your terminal still open, run the following command to install Biel.ai for React:
+1. Install the package:
 
     ```console
     npm install biel-react
     ```
 
-3. Create a custom `_app.jsx` or `_app.tsx` file in the `pages` directory (if you don't already have one):
+2. Create or update `pages/_app.tsx`:
 
     ```tsx
     import type { AppProps } from 'next/app';
@@ -74,56 +65,10 @@ To integrate the Biel.AI chat widget into your Nextra site:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-4. Start your Nextra project by running `npm run dev` in your terminal. Once it compiles successfully, verify that the chatbot appears and functions correctly on your site.
-
-## Advanced: Custom theme integration
-
-If you're using a custom Nextra theme and want more control over the widget placement:
-
-1. Create a custom layout component in your `theme.config.jsx` or `theme.config.tsx`:
-
-    ```tsx
-    import { useEffect } from 'react';
-    import { BielButton } from 'biel-react';
-    import { defineCustomElements } from 'biel-search/loader';
-    import 'biel-search/dist/biel-search/biel-search.css';
-
-    const config = {
-      // ... your existing Nextra theme config
-      footer: {
-        component: () => {
-          useEffect(() => {
-            if (typeof window !== 'undefined') {
-              defineCustomElements(window);
-            }
-          }, []);
-
-          return (
-            <>
-              {/* Your existing footer */}
-              <BielButton
-                project="<YOUR_PROJECT_ID>"
-                header-title="Biel.ai chatbot"
-                button-position="bottom-right"
-                modal-position="bottom-right"
-                button-style="dark"
-              >
-                Ask AI
-              </BielButton>
-            </>
-          );
-        }
-      }
-    };
-
-    export default config;
-    ```
-
-2. This approach gives you precise control over when and where the chatbot appears.
+3. Run `npm run dev` and verify the chatbot appears on your site.
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/customization) section.
-
-Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.
 

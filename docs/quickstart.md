@@ -1,74 +1,65 @@
 ---
 sidebar_position: 1
 slug: /
-description: Learn how to integrate an AI chatbot into your website using your content. This guide walks you through creating your account, setting up a project, and testing the chatbot.
+description: Create a Biel.ai account, set up a project, and test your AI chatbot in minutes.
 ---
 
 # Quickstart
 
-**Biel.ai** transforms your static documentation into an intelligent, 24/7 AI assistant that provides instant, accurate answers to user questions. Instead of users digging through pages of docs, they simply ask questions and get immediate help—reducing your support workload while improving user experience.
+[Biel.ai](https://biel.ai) adds AI-powered chat and search to your documentation site. Users ask questions in plain language and get answers drawn from your content — instead of browsing pages or filing support tickets.
 
-Ready to get started? In just a few minutes, you'll have an AI-powered chatbot running on your website and answering questions from your documentation.
+In this tutorial, you create a Biel.ai account, index your documentation, and test the chatbot from the dashboard. Later, you can embed the chatbot or search widget on your site.
 
 ## 1. Create your Biel.ai account
 
-To install the Biel.ai chatbot, start by setting up your account:
-
 1. Open [app.biel.ai](https://app.biel.ai).
-2. Click **Sign Up** in the top bar.
-3. Follow the on-screen instructions to complete your account setup:
+2. Click **Sign Up**.
+3. Enter your email, password, and company name.
+4. Confirm your email address to activate your account.
 
     ![Create account](./images/create-account.png)
 
-    - Provide your email, and password, and company name.
-    - Confirm your email address to activate your account.
-
-Once your account is ready, you can begin creating your first project.
-
 ## 2. Create a project
 
-Follow these steps to create and configure a new project:
+A project groups your content sources and powers the chatbot. Each project has its own index, settings, and analytics.
 
-1. In your Biel.ai dashboard, click the **Projects** tab in the top navbar.
-2. Click **Create project**.
-3. Complete the project setup wizard by providing the necessary details:
+1. In the dashboard, click **Projects** > **Create project**.
+2. Enter a **Name** for your project.
+3. Add one or more **Sources** to index:
+
+    | Source type | Description |
+    |---|---|
+    | **URL** | A single webpage. |
+    | **Sitemap** | Multiple pages from a sitemap URL. |
+    | **GitHub repository** | README files and docs folders from a repo. |
+    | **Files** | PDFs, Word documents, and other uploaded files. |
 
     ![Create project](./images/create-project.png)
 
-    * **Name**: A unique identifier for your project.
-    * **Sources**: Add the sources you want to index for your project:
-        * **URL**: Index a specific webpage.
-        * **Sitemap**: Index multiple pages from a sitemap, useful for indexing entire websites.
-        * **GitHub repositories**: Index documentation from code repositories, including README files and docs folders.
-        * **Files**: Index documents such as PDFs, Word files, and more.
+4. Click **Create**, then click **Done**.
 
-4. Click **Create** and **Done!** to finalize your project setup.
+Biel.ai begins crawling your sources. Wait a few minutes, then refresh the page to check the indexing status.
 
-Biel.ai will start crawling your documents. Please allow a few minutes for the process to complete, or refresh the page to check the status.
+## 3. Test the chatbot
 
-## 3. Chat with your docs
+Now that your content is indexed, verify that the chatbot returns accurate answers:
 
-Once your project is created and the documents are indexed, your chatbot will be ready to interact with the content.
-
-To test your chatbot:
-
-1. Click **New chat** in the **Project** dashboard.
-2. Enter a query or ask a question to see how your chatbot responds:
+1. In the project dashboard, click **New chat**.
+2. Type a question and click **Send**.
 
     ![My first chat](./images/my-first-chat.png)
 
-3. Click **Send**.
-
-:::tip
-If the chatbot does not provide accurate or helpful responses, try the following steps:
-
-1. Review the sources loaded in the **Logs** section to ensure the necessary content is indexed correctly.
-2. Adjust advanced settings in **Settings** to fine-tune the chatbot's behavior and improve responses.
-3. Click **Refresh sources** to re-crawl the indexed content.
+:::tip[Not getting good answers?]
+- Check **Logs** to verify that your sources were indexed correctly.
+- Adjust the chatbot behavior in **Settings**.
+- Click **Refresh sources** to re-crawl your content.
 :::
 
 ## Next steps
 
-Congratulations! You've successfully created your first chatbot.
+Your project is ready. Choose how you want to surface it to users:
 
-To integrate the chatbot widget into your website, check out the [Installation](/installation) guides. You'll find detailed instructions for embedding the chatbot in your site, customizing its appearance, and configuring advanced integration options.
+- **Chatbot widget** — Embed an AI chat button on your site. See the [Installation](/installation) guides for your platform.
+- **Search widget** — Add an AI-powered search bar instead of (or alongside) the chatbot. See [Install biel-search](/installation/cdn#advanced-install-biel-search).
+- **MCP server** — Let developers query your docs from AI coding assistants like Claude or Cursor. See [MCP Server](/integrations/mcp-server).
+- **Integrations** — Connect Biel.ai to GitHub Actions, Custom GPTs, Zapier, and more. See [Integrations](/integrations).

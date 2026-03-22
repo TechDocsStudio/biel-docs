@@ -16,13 +16,9 @@ keywords:
 # Workflows (Agentic RAG for Documentation)
 
 
-Workflows connect multiple Biel.ai projects into a single chatbot interface, with each project focused on a specific domain or knowledge area.
-Instead of training a single project on vastly different topics, workflows use intelligent routing to direct queries to the most appropriate specialized agent.
+Workflows connect multiple Biel.ai projects into a single chatbot interface. Each project covers a specific domain, and a router directs queries to the most appropriate one. Projects maintain their own sources, model configuration, and custom prompts.
 
 ![Workflows overview](./images/workflows.png)
-
-Think of it as having a team of specialists rather than a single generalist.
-Each project maintains its own documentation sources, model configuration, and custom prompts, while the workflow coordinates which agent handles each query and can trigger external actions based on conversation context.
 
 
 :::important
@@ -30,8 +26,6 @@ This feature is available exclusively on **Enterprise** plans. [Contact us](http
 :::
 
 ## How workflows work
-
-Workflows use multiple specialized agents instead of a single knowledge base.
 
 **Single project:**
 
@@ -59,50 +53,19 @@ graph TB
     G -->|Optional| J[Schedule Meeting]
 ```
 
-The router analyzes each query and sends it to the appropriate specialized agent. Each agent has its own knowledge base and can trigger different actions based on the conversation.
+The router analyzes each query and directs it to the appropriate agent. Agents can also trigger external actions (tickets, notifications, etc.) based on conversation context.
 
 ## When to use workflows
 
-Workflows are ideal when you need:
+| Scenario | Example | Why workflows help |
+|----------|---------|-------------------|
+| Multiple languages/SDKs | Python, JavaScript, Java docs | Users only see relevant examples |
+| Multiple products | Product A (analytics), Product B (collaboration) | Focused responses without cross-contamination |
+| Different doc types | API reference, user guides, admin docs | Routes technical queries to API docs, UI questions to guides |
+| Large doc sets (1000+ pages) | Enterprise documentation | Splitting by domain improves accuracy |
+| Custom actions | Bug reports → Zendesk, demo requests → Calendly | Trigger integrations based on conversation context |
 
-### Multiple documentation domains
-
-**Separate projects by language:**
-- **Use case**: SDK documentation in Python, JavaScript, Java, and Go
-- **Why it helps**: Users asking Python questions only see Python examples
-- **Setup**: Create one project per language with keywords (`python`, `pip`, `js`, `npm`, `java`, `maven`)
-
-**Split by product:**
-- **Use case**: Multiple products with distinct features (e.g., Product A for analytics, Product B for collaboration)
-- **Why it helps**: Each product gets focused, accurate responses without irrelevant information
-- **Setup**: One project per product with specific keywords and fallback to query both if unclear
-
-**Organize by documentation type:**
-- **Use case**: API reference, end-user guides, and admin documentation
-- **Why it helps**: Routes technical queries to API docs, UI questions to user guides
-- **Setup**: Separate projects for each documentation type with topic-based routing
-
-### Large documentation sets
-
-For documentation over 1000 pages:
-- Split into domain-specific projects for better accuracy
-- Each specialized agent focuses on a narrower context
-- Easier to maintain and update individual sections
-
-### Custom actions and integrations
-
-Automatically trigger actions based on conversation context:
-- **Bug reports**: Create Zendesk ticket + notify team on Slack
-- **Demo requests**: Send webhook to Calendly for scheduling
-- **Pricing inquiries**: Create CRM lead + notify sales team
-- **Feature requests**: Log to Jira + send confirmation email
-
-## When not to use workflows
-
-Use a single project instead if:
-- Documentation under 1000 pages covering one cohesive topic
-- Content is naturally interconnected (all features of one product)
-- No need for custom actions or external integrations
+Use a single project instead if your docs are under 1000 pages, cover one cohesive topic, and don't need external integrations.
 
 ## Setting up a workflow
 
@@ -114,26 +77,14 @@ We'll work with you to define routing rules, configure integrations, and test th
 
 ### Prerequisites
 
-Before creating a workflow, ensure you have:
-
-* At least two existing projects with indexed content
-* A clear understanding of how queries should be routed
-* (Optional) Webhook endpoints ready if you plan to use custom actions
+- At least two existing projects with indexed content.
+- (Optional) Webhook endpoints for custom actions.
 
 ### Create your workflow
 
-1. Log in to your Biel.ai account and navigate to your dashboard.
-
-2. Click **Workflows** in the top navigation bar.
-
-3. Click **Create workflow**.
-
-4. Configure your workflow:
-
-   - **Name**: A descriptive identifier for your workflow (e.g., "Product Suite Assistant")
-   - **Description**: Internal notes about the workflow's purpose
-
-5. Click **Create**.
+1. In the [Biel.ai dashboard](https://app.biel.ai), click **Workflows** > **Create workflow**.
+2. Enter a **Name** and optional **Description**.
+3. Click **Create**.
 
 ### Add projects
 
@@ -180,71 +131,32 @@ Before creating a workflow, ensure you have:
 ### Set up custom actions (optional)
 
 1. Navigate to **Actions** in your workflow settings.
-
 2. Click **Add action**.
-
 3. Configure your action:
+   - **Action type**: Slack, Microsoft Teams, Email, Zendesk, Webhook, or other available integrations.
+   - **Trigger condition**: When this action should fire.
+   - **Configuration**: Credentials and integration details.
+4. Click **Save**.
 
-   - **Action type**: Choose from available integrations:
-     - **Slack** - Send messages to channels or users
-     - **Microsoft Teams** - Post to Teams channels
-     - **Email** - Send notifications to team members
-     - **Zendesk** - Create support tickets automatically
-     - **Webhook** - Post to any custom endpoint
-     - More integrations available based on your plan
-   - **Trigger condition**: Define when this action should fire
-   - **Configuration**: Provide credentials and integration details
+## Test your workflow
 
-6. Click **Save**.
-
-## Testing your workflow
-
-Before deploying your workflow, test it thoroughly:
-
-1. In your workflow dashboard, click **Test**.
-
-2. Enter sample queries that should trigger different projects:
-   - Questions that match specific routing rules
-   - Queries that should trigger custom actions
-   - Edge cases that require fallback handling
-
-3. Review the routing decisions and responses.
-
+1. In the workflow dashboard, click **Test**.
+2. Enter sample queries that should trigger different projects, including edge cases and action triggers.
+3. Review routing decisions and responses.
 4. Adjust rules and priorities as needed.
 
-## Deploying your workflow
-
-Once your workflow is configured and tested:
+## Deploy your workflow
 
 1. In your workflow settings, navigate to **Deployment**.
-
-2. Copy the workflow embed code.
-
-3. Add this code to your website where you want the chatbot to appear.
-
-4. The workflow chatbot will replace or supplement your existing chatbot implementation.
-
-## Best practices
-
-- **Start small**: Begin with 2-3 projects, add more as needed
-- **Keep projects focused**: Each project should cover one clear topic area
-- **Test regularly**: Try queries that might match multiple projects
-- **Monitor analytics**: Check which projects handle the most queries
-- **Update routing rules**: Refine keywords based on actual user questions
+2. Copy the embed code and add it to your website.
 
 ## Supported integrations
 
-Workflows can trigger actions in these platforms:
-
-- **Communication**: Slack, Microsoft Teams, Email, Discord
-- **Ticketing**: Zendesk, Jira, ServiceNow, Freshdesk
-- **CRM**: Salesforce, HubSpot
-- **Scheduling**: Calendly, Cal.com
-- **Analytics**: Segment, Mixpanel, Google Analytics
-- **Webhooks**: Any HTTP endpoint
-
-For custom integrations, contact [info@biel.ai](mailto:info@biel.ai).
-
-## Getting help
-
-For workflow setup assistance, see [Support](../support.mdx).
+| Category | Platforms |
+|----------|-----------|
+| Communication | Slack, Microsoft Teams, Email, Discord |
+| Ticketing | Zendesk, Jira, ServiceNow, Freshdesk |
+| CRM | Salesforce, HubSpot |
+| Scheduling | Calendly, Cal.com |
+| Analytics | Segment, Mixpanel, Google Analytics |
+| Custom | Any HTTP endpoint via webhooks |

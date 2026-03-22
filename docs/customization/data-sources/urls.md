@@ -22,18 +22,16 @@ Use URLs to:
 
 ## Requirements
 
-URLs must be:
-- Publicly accessible (not behind login)
-- Include the protocol (`https://`)
-- Contain searchable text content
+- Publicly accessible (not behind login).
+- Full URL with protocol (e.g., `https://example.com/page`).
+- Page contains text content (not just images or videos).
 
 ## Add URLs
 
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Select **URLs**
-4. Enter the complete URL (including `https://`)
-5. Click **Save**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Sources** > **URLs**.
+3. Enter the full URL (including `https://`).
+4. Click **Save**.
 
 Example URLs:
 ```
@@ -42,25 +40,16 @@ https://docs.example.com/api-reference
 https://support.example.com/troubleshooting
 ```
 
-## Best practices
-
-- Use canonical URLs (primary version of each page)
-- Start with 10-20 key pages
-- Test one URL at a time initially
-- Use sitemaps for multiple related pages
-
 ## Troubleshooting
 
-**URL not indexing**
-- Check that the URL is publicly accessible
-- Verify the URL format includes `https://`
-- Check if the site blocks crawlers in robots.txt
+### URL not indexing
 
-**Content not appearing**
-- Wait 5-10 minutes for processing
-- Test with specific questions about page content
-- Check if the page uses dynamic JavaScript content
+- Verify the URL is publicly accessible.
+- Check the URL includes `https://`.
+- Check if the site blocks crawlers in `robots.txt`.
 
-**Need help?** Contact support at [support@biel.ai](mailto:support@biel.ai) if you experience issues with content processing or indexing takes too long.
+### Content not appearing
 
- 
+- Wait 5-10 minutes for processing.
+- Test with specific questions about the page content.
+- Check if the page relies on JavaScript to render content.

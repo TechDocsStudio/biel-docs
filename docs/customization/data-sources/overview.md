@@ -14,8 +14,6 @@ Only Administrator and Maintainer roles can manage sources. See [Manage roles](.
 
 ## Source types
 
-Choose from these source types:
-
 <section className="row">
   <article className="col col--6">
     <a className="card padding--lg" href="/customization/data-sources/sitemaps">
@@ -69,11 +67,9 @@ Choose from these source types:
 
 ## Add a source
 
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Choose a source type and configure it
-4. Click **Save**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Sources**.
+3. Choose a source type and configure it.
+4. Click **Save**.
 
-Content indexing starts automatically and takes a few minutes. Test your chatbot after indexing completes.
-
-**Need help?** Contact support at [support@biel.ai](mailto:support@biel.ai) if you experience issues with content processing or indexing takes too long.
+Indexing starts automatically and takes a few minutes. Test your chatbot after indexing completes.

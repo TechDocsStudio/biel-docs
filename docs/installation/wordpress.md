@@ -1,28 +1,21 @@
 ---
 sidebar_label: WordPress
-description: Add an AI chatbot to your WordPress site with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your WordPress site with this step-by-step guide.
 ---
 
 # Ask AI chatbot widget for WordPress
 
-Add an AI chatbot to your WordPress site using Biel.ai's web components. The integration works with any WordPress theme and can be added through a plugin or by editing your theme files.
-
-This guide shows you how to add the chat widget to your WordPress site in minutes using a header/footer plugin.
+Add an [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your WordPress site using Biel.ai's web components.
 
 ## Prerequisites
 
-Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
-- **A WordPress website** ready to install Biel.ai.  
+- **A WordPress website** ready to install Biel.ai.
 
-## Installation
-
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+## Add the chatbot widget
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
-
-To embed the Biel.AI chat widget into your WordPress site:
 
 1. Install a header/footer editor plugin:
 
@@ -35,14 +28,13 @@ To embed the Biel.AI chat widget into your WordPress site:
         If you prefer not to use a plugin, you can manually add the code snippets to your theme's `header.php` and `footer.php` files. See the [basic installation guide](./cdn.md) for instructions.
         :::
 
-1. Add the Biel.ai styles and scripts:
-    
+2. Add the Biel.ai styles and scripts:
+
     * Navigate to `Settings > Insert Headers and Footers` (or the relevant plugin settings page).
-    
+
     * In the **Scripts in Header** section, add the following code:
 
         ```html
-        <!-- Initialize the Biel.AI chat widget -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.css">
         <script type="module" src="https://cdn.jsdelivr.net/npm/biel-search/dist/biel-search/biel-search.esm.js"></script>
         ```
@@ -54,7 +46,7 @@ To embed the Biel.AI chat widget into your WordPress site:
     * Add the following snippet:
 
         ```html
-        <biel-button project="<YOUR_PROJECT_ID>" 
+        <biel-button project="<YOUR_PROJECT_ID>"
             header-title="Biel.ai chatbot"
             button-position="bottom-right"
             modal-position="bottom-right"
@@ -66,10 +58,9 @@ To embed the Biel.AI chat widget into your WordPress site:
         Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
     * Click the **Save** button to apply the changes.
 
-1. Visit your WordPress website in a web browser to ensure the chatbot is visible and operational.
+4. Visit your WordPress website in a web browser to ensure the chatbot is visible and operational.
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/customization) section.
-
-Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.

@@ -1,49 +1,37 @@
 ---
 sidebar_label: Sphinx
-description: Add an AI chatbot to your Sphinx documentation site with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Sphinx site with Biel.ai.
 ---
 
 # Ask AI chatbot widget for Sphinx
 
-Add an AI chatbot to your Sphinx documentation using Biel.ai's Python package. The integration works with any Sphinx theme, including Read the Docs, and adds both chat and search capabilities.
-
-This guide shows you how to install the package via pip and add the chat widget to your Sphinx site in minutes.
+Add a Biel.ai [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Sphinx documentation using the `sphinx-biel` package. Works with any Sphinx theme, including Read the Docs.
 
 ## Prerequisites
 
-Before starting, ensure you have:
-- A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
-- **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
-- **A Sphinx project** ready to install Biel.ai.  
+- A [Biel.ai account](https://app.biel.ai/accounts/signup/).
+- A [project](../quickstart.md#2-create-a-project) with indexed content.
+- A Sphinx project.
 
-## Installation
+## Add the chatbot widget
 
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+The `sphinx-biel` extension adds a floating chat button to your site.
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
-To integrate the Biel.AI chat widget into your Sphinx site:
-
-1. Open your terminal or command prompt. Navigate to your project's root directory using the `cd` command:
-
-    ```console
-    cd path/to/your/project
-    ```
-    
-    Replace `path/to/your/project` with your project's actual directory path.
-
-2. With your terminal still open, run the following command to install Biel.ai via PIP:
+1. Install the package:
 
     ```console
     pip install sphinx-biel
     ```
 
-2. Add the extension to your Sphinx project's `conf.py` file:
+2. Add the extension to your `conf.py`:
 
     ```python
-    extensions ['sphinx_biel']
+    extensions = ['sphinx_biel']
     ```
-3. Configure your project ID in the `conf.py` file:
+
+3. Configure your project ID in `conf.py`:
 
     ```python
     biel_project = '<YOUR_PROJECT_ID>'
@@ -53,26 +41,27 @@ To integrate the Biel.AI chat widget into your Sphinx site:
 
     Replace `<YOUR_PROJECT_ID>` with your project's ID from the [Biel.ai dashboard](../quickstart.md#2-create-a-project).
 
-4. Build the documentation:
+4. Build and verify:
 
     ```console
     make html
     ```
 
-    Once built, open your documentation in a web browser. verify that the chatbot  appears and works correctly on your site.
+    Open the built documentation in a browser and verify the chatbot appears.
 
-## Next steps
+## Customization
 
-You can customize the Biel.AI chat widget to suit your needs. For example, you can change the widget's position, color, and more.
+Pass [layout options](../customization/layout.mdx) in `conf.py` with these naming conventions:
 
-To do so, you can add any of the following [customization](../customization/layout.mdx)  options to your `conf.py` file, with the following modifications:
-
-1. Prefix configuration options with `biel_`. For instance, `project` would be `biel_project`.
-
-2. Use underscores instead of hyphens as words separator. For example, `button-position` becomes `biel_button_position`.
-
-Here's an example:
+- Prefix each option with `biel_` (e.g., `project` → `biel_project`).
+- Replace hyphens with underscores (e.g., `button-position` → `biel_button_position`).
 
 ```python
 biel_button_style = "light"
+biel_button_position = "center-right"
 ```
+
+## Next steps
+
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.

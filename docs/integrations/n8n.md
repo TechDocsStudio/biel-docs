@@ -6,42 +6,25 @@ sidebar_position: 3
 
 # n8n integration for RAG workflows
 
-Connect Biel.ai to your n8n workflows to add intelligent document retrieval and question-answering capabilities. Use your indexed documentation as a knowledge base for chatbots, support automation, Slack bots, and custom AI workflows.
+Connect Biel.ai to n8n to query your indexed documentation from any workflow. Use it to build support chatbots, Slack bots, email automation, or any workflow that needs answers from your docs.
 
-This integration enables Retrieval-Augmented Generation (RAG) in n8n, allowing your automations to search and cite your documentation when answering questions or processing requests.
-
-## What you can build
-
-Common use cases for Biel.ai in n8n workflows:
-
-- **Support chatbots**: Answer customer questions using your documentation
-- **Slack/Discord bots**: Provide instant answers from your knowledge base
-- **Email automation**: Generate responses with context from your docs
-- **Internal tools**: Build custom AI assistants for your team
-- **Content generation**: Pull relevant documentation for blog posts or guides
-- **API documentation bots**: Help developers find API information quickly
-
-:::info API Access Required
-This integration requires API access, which is available on **Business** and **Enterprise** plans. [Upgrade your plan](https://app.biel.ai) to get started.
+:::info
+This integration requires a **Business** or **Enterprise** plan for API access.
 :::
 
 ## Prerequisites
 
-Before starting, ensure you have:
+- A [Biel.ai account](https://app.biel.ai) with documentation indexed.
+- A Business or Enterprise plan.
+- An n8n instance (cloud or self-hosted).
+- Your **project slug** from the Biel.ai dashboard.
+- An **API key** from your team settings.
 
-- **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
-- **Business or Enterprise plan** for API access
-- **n8n instance** (cloud or self-hosted)
-- **Project slug** from your Biel.ai dashboard
-- **API key** from your team settings
-
-## Setup: Get AI-powered answers
-
-This workflow uses Biel.ai's chat endpoint to get AI-generated answers with citations from your documentation.
+## Setup
 
 ### 1. Create a new workflow
 
-In n8n, create a new workflow and add the following nodes:
+Create a new workflow with the following nodes:
 
 1. **Trigger node** (e.g., Webhook, Manual, Slack)
 2. **HTTP Request node** to query Biel.ai
@@ -53,7 +36,7 @@ Add an **HTTP Request** node with these settings:
 
 **Method:** `POST`
 
-**URL:** `https://docs.biel.ai/api/v1/chats/`
+**URL:** `https://app.biel.ai/api/v1/chats/`
 
 **Headers:**
 ```json
@@ -75,7 +58,7 @@ Replace `YOUR_API_KEY` with your API key from your Biel.ai team settings.
 
 Replace `YOUR_PROJECT_SLUG` with your project slug from the Biel.ai dashboard.
 
-For complete API documentation, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
+For the full API reference, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
 
 ### 3. Process the response
 
@@ -113,5 +96,4 @@ To maintain context in multi-turn conversations, include the `chat_uuid`:
 }
 ```
 
-Need help? [Contact us](https://biel.ai/contact) to discuss your workflow.
 

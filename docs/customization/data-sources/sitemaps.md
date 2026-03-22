@@ -8,10 +8,6 @@ description: Add entire websites using XML sitemap files
 
 Add entire websites using XML sitemap files. Sitemaps efficiently index large amounts of content from a single domain.
 
-:::tip
-Sitemaps automatically discover all pages listed in the XML file.
-:::
-
 ## When to use sitemaps
 
 Use sitemaps to:
@@ -34,11 +30,10 @@ Supported types:
 
 ## Add sitemaps
 
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Select **Sitemaps**
-4. Enter the sitemap URL (must end in `.xml`)
-5. Click **Save**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Sources** > **Sitemaps**.
+3. Enter the sitemap URL (must end in `.xml`).
+4. Click **Save**.
 
 Example sitemap URLs:
 ```
@@ -58,24 +53,13 @@ https://yoursite.com/sitemaps/sitemap.xml
 
 Platform-specific patterns:
 
-**Docusaurus**
-```
-https://yoursite.com/sitemap.xml
-```
+| Platform | Sitemap URL |
+|----------|-------------|
+| Docusaurus | `https://yoursite.com/sitemap.xml` |
+| GitBook | `https://yourorg.gitbook.io/sitemap.xml` |
+| WordPress | `https://yoursite.com/wp-sitemap.xml` |
 
-**GitBook**
-```
-https://yourorg.gitbook.io/sitemap.xml
-```
-
-**WordPress**
-```
-https://yoursite.com/wp-sitemap.xml
-```
-
-**Custom sites**
-
-Check `robots.txt` at `https://yoursite.com/robots.txt` for sitemap declarations.
+For other platforms, check `robots.txt` at `https://yoursite.com/robots.txt` for sitemap declarations.
 
 ## Filter URLs
 
@@ -118,29 +102,17 @@ Large sites often use index files that reference multiple sitemaps:
 
 Biel.ai automatically follows sitemap indexes and processes all referenced sitemaps.
 
- 
-## Best practices
-
-- Verify sitemap accessibility before adding
-- Start with smaller sitemaps (under 1000 pages)
-- Use URL filtering to exclude irrelevant content
-- Test indexing with a few key pages first
-
 ## Troubleshooting
 
-**Sitemap not found**
-- Check URL format (must end with `.xml`)
-- Try common sitemap locations
-- Check robots.txt for sitemap declarations
+### Sitemap not found
 
-**Partial indexing**
-- Check if pages in sitemap are publicly accessible
-- Review URL filters for over-exclusion
-- Large sitemaps may have processing limits
+- Check URL format (must end with `.xml`).
+- Try common sitemap locations listed in [Find sitemaps](#find-sitemaps).
+- Check `robots.txt` for sitemap declarations.
 
-**Content quality issues**
-- Some pages may have minimal text content
-- JavaScript-heavy pages may not index properly
+### Partial indexing
 
-**Need help?** Contact support at [support@biel.ai](mailto:support@biel.ai) if you experience issues with content processing or indexing takes too long.
+- Verify pages in the sitemap are publicly accessible.
+- Review URL filters for over-exclusion.
+- JavaScript-heavy pages may not index properly.
 

@@ -6,42 +6,25 @@ sidebar_position: 5
 
 # Zapier integration for RAG workflows
 
-Connect Biel.ai to your Zapier Zaps to add intelligent document retrieval and question-answering capabilities. Use your indexed documentation as a knowledge base for chatbots, support automation, and custom AI workflows.
+Connect Biel.ai to Zapier to query your indexed documentation from any Zap. Use it to build support chatbots, Slack bots, email automation, or any workflow that needs answers from your docs.
 
-This integration enables Retrieval-Augmented Generation (RAG) in Zapier, allowing your automations to search and cite your documentation when answering questions or processing requests.
-
-## What you can build
-
-Common use cases for Biel.ai in Zapier Zaps:
-
-- **Support chatbots**: Answer customer questions using your documentation
-- **Slack/Teams bots**: Provide instant answers from your knowledge base
-- **Email automation**: Generate responses with context from your docs
-- **Internal tools**: Build custom AI assistants for your team
-- **Content generation**: Pull relevant documentation for blog posts or guides
-- **API documentation bots**: Help developers find API information quickly
-
-:::info API Access Required
-This integration requires API access, which is available on **Business** and **Enterprise** plans. [Upgrade your plan](https://app.biel.ai) to get started.
+:::info
+This integration requires a **Business** or **Enterprise** plan for API access.
 :::
 
 ## Prerequisites
 
-Before starting, ensure you have:
+- A [Biel.ai account](https://app.biel.ai) with documentation indexed.
+- A Business or Enterprise plan.
+- A Zapier account.
+- Your **project slug** from the Biel.ai dashboard.
+- An **API key** from your team settings.
 
-- **Biel.ai account** with documentation indexed ([create account](https://app.biel.ai))
-- **Business or Enterprise plan** for API access
-- **Zapier account** (free or paid)
-- **Project slug** from your Biel.ai dashboard
-- **API key** from your team settings
-
-## Setup: Get AI-powered answers
-
-This Zap uses Biel.ai's chat endpoint to get AI-generated answers with citations from your documentation.
+## Setup
 
 ### 1. Create a new Zap
 
-In Zapier, create a new Zap and add the following steps:
+Create a new Zap with the following steps:
 
 1. **Trigger** (e.g., New Email, Slack Message, Form Submission)
 2. **Webhooks by Zapier** action to query Biel.ai
@@ -51,7 +34,7 @@ In Zapier, create a new Zap and add the following steps:
 
 Add a **Webhooks by Zapier > POST** action with these settings:
 
-**URL:** `https://docs.biel.ai/api/v1/chats/`
+**URL:** `https://app.biel.ai/api/v1/chats/`
 
 **Payload Type:** `json`
 
@@ -73,11 +56,7 @@ Replace `Question from step 1` with the field from your trigger that contains th
 
 Replace `YOUR_API_KEY` with your API key from your Biel.ai team settings.
 
-:::tip Using Code by Zapier
-For more complex message structures, use **Code by Zapier** to format the JSON properly before sending to the Webhooks action.
-:::
-
-For complete API documentation, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
+For the full API reference, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
 
 ### 3. Process the response
 
@@ -120,5 +99,4 @@ To maintain context in multi-turn conversations, store the `chat_uuid` using **S
 | `project_slug` | `YOUR_PROJECT_SLUG` |
 | `chat_uuid` | `Chat Uuid from step 2` |
 
-Need help? [Contact us](https://biel.ai/contact) to discuss your Zap.
 

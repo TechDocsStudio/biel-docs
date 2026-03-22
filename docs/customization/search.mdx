@@ -1,46 +1,38 @@
 ---
 sidebar_position: 9
+description: Configure and customize the Biel.ai search widget, including ranking boosts and metadata.
 ---
 
 # Search
 
-The search widget provides a powerful way to help users find relevant content across your documentation.
+The search widget uses semantic search to find relevant content across your indexed sources.
 
 ![Biel search](./images/biel-search-widget.png)
 
 ## How search works
 
-The search widget uses semantic search to find relevant content across your indexed sources. It considers multiple factors when ranking results:
+Results are ranked by similarity to the query (score between 0 and 1), based on:
 
-- Page content
-- Page title
-- Meta keywords
-- Meta description
+- Page content and title
+- Meta keywords and description
 - URL structure
 
-Each result gets a base score based on its similarity to the search query, between 0 and 1.
+You can adjust rankings with a [boost score](#boost-search-results): positive values (e.g., `0.5`) increase a page's ranking, negative values (e.g., `-0.5`) decrease it. The final score is the base score plus the boost.
 
-You can add a [boost score](#boost-search-results) to adjust this base ranking:
-- Positive values (e.g., 0.5) increase the page's ranking
-- Negative values (e.g., -0.5) decrease the page's ranking
-
-The base score plus the boost score generate a final score. The final score can exceed 1 when using positive boost values.
-
-:::important
-Pages with a final ranking score below 0.8 will not appear in search results.
-Setting a boost score of -1.0 is enough to prevent a page from showing in search results.
+:::tip
+Any page with a final score above 0 can appear in results. Use a negative boost (e.g., `-1.0`) to effectively hide a page from search.
 :::
 
 ## Installation
 
-- To install the search widget, see [CDN installation guide](../installation/cdn.md#advanced-install-biel-search).
-- For technology-specific instructions, see [Installation](../installation.md).
+- [CDN installation guide](../installation/cdn.md#add-the-search-widget)
+- [Platform-specific guides](../installation.md)
 
 ## Customization
 
 ### Widget appearance
 
-To customize the search widget look and feel, see [Layout](../customization/layout.mdx#biel-search-button).
+See [Layout](../customization/layout.mdx#biel-search-button) for styling and positioning options.
 
 ### Search filters
 
@@ -48,7 +40,7 @@ You can configure filters that let users narrow search results by category (for 
 
 ### Metadata and keywords
 
-You can enhance your content's searchability by adding relevant metadata and keywords. Add meta tags in the `<head>` section of your HTML:
+Add meta tags to improve how your content is indexed and ranked:
 
 ```html
 <meta name="description" content="Learn how to configure and customize your Biel.ai chatbot">
@@ -59,9 +51,9 @@ For Docusaurus, Sphinx, and other documentation systems, see [Metadata by platfo
 
 ### Boost search results
 
-Boost scores are useful for prioritizing certain types of pages over others. For example, you might boost guides by 0.5 to make them appear higher in search results, while leaving reference pages with no boost (0) to maintain their natural ranking.
+Use boost scores to prioritize certain pages. For example, boost guides by `0.5` so they rank higher, while leaving reference pages at `0` for natural ranking.
 
-To add a boost score, add the following meta tag in the `<head>` section of your HTML:
+Add the following meta tag to the `<head>` of the page:
 
 ```html
 <meta name="biel:boost_score" content="0.5">
@@ -70,12 +62,6 @@ To add a boost score, add the following meta tag in the `<head>` section of your
 For Docusaurus, Sphinx, and other documentation systems, see [Metadata by platform](#metadata-by-platform).
 
 ### Metadata by platform
-
-This section shows how to add metadata (title, description, keywords) and boost scores in popular documentation systems.
-
-:::note
-Can't find your system and don't know how to set up metadata? [Contact us for support](../support.mdx).
-:::
 
 
 import Tabs from '@theme/Tabs';
@@ -120,15 +106,6 @@ Search Configuration
 </TabItem>
 </Tabs>
 
-## Best practices
-
-* **Use descriptive titles**: Ensure your page titles clearly describe the content.
-* **Add meta descriptions**: Provide concise summaries of page content.
-* **Include keywords**: Add relevant keywords in meta tags.
-* **Structure content**: Use proper heading hierarchy (h1, h2, etc.).
-* **Optimize URLs**: Use clear, descriptive URLs that reflect the content.
-
 ## Limitations
 
-The search widget only works with website content.
-Files (PDF, Word, Excel, etc.) are not searchable, even if they are indexed as sources.
+The search widget only indexes website content. Files (PDF, Word, Excel, etc.) are not searchable, even if they are added as project sources.

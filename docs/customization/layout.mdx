@@ -1,39 +1,26 @@
 ---
 sidebar_position: 1
 sidebar_label: Widget
+description: All available properties for the biel-button and biel-search-button widgets.
 ---
 
 # Widget customization
 
-The Biel.ai widget is highly customizable, allowing you to adjust its behavior and appearance to suit your application's needs. This includes options to modify the button's text to align with your company's tone or support multiple languages (i18n). 
-
-This page lists all available properties you can use to configure the Biel.ai widget and ensure it fits within your application.
+Configure the chatbot and search widgets by setting HTML attributes. All properties support i18n — override any text property to localize the widget.
 
 ## biel-button
 
-The `<biel-button>` widget enables a conversational chat powered by AI in your site.
+The `<biel-button>` component adds a floating AI chat button to your site.
 
 ![Biel bot](./images/biel-widget-docs.png)
 
 ### Usage
 
-To customize the properties, you need to set the appropriate attributes on the `<biel-button>` element in your HTML. For example:
-
 ```html
 <biel-button project="YOUR_PROJECT_ID" header-title="Biel.ai chatbot" button-style="dark">Ask AI</biel-button>
 ```
 
-### Change the company name
-
-By default, the chatbot header displays "Company Name AI". To change it to your company name, set the `header-title` property:
-
-```html
-<biel-button project="YOUR_PROJECT_ID" header-title="Acme AI">Ask AI</biel-button>
-```
-
 ### Chatbot button properties
-
-The table below lists all the available properties that modify the button:
 
 | Property               | Description                                                                                   |
 |------------------------|-----------------------------------------------------------------------------------------------|
@@ -46,10 +33,11 @@ The table below lists all the available properties that modify the button:
 | `ai-icon`              | **Type**: `string`<br />**Default value**: `bot`<br />**Available values:** Various AI icon types<br /><br />Specifies which AI icon to display in the button.|
 | `hide-avatars`         | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, hides avatars in the chat interface.|
 | `api-key`              | **Type**: `string`<br />**Default value**: ``<br /><br />API key for authenticating requests to private projects. Required for private projects with `create_chat` and `project_read` permissions. Not required for public projects.|
+| `api-url`              | **Type**: `string`<br />**Default value**: `https://app.biel.ai`<br /><br />Override the base API URL. Use this for self-hosted or custom API endpoints.|
+| `embedded-mode`        | **Type**: `boolean`<br />**Default value**: `false`<br /><br />Renders the chatbot inline in the page layout instead of as a floating button. See [Embedded mode](./embedded-mode).|
+| `show-powered-by`      | **Type**: `boolean`<br />**Default value**: `true`<br /><br />Show or hide the "Powered by Biel.ai" text. Hiding requires a Professional plan or above.|
 
 ### Chatbot modal properties
-
-The table below lists all the available properties that modify the chatbot modal:
 
 | Property               | Description                                                                                   |
 |------------------------|-----------------------------------------------------------------------------------------------|
@@ -69,8 +57,12 @@ The table below lists all the available properties that modify the chatbot modal
 | `modal-position`       | **Type**: `string`<br />**Default value**: `center`<br />**Available values:** `center`, `top-center`, `bottom-right`, `bottom-left`<br /><br />Determines where the chat modal appears on the screen when opened. Choose the position that best fits your website's layout.|
 | `show-terms-modal` | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, displays a terms and conditions modal before starting the chat. |
 | `think-mode-enabled`   | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, selects Think mode by default (instead of Auto) for deeper AI reasoning. Users can still change modes via the settings dropdown unless you also set `hide-settings-button` to `true`. Requires the reasoning mode plugin to be enabled for your project. See [Reasoning modes](./reasoning-modes) for details. |
+| `keep-conversation`    | **Type**: `boolean`<br />**Default value**: `false`<br /><br />When set to `true`, persists the conversation across page navigations. The chat history is maintained until the user refreshes or closes the browser. |
 | **MCP Integration**  |  |  |
-| `mcp-server-url`       | **Type**: `string`<br />**Default value**: ``<br /><br />Manually override the MCP (Model Context Protocol) server URL. Use this when you need to connect to a custom MCP server or when your MCP server requires authentication (e.g., API keys). Takes priority over the API-provided MCP URL. Example: `https://mcp.biel.ai/v2/YOUR_PROJECT/mcp?api_key=sk_...` See [MCP Server Integration](/integrations/mcp-server) for details. |
+| `mcp-server-url`       | **Type**: `string`<br />**Default value**: ``<br /><br />Override the MCP server URL. Use for custom or self-hosted MCP servers, or when authentication is required. Takes priority over the API-provided URL. See [MCP Server](/integrations/mcp-server). |
+| `mcp-enabled`          | **Type**: `boolean`<br />**Default value**: `false`<br /><br />Enable MCP (Model Context Protocol) integration for the widget. |
+| `mcp-server-name`      | **Type**: `string`<br />**Default value**: ``<br /><br />Custom display name for the MCP server shown in the connect dialog. |
+| `mcp-metadata-tag`     | **Type**: `string`<br />**Default value**: ``<br /><br />Tag to identify conversations originating from MCP connections. |
 | **Text**             |  |  |
 | `assistant-label`      | **Type**: `string`<br />**Default value**: `Assistant`<br /><br />Label text displayed above AI responses in the chat. |
 | `close-button-text`    | **Type**: `string`<br />**Default value**: `Close`<br /><br />Tooltip text for the close button in the chatbot header. |
@@ -103,25 +95,29 @@ The table below lists all the available properties that modify the chatbot modal
 | `terms-checkbox-text`    | **Type**: `string`<br />**Default value**: `I have read and agree to the Terms & Conditions.`<br /><br />Text displayed next to the terms acceptance checkbox. |
 | `terms-description`      | **Type**: `string`<br />**Default value**: `Please review our <a href='https://biel.ai/terms' target='_blank' rel='noopener'>Terms & Conditions</a> before proceeding.`<br /><br />Description text shown in the terms and conditions modal. |
 | `terms-title`            | **Type**: `string`<br />**Default value**: `Chatbot Terms & Conditions`<br /><br />Title text for the terms and conditions modal. |
-| `welcome-message`        | **Type**: `string`<br />**Default value**: ""<br /><br />A custom greeting message that appears when users first open the chat. Use this to set the tone and provide initial guidance for the conversation. |
+| `copy-button-text`       | **Type**: `string`<br />**Default value**: `Copy`<br /><br />Tooltip text for the copy button on code snippets. |
+| `copied-button-text`     | **Type**: `string`<br />**Default value**: `Copied!`<br /><br />Text shown after copying a code snippet. |
+| `think-mode-auto-text`   | **Type**: `string`<br />**Default value**: `Auto`<br /><br />Label for the Auto reasoning mode in the settings dropdown. |
+| `think-mode-auto-description` | **Type**: `string`<br />**Default value**: `Balances speed and quality`<br /><br />Description for the Auto reasoning mode. |
+| `think-mode-fast-text`   | **Type**: `string`<br />**Default value**: `Instant`<br /><br />Label for the Instant reasoning mode in the settings dropdown. |
+| `think-mode-fast-description` | **Type**: `string`<br />**Default value**: `Quick answers for simple questions`<br /><br />Description for the Instant reasoning mode. |
+| `think-mode-think-text`  | **Type**: `string`<br />**Default value**: `Think`<br /><br />Label for the Think reasoning mode in the settings dropdown. |
+| `think-mode-think-description` | **Type**: `string`<br />**Default value**: `Deep reasoning for complex questions`<br /><br />Description for the Think reasoning mode. |
+| `welcome-message`        | **Type**: `string`<br />**Default value**: ""<br /><br />A custom greeting message that appears when users first open the chat. |
 
 ## biel-search-button
 
-The `<biel-search-button>` widget offers a search-based interaction that allows users to query documentation or other indexed content.
+The `<biel-search-button>` component adds an AI-powered search bar to your site.
 
 ![Biel search](./images/biel-search-widget.png)
 
 ### Usage
-
-To customize the properties, you need to set the appropriate attributes on the `<biel-search-button>` element in your HTML. For example:
 
 ```html
 <biel-search-button project="YOUR_PROJECT_ID" button-style="rounded" search-placeholder="Search here...">Search</biel-search-button>
 ```
 
 ### Search button properties
-
-The table below lists all the available properties that modify the layout:
 
 | Property               | Description                                                                                   |
 |------------------------|-----------------------------------------------------------------------------------------------|
@@ -136,8 +132,6 @@ The table below lists all the available properties that modify the layout:
 | `api-key`              | **Type**: `string`<br />**Default value**: ``<br /><br />API key for authenticating requests to private projects. Required for private projects with `create_chat`, `project_search`, and `project_read` permissions. Not required for public projects.|
 
 ### Search modal properties
-
-The table below lists all the available properties that modify the search modal:
 
 | Property               | Description                                                                                   |
 |------------------------|-----------------------------------------------------------------------------------------------|
@@ -160,3 +154,21 @@ The table below lists all the available properties that modify the search modal:
 Most properties that can be defined in `<biel-button>` for configuring the chatbot modal can be set in the `biel-search-button`.
 
 For details, see [Chatbot modal properties](#chatbot-modal-properties).
+
+## Common customizations
+
+### Change the chatbot title
+
+By default, the chatbot header displays "Company Name AI". Set the `header-title` property to show your own title:
+
+```html
+<biel-button project="YOUR_PROJECT_ID" header-title="Acme AI">Ask AI</biel-button>
+```
+
+### Change the button text
+
+Replace the inner text of the element to change what the button says:
+
+```html
+<biel-button project="YOUR_PROJECT_ID">Help</biel-button>
+```

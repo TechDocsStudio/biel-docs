@@ -1,42 +1,33 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: OpenAPI
-description: Add OpenAPI/Swagger documents for optimized API documentation
+description: Add OpenAPI/Swagger specs to your Biel.ai project for accurate API documentation indexing.
 ---
 
 # OpenAPI documents
 
-Add OpenAPI document files to include API documentation in your project.
+Add OpenAPI specs to index API documentation. Structured YAML/JSON is parsed more accurately than crawling API docs websites — all endpoints, parameters, and schemas are captured.
 
 :::tip
 File content remains private. Your chatbot won't expose file links as sources to users.
 :::
 
-## Why use OpenAPI documents
-
-OpenAPI documents provide structured data that's processed more accurately than crawling documentation websites:
-
-- **Complete API coverage**: All endpoints, parameters, and schemas included automatically
-- **Structured format**: YAML/JSON format enables precise parsing of API details
-- **No missing content**: Unlike web crawling, nothing gets missed or incorrectly parsed
-- **Better understanding**: Schema definitions and data types are fully captured
-
 ## Requirements
 
-- Valid OpenAPI/Swagger syntax (versions 2.0, 3.0.x, 3.1.x)
-- JSON (`.json`) or YAML (`.yaml`, `.yml`) format
-- Publicly accessible URL
+- Valid OpenAPI/Swagger syntax (versions 2.0, 3.0.x, 3.1.x).
+- JSON (`.json`) or YAML (`.yaml`, `.yml`) format.
+- Publicly accessible URL.
 
-## Add OpenAPI documents
+## Add an OpenAPI document
 
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Select **OpenAPI**
-4. Enter the document URL
-5. Click **Add OpenAPI URL**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Sources** > **OpenAPI**.
+3. Enter the document URL.
+4. Click **Add OpenAPI URL**.
 
 Example URLs:
-```
+
+```text
 https://api.example.com/openapi.json
 https://docs.example.com/swagger.yaml
 https://api.example.com/v1/openapi.yml
@@ -44,12 +35,12 @@ https://api.example.com/v1/openapi.yml
 
 ## Troubleshooting
 
-**Document not loading**
-- Check URL accessibility
-- Verify valid OpenAPI syntax
+### Document not loading
 
-**Validation errors**
-- Check logs for validation issues
-- Fix syntax errors and refresh sources
+- Check the URL is publicly accessible.
+- Verify valid OpenAPI syntax.
 
-**Need help?** Contact support at [support@biel.ai](mailto:support@biel.ai) if you experience issues with content processing or indexing takes too long. 
+### Validation errors
+
+- Check logs for validation details.
+- Fix syntax errors and click **Refresh sources**.

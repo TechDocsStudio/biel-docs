@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Manage subscription
+description: Manage your Biel.ai subscription, billing, and usage.
 ---
 
 # Manage subscription
@@ -8,7 +9,7 @@ title: Manage subscription
 ![Manage subscription](./images/manage-subscription.png)
 
 :::important
-Only users with the **Administrator** or **Maintainer** role can manage subscriptions. For more details, see [Manage roles](roles.md).
+Only **Administrator** or **Maintainer** roles can manage subscriptions. See [Manage roles](roles.md).
 :::
 
 From **Team > Manage subscription**, you can:
@@ -20,4 +21,3 @@ From **Team > Manage subscription**, you can:
 * View your plan usage.
 * Buy more seats.
 * Buy more interactions.
-

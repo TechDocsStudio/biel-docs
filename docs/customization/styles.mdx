@@ -1,21 +1,18 @@
 ---
 sidebar_position: 2
+description: Customize the Biel.ai widget appearance with CSS custom properties and CSS parts.
 ---
 
 # Styles
 
-Biel.ai offers two main approaches for customizing component styles:
+Two approaches for customizing widget styles:
 
-1. **CSS custom properties** (Recommended) - For standard customization needs
-2. **CSS parts** (Advanced) - For fine-grained control over specific elements
+1. **CSS custom properties** — Override colors, fonts, spacing, and sizing.
+2. **CSS parts** (advanced) — Target specific elements inside the Shadow DOM.
 
 ## CSS custom properties
 
-This is the standard and recommended way to customize the widget appearance. CSS custom properties provide a simple interface for theming colors, fonts, spacing, and other common design properties.
-
-### Usage
-
-To customize these properties, define them in your website's CSS using the `:root` selector for global changes or a specific selector to target particular areas:
+Define CSS custom properties in your stylesheet using the `:root` selector:
 
 ```css
 :root {
@@ -25,8 +22,6 @@ To customize these properties, define them in your website's CSS using the `:roo
 ```
 
 ### Properties
-
-The tables below lists all the available properties you can override:
 
 ```css
 :root {
@@ -160,6 +155,9 @@ The tables below lists all the available properties you can override:
     --biel-input-font-family: var(--biel-font-family);
     --biel-input-textarea-max-height: 114px;
     --biel-input-textarea-min-height: 19px;
+    --biel-input-options-button-hover-bg-color: var(--biel-secondary-color);
+    --biel-input-options-button-hover-border-color: var(--biel-dark-color);
+    --biel-input-options-button-focus-border-color: var(--biel-dark-color);
 
     /* Biel bot code snippet */
     --biel-code-snippet-header-text-color: var(--biel-light-color);
@@ -319,6 +317,9 @@ The tables below lists all the available properties you can override:
     --biel-input-button-hover-color: var(--biel-dark-color);
     --biel-input-button-hover-bg-color: var(--biel-white-hover-color);
     --biel-input-button-hover-border-color: var(--biel-white-color);
+    --biel-input-options-button-hover-bg-color: var(--biel-message-biel-bg-color);
+    --biel-input-options-button-hover-border-color: var(--biel-white-color);
+    --biel-input-options-button-focus-border-color: var(--biel-white-color);
     --biel-message-biel-text-color: var(--biel-white-color);
     --biel-message-biel-bg-color: #2a2a2a;
     --biel-message-user-text-color: var(--biel-white-color);
@@ -377,19 +378,11 @@ The tables below lists all the available properties you can override:
 }
 ```
 
-## Advanced: CSS parts
+## CSS parts
 
-For fine-grained control over specific component internals, the widget exposes **CSS parts** that allow you to style elements within Shadow DOM components using the `::part()` pseudo-element.
+For fine-grained control, the widget exposes CSS parts that let you style elements inside the Shadow DOM using the `::part()` pseudo-element.
 
-:::info
-This approach is more advanced and requires familiarity with Web Components and Shadow DOM.
-:::
-
-### How it works
-
-Biel.ai components expose internal elements via the `part` attribute. You can target these from your CSS using the `::part()` selector.
-
-**Basic syntax:**
+**Syntax:**
 
 ```css
 /* Styling a component's own parts */
@@ -403,28 +396,16 @@ parent-component::part(child-component-part-name) {
 }
 ```
 
-**Key concepts:**
+**Naming conventions:**
 
-- **Main parts use simple names** to avoid redundancy:
-  - `biel-bot::part(modal)` (instead of `biel-bot-modal`)
-  - `biel-button::part(button)` (instead of `biel-button-button`)
-
-- **Child parts use prefixed names** for clarity when styled from a parent:
-  - `biel-bot::part(biel-message-bubble)` (clearly from the `biel-message` component)
-  - `biel-search::part(biel-search-result-title)` (clearly from the results list)
+- **Direct parts** use simple names: `biel-bot::part(modal)`, `biel-button::part(button)`
+- **Nested parts** use prefixed names: `biel-bot::part(biel-message-bubble)`, `biel-search::part(biel-search-result-title)`
 
 ### Finding available parts
 
-The easiest way to discover available parts is using your browser's developer tools:
-
-1. Right-click the component you want to style and select **Inspect**.
-2. Locate the component tag (e.g., `<biel-bot>` or `<biel-search>`).
-3. Expand its `#shadow-root`.
-4. Look for elements with the `part="..."` attribute.
-
-For example:
-- **Direct parts**: If you see `<div part="modal">` directly inside `biel-bot`, style it with `biel-bot::part(modal)`.
-- **Nested parts**: If you see `<div part="bubble">` inside a nested component (e.g., `<biel-message>`), you must prefix it with the component name: `biel-bot::part(biel-message-bubble)`.
+1. Right-click the widget and select **Inspect**.
+2. Expand the `#shadow-root` inside the component tag.
+3. Look for elements with `part="..."` attributes.
 
 ### Examples
 

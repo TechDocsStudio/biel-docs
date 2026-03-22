@@ -4,19 +4,17 @@ description: Automatically sync your Biel.ai project when documentation changes 
 sidebar_position: 2
 ---
 
-# GitHub workflow integation
+# GitHub workflow integration
 
-Use GitHub Actions to automatically update your Biel.ai project when you push documentation changes. This keeps your AI assistant synchronized with your latest content.
+Use GitHub Actions to automatically sync your Biel.ai project when you push documentation changes.
 
 ## Before you begin
 
-Ensure you have the following:
-
-- A Biel.ai Business or Enterprise plan (required for API access)
+- A Biel.ai Business or Enterprise plan (required for API access).
 - An API key from your team settings with these permissions:
   - `project_sources_create` (to upload site files)
   - `project_sync` (to trigger content crawls)
-- Your project slug from your Biel.ai dashboard
+- Your project slug from the Biel.ai dashboard.
 
 ## Choose your automation approach
 
@@ -47,10 +45,13 @@ name: Sync Biel.ai
 on:
   push:
     branches: [main]
-    paths: 
+    paths:
       - 'docs/**'
       - '*.md'
   workflow_dispatch:
+
+env:
+  BIEL_PROJECT_SLUG: 'your-project-slug'
 
 jobs:
   sync:
@@ -62,21 +63,24 @@ jobs:
           if ! curl -f -X POST \
             -H "Authorization: Api-Key ${{ secrets.BIEL_API_TOKEN }}" \
             -H "Content-Type: application/json" \
-            https://app.biel.ai/api/v1/projects/${{ secrets.BIEL_PROJECT_SLUG }}/sources/sync/; then
+            https://app.biel.ai/api/v1/projects/$BIEL_PROJECT_SLUG/sources/sync/; then
             echo "❌ Failed to sync Biel.ai project"
             exit 1
           fi
           echo "✅ Project synced successfully"
 ```
 
-### 2. Configure GitHub secrets
+### 2. Configure the workflow
 
-1. In your GitHub repository, go to **Settings** > **Secrets and variables** > **Actions**
-2. Click **New repository secret** and add:
-   - **Name**: `BIEL_API_TOKEN`
-   - **Secret**: Your Biel.ai API key
+1. Replace `your-project-slug` in the `env` section with your project slug from the Biel.ai dashboard.
+2. In your GitHub repository, go to **Settings** > **Secrets and variables** > **Actions**.
+3. Click **New repository secret** and add:
 
-For more information, see the GitHub documentation on [Using secrets in GitHub Actions](https://docs.github.com/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions).
+   | Name | Value |
+   |------|-------|
+   | `BIEL_API_TOKEN` | Your Biel.ai API key |
+
+See [Using secrets in GitHub Actions](https://docs.github.com/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) for details.
 
 ### 3. Customize the trigger paths
 
@@ -183,6 +187,3 @@ After setting up your workflow:
 
 You can also trigger the workflow manually by clicking **Run workflow** in the Actions tab.
 
-## Get help
-
-If you need assistance, [contact our support team](https://biel.ai/contact). 

@@ -20,60 +20,36 @@ Use GitHub repositories for:
 - API documentation and code examples
 - Developer guides and technical content
 
-## Add repositories
+## Add a repository
 
-### Public repositories
-
-1. Go to [app.biel.ai](https://app.biel.ai)
-2. Select **Projects** > your project > **Settings** > **Sources**
-3. Select **GitHub**
-4. Enter the repository URL: `https://github.com/owner/repo`
-5. Click **Save**
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Sources** > **GitHub**.
+3. Enter the repository URL (e.g., `https://github.com/owner/repo`).
+4. Click **Save**.
 
 ### Private repositories
 
-For private repositories, create a GitHub personal access token:
+Private repos require a GitHub personal access token:
 
-1. **Generate token**:
-   - Go to [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens)
-   - Click **Generate new token (classic)**
-   - Add description: "Biel.ai Documentation"
-   - Select `repo` scope
-   - Click **Generate token** and copy it
-
-2. **Add to Biel.ai**:
-   - Go to [app.biel.ai](https://app.biel.ai)
-   - Select **Projects** > your project > **Settings** > **Sources**
-   - Select **GitHub**
-   - Enter the repository URL: `https://github.com/owner/repo`
-   - Expand **Advanced options**
-   - Paste token in **GitHub Token** field
-   - Click **Save**
+1. Go to [GitHub Settings > Personal access tokens](https://github.com/settings/tokens).
+2. Click **Generate new token (classic)**.
+3. Select the `repo` scope and click **Generate token**.
+4. Copy the token.
+5. In Biel.ai, expand **Advanced options** on the GitHub source and paste the token in the **GitHub Token** field.
 
 ## Filter files
 
-Control which repository files get indexed.
+Control which files get indexed using include and exclude patterns.
 
-**Include patterns** - Only index matching files:
-```
-*.md              # Markdown files
-docs/             # Files in docs folder
-README.md         # README files
-*.rst             # reStructuredText files
-```
-
-**Exclude patterns** - Skip matching files:
-```
-*.log             # Log files
-node_modules/     # Dependencies
-.git/             # Git metadata
-*.test.js         # Test files
-build/            # Build artifacts
-```
-
-**Example configuration**:
-- Include: `*.md, docs/, README.md, *.rst`
-- Exclude: `node_modules/, .git/, build/, *.test.*, coverage/`
+| Pattern | Action | Effect |
+|---------|--------|--------|
+| `*.md` | Include | Only Markdown files |
+| `docs/` | Include | Only files in docs folder |
+| `*.rst` | Include | Only reStructuredText files |
+| `node_modules/` | Exclude | Skip dependencies |
+| `.git/` | Exclude | Skip Git metadata |
+| `*.test.*` | Exclude | Skip test files |
+| `build/` | Exclude | Skip build artifacts |
 
 ## Advanced options
 
@@ -81,35 +57,21 @@ build/            # Build artifacts
 * **Branch selection**: Default branch is indexed (usually `main` or `master`)
 * **Submodules**: Not automatically indexed—add as separate sources
 
-## Best practices
-
-**Repository organization**:
-- Use clear, descriptive file names
-- Group related documentation in folders
-- Maintain README files at each level
-- Use consistent formatting (Markdown or reStructuredText)
-
-**Security**:
-- Use minimal token permissions (`repo` scope only)
-- Rotate tokens every 6-12 months
-- Monitor token usage in GitHub settings
-
 ## Troubleshooting
 
-**Repository not found**
-- Check URL format: `https://github.com/owner/repo`
-- Verify repository is accessible with your token
+### Repository not found
 
-**Files not indexing**
-- Check include patterns match file paths
-- Review exclude patterns for over-exclusion
-- Verify files are in supported formats (Markdown, plain text)
+- Check URL format: `https://github.com/owner/repo`.
+- For private repos, verify the token has `repo` scope and hasn't expired.
 
-**Token issues**
-- Verify `repo` scope for private repositories
-- Check token hasn't expired
-- Confirm repository permissions haven't changed
+### Files not indexing
 
-**Need help?** Contact support at [support@biel.ai](mailto:support@biel.ai) if you experience issues with content processing or indexing takes too long.
+- Check that include patterns match your file paths.
+- Review exclude patterns for over-exclusion.
+- Verify files are in supported formats (Markdown, plain text, reStructuredText).
 
- 
+### Token issues
+
+- Confirm the token has `repo` scope.
+- Regenerate the token if it has expired.
+- Check that repository permissions haven't changed.

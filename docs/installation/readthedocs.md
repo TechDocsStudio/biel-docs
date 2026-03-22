@@ -1,25 +1,20 @@
 ---
 sidebar_label: Read the Docs
-description: Add an AI chatbot to your Read the Docs site with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Read the Docs site with this step-by-step guide.
 ---
 
 # Ask AI chatbot widget for Read the Docs
 
-Add an AI chatbot to your Read the Docs documentation using Biel.ai's web components. The integration works with both Sphinx and MkDocs projects hosted on Read the Docs, adding conversational AI capabilities to your documentation.
-
-This guide shows you how to add the chat widget to your Read the Docs project in minutes by modifying your documentation theme.
+Add an [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Read the Docs documentation using Biel.ai's web components.
 
 ## Prerequisites
 
-Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **A Read the Docs project** using Sphinx or MkDocs.
 - **Access to your documentation repository** to modify theme files.
 
 ## Installation for Sphinx
-
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
 
@@ -37,7 +32,7 @@ If your Read the Docs project uses Sphinx, the easiest way to add Biel.ai is usi
 
     ```python
     extensions = ['sphinx_biel']
-    
+
     biel_project = '<YOUR_PROJECT_ID>'
     biel_header_title = 'Biel.ai chatbot'
     biel_button_style = 'dark'
@@ -68,7 +63,7 @@ Alternatively, you can add Biel.ai using custom Sphinx templates:
 
     {% block footer %}
       {{ super() }}
-      <biel-button project="<YOUR_PROJECT_ID>" 
+      <biel-button project="<YOUR_PROJECT_ID>"
           header-title="Biel.ai chatbot"
           button-position="bottom-right"
           modal-position="bottom-right"
@@ -107,7 +102,7 @@ If your Read the Docs project uses MkDocs:
 
     {% block content %}
       {{ super() }}
-      <biel-button project="<YOUR_PROJECT_ID>" 
+      <biel-button project="<YOUR_PROJECT_ID>"
           header-title="Biel.ai chatbot"
           button-position="bottom-right"
           modal-position="bottom-right"
@@ -131,24 +126,25 @@ If your Read the Docs project uses MkDocs:
 
 ## Troubleshooting
 
-**Widget not appearing after rebuild**
+### Widget not appearing after rebuild
+
 - Check the build logs on Read the Docs for any errors
 - Verify your template files are in the correct location
 - Ensure your project ID is correct
 
-**Build failures**
+### Build failures
+
 - For Sphinx extension issues, verify `sphinx-biel` is in your requirements file
 - Check that your Python version is compatible
 - Review the Read the Docs build log for specific error messages
 
-**Styling conflicts**
+### Styling conflicts
+
 - Different Read the Docs themes may have different styling
 - Adjust the `button-position` and `modal-position` attributes if needed
 - See the [customization section](/customization) for style overrides
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/customization) section.
-
-Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
-
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.

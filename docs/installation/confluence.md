@@ -1,17 +1,14 @@
 ---
 sidebar_label: Confluence
-description: Add an AI chatbot to your Confluence pages with this step-by-step guide.
+description: Add an AI chatbot or AI search widget to your Confluence pages with this step-by-step guide.
 ---
 
 # Ask AI chatbot widget for Confluence
 
-Add an AI chatbot to your Confluence space using Biel.ai's web components. The integration works with Confluence Cloud and can be added space-wide using custom HTML configuration.
-
-This guide shows you how to add the chat widget to all pages in your Confluence space.
+Add an [AI chatbot](https://biel.ai) or [AI search widget](https://biel.ai/ai-search-for-docs) to your Confluence space using Biel.ai's web components.
 
 ## Prerequisites
 
-Before starting, ensure you have:
 - A **Biel.ai account**. If you don't have one, [sign up for free](https://app.biel.ai/accounts/signup/).
 - **A project created in your Biel.ai dashboard**. Follow the [Quickstart guide](../quickstart.md) to create one.
 - **A Confluence Cloud instance**.
@@ -21,13 +18,9 @@ Before starting, ensure you have:
 Looking to connect Confluence as a data source instead? See [Confluence as a data source](../customization/data-sources/confluence.md) to index your Confluence pages for AI answers.
 :::
 
-## Installation
-
-The Biel.AI chat widget enables a conversational chat powered by AI in your site.
+## Add the chatbot widget
 
 ![Chatbot widget for docs](./images/biel-widget-docs.png)
-
-To add the chatbot to all pages in a Confluence space:
 
 :::info
 This method requires Confluence admin permissions and may vary based on your Confluence version and configuration.
@@ -49,7 +42,7 @@ This method requires Confluence admin permissions and may vary based on your Con
 5. In the **At end of BODY** section, add:
 
     ```html
-    <biel-button project="<YOUR_PROJECT_ID>" 
+    <biel-button project="<YOUR_PROJECT_ID>"
         header-title="Biel.ai chatbot"
         button-position="bottom-right"
         modal-position="bottom-right"
@@ -90,6 +83,5 @@ This method requires Confluence admin permissions and may vary based on your Con
 
 ## Next steps
 
-For more about customization and additional features exploration, check out the [customization](/customization) section.
-
-Need assistance? We're here to help! Reach out to us at [Biel.ai Support](https://biel.ai/contact).
+- [Customize](/customization) the widget's appearance, behavior, and tone.
+- [Connect integrations](/integrations) like GitHub Actions, MCP, or Zapier.
