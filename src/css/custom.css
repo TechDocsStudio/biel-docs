@@ -183,6 +183,14 @@
 .navbar__items--right > .colorModeToggle_DEke,
 .navbar__items--right > [class*="colorModeToggle"] {
   order: -2;
+  display: none;
+}
+
+@media (min-width: 997px) {
+  .navbar__items--right > .colorModeToggle_DEke,
+  .navbar__items--right > [class*="colorModeToggle"] {
+    display: flex;
+  }
 }
 
 /* Color mode toggle — clean sun/moon icon */
