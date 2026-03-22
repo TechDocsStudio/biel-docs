@@ -1,12 +1,12 @@
 ---
 sidebar_position: 6
 slug: /security
-description: Security best practices and guidelines for Biel AI.
+description: Security features, architecture, and compliance in Biel.ai.
 ---
 
 # Security
 
-Security best practices and guidelines for Biel AI.
+Security features, architecture, and compliance in Biel.ai.
 
 <section className="row">
   <article className="col col--6">

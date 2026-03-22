@@ -1,12 +1,12 @@
 ---
 sidebar_position: 3
 slug: /customization
-description: Learn how to customize and configure Biel AI to meet your specific needs.
+description: Customize the Biel.ai widget appearance, behavior, AI settings, and data sources.
 ---
 
 # Customization
 
-Learn how to customize and configure Biel AI to meet your specific needs. This section covers everything from visual styling to AI behavior configuration.
+Configure the Biel.ai widget appearance, behavior, AI settings, and data sources.
 
 ## User interface
 

@@ -60,6 +60,6 @@ Now that your content is indexed, verify that the chatbot returns accurate answe
 Your project is ready. Choose how you want to surface it to users:
 
 - **Chatbot widget** — Embed an AI chat button on your site. See the [Installation](/installation) guides for your platform.
-- **Search widget** — Add an AI-powered search bar instead of (or alongside) the chatbot. See [Install biel-search](/installation/cdn#advanced-install-biel-search).
+- **Search widget** — Add an AI-powered search bar instead of (or alongside) the chatbot. See [Install biel-search](/installation/cdn#add-the-search-widget).
 - **MCP server** — Let developers query your docs from AI coding assistants like Claude or Cursor. See [MCP Server](/integrations/mcp-server).
 - **Integrations** — Connect Biel.ai to GitHub Actions, Custom GPTs, Zapier, and more. See [Integrations](/integrations).

@@ -1,21 +1,21 @@
 ---
 sidebar_position: 4
 slug: /administration
-description: Administrative guides and best practices for managing Biel AI.
+description: Administrative guides for managing Biel.ai.
 ---
 
 # Administration
 
-Administrative guides and best practices for managing Biel AI.
+Administrative guides for managing Biel.ai.
 
 <section className="row">
   <article className="col col--6">
     <a className="card padding--lg" href="/administration/team">
       <h2 className="text--truncate" title="Manage team">📄️ Manage team</h2>
-      <p className="text--truncate" title="Manage subscription">Manage subscription</p>
+      <p className="text--truncate" title="Manage team members, roles, and settings">Manage team members, roles, and settings</p>
     </a>
   </article>
-  
+
   <article className="col col--6">
     <a className="card padding--lg" href="/administration/roles">
       <h2 className="text--truncate" title="Manage roles">📄️ Manage roles</h2>
