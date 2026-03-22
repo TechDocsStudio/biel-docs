@@ -1,24 +1,23 @@
 ---
 sidebar_position: 10
+description: Add category filters to the Biel.ai search widget to help users narrow results.
 ---
 
 # Search filters
 
-Search filters let users narrow down search results by category. Each filter maps a label to a URL pattern.
-When a user selects a filter, only results whose URLs match that pattern appear.
+Search filters let users narrow search results by category. Each filter maps a label to a URL pattern — when selected, only matching results appear.
 
 ![Search filters shown in the search widget](./images/search-filters.png)
 
 ## Configure filters
 
 :::important
-Only users with the **Administrator** or **Maintainer** role can configure project settings. For more details, see [Manage roles](../administration/roles.md).
+Only **Administrator** or **Maintainer** roles can manage projects. See [Manage roles](../administration/roles.md).
 :::
 
-1. Navigate to your project page.
-2. Click the **Settings** button.
-3. Scroll to the **Search filters** section.
-4. Add one or more filters. Each filter requires:
+1. In the [Biel.ai dashboard](https://app.biel.ai), select your project.
+2. Go to **Settings** > **Search filters**.
+3. Add one or more filters. Each filter requires:
    - **Title:** The label shown in the widget (for example, `API`, `Guides`, `Blog`).
    - **Pattern:** A case-insensitive regular expression matched against result URLs. Use `\.` to match a literal dot and `.*` to match any characters. See [Pattern examples](#pattern-examples) for common use cases.
 5. Click **Save**.
