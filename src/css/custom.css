@@ -30,7 +30,10 @@
   --biel-button-border-radius: 8px;
   --biel-search-button-border-radius: 8px;
   --biel-search-button-bg-color: transparent;
+  --biel-search-button-text-font-size: 0.875rem;
+  --biel-search-button-text-color: rgba(24, 24, 27, 0.5);
   --ifm-navbar-item-padding-vertical: 0;
+  --ifm-navbar-shadow: none;
   --ifm-link-decoration: underline;
   
   /* Typography improvements */
@@ -74,12 +77,78 @@
   --feedback-button-dark-text-color: #18181b;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-menu-color-background-active: var(--ifm-hover-overlay);
-  --ifm-navbar-shadow: 0 0.5px 0.5px 0 #dadde1;
+  --ifm-navbar-shadow: none;
   --ifm-code-background: rgba(255, 255, 255, 0.08);
+  --biel-search-button-text-color: rgba(255, 255, 255, 0.5);
+  --biel-search-button-shortcut-text-color: rgba(255, 255, 255, 0.4);
+  --feedback-modal-button-border-color-active: #fff;
+  --feedback-modal-button-text-color-active: #fff;
+  --feedback-modal-button-border-color: rgba(255, 255, 255, 0.3);
+  --feedback-modal-button-text-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Feedback widget — "Was this helpful?" */
+.feedback-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.feedback-widget b {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgba(24, 24, 27, 0.6);
+  margin-right: 0.25rem;
+}
+
+[data-theme='dark'] .feedback-widget b {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.feedback-widget .button--outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #e4e4e7;
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(24, 24, 27, 0.5);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  --ifm-button-color: rgba(24, 24, 27, 0.5);
+}
+
+.feedback-widget .button--outline:hover {
+  border-color: #a1a1aa;
+  color: #18181b;
+  background: #f4f4f5;
+  --ifm-button-color: #18181b;
 }
 
 [data-theme='dark'] .feedback-widget .button--outline {
+  border-color: #3f3f46;
+  color: rgba(255, 255, 255, 0.5);
+  --ifm-button-color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .feedback-widget .button--outline:hover {
+  border-color: #52525b;
+  color: #fff;
+  background: #27272a;
   --ifm-button-color: #fff;
+}
+
+.feedback-widget .margin-bottom--sm {
+  margin-bottom: 0 !important;
+}
+
+.feedback-widget .margin-left--sm {
+  margin-left: 0 !important;
 }
 
 
@@ -97,13 +166,18 @@
 }
 
 .navbar__logo img {
-  height: 34px;
+  height: 32px;
 }
 
-/* Navbar item ordering — move dark/light toggle before search */
+/* Navbar item ordering — search first, then links, signup, then theme toggle last */
 .navbar__items--right {
   display: flex;
   align-items: center;
+  gap: 1rem;
+}
+
+.navbar__items--right > [class*="navbarSearchContainer"] {
+  order: -1;
 }
 
 .navbar__items--right > .colorModeToggle_DEke,
@@ -111,22 +185,68 @@
   order: -2;
 }
 
-.navbar__items--right > [class*="navbarSearchContainer"] {
-  order: -1;
+/* Color mode toggle — clean sun/moon icon */
+.clean-color-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: rgba(24, 24, 27, 0.5);
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.clean-color-toggle:hover {
+  color: #18181b;
+  background-color: #f4f4f5;
+}
+
+[data-theme='dark'] .clean-color-toggle {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .clean-color-toggle:hover {
+  color: #fff;
+  background-color: #27272a;
+}
+
+/* Mobile hamburger menu — match landing page size */
+.navbar__toggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Navbar link styles */
 .navbar__link {
   text-decoration: none !important;
   font-weight: 400;
+  font-size: 0.875rem;
+  color: rgba(24, 24, 27, 0.6);
+  transition: color 0.1s ease-in-out;
 }
 
 .navbar__link:hover {
   text-decoration: none !important;
+  color: #18181b;
 }
 
 .navbar__link--active {
   font-weight: 600;
+  color: #18181b;
+}
+
+[data-theme='dark'] .navbar__link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .navbar__link--active {
+  color: #fff;
 }
 
 /* Hide external link icons */
@@ -147,18 +267,18 @@
 
 /* Sign up button in navbar */
 .navbar__item--signup {
-  background-color: var(--ifm-color-primary);
+  background-color: #18181b;
   color: #fff !important;
   border-radius: 6px;
   padding: 6px 16px !important;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.875rem;
   text-decoration: none !important;
   transition: background-color 0.2s ease;
 }
 
 .navbar__item--signup:hover {
-  background-color: var(--ifm-color-primary-dark);
+  background-color: #27272a;
   color: #fff !important;
 }
 
@@ -315,8 +435,8 @@ html[class*="plugin-@scalar"] .footer {
   html[class*="plugin-@scalar"] .navbar__inner {
     max-width: 1432px;
     margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -841,8 +961,8 @@ a.card.padding--lg {
   .navbar__inner {
     max-width: 1432px;
     margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   .main-wrapper {
@@ -905,11 +1025,26 @@ a.card.padding--lg {
     padding-right: 3rem;
   }
 
+  .navbar {
+    border-bottom: 1px solid #e4e4e7;
+    box-shadow: none;
+  }
+
   @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
     .navbar {
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
-        background-color: initial;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        background-color: rgba(255, 255, 255, 0.8);
     }
-  }  
+  }
+
+  [data-theme='dark'] .navbar {
+    border-bottom: 1px solid #27272a;
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    [data-theme='dark'] .navbar {
+      background-color: rgba(24, 24, 27, 0.8);
+    }
+  }
 }
