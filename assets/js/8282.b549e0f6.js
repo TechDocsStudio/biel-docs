@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbiel=globalThis.webpackChunkbiel||[]).push([[8282],{5901:(e,a,b)=>{b.d(a,{createTreemapServices:()=>i.d});var i=b(1633);b(7960)}}]);

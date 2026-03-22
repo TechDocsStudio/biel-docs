@@ -1,0 +1,625 @@
+openapi: 3.0.3
+info:
+  title: Biel.ai REST API (Beta)
+  version: 0.1.0
+  description: |
+
+    Biel.ai is an AI-powered documentation assistant. It indexes your technical documentation and provides AI chat and search capabilities through widgets, MCP servers, and this REST API.
+
+    **Base URL:** `https://app.biel.ai`
+
+    > The API is available on **Business** and **Enterprise** plans. [Contact us](https://biel.ai/contact) to upgrade.
+
+    ## Authorization & permissions
+
+    Biel.ai uses API key authentication with granular permissions.
+
+    - **Public projects**: Read operations don't require authentication. Write operations require an API key.
+    - **Private projects**: All operations require an API key.
+
+    > Projects are public by default. Configure this in **Project settings**.
+
+    ### Available permissions
+
+    | Permission | Description | Required For |
+    |------------|-------------|--------------|
+    | `project_read` | Read project details | Getting project information |
+    | `project_search` | Search documents within projects | Searching project content, tracking search clicks |
+    | `project_sources_read` | View project sources | Listing project sources (files, URLs, sitemaps) |
+    | `project_sources_create` | Upload sources | Adding files, URLs, and sitemaps to projects |
+    | `project_sources_delete` | Delete sources | Removing sources from projects |
+    | `project_sync` | Refresh/sync project data | Triggering project data refresh |
+    | `chat_create` | Create chats and send messages | Interacting with the AI chat |
+
+    ### Create an API key
+
+    1. In [app.biel.ai](https://app.biel.ai), go to **Team** > **API Keys**.
+    2. Click **Create API Key**, enter a name, and select permissions.
+    3. Click **Create API Key** and copy the key — you won't be able to view it again.
+
+    ### Using your API key
+
+    Include the key in the `Authorization` header:
+    ```
+    Authorization: Api-Key <your-api-key>
+    ```
+
+    > Read-only keys (`project_read`, `project_search`) can be exposed client-side. Keys with write permissions should always be stored server-side.
+
+servers:
+  - url: https://app.biel.ai
+    description: Production
+tags:
+  - name: Chat
+    description: Send messages and retrieve conversations.
+  - name: Projects
+    description: Get project details and search indexed content.
+  - name: Sources
+    description: Manage project sources (files, URLs, sitemaps, sites).
+paths:
+  /api/v1/chats/:
+    post:
+      operationId: sendMessage
+      summary: Send a message
+      description: |
+        Send a message and get an AI response. Returns 201 for new chats, 200 for existing ones.
+
+        **Required permission:** `chat_create`
+
+      tags:
+      - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The message to send to the AI.
+                project_slug:
+                  type: string
+                  description: Project slug identifier.
+                chat_uuid:
+                  type: string
+                  format: uuid
+                  description: UUID of an existing chat to continue. Creates a new chat if omitted.
+                url:
+                  type: string
+                  description: URL where the chat is initiated from.
+                email:
+                  type: string
+                  description: Email or ID for conversation tracking in analytics.
+                think_mode:
+                  type: boolean
+                  description: Enable reasoning mode for deeper analysis. Requires the reasoning mode plugin to be enabled for the project.
+                metadata:
+                  type: string
+                  description: Tag to identify the conversation source (e.g., `mcp`, `slack`, `web`).
+              required:
+                - message
+                - project_slug
+      security:
+      - ApiKeyAuth: ['chat_create']
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_message_id:
+                    type: string
+                  ai_message:
+                    type: object
+                    properties:
+                      from:
+                        type: string
+                      message:
+                        type: string
+                      messageId:
+                        type: string
+                      isPartial:
+                        type: boolean
+                      timestamp:
+                        type: string
+                      sources:
+                        type: array
+                  chat_uuid:
+                    type: string
+          description: 'Message sent successfully'
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_message_id:
+                    type: string
+                  ai_message:
+                    type: object
+                    properties:
+                      from:
+                        type: string
+                      message:
+                        type: string
+                      messageId:
+                        type: string
+                      isPartial:
+                        type: boolean
+                      timestamp:
+                        type: string
+                      sources:
+                        type: array
+                  chat_uuid:
+                    type: string
+          description: 'New chat created successfully'
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Bad request'
+        '403':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Forbidden - missing permissions or unauthorized domain'
+  /api/v1/projects/{slug}/:
+    get:
+      operationId: getProject
+      summary: Get project details
+      description: |
+        Retrieve project settings, filters, and metadata.
+
+        **Required permission:** `project_read` (private projects only).
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: Project slug identifier
+      tags:
+      - Projects
+      security:
+      - ApiKeyAuth: ['project_read']
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+          description: 'Project details retrieved successfully'
+        '403':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Forbidden - missing permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Project not found'
+  /api/v1/projects/{slug}/search/:
+    get:
+      operationId: searchProject
+      summary: Search project content
+      description: |
+        Semantic search across indexed project content. Returns ranked results with snippets.
+
+        **Required permission:** `project_search` (private projects only).
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: Project slug identifier
+      - in: query
+        name: q
+        schema:
+          type: string
+        required: true
+        description: Search query
+      - in: query
+        name: url
+        schema:
+          type: string
+        description: URL from where the search was initiated.
+      - in: query
+        name: filter_title
+        schema:
+          type: string
+        required: false
+        description: Optional filter to restrict search results to documents matching this filter title.
+      tags:
+      - Projects
+      security:
+      - ApiKeyAuth: ['project_search']
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SearchResult'
+          description: 'Search results'
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Bad request - missing query parameter'
+        '403':
+          description: 'Forbidden'
+        '404':
+          description: 'Project not found'
+  /api/v1/projects/{slug}/sources/:
+    get:
+      operationId: listSources
+      summary: List sources
+      description: |
+        List all sources associated with a project.
+
+        **Required permission:** `project_sources_read`
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: Project slug identifier
+      tags:
+      - Sources
+      security:
+      - ApiKeyAuth: ['project_sources_read']
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    uuid:
+                      type: string
+                      format: uuid
+                      description: Source UUID
+                    name:
+                      type: string
+                      description: Source name or URL
+                    type:
+                      type: string
+                      enum: ['file', 'url', 'sitemap', 'site', 'hosted_site', 'confluence']
+                      description: Source type.
+          description: 'Sources listed successfully'
+    post:
+      operationId: addSource
+      summary: Add source
+      description: |
+        Upload files, URLs, sitemaps, or hosted sites to a project. All sources are indexed for search and chat.
+
+        **Required permission:** `project_sources_create`
+
+        | Source type | Limits |
+        |-------------|--------|
+        | Files (PDF, MD, TXT, DOCX, XLSX, CSV) | 10 MB per file |
+        | URLs | Publicly accessible |
+        | Sitemaps | Must end in `.xml` |
+        | Hosted sites (ZIP) | 250 MB per ZIP |
+        
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: Project slug identifier
+      tags:
+      - Sources
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                  description: Files to upload (PDF, MD, TXT, DOCX, XLSX, CSV)
+                urls:
+                  type: array
+                  items:
+                    type: string
+                    format: uri
+                  description: URLs to crawl and index
+                sitemaps:
+                  type: array
+                  items:
+                    type: string
+                    format: uri
+                  description: Sitemap URLs to crawl
+                site_zip:
+                  type: string
+                  format: binary
+                  description: ZIP file containing a complete website to host and index
+                site_name:
+                  type: string
+                  description: Name for the hosted site (required when uploading site_zip)
+                base_url:
+                  type: string
+                  format: uri
+                  description: Original base URL of the site (required when uploading site_zip)
+      security:
+      - ApiKeyAuth: ['project_sources_create']
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  sources:
+                    type: array
+                    items:
+                      type: object
+          description: 'Source added successfully'
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Bad request - invalid files or data'
+        '403':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Forbidden - missing permissions'
+  /api/v1/projects/{slug}/sources/{source_uuid}/:
+    delete:
+      operationId: deleteSource
+      summary: Delete source
+      description: |
+        Remove a source and its indexed content from a project.
+
+        **Required permission:** `project_sources_delete`
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: Project slug identifier
+      - in: path
+        name: source_uuid
+        schema:
+          type: string
+          format: uuid
+        required: true
+        description: UUID of the source to delete
+      tags:
+      - Sources
+      security:
+      - ApiKeyAuth: ['project_sources_delete']
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+          description: 'Source deleted successfully'
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Bad request'
+        '403':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Forbidden - missing permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Source not found'
+  /api/v1/projects/{slug}/sources/sync/:
+    post:
+      operationId: syncProject
+      summary: Sync sources
+      description: |
+        Re-crawl all project sources and update the search index.
+
+        **Required permission:** `project_sync`
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: Project slug identifier
+      tags:
+      - Sources
+      security:
+      - ApiKeyAuth: ['project_sync']
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+          description: 'Project sync started successfully'
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Bad request - sync already running'
+        '403':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Forbidden - missing permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+          description: 'Project not found'
+components:
+  schemas:
+    SearchResult:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The page title related to the document.
+        fragment:
+          type: string
+          description: A snippet of text containing the search query or a relevant section of the document.
+        url:
+          type: string
+          format: uri
+          description: The URL to the original document containing the fragment.
+        score:
+          type: number
+          description: Relevance score.
+        domain:
+          type: string
+          format: uri
+          description: The root domain name of the source.
+        is_title_match:
+          type: boolean
+          description: Whether the page title contains the exact search query.
+    Filter:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Display title of the filter.
+      required:
+      - title
+    Project:
+      type: object
+      properties:
+        whitelabel:
+          type: string
+          readOnly: true
+          description: Whitelabel settings.
+        suggested_questions:
+          type: string
+          readOnly: true
+          description: Pre-configured suggested questions.
+        initial_message:
+          type: string
+          description: Greeting message shown when users open the chat.
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filter'
+          readOnly: true
+          description: Search filters configured for the project.
+        think_mode:
+          type: boolean
+          readOnly: true
+          description: Whether reasoning mode is enabled.
+        is_private:
+          type: boolean
+          readOnly: true
+          description: Whether the project requires authentication.
+        mcp_enabled:
+          type: boolean
+          description: Whether MCP server integration is enabled.
+        mcp_server_name:
+          type: string
+          description: Display name of the MCP server.
+        mcp_metadata_tag:
+          type: string
+          description: Tag to identify MCP-originated conversations.
+      required:
+      - filters
+      - initial_message
+      - suggested_questions
+      - whitelabel
+      - think_mode
+      - is_private
+      - mcp_enabled
+      - mcp_server_name
+      - mcp_metadata_tag
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: |
+        API Key authentication using the format: `Api-Key <your-api-key>`
+
+        Create your API key in Team Settings and assign the required permissions for your use case.
