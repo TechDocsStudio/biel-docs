@@ -1,5 +1,6 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
+sidebar_label: Roles
 title: Manage roles
 description: Assign and manage team member roles and permissions.
 ---

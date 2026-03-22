@@ -56,7 +56,7 @@ Replace `Question from step 1` with the field from your trigger that contains th
 
 Replace `YOUR_API_KEY` with your API key from your Biel.ai team settings.
 
-For the full API reference, see [Biel.ai REST API](/api/biel-ai-rest-api-beta).
+For the full API reference, see [Biel.ai REST API](/api).
 
 ### 3. Process the response
 

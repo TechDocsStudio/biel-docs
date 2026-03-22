@@ -13,23 +13,20 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "gen-api-docs": "docusaurus gen-api-docs all",
-    "clean-api": "docusaurus clean-api-docs all",
-    "genapi": "yarn clean-api && docusaurus gen-api-docs all"
+    "sync-api-schema": "cp openapi/schema.yaml static/openapi/schema.yaml"
   },
   "dependencies": {
     "@docusaurus/core": "^3.0.0",
-    "@docusaurus/plugin-client-redirects": "^3.0.0",
+    "@docusaurus/plugin-client-redirects": "^3.8.1",
     "@docusaurus/plugin-sitemap": "^3.0.0",
     "@docusaurus/preset-classic": "^3.0.0",
     "@docusaurus/theme-mermaid": "^3.8.1",
     "@mdx-js/react": "^3.0.0",
+    "@scalar/docusaurus": "^0.8.4",
     "clsx": "^1.2.1",
     "docusaurus-biel": "^1.0.4",
     "docusaurus-plugin-image-zoom": "^0.1.4",
-    "docusaurus-plugin-openapi-docs": "^4.4.0",
     "docusaurus-pushfeedback": "^1.0.1",
-    "docusaurus-theme-openapi-docs": "^4.4.0",
     "prism-react-renderer": "^2.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

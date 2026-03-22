@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
+sidebar_label: Team
 title: Manage team
 description: Manage team members, roles, and settings in Biel.ai.
 ---

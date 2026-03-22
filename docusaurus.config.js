@@ -10,7 +10,7 @@ const darkTheme = themes.dracula;
 const config = {
   title: 'Biel.ai docs',
   tagline: 'Ask AI chatbot for technical documentation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   trailingSlash: false,
 
   // Set the production url of your site here
@@ -48,7 +48,6 @@ const config = {
           // This moves your docs to the root domain
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          docItemComponent: "@theme/ApiItem",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -82,24 +81,28 @@ const config = {
       },
     ],
     [
-      'docusaurus-plugin-openapi-docs',
+      '@scalar/docusaurus',
       {
-        id: 'biel',
-        docsPluginId: "classic",
-        config: {
-          biel: {
-            label: 'API Reference',
-            specPath: 'openapi/schema.yaml',
-            outputDir: 'docs/api',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-            },
+        label: 'API Reference',
+        route: '/api',
+        showNavLink: false,
+        configuration: {
+          url: '/openapi/schema.yaml',
+          hideTestRequestButton: true,
+          hideClientButton: true,
+          withDefaultFonts: false,
+          agent: {
+            disabled: true,
           },
-        }
+          showDeveloperTools: "never",
+          mcp: {
+            disabled: true,
+          },
+        },
       },
-    ],    
+    ],
   ],
-  themes: ["docusaurus-theme-openapi-docs", "@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid"],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -111,6 +114,45 @@ const config = {
           src: 'img/logo-biel.png',
           srcDark: 'img/logo-biel-dark.png',
         },
+        items: [
+          // Left side
+          {
+            to: '/',
+            label: 'Documentation',
+            position: 'left',
+            activeBaseRegex: '^/(?!support$|api$)',
+          },
+          {
+            to: '/api',
+            label: 'REST API',
+            position: 'left',
+            activeBaseRegex: '^/api$',
+          },
+          {
+            to: '/support',
+            label: 'Support',
+            position: 'left',
+            activeBaseRegex: '^/support$',
+          },
+          // Right side
+          {
+            type: 'search',
+            position: 'right',
+          },
+          {
+            href: 'https://biel.ai/demo',
+            label: 'Book a demo',
+            position: 'right',
+            'aria-label': 'Book a demo',
+          },
+          {
+            href: 'https://app.biel.ai/accounts/signup/',
+            label: 'Sign up',
+            position: 'right',
+            className: 'navbar__item--signup',
+            'aria-label': 'Sign up',
+          },
+        ],
       },
       colorMode: {
         defaultMode: 'light',
@@ -135,6 +177,45 @@ const config = {
       }
     }),
     headTags: [
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '96x96',
+          href: '/img/favicon-96x96.png',
+        }
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/img/favicon.svg',
+        }
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'shortcut icon',
+          href: '/img/favicon.ico',
+        }
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/img/apple-touch-icon.png',
+        }
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'manifest',
+          href: '/site.webmanifest',
+        }
+      },
       {
         tagName: 'link',
         attributes: {

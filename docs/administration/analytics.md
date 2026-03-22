@@ -1,5 +1,6 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
+sidebar_label: Analytics
 title: View analytics
 description: Track chatbot and search usage, FAQs, and content gaps.
 ---

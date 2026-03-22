@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+sidebar_label: Subscription
 title: Manage subscription
 description: Manage your Biel.ai subscription, billing, and usage.
 ---

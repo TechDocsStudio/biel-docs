@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
+sidebar_label: Projects
 title: Manage projects
 description: View, configure, and manage your Biel.ai projects.
 ---
@@ -113,7 +114,7 @@ For detailed configuration instructions, see [Sources](../customization/data-sou
 
 Control access to your chatbot:
 
-- **Require authentication for all API access**: When enabled, all API access requires authentication. Available from **Business** plan. See [API authorization](/api/biel-ai-rest-api-beta#authorization--permissions).
+- **Require authentication for all API access**: When enabled, all API access requires authentication. Available from **Business** plan. See [API authorization](/api).
 - **Allowed domains**: Only domains from this list will be able to use your chatbot widget.
 
 ### UI settings
