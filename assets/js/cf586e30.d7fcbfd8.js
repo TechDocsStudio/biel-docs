@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkbiel=globalThis.webpackChunkbiel||[]).push([[2009],{1942:a=>{a.exports=JSON.parse('{"name":"@scalar/docusaurus","id":"default"}')}}]);
