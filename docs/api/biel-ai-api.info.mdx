@@ -1,0 +1,128 @@
+---
+id: biel-ai-api
+title: "Biel.ai API"
+description: "Biel.ai is an AI-powered documentation assistant. It indexes your technical documentation and provides AI chat and search capabilities through widgets, MCP servers, and this REST API."
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 0.1.0"}
+>
+</span>
+
+<Export
+  url={"/openapi/schema.yaml"}
+  proxy={undefined}
+>
+  
+</Export>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Biel.ai API"}
+>
+</Heading>
+
+
+
+
+Biel.ai is an AI-powered documentation assistant. It indexes your technical documentation and provides AI chat and search capabilities through widgets, MCP servers, and this REST API.
+
+**Base URL:** `https://app.biel.ai`
+
+> The API is available on **Business** and **Enterprise** plans. [Contact us](https://biel.ai/contact) to upgrade.
+
+## Authorization & permissions
+
+Biel.ai uses API key authentication with granular permissions.
+
+- **Public projects**: Read operations don't require authentication. Write operations require an API key.
+- **Private projects**: All operations require an API key.
+
+> Projects are public by default. Configure this in **Project settings**.
+
+### Available permissions
+
+| Permission | Description | Required For |
+|------------|-------------|--------------|
+| `project_read` | Read project details | Getting project information |
+| `project_search` | Search documents within projects | Searching project content, tracking search clicks |
+| `project_sources_read` | View project sources | Listing project sources (files, URLs, sitemaps) |
+| `project_sources_create` | Upload sources | Adding files, URLs, and sitemaps to projects |
+| `project_sources_delete` | Delete sources | Removing sources from projects |
+| `project_sync` | Refresh/sync project data | Triggering project data refresh |
+| `chat_create` | Create chats and send messages | Interacting with the AI chat |
+
+### Create an API key
+
+1. In [app.biel.ai](https://app.biel.ai), go to **Team** > **API Keys**.
+2. Click **Create API Key**, enter a name, and select permissions.
+3. Click **Create API Key** and copy the key — you won't be able to view it again.
+
+### Using your API key
+
+Include the key in the `Authorization` header:
+```
+Authorization: Api-Key <your-api-key>
+```
+
+> Read-only keys (`project_read`, `project_search`) can be exposed client-side. Keys with write permissions should always be stored server-side.
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"API Key: ApiKeyAuth"}
+      value={"ApiKeyAuth"}
+    >
+      
+      
+      API Key authentication using the format: `Api-Key <your-api-key>`
+      
+      Create your API key in Team Settings and assign the required permissions for your use case.
+      
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Authorization
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div>
+      

@@ -57,7 +57,7 @@ Replace `YOUR_API_KEY` with your API key from your Biel.ai team settings.
 
 Replace `{{1.question}}` with the appropriate variable from your trigger module. Replace `YOUR_PROJECT_SLUG` with your project slug from the Biel.ai dashboard.
 
-For the full API reference, see [Biel.ai REST API](/api).
+For the full API reference, see [Biel.ai REST API](/api/biel-ai-api).
 
 ### 3. Process the response
 

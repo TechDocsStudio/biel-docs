@@ -13,6 +13,14 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
+  apiSidebar: [
+    ...require('./docs/api/sidebar'),
+    {
+      type: 'doc',
+      id: 'api/websocket',
+      label: 'WebSocket API',
+    },
+  ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
   tutorialSidebar: [
     'quickstart',
@@ -144,21 +152,6 @@ const sidebars = {
         'integrations/n8n',
       ],
     },
-    {
-      type: 'category',
-      label: 'API Reference',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'link',
-          label: 'REST API',
-          href: '/api',
-        },
-        'api-websocket',
-      ],
-    },
-
     {
       type: 'category',
       label: 'Security',

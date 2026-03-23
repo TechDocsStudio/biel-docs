@@ -1,0 +1,1 @@
+{"parameters":[{"in":"path","name":"slug","schema":{"type":"string"},"required":true,"description":"Project slug identifier"}]}

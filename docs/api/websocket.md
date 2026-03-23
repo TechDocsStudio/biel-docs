@@ -6,7 +6,7 @@ description: Real-time chat via WebSocket for streaming AI responses.
 
 # WebSocket API
 
-The WebSocket API enables real-time, streaming chat with your Biel.ai project. Use it when you need token-by-token AI responses instead of waiting for the full response via the [REST API](/api).
+The WebSocket API enables real-time, streaming chat with your Biel.ai project. Use it when you need token-by-token AI responses instead of waiting for the full response via the [REST API](/api/biel-ai-api).
 
 **Endpoint:** `wss://app.biel.ai/ws/messages/{projectId}`
 
@@ -84,7 +84,7 @@ The server sends JSON messages back. Partial messages stream token-by-token; the
 
 ## Authentication
 
-The WebSocket API uses the same authentication model as the [REST API](/api):
+The WebSocket API uses the same authentication model as the [REST API](/api/biel-ai-api):
 
 - **Public projects** — No API key required. Domain restrictions still apply.
 - **Private projects** — Include `apiKey` in the first message payload with `chat_create` permission.

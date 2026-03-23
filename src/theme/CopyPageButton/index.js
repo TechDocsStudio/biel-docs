@@ -1,9 +1,7 @@
 import React, {useCallback, useState} from 'react';
-import {useLocation} from '@docusaurus/router';
 
 export default function CopyPageButton() {
   const [copied, setCopied] = useState(false);
-  const location = useLocation();
 
   const handleCopy = useCallback(async () => {
     try {
@@ -24,7 +22,7 @@ export default function CopyPageButton() {
     } catch (err) {
       console.error('Failed to copy:', err);
     }
-  }, [location.pathname]);
+  }, []);
 
   return (
     <button

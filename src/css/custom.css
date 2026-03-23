@@ -397,6 +397,48 @@
   z-index: 1000;
 }
 
+/* OpenAPI docs — reduce oversized endpoint path and auth header */
+.markdown h2.openapi__method-endpoint-path {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.markdown h4.openapi-security__summary-header,
+h4.openapi-security__summary-header {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+/* OpenAPI docs — hide escaped <code> placeholder */
+.openapi-explorer__response-placeholder-message {
+  visibility: hidden;
+  font-size: 0;
+}
+
+.openapi-explorer__response-placeholder-message::after {
+  content: 'Click "Send API Request" above to see the response here.';
+  visibility: visible;
+  font-size: 0.875rem;
+  color: rgba(24, 24, 27, 0.5);
+}
+
+[data-theme='dark'] .openapi-explorer__response-placeholder-message::after {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* OpenAPI docs — spacing between badge and endpoint URL */
+.openapi__method-endpoint .badge {
+  margin-right: 0.5rem;
+}
+
 
 article a:not(.card) {
   font-weight: 600;
@@ -432,36 +474,6 @@ article a:not(.card) {
   font-weight: 700;
 }
 
-/* Scalar API Reference — layout */
-html[class*="plugin-@scalar"] .main-wrapper {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-html[class*="plugin-@scalar"] .footer {
-  display: none;
-}
-
-/* Scalar — keep navbar consistent with docs pages */
-@media (min-width: 997px) {
-  html[class*="plugin-@scalar"] .navbar__inner {
-    max-width: 1432px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Scalar — remove code border */
-html[class*="plugin-@scalar"] .markdown code {
-  border: 0 !important;
-}
-
-/* Scalar — remove border from method badges */
-html[class*="plugin-@scalar"] .uppercase.text-xs.font-medium.border {
-  border: 0 !important;
-}
 
 .markdown h2 {
   font-size: 2rem;
@@ -500,15 +512,15 @@ html[class*="plugin-@scalar"] .uppercase.text-xs.font-medium.border {
 }
 
 /* Beautiful numbered list styling (docs pages only, not Scalar) */
-html:not([class*="plugin-@scalar"]) .markdown > ol,
-html:not([class*="plugin-@scalar"]) .markdown > ol ol {
+.markdown > ol,
+.markdown > ol ol {
   list-style: none;
   counter-reset: item;
   padding-left: 0;
 }
 
-html:not([class*="plugin-@scalar"]) .markdown > ol > li,
-html:not([class*="plugin-@scalar"]) .markdown > ol ol > li {
+.markdown > ol > li,
+.markdown > ol ol > li {
   counter-increment: item;
   position: relative;
   padding-left: 3rem;
@@ -516,7 +528,7 @@ html:not([class*="plugin-@scalar"]) .markdown > ol ol > li {
 }
 
 /* Vertical line connecting badges */
-html:not([class*="plugin-@scalar"]) .markdown > ol > li::after {
+.markdown > ol > li::after {
   content: '';
   position: absolute;
   left: 0.875rem;
@@ -526,13 +538,13 @@ html:not([class*="plugin-@scalar"]) .markdown > ol > li::after {
   background: var(--ifm-toc-border-color);
 }
 
-html:not([class*="plugin-@scalar"]) .markdown > ol > li:last-child::after {
+.markdown > ol > li:last-child::after {
   display: none;
 }
 
 /* Circular number badge */
-html:not([class*="plugin-@scalar"]) .markdown > ol > li::before,
-html:not([class*="plugin-@scalar"]) .markdown > ol ol > li::before {
+.markdown > ol > li::before,
+.markdown > ol ol > li::before {
   content: counter(item);
   position: absolute;
   left: 0;
@@ -551,8 +563,8 @@ html:not([class*="plugin-@scalar"]) .markdown > ol ol > li::before {
   z-index: 1;
 }
 
-html[data-theme='dark']:not([class*="plugin-@scalar"]) .markdown > ol > li::before,
-html[data-theme='dark']:not([class*="plugin-@scalar"]) .markdown > ol ol > li::before {
+[data-theme='dark'] .markdown > ol > li::before,
+[data-theme='dark'] .markdown > ol ol > li::before {
   background: var(--ifm-color-primary-dark);
   color: #18181b;
 }
@@ -691,13 +703,74 @@ html[data-theme='dark']:not([class*="plugin-@scalar"]) .markdown > ol ol > li::b
   color: var(--ifm-heading-color);
 }
 
-/* Copy page button */
+/* Copy page button — right-aligned on regular docs */
 .doc-header-with-copy {
   display: flex;
   justify-content: flex-end;
   margin-bottom: -2rem;
   position: relative;
   z-index: 1;
+}
+
+/* On API pages, hide the header copy button (portal injects it next to h1 instead) */
+.docs-doc-id-api .doc-header-with-copy {
+  display: none;
+}
+
+/* API pages: copy button inline with h1, pushed to the right */
+.openapi__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.openapi__heading .copy-btn-portal {
+  flex-shrink: 0;
+}
+
+.openapi__heading .copy-page-button {
+  flex-shrink: 0;
+}
+
+/* Hide the original Export dropdown — we inject it into the h1 row */
+.markdown .dropdown.dropdown--hoverable.dropdown--right[style*="float"] {
+  display: none !important;
+}
+
+/* Restyle Export button to match Copy page button */
+.export-button.button.button--sm.button--secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: var(--ifm-font-family-base);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  --ifm-button-background-color: transparent;
+}
+
+.export-button.button.button--sm.button--secondary:hover {
+  border-color: var(--ifm-color-emphasis-400);
+  color: var(--ifm-color-emphasis-800);
+  background: var(--ifm-hover-overlay);
+  --ifm-button-background-color: var(--ifm-hover-overlay);
+}
+
+/* Export dropdown styling */
+.export-dropdown.dropdown__menu {
+  min-width: auto;
+}
+
+.export-dropdown .dropdown__link {
+  font-size: 0.8125rem;
+  padding: 0.375rem 0.75rem;
 }
 
 .copy-page-button {

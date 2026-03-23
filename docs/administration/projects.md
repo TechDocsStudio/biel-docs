@@ -114,7 +114,7 @@ For detailed configuration instructions, see [Sources](../customization/data-sou
 
 Control access to your chatbot:
 
-- **Require authentication for all API access**: When enabled, all API access requires authentication. Available from **Business** plan. See [API authorization](/api).
+- **Require authentication for all API access**: When enabled, all API access requires authentication. Available from **Business** plan. See [API authorization](/api/biel-ai-api).
 - **Allowed domains**: Only domains from this list will be able to use your chatbot widget.
 
 ### UI settings

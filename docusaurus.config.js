@@ -48,6 +48,7 @@ const config = {
           // This moves your docs to the root domain
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          docItemComponent: "@theme/ApiItem",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -62,6 +63,20 @@ const config = {
     ],
   ],
   plugins: [
+    function webpackPolyfillPlugin() {
+      return {
+        name: 'webpack-polyfill-plugin',
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                path: require.resolve('path-browserify'),
+              },
+            },
+          };
+        },
+      };
+    },
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -69,6 +84,10 @@ const config = {
           {
             from: '/customization/think-mode',
             to: '/customization/reasoning-modes',
+          },
+          {
+            from: '/api-websocket',
+            to: '/api/websocket',
           },
         ],
       },
@@ -81,28 +100,25 @@ const config = {
       },
     ],
     [
-      '@scalar/docusaurus',
+      'docusaurus-plugin-openapi-docs',
       {
-        label: 'API Reference',
-        route: '/api',
-        showNavLink: false,
-        configuration: {
-          url: '/openapi/schema.yaml',
-          hideTestRequestButton: true,
-          hideClientButton: true,
-          withDefaultFonts: false,
-          agent: {
-            disabled: true,
-          },
-          showDeveloperTools: "never",
-          mcp: {
-            disabled: true,
+        id: 'biel',
+        docsPluginId: "classic",
+        config: {
+          biel: {
+            label: 'API reference',
+            specPath: 'openapi/schema.yaml',
+            outputDir: 'docs/api',
+            downloadUrl: '/openapi/schema.yaml',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+            },
           },
         },
       },
     ],
   ],
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-openapi-docs"],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -120,13 +136,13 @@ const config = {
             to: '/',
             label: 'Documentation',
             position: 'left',
-            activeBaseRegex: '^/(?!support$|api$)',
+            activeBaseRegex: '^/(?!support$|api)',
           },
           {
-            to: '/api',
+            to: '/api/biel-ai-api',
             label: 'REST API',
             position: 'left',
-            activeBaseRegex: '^/api$',
+            activeBaseRegex: '^/api',
           },
           {
             to: '/support',
