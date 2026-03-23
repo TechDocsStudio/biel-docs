@@ -131,24 +131,20 @@ const config = {
           srcDark: 'img/logo-biel-dark.png',
         },
         items: [
-          // Left side
+          // Left side — mobile only
           {
             to: '/',
-            label: 'Documentation',
+            label: 'Guides',
             position: 'left',
-            activeBaseRegex: '^/(?!support$|api)',
+            className: 'navbar__item--mobile-only',
+            activeBaseRegex: '^/(?!api)',
           },
           {
             to: '/api/biel-ai-api',
             label: 'REST API',
             position: 'left',
+            className: 'navbar__item--mobile-only',
             activeBaseRegex: '^/api',
-          },
-          {
-            to: '/support',
-            label: 'Support',
-            position: 'left',
-            activeBaseRegex: '^/support$',
           },
           // Right side
           {
@@ -159,14 +155,8 @@ const config = {
             href: 'https://biel.ai/demo',
             label: 'Book a demo',
             position: 'right',
-            'aria-label': 'Book a demo',
-          },
-          {
-            href: 'https://app.biel.ai/accounts/signup/',
-            label: 'Sign up',
-            position: 'right',
             className: 'navbar__item--signup',
-            'aria-label': 'Sign up',
+            'aria-label': 'Book a demo',
           },
         ],
       },
