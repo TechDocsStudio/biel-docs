@@ -96,7 +96,8 @@ const config = {
     [
       'docusaurus-biel',{
           project: 'dl1kps0old',
-          headerTitle: 'Biel.ai chatbot'
+          headerTitle: 'Biel.ai chatbot',
+          modalPosition: 'sidebar-right',
       },
     ],
     [

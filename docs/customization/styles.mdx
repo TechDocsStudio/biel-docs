@@ -85,6 +85,7 @@ Define CSS custom properties in your stylesheet using the `:root` selector:
     --biel-bot-content-position-left: 10px;
     --biel-bot-content-position-right: 10px;
     --biel-bot-content-position-top: 10px;
+    --biel-bot-content-max-width: 600px;
     --biel-bot-content-text-color: var(--biel-text-color);
     --biel-bot-content-z-index: 300;
 
@@ -104,7 +105,7 @@ Define CSS custom properties in your stylesheet using the `:root` selector:
     --biel-header-text-color: var(--biel-dark-color);
     --biel-header-border-color: var(--biel-light-color);
 
-    /* Biel header dropdown */
+    /* Biel input options dropdown */
     --biel-dropdown-bg-color: var(--biel-white-color);
     --biel-dropdown-border-color: var(--biel-light-color);
     --biel-dropdown-hover-bg-color: var(--biel-secondary-color);
@@ -144,17 +145,19 @@ Define CSS custom properties in your stylesheet using the `:root` selector:
     /* Biel bot input */
     --biel-input-color: var(--biel-dark-color);
     --biel-input-button-color: var(--biel-white-color);
-    --biel-input-button-bg-color: var(--biel-dark-color);
+    --biel-input-button-bg-color: var(--biel-primary-color);
     --biel-input-button-border-color: var(--biel-dark-color);
     --biel-input-button-hover-color: var(--biel-white-color);
-    --biel-input-button-hover-bg-color: var(--biel-dark-hover-color);
-    --biel-input-button-hover-border-color: var(--biel-dark-color);
+    --biel-input-button-hover-bg-color: var(--biel-primary-hover-color);
+    --biel-input-button-hover-border-color: var(--biel-primary-hover-color);
     --biel-input-border-color: var(--biel-dark-color);
     --biel-input-border-radius: 6px;
     --biel-input-border-focus-color: var(--biel-dark-color);
     --biel-input-font-family: var(--biel-font-family);
     --biel-input-textarea-max-height: 114px;
     --biel-input-textarea-min-height: 19px;
+
+    /* Biel bot input options */
     --biel-input-options-button-hover-bg-color: var(--biel-secondary-color);
     --biel-input-options-button-hover-border-color: var(--biel-dark-color);
     --biel-input-options-button-focus-border-color: var(--biel-dark-color);
@@ -236,6 +239,8 @@ Define CSS custom properties in your stylesheet using the `:root` selector:
     --biel-search-result-title-color: var(--biel-dark-color);
     --biel-search-result-title-font-size: var(--biel-text-xl-font-size);
     --biel-search-result-description-font-size: var(--biel-text-lg-font-size);
+    --biel-search-result-description-line-height: 1.4;
+    --biel-search-line-height: 1;
 
     /* Biel search ask ai button */
     --biel-search-ask-ai-bg-color: var(--biel-primary-color);
@@ -245,10 +250,10 @@ Define CSS custom properties in your stylesheet using the `:root` selector:
     --biel-search-filter-color: var(--biel-dark-color);
     --biel-search-filter-selected-color: var(--biel-white-color);
     --biel-search-filter-bg-color: var(--biel-white-color);
-    --biel-search-filter-selected-bg-color: var(--biel-dark-color);
+    --biel-search-filter-selected-bg-color: var(--biel-primary-color);
     --biel-search-filter-border-color: var(--biel-white-hover-color);
     --biel-search-filter-hover-color: var(--biel-white-hover-color);
-    --biel-search-filter-selected-border-color: var(--biel-white-hover-color);
+    --biel-search-filter-selected-border-color: var(--biel-primary-color);
 
     /* Biel search footer */
     --biel-search-footer-command-key-border-color: var(--biel-header-border-color);
@@ -311,12 +316,12 @@ Define CSS custom properties in your stylesheet using the `:root` selector:
     --biel-input-color: var(--biel-white-color);
     --biel-input-border-color: var(--biel-white-color);
     --biel-input-border-focus-color: var(--biel-white-color);
-    --biel-input-button-color: var(--biel-dark-color);
-    --biel-input-button-bg-color: var(--biel-white-color);
-    --biel-input-button-border-color: var(--biel-white-color);
-    --biel-input-button-hover-color: var(--biel-dark-color);
-    --biel-input-button-hover-bg-color: var(--biel-white-hover-color);
-    --biel-input-button-hover-border-color: var(--biel-white-color);
+    --biel-input-button-color: var(--biel-white-color);
+    --biel-input-button-bg-color: var(--biel-primary-color);
+    --biel-input-button-border-color: var(--biel-primary-color);
+    --biel-input-button-hover-color: var(--biel-white-color);
+    --biel-input-button-hover-bg-color: var(--biel-primary-hover-color);
+    --biel-input-button-hover-border-color: var(--biel-primary-hover-color);
     --biel-input-options-button-hover-bg-color: var(--biel-message-biel-bg-color);
     --biel-input-options-button-hover-border-color: var(--biel-white-color);
     --biel-input-options-button-focus-border-color: var(--biel-white-color);
