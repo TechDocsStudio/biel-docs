@@ -76,6 +76,7 @@ biel-search-button:not(.hydrated) {
   --biel-primary-color: #fff;
   --biel-primary-hover-color: #fff;
   --biel-button-dark-bg-color: #fff;
+  --biel-input-button-bg-color: #2a2a2a;
   --biel-button-dark-text-color: #18181b;
   --biel-suggested-questions-text-color: #fff;
   --biel-search-ask-ai-color: #18181b;
