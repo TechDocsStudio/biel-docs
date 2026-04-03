@@ -147,6 +147,7 @@ const sidebars = {
         'integrations/mcp-server',
         'integrations/github-workflow',
         'integrations/custom-gpt',
+        'integrations/slack',
         'integrations/zapier',
         'integrations/make',
         'integrations/n8n',
